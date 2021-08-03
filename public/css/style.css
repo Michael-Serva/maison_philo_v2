@@ -1,0 +1,78 @@
+html {
+    overflow-x: hidden;
+}
+
+nav.navbar {
+    background-color: rgb(4, 49, 6);
+}
+
+
+/* Cacher / afficher le mot de passe */
+
+.field-icon {
+    float: right;
+    margin-left: -25px;
+    margin-top: -25px;
+    position: relative;
+    z-index: 2;
+}
+
+.container {
+    padding-top: 50px;
+    margin: auto;
+}
+
+h1 {
+    font-family: 'Tangerine', cursive;
+}
+
+.text-site {
+    color: rgb(49, 31, 4);
+}
+
+.text-site-or {
+    color: #d3c37b;
+}
+
+.dropdown {
+    position: static !important;
+}
+
+.dropdown-menu {
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15)!important;
+    margin-top: 0px !important;
+    width: 100% !important;
+}
+
+.dropdown-menu:hover {
+    background-color: rgb(167, 184, 167)
+}
+
+a {
+    text-decoration: none;
+    color: #d3c37b;
+}
+
+.active a {
+    color: rgb(11, 172, 11)!important;
+}
+
+.form-error-message {
+    text-align: center;
+    color: rgb(212, 25, 212);
+}
+
+h1.inscription,
+h1.connexion {
+    color: rgb(4, 49, 6);
+}
+
+.button_philo {
+    border: 2px solid #d3c37b;
+    background-color: rgb(4, 49, 6);
+}
+
+.footer {
+    /*  background-color: rgb(217, 224, 218); */
+    color: #d3c37b;
+}

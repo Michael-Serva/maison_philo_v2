@@ -10,10 +10,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class DashboardController extends AbstractController
 {
     /**
-     * @Route("/dashboard")
+     * @Route("/")
      * @Template
      */
-    public function index(): Response
+    public function home(): array
     {
         return  [
             'controller_name' => 'DashboardController',

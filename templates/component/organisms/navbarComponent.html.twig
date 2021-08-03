@@ -1,0 +1,119 @@
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark ">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="{{path(routePath)}} ">
+				<h1>MaisonPhilo</h1>
+			</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item"></li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+							Bienvenue chez nous
+						</a>
+						<ul class="dropdown-menu text-center" aria-labelledby="navbarDropdown">
+							<li>
+								<div class="row  ">
+									<a class="dropdown-item col fw-bold text-site " href="#">Notre histoire</a>
+									<a class="dropdown-item d-none col fw-bold text-site " href="#">Notre objectif</a>
+									<a class="dropdown-item col fw-bold text-site " href="#">Nos produits</a>
+									<a class="dropdown-item col fw-bold text-site " href="#">Vieillissement</a>
+									<a class="dropdown-item col fw-bold text-site " href="#">Dossier pays</a>
+								</div>
+
+								<div class="row">
+									<a class="dropdown-item col text-site-or " href="#"></a>
+									<a class="dropdown-item col text-site-or d-none" href="#"></a>
+									<a class="dropdown-item col text-site-or " href="#">Notre gamme de fauteuil roulant</a>
+									<a class="dropdown-item col text-site-or " href="#"></a>
+									<a class="dropdown-item col text-site-or " href="#">Côte d'Ivoire</a>
+								</div>
+
+							</li>
+						</ul>
+					</li>
+					{% set test = 10 %}
+					{#{{ (test == 10) ? "oui" : "non" }} #}
+					{% if app.user %}
+						<li
+							class="nav-item ">
+							{# {{ (test == 10) ? 'bg-danger' : 'bg-warning' }} #}
+
+							<a class="nav-link" href="">Profil</a>
+						</li>
+
+						{% if app.user.roles[0] == "ROLE_ADMIN" %}
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+									Gestion du site
+								</a>
+
+								<ul class="dropdown-menu text-center" aria-labelledby="navbarDropdown">
+									<li>
+										<div class="row  ">
+											<a class="dropdown-item col fw-bold text-site" href="">Gestion des utilisateurs</a>
+											<a class="dropdown-item col fw-bold text-site" href="">Gestion des catégories</a>
+											<a class="dropdown-item col fw-bold text-site" href="">Gestion des produits</a>
+
+										</div>
+
+									</li>
+								</ul>
+							</li>
+						{% endif %}
+					{% endif %}
+					{% if not app.user %}
+						<li class="nav-item ">
+							<a class="nav-link " href=" ">Inscription</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="">Connexion</a>
+
+						</li>
+					{% endif %}
+
+					{% if app.user %}
+						<li class="d-flex">
+							<button class="btn text-light" id="btn-confirm">
+								Déconnexion
+								<i class="fas fa-sign-out-alt"></i>
+							</button>
+
+
+						</li>
+					{% endif %}
+
+				</ul>
+
+				<form class="d-flex">
+					<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+					<button class="btn btn-outline-success" type="submit">Search</button>
+				</form>
+			</div>
+		</div>
+	</nav>
+
+
+	<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="mi-modal">
+		<div class="modal-dialog modal-sm">
+			<div class="modal-content">
+				<div class="modal-header">
+
+					<h4 class="modal-title" id="myModalLabel">Souhaitez vous vous déconnecter?</h4>
+				</div>
+				<div class="modal-footer">
+					<a type="button" class="btn btn-default" href="" id="modal-btn-si">
+						<em class="text-secondary">Oui   |</em>
+					</a>
+
+					<button type="button" class="btn deconnexion-confirmation" id="modal-btn-no">
+						<em class="text-light">Non</em>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
