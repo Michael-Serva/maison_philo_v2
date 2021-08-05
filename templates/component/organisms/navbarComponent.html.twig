@@ -57,9 +57,7 @@
 											<a class="dropdown-item col fw-bold text-site" href="">Gestion des utilisateurs</a>
 											<a class="dropdown-item col fw-bold text-site" href="">Gestion des catégories</a>
 											<a class="dropdown-item col fw-bold text-site" href="">Gestion des produits</a>
-
 										</div>
-
 									</li>
 								</ul>
 							</li>
@@ -71,23 +69,17 @@
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="">Connexion</a>
-
 						</li>
 					{% endif %}
-
 					{% if app.user %}
 						<li class="d-flex">
 							<button class="btn text-light" id="btn-confirm">
 								Déconnexion
 								<i class="fas fa-sign-out-alt"></i>
 							</button>
-
-
 						</li>
 					{% endif %}
-
 				</ul>
-
 				<form class="d-flex">
 					<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
 					<button class="btn btn-outline-success" type="submit">Search</button>
@@ -95,20 +87,16 @@
 			</div>
 		</div>
 	</nav>
-
-
 	<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="mi-modal">
 		<div class="modal-dialog modal-sm">
 			<div class="modal-content">
 				<div class="modal-header">
-
 					<h4 class="modal-title" id="myModalLabel">Souhaitez vous vous déconnecter?</h4>
 				</div>
 				<div class="modal-footer">
 					<a type="button" class="btn btn-default" href="" id="modal-btn-si">
 						<em class="text-secondary">Oui   |</em>
 					</a>
-
 					<button type="button" class="btn deconnexion-confirmation" id="modal-btn-no">
 						<em class="text-light">Non</em>
 					</button>
