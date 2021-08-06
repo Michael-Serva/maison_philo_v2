@@ -24,13 +24,12 @@ public function __construct(UserPasswordHasherInterface $encoder)
             $user = new User();
             /* creation of a random genre */
             $genre = $faker->randomElement($genres);
-            $picture = 'https://randomuser.me/api/portraits/men/1.jpg';
             $pictureId = $faker->numberBetween(1,99).'.jpg';
-            $picture .= ($genre == 'male' ? 'men/' : 'female/'); //$picture = $picture.($genre == 'male' ? 'men/' : 'female/');
+            $picture = "https://randomuser.me/api/portraits/".($genre= 'male' ? 'men/' : 'women/').$pictureId;
             $user->setEmail($faker->email)
             ->setfirstName($faker->firstName)
             ->setLastName($faker->lastName)
-            ->setHash("95610b405A!")
+            ->setPassword("95610b405A!")
             ->setPicture($picture)
             ->setGenre($genre);
             $manager->persist($user);

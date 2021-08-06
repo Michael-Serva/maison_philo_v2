@@ -2,13 +2,19 @@
 
 namespace App\Entity;
 
-use App\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
+ * @UniqueEntity(
+ * fields={"email"},
+ * message="Cet email est déjà associé à un compte"
+ * )
  */
-class User
+class User implements UserInterface
 {
     /**
      * @ORM\Id
@@ -17,8 +23,9 @@ class User
      */
     private $id;
 
-    /**
+     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="Veuillez saisir un email")
      */
     private $email;
 
@@ -37,15 +44,33 @@ class User
      */
     private $picture;
 
+     /* -------
+        @Assert\NotBlank(message="Veuillez saisir un mot de passe")
+        @Assert\EqualTo(
+        propertyPath="confirmPassword",
+        message="Les mots de passe ne sont pas identiques"
+        )
+    */
+
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $hash;
+    private $password;
+
+    // ------- @Assert\NotBlank(message="Veuillez confirmer votre mot de passe")
+     
+    // public $confirmPassword;
+
 
     /**
      * @ORM\Column(type="string", length=255)
      */
     private $genre;
+
+    /**
+     * @ORM\Column(type="json")
+     */
+    private $roles = ['ROLE_USER'];
 
     public function getId(): ?int
     {
@@ -100,14 +125,14 @@ class User
         return $this;
     }
 
-    public function getHash(): ?string
+    public function getPassword(): ?string
     {
-        return $this->hash;
+        return $this->password;
     }
 
-    public function setHash(string $hash): self
+    public function setPassword(string $password): self
     {
-        $this->hash = $hash;
+        $this->password = $password;
 
         return $this;
     }
@@ -123,4 +148,33 @@ class User
 
         return $this;
     }
+
+    public function getRoles(): ?array
+    {
+        return $this->roles;
+    }
+
+    public function setRoles(array $roles): self
+    {
+        $this->roles = $roles;
+
+        return $this;
+    }
+    
+    public function getUsername() : ?string
+    {
+        return(string) $this->email;
+    }
+
+    public function getUserIdentifier()
+    {
+
+        return $this->email;
+    } 
+    // Renvoie la string non encodé que l'utilisateur a saisi
+    public function getSalt(){}
+
+    // nettoyer le mdp
+    public function eraseCredentials(){}
+
 }
