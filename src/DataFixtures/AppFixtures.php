@@ -10,9 +10,12 @@ use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 class AppFixtures extends Fixture
 {
-
+private $encoder;
+/*allows to use $this->encoder in the whole fixture */
 public function __construct(UserPasswordHasherInterface $encoder)
 {
+    $this->encoder = $encoder;
+    //dd(get_class_methods(($encoder)));
 }
     public function load(ObjectManager $manager)
     {
@@ -23,13 +26,16 @@ public function __construct(UserPasswordHasherInterface $encoder)
             /* creation of a new user */
             $user = new User();
             /* creation of a random genre */
+
+            $password = $this->encoder->hashPassword($user, '95610b405A!');
+            //dd($password);
             $genre = $faker->randomElement($genres);
             $pictureId = $faker->numberBetween(1,99).'.jpg';
-            $picture = "https://randomuser.me/api/portraits/".($genre= 'male' ? 'men/' : 'women/').$pictureId;
+            $picture = "https://randomuser.me/api/portraits/".($genre== 'male' ? 'men/' : 'women/').$pictureId;
             $user->setEmail($faker->email)
             ->setfirstName($faker->firstName)
             ->setLastName($faker->lastName)
-            ->setPassword("95610b405A!")
+            ->setPassword($password)
             ->setPicture($picture)
             ->setGenre($genre);
             $manager->persist($user);

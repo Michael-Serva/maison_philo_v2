@@ -6,9 +6,7 @@ nav.navbar {
     background-color: rgb(4, 49, 6);
 }
 
-
 /* Cacher / afficher le mot de passe */
-
 .field-icon {
     float: right;
     margin-left: -25px;
