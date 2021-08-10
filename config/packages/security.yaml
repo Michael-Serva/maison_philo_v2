@@ -1,28 +1,36 @@
-
-# config/packages/security.yaml
 security:
-    # ...
+    # encoders:
     password_hashers:
         App\Entity\User:
-            algorithm: auto
-            cost: 12
+            algorithm: bcrypt
+
     # https://symfony.com/doc/current/security/experimental_authenticators.html
     enable_authenticator_manager: true
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:
-        users_in_memory: { memory: null }
+        in_database:
+            entity:
+                class: App\Entity\User
+                property: email
+
+
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
             lazy: true
-            provider: users_in_memory
-            custom_authenticator: App\Security\AppCustomAuthenticator
+            provider: in_database
+            
+            form_login:
+                login_path: app_security_login 
+                check_path: app_security_login
+                default_target_path: app_dashboard_home
+            
             logout:
                 path: app_logout
-                # where to redirect after logout
                 target: app_dashboard_home
+
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#firewalls-authentication
@@ -34,12 +42,22 @@ security:
     # Note: Only the *first* access control that matches will be used
     access_control:
         - { path: ^/admin, roles: ROLE_ADMIN }
-        - { path: ^/profile, roles: ROLE_USER }
-        - { path: ^/app_security_login, roles: PUBLIC_ACCESS  }
-        - { path: ^/security/register, roles: PUBLIC_ACCESS  }
-        - { path: ^/dashboard/home, roles: ROLE_USER }
-        - { path: ^/app_security_logout, roles: ROLE_USER  }
+        - { path: ^/profil, roles: IS_AUTHENTICATED_FULLY }
+        - { path: ^/inscription, roles: IS_ANONYMOUS }
+        - { path: ^/connexion, roles: IS_ANONYMOUS }
+        - { path: ^/deconnexion, roles: IS_AUTHENTICATED_FULLY }
+        - { path: ^/roles, roles: IS_AUTHENTICATED_FULLY }
 
 
 
-          
+         
+
+
+
+        # Actuellement sur le site, il existe 2 rôles : ROLE_ADMIN et ROLE_USER
+        # tous les rôles du site (utilisateurs connectés): IS_AUTHENTICATED_FULLY
+        # sans rôles (utilisateurs non connectés): IS_ANONYMOUS
+
+
+    role_hierarchy:
+        ROLE_ALL: [ROLE_ADMIN, ROLE_USER]

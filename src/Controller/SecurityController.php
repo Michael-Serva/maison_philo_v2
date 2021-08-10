@@ -26,7 +26,7 @@ class SecurityController extends AbstractController
         $user = new User;
         $form = $this->createForm(RegistrationFormType::class, $user, array("registration" => true) );
         $form->handleRequest($request);
-
+        
         if($form->isSubmitted() && $form->isValid())
         {
             //dd($user->getPassword());
@@ -34,8 +34,8 @@ class SecurityController extends AbstractController
             $user->setPassword($hash);
             $manager->persist($user);
             $manager->flush();
-
-
+            
+            //dd($app_flashes);
             $this->addFlash("success", $user->getPseudo() . ", votre inscription a bien été enregistrée");
 
             return $this->redirectToRoute("app_security_login");
@@ -53,6 +53,7 @@ class SecurityController extends AbstractController
      */
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
+        //dd($authenticationUtils->getLastAuthenticationError());
         /*  
         methode $authenticationUtils
          0 => "__construct"
