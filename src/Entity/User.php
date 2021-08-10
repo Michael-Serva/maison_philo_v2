@@ -14,6 +14,10 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
  * fields={"email"},
  * message="Cet email est déjà associé à un compte"
  * )
+ * @UniqueEntity(
+ * fields={"pseudo"},
+ * message="Ce pseudo est déjà associé à un compte"
+ * )
  */
 class User implements UserInterface
 {
@@ -26,7 +30,6 @@ class User implements UserInterface
 
      /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank(message="Veuillez saisir un email")
      */
     private $email;
 

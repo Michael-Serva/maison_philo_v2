@@ -10,6 +10,7 @@
 			{% endblock %}
 		</title>
 		{% include "component/atoms/head.html.twig" %}
+		{% block stylesheet %}{% endblock %}
 	</head>
 	{% include "component/organisms/navbarComponent.html.twig" with {
             routePath : 'app_dashboard_home',

@@ -29,20 +29,21 @@ class SecurityController extends AbstractController
 
         if($form->isSubmitted() && $form->isValid())
         {
-            dd($user->getPassword());
+            //dd($user->getPassword());
             $hash = $encoder->hashPassword($user, $user->getPassword());
             $user->setPassword($hash);
             $manager->persist($user);
             $manager->flush();
 
 
-            $this->addFlash("success", $user->getEmail() . ", votre inscription a bien été enregistrée");
+            $this->addFlash("success", $user->getPseudo() . ", votre inscription a bien été enregistrée");
 
             return $this->redirectToRoute("app_security_login");
         }
 
         return $this->render('security\register.html.twig', [
-            "registrationForm" => $form->createView()
+            "registrationForm" => $form->createView(),
+            
         ]);
     }
    
