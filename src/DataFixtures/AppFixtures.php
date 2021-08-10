@@ -32,8 +32,16 @@ public function __construct(UserPasswordHasherInterface $encoder)
             $genre = $faker->randomElement($genres);
             $pictureId = $faker->numberBetween(1,99).'.jpg';
             $picture = "https://randomuser.me/api/portraits/".($genre== 'male' ? 'men/' : 'women/').$pictureId;
-            $user->setEmail($faker->email)
-            ->setfirstName($faker->firstName)
+            if ($genre == 'male') {
+                $user
+                ->setfirstName($faker->firstNameMale);
+            }elseif ($genre == 'female') {
+                 $user
+                ->setfirstName($faker->firstNameFemale);
+            }      
+            $user
+            ->setEmail($faker->email)
+            ->setPseudo($faker->city)
             ->setLastName($faker->lastName)
             ->setPassword($password)
             ->setPicture($picture)
