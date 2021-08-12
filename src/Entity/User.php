@@ -2,6 +2,9 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
+use Symfony\Component\Uid\Uuid;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\UserRepository;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -23,10 +26,20 @@ class User implements UserInterface
 {
     /**
      * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="uuid", unique=true)
      */
     private $id;
+
+    public function __construct()
+    {
+        $this->id = Uuid::v4();
+        //$this->roles = new ArrayCollection();
+    }
+
+    public function getId(): Uuid
+    {
+        return $this->id;
+    }
 
      /**
      * @ORM\Column(type="string", length=255)
@@ -72,11 +85,6 @@ class User implements UserInterface
     private $genre;
 
     /**
-     * @ORM\Column(type="json")
-     */
-    private $roles = ['ROLE_USER'];
-
-    /**
      * @ORM\Column(type="boolean")
      */
     private $isVerified = false;
@@ -86,10 +94,7 @@ class User implements UserInterface
      */
     private $pseudo;
 
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
+  
 
     public function getEmail(): ?string
     {
@@ -163,17 +168,7 @@ class User implements UserInterface
         return $this;
     }
 
-    public function getRoles(): ?array
-    {
-        return $this->roles;
-    }
-
-    public function setRoles(array $roles): self
-    {
-        $this->roles = $roles;
-
-        return $this;
-    }
+ 
     
     public function getUsername() : ?string
     {
@@ -214,5 +209,7 @@ class User implements UserInterface
 
         return $this;
     }
+public function getRoles(){}
+ 
 
 }
