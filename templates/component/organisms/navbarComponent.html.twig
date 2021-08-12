@@ -44,7 +44,6 @@
 
 							<a class="nav-link" href="">Profil</a>
 						</li>
-
 						{% if app.user.roles[0] == "ROLE_ADMIN" %}
 							<li class="nav-item dropdown">
 								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -54,7 +53,8 @@
 								<ul class="dropdown-menu text-center" aria-labelledby="navbarDropdown">
 									<li>
 										<div class="row  ">
-											<a class="dropdown-item col fw-bold text-site" href="">Gestion des utilisateurs</a>
+											<a class="dropdown-item col fw-bold text-site" href="{{path('admin_index')}}">Gestion des utilisateurs</a>
+
 											<a class="dropdown-item col fw-bold text-site" href="">Gestion des catégories</a>
 											<a class="dropdown-item col fw-bold text-site" href="">Gestion des produits</a>
 										</div>
@@ -66,13 +66,9 @@
 					{% if not app.user %}
 						<li class="nav-item ">
 							<a class="nav-link " href="{{ path('app_security_register')}}">Inscription</a>
-
-
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="{{ path('app_security_login')}}">Connexion</a>
-
-
 						</li>
 					{% endif %}
 					{% if app.user %}
