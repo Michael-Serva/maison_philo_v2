@@ -3,6 +3,7 @@
 namespace App\DataFixtures;
 
 use Faker\Factory;
+use App\Entity\Role;
 use App\Entity\User;
 use Doctrine\Persistence\ObjectManager;
 use Doctrine\Bundle\FixturesBundle\Fixture;
@@ -20,6 +21,25 @@ public function __construct(UserPasswordHasherInterface $encoder)
     public function load(ObjectManager $manager)
     {
         $faker = Factory::create('fr-Fr');
+
+        $adminRole = new Role;
+        $adminRole->setTitle('ROLE_ADMIN');
+        $manager->persist($adminRole);
+
+        /* creation of an admin user */
+        $adminUser = new User();
+        $adminUser
+            ->setFirstName('Mike')
+            ->setLastName('Serva')
+            ->setEmail('admin@gmail.com')
+            ->setPseudo('admin')
+            ->setPassword($this->encoder->hashPassword($adminUser, '95610b405A!'))
+            ->setPicture('https://randomuser.me/api/portraits/lego/0.jpg')
+            ->setGenre('male')
+            ->addUserRole($adminRole);
+            $manager->persist($adminUser);
+                
+  
         $users = [];
         $genres = ['male', 'female'];
         for ($i=1; $i < 30; $i++) { 
@@ -33,21 +53,19 @@ public function __construct(UserPasswordHasherInterface $encoder)
             $pictureId = $faker->numberBetween(1,99).'.jpg';
             $picture = "https://randomuser.me/api/portraits/".($genre== 'male' ? 'men/' : 'women/').$pictureId;
             if ($genre == 'male') {
-                $user
-                ->setfirstName($faker->firstNameMale);
+                $user->setfirstName($faker->firstNameMale);
             }elseif ($genre == 'female') {
-                 $user
-                ->setfirstName($faker->firstNameFemale);
+                 $user->setfirstName($faker->firstNameFemale);
             }      
             $user
-            ->setEmail($faker->email)
-            ->setPseudo($faker->city)
-            ->setLastName($faker->lastName)
-            ->setPassword($password)
-            ->setPicture($picture)
-            ->setGenre($genre);
-            $manager->persist($user);
-            $users[] = $user;
+                ->setEmail($faker->email)
+                ->setPseudo($faker->city)
+                ->setLastName($faker->lastName)
+                ->setPassword($password)
+                ->setPicture($picture)
+                ->setGenre($genre);
+                $manager->persist($user);
+                $users[] = $user;
         }
         $manager->flush();
     }
