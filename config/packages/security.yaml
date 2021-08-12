@@ -31,7 +31,6 @@ security:
                 path: app_logout
                 target: app_dashboard_home
 
-
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#firewalls-authentication
 
@@ -43,21 +42,13 @@ security:
     access_control:
         - { path: ^/admin, roles: ROLE_ADMIN }
         - { path: ^/profil, roles: IS_AUTHENTICATED_FULLY }
-        - { path: ^/inscription, roles: IS_ANONYMOUS }
-        - { path: ^/connexion, roles: IS_ANONYMOUS }
+        - { path: ^/login, roles: IS_ANONYMOUS }
+        - { path: ^/register, roles: IS_ANONYMOUS }
         - { path: ^/deconnexion, roles: IS_AUTHENTICATED_FULLY }
-        - { path: ^/roles, roles: IS_AUTHENTICATED_FULLY }
-
-
-
+        - { path: ^/roles, roles: IS_AUTHENTICATED_FULLY }  
+        # Currently on the site, there are 2 roles: ROLE_ADMIN and ROLE_USER
+         # all the roles of the site (logged in users): IS_AUTHENTICATED_FULLY
+         # without roles (users not logged in): IS_ANONYMOUS
          
-
-
-
-        # Actuellement sur le site, il existe 2 rôles : ROLE_ADMIN et ROLE_USER
-        # tous les rôles du site (utilisateurs connectés): IS_AUTHENTICATED_FULLY
-        # sans rôles (utilisateurs non connectés): IS_ANONYMOUS
-
-
     role_hierarchy:
         ROLE_ALL: [ROLE_ADMIN, ROLE_USER]
