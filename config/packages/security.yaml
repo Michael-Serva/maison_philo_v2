@@ -13,12 +13,16 @@ security:
                 class: App\Entity\User
                 property: email
 
-
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
+            # configure the maximum login attempts in a custom period of time
+            login_throttling:
+                max_attempts: 3
+                interval: '15 minutes'
+
             lazy: true
             provider: in_database
             
@@ -49,6 +53,6 @@ security:
         # Currently on the site, there are 2 roles: ROLE_ADMIN and ROLE_USER
          # all the roles of the site (logged in users): IS_AUTHENTICATED_FULLY
          # without roles (users not logged in): IS_ANONYMOUS
-         
+
     role_hierarchy:
         ROLE_ALL: [ROLE_ADMIN, ROLE_USER]
