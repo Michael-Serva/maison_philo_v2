@@ -5,6 +5,9 @@
 `https://localhost:8000`
 `http://localhost:81/phpmyadmin/`
 
+## GitHub
+`https://github.com/Michael-Serva/maisonphilo.git` 
+
 ## creating false data 
 `https://symfonycasts.com/screencast/symfony4-doctrine/faker-fixtures` / `https://github.com/fzaninotto/Faker`
 `php bin/console doctrine:fixtures:load`
