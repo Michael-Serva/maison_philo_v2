@@ -15,20 +15,19 @@ use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 class SecurityController extends AbstractController
 {
- /**
-     * 
-     * @Route("/register", name="app_security_register")
-     * @Template
-     */
-    public function register(Request $request, EntityManagerInterface $manager, UserPasswordHasherInterface $encoder )
+    /**
+        *
+        * @Route("/register", name="app_security_register")
+        * @Template
+        */
+    public function register(Request $request, EntityManagerInterface $manager, UserPasswordHasherInterface $encoder)
     {
         // UserPasswordEncoderInterface
         $user = new User;
-        $form = $this->createForm(RegistrationFormType::class, $user, array("registration" => true) );
+        $form = $this->createForm(RegistrationFormType::class, $user, array("registration" => true));
         $form->handleRequest($request);
         
-        if($form->isSubmitted() && $form->isValid())
-        {
+        if ($form->isSubmitted() && $form->isValid()) {
             //dd($user->getPassword());
             $hash = $encoder->hashPassword($user, $user->getPassword());
             $user->setPassword($hash);
@@ -53,7 +52,7 @@ class SecurityController extends AbstractController
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
         //dd($authenticationUtils->getLastAuthenticationError());
-        /*  
+        /*
         methode $authenticationUtils
          0 => "__construct"
         1 => "getLastAuthenticationError"
@@ -68,8 +67,10 @@ class SecurityController extends AbstractController
         $error = $authenticationUtils->getLastAuthenticationError();
         // last username entered by the user
         $lastUsername = $authenticationUtils->getLastUsername();
-
-        return $this->render('security/login.html.twig', ['last_username' => $lastUsername, 'error' => $error]);
+        
+        return $this->render('security/login.html.twig', [
+            'last_username' => $lastUsername, 'error' => $error
+        ]);
     }
 
     /**
