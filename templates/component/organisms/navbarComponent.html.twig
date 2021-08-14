@@ -71,10 +71,10 @@
 					{% endif %}
 					{% if app.user %}
 						<li class="d-flex">
-							<button class="btn text-light" id="btn-confirm">
+							<a href="{{ path('app_logout')}}" class="btn text-light">
 								Déconnexion
 								<i class="fas fa-sign-out-alt"></i>
-							</button>
+							</a>
 						</li>
 					{% endif %}
 				</ul>

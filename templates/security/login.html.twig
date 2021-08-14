@@ -10,7 +10,7 @@
 
 	<form method="post">
 		{% if error %}
-			<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+			<div class="alert alert-danger text-center">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
 		{% endif %}
 		{% if app.flashes.success is defined %}
 			<div class="alert alert-success text-center">{{ app.flashes.success|trans() }}</div>
