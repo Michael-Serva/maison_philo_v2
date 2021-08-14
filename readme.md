@@ -5,6 +5,10 @@
 `https://localhost:8000`
 `http://localhost:81/phpmyadmin/`
 
+```bash
+
+symfony server:start
+```
 ## GitHub
 `https://github.com/Michael-Serva/maisonphilo.git` 
 

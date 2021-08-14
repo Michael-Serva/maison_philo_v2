@@ -28,7 +28,7 @@ class SecurityController extends AbstractController
         $form->handleRequest($request);
         
         if ($form->isSubmitted() && $form->isValid()) {
-            //dd($user->getPassword());
+            /* password encode */
             $hash = $encoder->hashPassword($user, $user->getPassword());
             $user->setPassword($hash);
             $manager->persist($user);
@@ -51,17 +51,7 @@ class SecurityController extends AbstractController
      */
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
-        //dd($authenticationUtils->getLastAuthenticationError());
-        /*
-        methode $authenticationUtils
-         0 => "__construct"
-        1 => "getLastAuthenticationError"
-        2 => "getLastUsername" */
-
-        // if ($this->getUser()) {
-        //     return $this->redirectToRoute('target_path');
-        // }
-        //dd($authenticationUtils->getLastUsername());
+     
 
         // get the login error if there is one
         $error = $authenticationUtils->getLastAuthenticationError();
