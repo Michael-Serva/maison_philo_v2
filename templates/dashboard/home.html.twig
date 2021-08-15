@@ -1,15 +1,12 @@
 {% extends 'base.html.twig' %}
 {% block title %}
-	{% trans %}
-	Accueil
-	{% endtrans %}
-	{{ parent() }}
+	{% trans %}Home |{% endtrans %}{{ parent() }}
 {% endblock %}
 {% block body %}
-	<h1 class" font-tangerine ">
-		{% trans %}Bienvenue sur{% endtrans %}
-		{{websiteName}}
-		{{app.user.firstName ??  '' }}
+	<h1 class"font-tangerine ">
+		{% trans %}Welcome to{% endtrans %}
+		{{webSiteName}}
+		{{app.user.pseudo ??  '' }}
 	</h1>
 	<div class="row container-fluid">
 		<img class="img-fluid col-lg-8" src="{{ asset('images/couple_agees2.jpg') }}" data-aos="fade-down-right" data-aos-duration="2000">

@@ -1,0 +1,21 @@
+{% set alt = 'flag image' %}
+<div class="dropdown ">
+	<button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+		<span class="text-light">
+			<img src="{{asset('images/logo_'~app.request.locale~'.png')}}" width="20" alt="{{app.request.locale == 'en' ? 'English' : 'French'|trans}}{{alt|trans}}">{% trans %}language{% endtrans %}
+		</span>
+	</button>
+	{# if the language is not that of the site #}
+	{% for locale in locales %}
+		{% if locale != app.request.locale %}
+			<ul class="dropdown-menu" aria-la belledby="dropdownMenuButton1">
+				<li>
+					<a href="#">
+						<img src="{{asset('images/logo_'~locale~'.png')}}" width="20" alt="{{locale == 'en' ? 'English' : 'French'|trans}}{{alt|trans}}">
+						{{locale == 'en' ? 'English' : 'French'}}
+					</a>
+				</li>
+			</ul>
+		{% endif %}
+	{% endfor %}
+</div>
