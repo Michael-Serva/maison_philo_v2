@@ -1,10 +1,9 @@
 {% extends 'base.html.twig' %}
-
-{% block title %}User
+{% block title %}
+	{% trans %}User{% endtrans %}
 {% endblock %}
-
 {% block body %}
-	<h1>Utilisateur</h1>
+	<h1>{% trans %}Utilisateur{% endtrans %}</h1>
 	<div class="container-fluid">
 		<table class="table col">
 			<tbody>
@@ -17,11 +16,11 @@
 					<td>{{ user.email }}</td>
 				</tr>
 				<tr>
-					<th>FirstName</th>
+					<th>{% trans %}FirstName{% endtrans %}</th>
 					<td>{{ user.firstName }}</td>
 				</tr>
 				<tr>
-					<th>LastName</th>
+					<th>{% trans %}LastName{% endtrans %}</th>
 					<td>{{ user.lastName }}</td>
 				</tr>
 				<tr>
@@ -37,7 +36,7 @@
 					<td>{{ user.roles ? user.roles|json_encode : '' }}</td>
 				</tr>
 				<tr>
-					<th>IsVerified</th>
+					<th>{% trans %}IsVerified{% endtrans %}</th>
 					<td>{{ user.isVerified ? 'Yes' : 'No' }}</td>
 				</tr>
 				<tr>
@@ -48,9 +47,9 @@
 		</table>
 		<img class="rounded-circle img-fluid" src="{{ user.picture }}" alt=""/>
 	</div>
-	<a class="btn btn-outline-primary" href="{{ path('admin_index') }}">Retour à la liste des utilisateurs</a>
-	<a class="btn btn-outline-warning" href="{{ path('admin_edit', {'id': user.id}) }}">Modification d'un utilisateur</a>
+	<a class="btn btn-outline-primary" href="{{ path('admin_index') }}">{% trans %}Retour à la liste des utilisateurs{% endtrans %}</a>
+	<a class="btn btn-outline-warning" href="{{ path('admin_edit', {'id': user.id}) }}">{% trans %}Modification d'un utilisateur{% endtrans %}</a>
 
 	{{ include('admin/_delete_form.html.twig') }}
-	
+
 {% endblock %}

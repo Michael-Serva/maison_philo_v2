@@ -12,6 +12,7 @@
 
 ```bash
 symfony server:start
+php bin/console translation:update --force fr
 ```
 
 ## GitHub

@@ -12,23 +12,23 @@
 					<li class="nav-item"></li>
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-							Bienvenue chez nous
-						</a>					
+							{% trans %}Bienvenue chez nous{% endtrans %}
+						</a>
 						<ul class="dropdown-menu text-center" aria-labelledby="navbarDropdown">
 							<li>
 								<div class="row  ">
-									<a class="dropdown-item col fw-bold text-site " href="#">Notre histoire</a>
-									<a class="dropdown-item d-none col fw-bold text-site " href="#">Notre objectif</a>
-									<a class="dropdown-item col fw-bold text-site " href="#">Nos produits</a>
-									<a class="dropdown-item col fw-bold text-site " href="#">Vieillissement</a>
-									<a class="dropdown-item col fw-bold text-site " href="#">Dossier pays</a>
+									<a class="dropdown-item col fw-bold text-site " href="#">{% trans %}Notre histoire{% endtrans %}</a>
+									<a class="dropdown-item d-none col fw-bold text-site " href="#">{% trans %}Notre objectif{% endtrans %}</a>
+									<a class="dropdown-item col fw-bold text-site " href="#">{% trans %}Nos produits{% endtrans %}</a>
+									<a class="dropdown-item col fw-bold text-site " href="#">{% trans %}Vieillissement{% endtrans %}</a>
+									<a class="dropdown-item col fw-bold text-site " href="#">{% trans %}Dossier pays{% endtrans %}</a>
 								</div>
 								<div class="row">
 									<a class="dropdown-item col text-site-or " href="#"></a>
 									<a class="dropdown-item col text-site-or d-none" href="#"></a>
-									<a class="dropdown-item col text-site-or " href="#">Notre gamme de fauteuil roulant</a>
+									<a class="dropdown-item col text-site-or " href="#">{% trans %}Notre gamme de fauteuil roulant{% endtrans %}</a>
 									<a class="dropdown-item col text-site-or " href="#"></a>
-									<a class="dropdown-item col text-site-or " href="#">Côte d'Ivoire</a>
+									<a class="dropdown-item col text-site-or " href="#">{% trans %}Côte d'Ivoire{% endtrans %}</a>
 								</div>
 							</li>
 						</ul>
@@ -40,21 +40,21 @@
 							class="nav-item ">
 							{# {{ (test == 10) ? 'bg-danger' : 'bg-warning' }} #}
 
-							<a class="nav-link" href="">Profil</a>
+							<a class="nav-link" href="">{% trans %}Profil{% endtrans %}</a>
 						</li>
 						{% if app.user.roles[0] == "ROLE_ADMIN" %}
 							<li class="nav-item dropdown">
 								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-									Gestion du site
+									{% trans %}Gestion du site{% endtrans %}
 								</a>
 
 								<ul class="dropdown-menu text-center" aria-labelledby="navbarDropdown">
 									<li>
 										<div class="row  ">
-											<a class="dropdown-item col fw-bold text-site" href="{{path('admin_index')}}">Gestion des utilisateurs</a>
+											<a class="dropdown-item col fw-bold text-site" href="{{path('admin_index')}}">{% trans %}Gestion des utilisateurs{% endtrans %}</a>
 
-											<a class="dropdown-item col fw-bold text-site" href="">Gestion des catégories</a>
-											<a class="dropdown-item col fw-bold text-site" href="">Gestion des produits</a>
+											<a class="dropdown-item col fw-bold text-site" href="">{% trans %}Gestion des catégories{% endtrans %}</a>
+											<a class="dropdown-item col fw-bold text-site" href="">{% trans %}Gestion des produits{% endtrans %}</a>
 										</div>
 									</li>
 								</ul>
@@ -63,16 +63,16 @@
 					{% endif %}
 					{% if not app.user %}
 						<li class="nav-item ">
-							<a class="nav-link " href="{{ path('app_security_register')}}">Inscription</a>
+							<a class="nav-link " href="{{ path('app_security_register')}}">{% trans %}Inscription{% endtrans %}</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="{{ path('app_security_login')}}">Connexion</a>
+							<a class="nav-link" href="{{ path('app_security_login')}}">{% trans %}Connexion{% endtrans %}</a>
 						</li>
 					{% endif %}
 					{% if app.user %}
 						<li class="d-flex">
 							<a href="{{ path('app_logout')}}" class="btn text-light">
-								Déconnexion
+								{% trans %}Déconnexion{% endtrans %}
 								<i class="fas fa-sign-out-alt"></i>
 							</a>
 						</li>
@@ -80,7 +80,7 @@
 				</ul>
 				<form class="d-flex">
 					<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-					<button class="btn btn-outline-success" type="submit">Search</button>
+					<button class="btn btn-outline-success" type="submit">{% trans %}Search{% endtrans %}</button>
 				</form>
 			</div>
 		</div>
@@ -89,15 +89,7 @@
 		<div class="modal-dialog modal-sm">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h4 class="modal-title" id="myModalLabel">Souhaitez vous vous déconnecter?</h4>
-				</div>
-				<div class="modal-footer">
-					<a type="button" class="btn btn-default" href="" id="modal-btn-si">
-						<em class="text-secondary">Oui   |</em>
-					</a>
-					<button type="button" class="btn deconnexion-confirmation" id="modal-btn-no">
-						<em class="text-light">Non</em>
-					</button>
+					<h4 class="modal-title" id="myModalLabel">{% trans %}Souhaitez vous vous déconnecter?{% endtrans %}</h4>
 				</div>
 			</div>
 		</div>

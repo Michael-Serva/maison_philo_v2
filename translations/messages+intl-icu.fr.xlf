@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
-  <file source-language="en" target-language="fr" datatype="plaintext" original="file.ext">
+  <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
     <header>
       <tool tool-id="symfony" tool-name="Symfony"/>
     </header>
@@ -72,13 +72,149 @@
         <source>Register</source>
         <target>Inscription</target>
       </trans-unit>
-      <trans-unit id="z7GsDIB" resname="Inscription">
-        <source>Inscription</source>
-        <target>__Inscription</target>
-      </trans-unit>
       <trans-unit id="BdvmTUa" resname="You already have an account, click here!">
         <source>You already have an account, click here!</source>
         <target>Vous avez déjà un compte, Cliquez ici!</target>
+      </trans-unit>
+      <trans-unit id="6KiDUxl" resname="Edit User">
+        <source>Edit User</source>
+        <target>Modifier l'utilisateur</target>
+      </trans-unit>
+      <trans-unit id="U0M9PNE" resname="back to list">
+        <source>back to list</source>
+        <target>Retour à la liste</target>
+      </trans-unit>
+      <trans-unit id="ezuwN7u" resname="User index">
+        <source>User index</source>
+        <target>Index des utilisateurs</target>
+      </trans-unit>
+      <trans-unit id="byfdjOL" resname="Create a new user">
+        <source>Create a new user</source>
+        <target>Création d'un nouvel utilisateur</target>
+      </trans-unit>
+      <trans-unit id="OnqBk.y" resname="Users list">
+        <source>Users list</source>
+        <target>Liste des utilisateurs</target>
+      </trans-unit>
+      <trans-unit id="mhxU9V5" resname="Picture">
+        <source>Picture</source>
+        <target>Photo</target>
+      </trans-unit>
+      <trans-unit id="3NHVIj9" resname="Name">
+        <source>Name</source>
+        <target>Nom</target>
+      </trans-unit>
+      <trans-unit id="pQWi.wG" resname="IsVerified">
+        <source>IsVerified</source>
+        <target>Compte vérifié?</target>
+      </trans-unit>
+      <trans-unit id="MVJ_u5A" resname="New User">
+        <source>New User</source>
+        <target>Nouvel utilisateur</target>
+      </trans-unit>
+      <trans-unit id="g36VwXo" resname="Create new User">
+        <source>Create new User</source>
+        <target>Création d'un nouvel utilisateur</target>
+      </trans-unit>
+      <trans-unit id="tRLZfny" resname="User">
+        <source>User</source>
+        <target>Utilisateur</target>
+      </trans-unit>
+      <trans-unit id="lsJZgEW" resname="FirstName">
+        <source>FirstName</source>
+        <target>Prénom</target>
+      </trans-unit>
+      <trans-unit id="lJL54zv" resname="LastName">
+        <source>LastName</source>
+        <target>Nom</target>
+      </trans-unit>
+      <trans-unit id="LKpBO41" resname="Delete this user">
+        <source>Delete this user</source>
+        <target>Supprimer cet utilisateur</target>
+      </trans-unit>
+      <trans-unit id="U1RPnpm" resname="Bienvenue chez nous">
+        <source>Bienvenue chez nous</source>
+        <target>__Bienvenue chez nous</target>
+      </trans-unit>
+      <trans-unit id="ZSzZYDr" resname="Notre histoire">
+        <source>Notre histoire</source>
+        <target>__Notre histoire</target>
+      </trans-unit>
+      <trans-unit id="CCvaVnR" resname="Notre objectif">
+        <source>Notre objectif</source>
+        <target>__Notre objectif</target>
+      </trans-unit>
+      <trans-unit id="AP4XPYb" resname="Nos produits">
+        <source>Nos produits</source>
+        <target>__Nos produits</target>
+      </trans-unit>
+      <trans-unit id="Dn5xrE4" resname="Vieillissement">
+        <source>Vieillissement</source>
+        <target>__Vieillissement</target>
+      </trans-unit>
+      <trans-unit id="aB0NT8r" resname="Dossier pays">
+        <source>Dossier pays</source>
+        <target>__Dossier pays</target>
+      </trans-unit>
+      <trans-unit id="1_PPdzJ" resname="Notre gamme de fauteuil roulant">
+        <source>Notre gamme de fauteuil roulant</source>
+        <target>__Notre gamme de fauteuil roulant</target>
+      </trans-unit>
+      <trans-unit id="lf.FHdk" resname="Côte d'Ivoire">
+        <source>Côte d'Ivoire</source>
+        <target>__Côte d'Ivoire</target>
+      </trans-unit>
+      <trans-unit id="4mfTQ4I" resname="Profil">
+        <source>Profil</source>
+        <target>__Profil</target>
+      </trans-unit>
+      <trans-unit id="lBS0mm6" resname="Gestion du site">
+        <source>Gestion du site</source>
+        <target>__Gestion du site</target>
+      </trans-unit>
+      <trans-unit id="lQz21jl" resname="Gestion des utilisateurs">
+        <source>Gestion des utilisateurs</source>
+        <target>__Gestion des utilisateurs</target>
+      </trans-unit>
+      <trans-unit id="bEJdzWw" resname="Gestion des catégories">
+        <source>Gestion des catégories</source>
+        <target>__Gestion des catégories</target>
+      </trans-unit>
+      <trans-unit id="y_nfUS." resname="Gestion des produits">
+        <source>Gestion des produits</source>
+        <target>__Gestion des produits</target>
+      </trans-unit>
+      <trans-unit id="YdaVBBA" resname="Connexion">
+        <source>Connexion</source>
+        <target>__Connexion</target>
+      </trans-unit>
+      <trans-unit id="_1_eksG" resname="Déconnexion">
+        <source>Déconnexion</source>
+        <target>__Déconnexion</target>
+      </trans-unit>
+      <trans-unit id="ScJmuqq" resname="Search">
+        <source>Search</source>
+        <target>Recherche</target>
+      </trans-unit>
+      <trans-unit id="kZPegSh" resname="Souhaitez vous vous déconnecter?">
+        <source>Souhaitez vous vous déconnecter?</source>
+        <target>__Souhaitez vous vous déconnecter?</target>
+      </trans-unit>
+      <trans-unit id="fPMmoyW" resname="Bienvenue sur">
+        <source>Bienvenue sur</source>
+        <target>__Bienvenue sur</target>
+      </trans-unit>
+      <trans-unit id="8xYdfzw" resname="lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem">
+        <source>lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem</source>
+        <target>__lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem</target>
+      </trans-unit>
+      <trans-unit id="P9IMfgh" resname="Terms of Sales">
+        <source>Terms of Sales</source>
+        <target>Conditions générales de vente</target>
+      </trans-unit>
+      <trans-unit id="z7GsDIB" resname="Inscription">
+        <source>Inscription</source>
+        <target>__Inscription</target>
       </trans-unit>
     </body>
   </file>

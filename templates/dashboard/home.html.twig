@@ -7,14 +7,14 @@
 {% endblock %}
 {% block body %}
 	<h1 class" font-tangerine ">
-		Bienvenue sur
+		{% trans %}Bienvenue sur{% endtrans %}
 		{{websiteName}}
 		{{app.user.firstName ??  '' }}
 	</h1>
 	<div class="row container-fluid">
 		<img class="img-fluid col-lg-8" src="{{ asset('images/couple_agees2.jpg') }}" data-aos="fade-down-right" data-aos-duration="2000">
 		<div class="col-lg-4">
-			lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem
+			{% trans %}lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem{% endtrans %}
 		</div>
 	</div>
 {% endblock %}
