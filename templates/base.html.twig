@@ -4,9 +4,9 @@
 		<meta
 		charset="UTF-8">
 		{# Declaration of the title of my site #}
-		<title>
+		<title>{% set websiteName = 'Maisonphilo' %}
 			{% block title %}
-				{% trans %}MaisonPhilo{% endtrans %}
+				{{websiteName|trans}}
 			{% endblock %}
 		</title>
 		{% include "component/atoms/head.html.twig" %}
