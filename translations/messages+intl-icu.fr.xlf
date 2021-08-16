@@ -228,6 +228,10 @@
         <source>Home |</source>
         <target>Accueil |</target>
       </trans-unit>
+      <trans-unit id="eljnQ8b" resname="welcome to our house">
+        <source>welcome to our house</source>
+        <target>Bienvenue chez nous</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
