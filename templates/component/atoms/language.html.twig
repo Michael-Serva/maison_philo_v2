@@ -10,8 +10,8 @@
 		{% if locale != app.request.locale %}
 			<ul class="dropdown-menu" aria-la belledby="dropdownMenuButton1">
 				<li>
-					<a href="{{path('app_dashboard_changeLocale', {'locale': locale})}} ">
-						<img src="{{asset('images/logo_'~locale~'.png')}}" alt="{{locale == 'en' ? 'English' : 'French'|trans}}{{alt|trans}}">
+					<a href="{{path('app_dashboard_changeLocale', {'locale': locale})}}" class="d-block text-center">
+						<img src="{{asset('images/logo_'~locale~'.png')}}" alt="{{locale == 'en' ? 'English' : 'Français'}}{{alt|trans}}">
 						{{locale == 'en' ? 'English' : 'French'}}
 					</a>
 				</li>

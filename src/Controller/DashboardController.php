@@ -3,9 +3,9 @@
 namespace App\Controller;
 
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Request;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Request;
 
 class DashboardController extends AbstractController
 {
@@ -28,6 +28,9 @@ class DashboardController extends AbstractController
     {
         /* we store the requested language in the session */
         $request->getSession()->set('_locale', $locale);
+        //dd($_SESSION);
+        $request->setDefaultLocale($locale);
+        //dd($request->getDefaultLocale());
         //dd($_SESSION);
         /* We reload the page in the requested language */
         return $this->redirect($request->headers->get('referer'));
