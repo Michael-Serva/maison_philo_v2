@@ -3,7 +3,7 @@ html {
 }
 
 nav.navbar {
-    background-color: rgb(4, 49, 6);
+    background-color: #043106;
 }
 
 /* Cacher / afficher le mot de passe */
@@ -25,7 +25,7 @@ h1 {
 }
 
 .text-site {
-    color: rgb(49, 31, 4);
+    color: #311f04;
 }
 
 .text-site-or {
@@ -37,13 +37,13 @@ h1 {
 }
 
 .dropdown-menu {
-    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15)!important;
+    box-shadow: 0 .5rem 1rem #00000026!important;
     margin-top: 0px !important;
     width: 100% !important;
 }
 
 .dropdown-menu:hover {
-    background-color: rgb(167, 184, 167)
+    background-color: #a7b8a7
 }
 
 a {
@@ -52,22 +52,22 @@ a {
 }
 
 .active a {
-    color: rgb(11, 172, 11)!important;
+    color: #0bac0b!important;
 }
 
 .form-error-message {
     text-align: center;
-    color: rgb(212, 25, 212);
+    color: #d419d4;
 }
 
 h1.inscription,
 h1.connexion {
-    color: rgb(4, 49, 6);
+    color: #043106;
 }
 
 .button_philo {
     border: 2px solid #d3c37b;
-    background-color: rgb(4, 49, 6);
+    background-color: #043106;
 }
 
 .footer {

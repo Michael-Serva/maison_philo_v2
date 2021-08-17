@@ -17,18 +17,32 @@
 						<ul class="dropdown-menu text-center" aria-labelledby="navbarDropdown">
 							<li>
 								<div class="row  ">
-									<a class="dropdown-item col fw-bold text-site " href="#">{% trans %}Our history{% endtrans %}</a>
-									<a class="dropdown-item d-none col fw-bold text-site " href="#">{% trans %}Our objective{% endtrans %}</a>
-									<a class="dropdown-item col fw-bold text-site " href="#">{% trans %}Our products{% endtrans %}</a>
-									<a class="dropdown-item col fw-bold text-site " href="#">{% trans %}Aging{% endtrans %}</a>
-									<a class="dropdown-item col fw-bold text-site " href="#">{% trans %}Country file{% endtrans %}</a>
+									<a class="dropdown-item col fw-bold text-site " href="#">
+										{% trans %}Our history{% endtrans %}
+									</a>
+									<a class="dropdown-item d-none col fw-bold text-site " href="#">
+										{% trans %}Our objective{% endtrans %}
+									</a>
+									<a class="dropdown-item col fw-bold text-site " href="#">
+										{% trans %}Our products{% endtrans %}
+									</a>
+									<a class="dropdown-item col fw-bold text-site " href="#">
+										{% trans %}Aging{% endtrans %}
+									</a>
+									<a class="dropdown-item col fw-bold text-site " href="#">
+										{% trans %}Country file{% endtrans %}
+									</a>
 								</div>
 								<div class="row">
 									<a class="dropdown-item col text-site-or " href="#"></a>
 									<a class="dropdown-item col text-site-or d-none" href="#"></a>
-									<a class="dropdown-item col text-site-or " href="#">{% trans %}Our range of wheelchairs{% endtrans %}</a>
+									<a class="dropdown-item col text-site-or " href="#">
+										{% trans %}Our range of wheelchairs{% endtrans %}
+									</a>
 									<a class="dropdown-item col text-site-or " href="#"></a>
-									<a class="dropdown-item col text-site-or " href="#">{% trans %}Ivory Coast{% endtrans %}</a>
+									<a class="dropdown-item col text-site-or " href="#">
+										{% trans %}Ivory Coast{% endtrans %}
+									</a>
 								</div>
 							</li>
 						</ul>
@@ -49,9 +63,14 @@
 								<ul class="dropdown-menu text-center" aria-labelledby="navbarDropdown">
 									<li>
 										<div class="row  ">
-											<a class="dropdown-item col fw-bold text-site" href="{{path('admin_index')}}">{% trans %}User Management{% endtrans %}</a>
-											<a class="dropdown-item col fw-bold text-site" href="">{% trans %}Category management{% endtrans %}</a>
-											<a class="dropdown-item col fw-bold text-site" href="">{% trans %}product management{% endtrans %}</a>
+											<a class="dropdown-item col fw-bold text-site" href="{{path('admin_index')}}">
+												{% trans %}User Management{% endtrans %}
+											</a>
+											<a class="dropdown-item col fw-bold text-site" href="{{path('app_category_index')}} ">
+												{% trans %}Category management{% endtrans %}</a>
+											<a class="dropdown-item col fw-bold text-site" href="">
+												{% trans %}product management{% endtrans %}
+											</a>
 										</div>
 									</li>
 								</ul>
@@ -60,10 +79,14 @@
 					{% endif %}
 					{% if not app.user %}
 						<li class="nav-item ">
-							<a class="nav-link " href="{{ path('app_security_register')}}">{% trans %}Register{% endtrans %}</a>
+							<a class="nav-link " href="{{ path('app_security_register')}}">
+								{% trans %}Register{% endtrans %}
+							</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="{{ path('app_security_login')}}">{% trans %}Log in{% endtrans %}</a>
+							<a class="nav-link" href="{{ path('app_security_login')}}">
+								{% trans %}Log in{% endtrans %}
+							</a>
 						</li>
 					{% endif %}
 					{% if app.user %}
@@ -77,7 +100,9 @@
 				</ul>
 				<form class="d-flex">
 					<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-					<button class="btn btn-outline-success" type="submit">{% trans %}Search{% endtrans %}</button>
+					<button class="btn btn-outline-success" type="submit">
+						{% trans %}Search{% endtrans %}
+					</button>
 				</form>
 				{% include "component/atoms/language.html.twig" %}
 			</div>

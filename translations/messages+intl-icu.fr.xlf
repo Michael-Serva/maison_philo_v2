@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
-  <file source-language="en" target-language="fr" datatype="plaintext" original="file.ext">
+  <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
     <header>
       <tool tool-id="symfony" tool-name="Symfony"/>
     </header>
@@ -231,6 +231,62 @@
       <trans-unit id="eljnQ8b" resname="welcome to our house">
         <source>welcome to our house</source>
         <target>Bienvenue chez nous</target>
+      </trans-unit>
+      <trans-unit id="ch5bKau" resname="Utilisateur">
+        <source>Utilisateur</source>
+        <target>__Utilisateur</target>
+      </trans-unit>
+      <trans-unit id="S0NuJIW" resname="Retour à la liste des utilisateurs">
+        <source>Retour à la liste des utilisateurs</source>
+        <target>__Retour à la liste des utilisateurs</target>
+      </trans-unit>
+      <trans-unit id="BHRymkI" resname="Modification d'un utilisateur">
+        <source>Modification d'un utilisateur</source>
+        <target>__Modification d'un utilisateur</target>
+      </trans-unit>
+      <trans-unit id="DZO3ehf" resname="Edit Category">
+        <source>Edit Category</source>
+        <target>Modification des catégories</target>
+      </trans-unit>
+      <trans-unit id="xo05DSt" resname="Category index">
+        <source>Category index</source>
+        <target>Gestion des catégories</target>
+      </trans-unit>
+      <trans-unit id="fozSBW2" resname="Title">
+        <source>Title</source>
+        <target>Titre</target>
+      </trans-unit>
+      <trans-unit id="HGMzUJ3" resname="show">
+        <source>show</source>
+        <target>Voir</target>
+      </trans-unit>
+      <trans-unit id="JiEhxTc" resname="edit">
+        <source>edit</source>
+        <target>Modification</target>
+      </trans-unit>
+      <trans-unit id="D5lam8." resname="no records found">
+        <source>no records found</source>
+        <target>Aucune catégorie enregistrée</target>
+      </trans-unit>
+      <trans-unit id="nz33U6Q" resname="Create new">
+        <source>Create new</source>
+        <target>Création d'une noivelle catégorie</target>
+      </trans-unit>
+      <trans-unit id="Ogh45Pp" resname="New Category">
+        <source>New Category</source>
+        <target>Nouvelle catégorie</target>
+      </trans-unit>
+      <trans-unit id="W6joEsF" resname="Create new Category">
+        <source>Create new Category</source>
+        <target>Créér une nouvelle catégorie</target>
+      </trans-unit>
+      <trans-unit id="KSwG8AR" resname="Category">
+        <source>Category</source>
+        <target>catégorie</target>
+      </trans-unit>
+      <trans-unit id="4tClSWj" resname="Delete">
+        <source>Delete</source>
+        <target>Suppression</target>
       </trans-unit>
     </body>
   </file>

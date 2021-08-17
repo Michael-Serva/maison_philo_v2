@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+	{% trans %}Category index{% endtrans %}
+{% endblock %}
+{% block body %}
+	<a class="btn btn-warning" href="{{ path('app_category_new') }}">
+		{% trans %}Create new{% endtrans %}
+	</a>
+	<h1>{% trans %}Category index{% endtrans %}</h1>
+	<table class="table table-hover table-dark text-center align-middle">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>{% trans %}Title{% endtrans %}</th>
+				<th>actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for category in categories %}
+				<tr>
+					<td>{{ category.id }}</td>
+					<td>{{ category.title|trans }}</td>
+					<td>
+						<a href="{{ path('app_category_show', {'id': category.id}) }}">{% trans %}show{% endtrans %}</a>
+						<a href="{{ path('app_category_edit', {'id': category.id}) }}">{% trans %}edit{% endtrans %}</a>
+					</td>
+				</tr>
+			{% else %}
+				<tr>
+					<td colspan="3">{% trans %}no records found{% endtrans %}</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+
+{% endblock %}

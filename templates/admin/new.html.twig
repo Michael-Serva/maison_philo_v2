@@ -3,7 +3,6 @@
 	{% trans %}New User{% endtrans %}
 {% endblock %}
 {% block body %}
-	<h1>{% trans %}Create new User{% endtrans %}</h1>
-	{{ include('admin/_form.html.twig') }}
+	<h1>{% trans %}Create new User{% endtrans %}</h1> {{ include('admin/_form.html.twig') }}
 	<a href="{{ path('admin_index') }}">{% trans %}back to list{% endtrans %}</a>
 {% endblock %}
