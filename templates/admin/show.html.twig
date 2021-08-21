@@ -47,9 +47,6 @@
 		</table>
 		<img class="rounded-circle img-fluid" src="{{ user.picture }}" alt=""/>
 	</div>
-	<a class="btn btn-outline-primary" href="{{ path('admin_index') }}">{% trans %}Retour à la liste des utilisateurs{% endtrans %}</a>
-	<a class="btn btn-outline-warning" href="{{ path('admin_edit', {'id': user.id}) }}">{% trans %}Modification d'un utilisateur{% endtrans %}</a>
-
-	{{ include('admin/_delete_form.html.twig') }}
-
+	<a class="btn btn-outline-primary" href="{{ path('app_admin_index') }}">{% trans %}Back to the list{% endtrans %}</a>
+	<a class="btn btn-outline-warning" href="{{ path('app_admin_edit', {'id': user.id}) }}">{% trans %}Edit user{% endtrans %}</a> {{ include('admin/_delete_form.html.twig') }}
 {% endblock %}

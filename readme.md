@@ -13,6 +13,7 @@
 ```bash
 symfony server:start
 php bin/console translation:update --force fr
+php bin/console doctrine:fixtures:load
 ```
 
 ## GitHub
@@ -22,7 +23,7 @@ php bin/console translation:update --force fr
 ## creating false data
 
 `https://symfonycasts.com/screencast/symfony4-doctrine/faker-fixtures` / `https://github.com/fzaninotto/Faker`
-`php bin/console doctrine:fixtures:load`
+
 
 ## Random User generator / avatar
 

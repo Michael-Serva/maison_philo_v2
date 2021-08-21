@@ -26,7 +26,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class AdminController extends AbstractController
 {
     /**
-     * @Route("/", name="admin_index", methods={"GET"})
+     * @Route("/", name="app_admin_index", methods={"GET"})
      */
     public function index(UserRepository $userRepository): Response
     {
@@ -36,7 +36,7 @@ class AdminController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="admin_new", methods={"GET","POST"})
+     * @Route("/new", name="app_admin_new", methods={"GET","POST"})
      */
     public function new(Request $request): Response
     {
@@ -49,7 +49,7 @@ class AdminController extends AbstractController
             $entityManager->persist($user);
             $entityManager->flush();
 
-            return $this->redirectToRoute('admin_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_admin_index', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('admin/new.html.twig', [
@@ -59,7 +59,7 @@ class AdminController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="admin_show", methods={"GET"})
+     * @Route("/{id}", name="app_admin_show", methods={"GET"})
      */
     public function show(User $user): Response
     {
@@ -69,7 +69,7 @@ class AdminController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="admin_edit", methods={"GET","POST"})
+     * @Route("/{id}/edit", name="app_admin_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, User $user): Response
     {
@@ -79,7 +79,7 @@ class AdminController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('admin_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_admin_index', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('admin/edit.html.twig', [
@@ -89,7 +89,7 @@ class AdminController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="admin_delete", methods={"POST"})
+     * @Route("/{id}", name="app_admin_delete", methods={"POST"})
      */
     public function delete(Request $request, User $user): Response
     {
@@ -99,6 +99,6 @@ class AdminController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('admin_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('app_admin_index', [], Response::HTTP_SEE_OTHER);
     }
 }
