@@ -1,9 +1,17 @@
-html {
+:root{
+    --h2color : #eb9839;
+    --emcolor : #f7c790;
+    --navbar-bg-color : #043106;
+    --presentation-bg-color :#5d8b06;
+}
+html { 
     overflow-x: hidden;
 }
-
+nav img{
+    max-height: 100px;
+}
 nav.navbar {
-    background-color: #043106;
+    background-color: var(--navbar-bg-color);
 }
 
 /* Cacher / afficher le mot de passe */
@@ -19,11 +27,36 @@ nav.navbar {
     padding-top: 50px;
     margin: auto;
 }
+.presentation{
+    /* background-color: var(--presentation-bg-color); */
+    background-image: url('../images/presentation-bg.png');
+    background-size: cover;
+}
+.presentation span{
+    color: aliceblue;
+    font-size: 2vh;
+}
+.side{
+    font-family: 'Tangerine', cursive;
+    font-size: 3vh;
+    color: var(--navbar-bg-color);
+}
 
 h1 {
     font-family: 'Tangerine', cursive;
 }
+span{
+    font-size: 15px;
+}
 
+h2{
+    color: var(--h2color);
+}
+
+em{
+    font-size: 10px;
+    color: var(--emcolor);
+}
 .text-site {
     color: #311f04;
 }

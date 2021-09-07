@@ -141,7 +141,7 @@ class ResetPasswordController extends AbstractController
         // Do not reveal whether a user account was found or not.
         if (!$user) {
             /* test */
-            echo 'invalid email credentials';
+            /* echo 'invalid email credentials'; */
             return $this->redirectToRoute('app_check_email');
         }
 

@@ -1,25 +1,27 @@
 <!DOCTYPE html>
 <html lang="fr">
-	<head>
-		<meta
-		charset="UTF-8">
-		{# Declaration of the title of my site #}
-		<title>
-			{% block title %}
-				{{webSiteName|trans}}
-			{% endblock %}
-		</title>
-		{% include "component/atoms/head.html.twig" %}
-		{% block stylesheet %}{% endblock %}
-	</head>
-	{% include "component/organisms/navbarComponent.html.twig" with {
+    <head>
+        <meta
+        charset="UTF-8">
+        {# Declaration of the title of my site #}
+        <title>
+            {% block title %}
+                {{webSiteName|trans}}
+            {% endblock %}
+        </title>
+        {% include "component/atoms/head.html.twig" %}
+        {% block stylesheet %}{% endblock %}
+    </head>
+    <div>
+        {% include "component/organisms/navbarComponent.html.twig" with {
             routePath : 'app_dashboard_home',
         } %}
-	{% block body %}{% endblock %}
-	{% block javascripts %}
-		{% include "component/atoms/script.html.twig" %}
-	{% endblock %}
-	{% block footer %}
-		{% include "component/atoms/footer.html.twig" %}
-	{% endblock %}
+        {% block body %}{% endblock %}
+        {% block javascripts %}
+            {% include "component/atoms/script.html.twig" %}
+        {% endblock %}
+        {% block footer %}
+            {% include "component/atoms/footer.html.twig" %}
+        {% endblock %}
+    </div>
 </html>

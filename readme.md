@@ -24,7 +24,6 @@ php bin/console doctrine:fixtures:load
 
 `https://symfonycasts.com/screencast/symfony4-doctrine/faker-fixtures` / `https://github.com/fzaninotto/Faker`
 
-
 ## Random User generator / avatar
 
 `https://randomuser.me/`
@@ -38,6 +37,10 @@ php bin/console doctrine:fixtures:load
 
 `https://www.w3schools.com/csSref/tryit.asp?filename=trycss3_gradient-linear`
 
-02 38 51 10 81
-rousseau service
-but va mandater une nouvelle societe et me contacter
+## google analytics
+
+`https://analytics.google.com/analytics/web/provision/?_ga=2.83265046.1804555890.1629906954-457951912.1629906954#/provision`
+
+`https://www.malt.fr/t/barometre-tarifs`
+
+

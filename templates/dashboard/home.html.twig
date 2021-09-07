@@ -1,17 +1,19 @@
 {% extends 'base.html.twig' %}
 {% block title %}
-	{% trans %}Home |{% endtrans %}{{ parent() }}
+    {% trans %}Home |{% endtrans %}{{ parent() }}
 {% endblock %}
 {% block body %}
-	<h1 class"font-tangerine ">
-		{% trans %}Welcome to{% endtrans %}
-		{{webSiteName}}
-		{{app.user.pseudo ??  '' }}
-	</h1>
-	<div class="row container-fluid">
-		<img class="img-fluid col-lg-8" src="{{ asset('images/couple_agees2.jpg') }}" data-aos="fade-down-right" data-aos-duration="2000">
-		<div class="col-lg-4">
-			{% trans %}lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem{% endtrans %}
-		</div>
-	</div>
+    <h1 class"font-tangerine">
+        {% trans %}Welcome to{% endtrans %}
+        {{webSiteName}}
+        {{app.user.pseudo ??  '' }}
+    </h1>
+    <div class="row container-fluid ">
+        <div class="mb-1 col-lg-6 col-md-12 col-sm-12 col-xlg-6">
+            <img class="img-fluid" src="{{ asset('images/couple_agees2.jpg') }}" data-aos="fade-down-right" data-aos-duration="2000">
+        </div>
+        {% include "component/atoms/presentation.html.twig" with {
+            presentationContents : presentationContents
+        } %}
+    </div>
 {% endblock %}

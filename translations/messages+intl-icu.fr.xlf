@@ -288,6 +288,18 @@
         <source>Delete</source>
         <target>Suppression</target>
       </trans-unit>
+      <trans-unit id="wcEAnT8" resname="Update">
+        <source>Update</source>
+        <target>Mise à jour</target>
+      </trans-unit>
+      <trans-unit id="ebbF.4f" resname="Back to the list">
+        <source>Back to the list</source>
+        <target>Retour à la liste</target>
+      </trans-unit>
+      <trans-unit id="BbiNGPw" resname="Edit user">
+        <source>Edit user</source>
+        <target>Modifier un utilisateur</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
