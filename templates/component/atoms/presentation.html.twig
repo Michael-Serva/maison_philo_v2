@@ -1,40 +1,4 @@
-{# <div class='col-lg row justify-content-end'>
-    <div class="col me-1 presentation">
-        <h2 class="ms-4">Monde</h2>
-        <span class="text-center d-block">
-            D’ici 2030, le nombre de personnes âgées de 60 ans et plus aura augmenté de 34% passant de 1 milliard en 2019 à 1,4 milliard.
-        </span>
-        <span class="text-center d-block">
-            D’ici à 2050, la population mondiale de personnes âgées aura plus que doublé pour atteindre 2,1 milliards.
-        </span>
-        <em class="">
-            Extrait du rapport de l’Organisation Mondiale de la Santé (OMS)
-                                                    « Décennie pour le vieillissement en bonne santé 2020-2030
-        </em>
-    </div>
-    <div class=" col presentation">
-        <h2 class="ms-4">Afrique</h2>
-        <span class="text-center d-block">
-            Souvent présenté comme un continent jeune, l’Afrique n’échappe pas au phénomène de vieillissement de population.
-
-
-        </span>
-        <span class="text-center d-block col">
-            Les projections d’ici 2050 indiquent que la progression des effectifs de
-                                personnes âgées y sera considérable : suivant les contextes nationaux, le nombre
-                                de personnes âgées de 60 ans et plus devrait aller jusqu’à quadrupler en 35 ans
-                                et le nombre de personnes âgées de 80 ans et plus devrait lui aussi très fortement
-                                augmenter
-        </span>
-        <em class="">
-            (Sajoux, Golaz et Lefèvre,
-                                                    2015)
-        </em>
-    </div>
-    <span class="side col-lg-12 text-center">Le vieillissement à venir est un défi supplémentaire auquel l'Afriquee doit se préparer</span>
-</div> #}
-
-<div class='col-lg row justify-content-end'>
+<div class='col-lg row justify-content-end' data-aos="fade-down-left" data-aos-duration="2000">
     {% for presentationContent in presentationContents %}
         <div class="col me-1 presentation">
             <h2 class="ms-4">{{presentationContent.title|trans}}
@@ -50,4 +14,5 @@
             </em>
         </div>
     {% endfor %}
+    <span class="side col-lg-12 text-center">Le vieillissement à venir est un défi supplémentaire auquel l'Afriquee doit se préparer</span>
 </div>

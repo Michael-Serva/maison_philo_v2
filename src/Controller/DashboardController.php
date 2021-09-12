@@ -18,16 +18,16 @@ class DashboardController extends AbstractController
     {
         $presentationContents = [
             [
-                'title' => 'World',
-                'header' => 'By 2030, the number of people aged 60 and over will have increased by 34%, from 1 billion in 2019 to 1.4 billion.',
-                'body' => "By 2050, the world's elderly population will more than double to 2.1 billion.",
-                'footer' => "Extract from the World Health Organization (WHO) report' Decade for Healthy Aging 2020-2030"
+                'title' => 'Monde',
+                'header' => 'D’ici 2030, le nombre de personnes âgées de 60 ans et plus aura augmenté de 34% passant de 1 milliard en 2019 à 1,4 milliard.',
+                'body' => "D’ici à 2050, la population mondiale de personnes âgées aura plus que doublé pour atteindre 2,1 milliards.",
+                'footer' => "Extrait du rapport de l’Organisation Mondiale de la Santé (OMS) « Décennie pour le vieillissement en bonne santé 2020-2030"
             ],
             [
-                'title' => 'Africa',
-                'header' => 'Often presented as a young continent, Africa is no exception to the phenomenon of population aging.',
-                'body' => "Projections by 2050 indicate that the increase in the number of elderly people will be considerable: depending on national contexts, the number of people aged 60 and over should quadruple in 35 years and the number of people aged 60 and over. 80 years and over is also expected to increase sharply",
-                'footer' => "Extract from the report of the World Health Organization (WHO) “Decade for Healthy Aging 2020-2030"
+                'title' => 'Afrique',
+                'header' => 'Souvent présenté comme un continent jeune, l’Afrique n’échappe pas au phénomène de vieillissement de population.',
+                'body' => "Les projections d’ici 2050 indiquent que la progression des effectifs de personnes âgées y sera considérable : suivant les contextes nationaux, le nombre de personnes âgées de 60 ans et plus devrait aller jusqu’à quadrupler en 35 ans et le nombre de personnes âgées de 80 ans et plus devrait lui aussi très fortement augmenter",
+                'footer' => " (Sajoux, Golaz et Lefèvre, 2015)"
             ]
         ];
         return  [

@@ -11,13 +11,13 @@ use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 class AppFixtures extends Fixture
 {
-private $encoder;
-/*allows to use $this->encoder in the whole fixture */
-public function __construct(UserPasswordHasherInterface $encoder)
-{
-    $this->encoder = $encoder;
-    //dd(get_class_methods(($encoder)));
-}
+    private $encoder;
+    /*allows to use $this->encoder in the whole fixture */
+    public function __construct(UserPasswordHasherInterface $encoder)
+    {
+        $this->encoder = $encoder;
+        //dd(get_class_methods(($encoder)));
+    }
     public function load(ObjectManager $manager)
     {
         $faker = Factory::create('fr-Fr');
@@ -37,12 +37,12 @@ public function __construct(UserPasswordHasherInterface $encoder)
             ->setPicture('https://randomuser.me/api/portraits/lego/0.jpg')
             ->setGenre('male')
             ->addUserRole($adminRole);
-            $manager->persist($adminUser);
+        $manager->persist($adminUser);
                 
   
         $users = [];
         $genres = ['male', 'female'];
-        for ($i=1; $i < 30; $i++) { 
+        for ($i=1; $i < 30; $i++) {
             /* creation of a new user */
             $user = new User();
             /* creation of a random genre */
@@ -50,13 +50,13 @@ public function __construct(UserPasswordHasherInterface $encoder)
             $password = $this->encoder->hashPassword($user, '95610b405A!');
             //dd($password);
             $genre = $faker->randomElement($genres);
-            $pictureId = $faker->numberBetween(1,99).'.jpg';
+            $pictureId = $faker->numberBetween(1, 99).'.jpg';
             $picture = "https://randomuser.me/api/portraits/".($genre== 'male' ? 'men/' : 'women/').$pictureId;
             if ($genre == 'male') {
                 $user->setfirstName($faker->firstNameMale);
-            }elseif ($genre == 'female') {
-                 $user->setfirstName($faker->firstNameFemale);
-            }      
+            } elseif ($genre == 'female') {
+                $user->setfirstName($faker->firstNameFemale);
+            }
             $user
                 ->setEmail($faker->email)
                 ->setPseudo($faker->city)
@@ -64,8 +64,8 @@ public function __construct(UserPasswordHasherInterface $encoder)
                 ->setPassword($password)
                 ->setPicture($picture)
                 ->setGenre($genre);
-                $manager->persist($user);
-                $users[] = $user;
+            $manager->persist($user);
+            $users[] = $user;
         }
         $manager->flush();
     }

@@ -1,5 +1,57 @@
-<div class="footer text-center fixed-bottom bg-secondary">
-	<em class="fw-bold">
-		&copy; SERVA Group</em>
-	<a href="#">{% trans %}Terms of Sales{% endtrans %}</a>
-</div>
+<div class="footer text-center">
+
+    <section class="footer2 text-center">
+        <em class="fw-bold">
+            &copy; SERVA Group</em>
+        <a href="#">{% trans %}Plan du site{% endtrans %}</a>
+
+
+    </a>|<a href="">
+        Mentions légales
+    </a>|<a href="#">{% trans %}Terms of Sales{% endtrans %}</a>
+
+</section>
+
+
+<section class="row">
+    <div class="col-lg-1 my-auto">
+        <img src="{{asset('images/logo_maison_philo.png')}}" width="50vh" alt="logo du site" class="d-block mx-auto">
+    </div>
+    <nav class="navFoot navbar-light col-lg row">
+
+        <div class="col">
+            <p>
+                <a href="contact.html">Accès</a>
+            </p>
+            <p>
+                <a href="contact.html#contact">Contact</a>
+            </p>
+        </div>
+        <div class="col">
+
+            <a href="presse.html">Presse</a>
+
+            <a href="galerie.html">Galerie</a>
+
+        </div>
+
+    </nav>
+    <div class="reseau col-lg">
+        <i class="fab fa-facebook-square"></i>
+        <i class="fab fa-twitter-square"></i>
+        <form action="" method="post">
+            <div class="form-group">
+                <label class="inputEmail">Abonnement à notre newsletter :</label>
+            </div>
+            <div class="form-group">
+                <input type="email" class="emailNews" id="inputEmail" placeholder="Entrer votre email">
+            </div>
+            <input type="submit" class="btn buttonBg" value="Envoyer">
+        </form>
+    </div>
+    <div class="avis col-lg">
+        <p>Ici le ou les 2 dernier(s) avis</p>
+        <!--Penser à rajouter les avis ici -->
+
+    </div>
+</section></div>
