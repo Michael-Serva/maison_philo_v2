@@ -8,7 +8,7 @@ html {
     overflow-x: hidden;
 }
 nav img{
-    max-height: 100px;
+    max-height: 30px;
 }
 nav.navbar {
     background-color: var(--navbar-bg-color);
@@ -34,19 +34,19 @@ nav.navbar {
 }
 .presentation span{
     color: aliceblue;
-    font-size: 2vh;
+    font-size: 1.8vh;
 }
 .side{
-    font-family: 'Tangerine', cursive;
     font-size: 3vh;
-    color: var(--navbar-bg-color);
+    color: var(--h2color);
+    font-style: italic;
 }
 
 h1 {
     font-family: 'Tangerine', cursive;
 }
 span{
-    font-size: 15px;
+    font-size: 5vh;
 }
 
 h2{
@@ -98,12 +98,12 @@ h1.connexion {
     color: #043106;
 }
 
-.button_philo {
+.button-philo {
     border: 2px solid #d3c37b;
     background-color: #043106;
 }
 
 .footer {
-    /*  background-color: rgb(217, 224, 218); */
     color: #d3c37b;
+    font-size: 1.5vh;
 }

@@ -1,18 +1,21 @@
-<div class='col-lg row justify-content-end' data-aos="fade-down-left" data-aos-duration="2000">
+<div class='col row justify-content-end' data-aos="fade-down-left" data-aos-duration="2000">
     {% for presentationContent in presentationContents %}
         <div class="col me-1 presentation">
-            <h2 class="ms-4">{{presentationContent.title|trans}}
-            </h2>
-            <span class="text-center d-block">
+
+            <span class="text-center d-block mt-5">
                 {{presentationContent.header|trans}}
             </span>
             <span class="text-center d-block">
                 {{presentationContent.body|trans}}
             </span>
-            <em>
+            <em class="text-center d-block mt-3">
                 {{presentationContent.footer|trans}}
-            </em>
+        </em>
+
+            <h2 class="text-center mt-3">{{presentationContent.title|trans}}
+            </h2>
+
         </div>
     {% endfor %}
-    <span class="side col-lg-12 text-center">Le vieillissement à venir est un défi supplémentaire auquel l'Afriquee doit se préparer</span>
+    
 </div>

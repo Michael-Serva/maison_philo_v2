@@ -8,8 +8,10 @@
         {{webSiteName}}
         {{app.user.pseudo ??  '' }}
     </h1>
-    <div class="row container-fluid ">
-        <div class="mb-1 col-lg-6 col-md-12 col-sm-12 col-xlg-6">
+    <div class="row container-fluid mb-1">
+        <span class="side col-lg-12 text-center mb-2">Le vieillissement à venir est un défi supplémentaire auquel l'Afrique doit se préparer</span>
+
+        <div class="mb-1 col-xlg-7 col-md-6">
             <img class="img-fluid" src="{{ asset('images/couple_agees2.jpg') }}" data-aos="fade-down-right" data-aos-duration="2000">
         </div>
         {% include "component/atoms/presentation.html.twig" with {
