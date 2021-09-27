@@ -2,20 +2,26 @@
 
 namespace App\Controller;
 
-use Symfony\Component\Routing\Annotation\Route;
+use App\Service\CallApiService;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class DashboardController extends AbstractController
 {
+   
     /**
      * @Route("/")
      * @Template
      */
-    public function home(): array
+    public function home(CallApiService $callApiService): array
     {
+        $data = $callApiService->getCoteIvoireData();
+        json_encode($data);
+        //dd($data);
+
         $presentationContents = [
             [
                 'title' => 'Monde',
@@ -58,13 +64,14 @@ class DashboardController extends AbstractController
 
     /**
      * This method is used to modify the language of the site
-     * @Route("/changeLocale/{locale}", name="app_dashboard_changeLocale")
+     * @Route("/changeLocale/{locale}", name="change_locale")
      * @Template
      */
-    public function changeLocal($locale, Request $request, SessionInterface $session)
+    public function changeLocal($locale, Request $request)
     {
-        $session->set('locale', $locale);
-        //dd($session->get('locale'));
+        
+        $request->setLocale($locale);
+
         return $this->redirect($request->headers->get('referer'));
         /* We redirect the user to the page where he came from */
     }

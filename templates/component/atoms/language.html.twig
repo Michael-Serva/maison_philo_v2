@@ -1,11 +1,11 @@
-{% set alt = 'flag image' %}
+{# {% set alt = 'flag image' %}
 <div class="dropdown ">
 	<button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
 		<span class="text-light">
 			<img src="{{asset('images/logo_'~app.request.locale~'.png')}}" alt="{{app.request.locale == 'en' ? 'English' : 'French'|trans}}{{alt|trans}}">
 		</span>
 	</button>
-	{# if the language is not that of the site #}
+
 	{% for locale in locales %}
 		{% if locale != app.request.locale %}
 			<ul class="dropdown-menu" aria-la belledby="dropdownMenuButton1">
@@ -18,4 +18,13 @@
 			</ul>
 		{% endif %}
 	{% endfor %}
-</div>
+</div> #}
+ <pre>
+{{ dump(app.request.locale) }}
+
+</pre> 
+{% for locale in locales %}
+	{% if locale != app.request.locale %}
+		<a href="{{ path('change_locale', {'locale' : locale})}}">{{ locale }}</a>
+	{% endif %}
+{% endfor %}
