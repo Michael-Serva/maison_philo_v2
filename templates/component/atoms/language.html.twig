@@ -19,10 +19,7 @@
 		{% endif %}
 	{% endfor %}
 </div> #}
- <pre>
-{{ dump(app.request.locale) }}
 
-</pre> 
 {% for locale in locales %}
 	{% if locale != app.request.locale %}
 		<a href="{{ path('change_locale', {'locale' : locale})}}">{{ locale }}</a>

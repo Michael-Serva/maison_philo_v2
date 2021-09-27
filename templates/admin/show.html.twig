@@ -1,52 +1,56 @@
 {% extends 'base.html.twig' %}
 {% block title %}
-	{% trans %}User{% endtrans %}
+    {% trans %}User{% endtrans %}
 {% endblock %}
 {% block body %}
-	<h1>{% trans %}Utilisateur{% endtrans %}</h1>
-	<div class="container-fluid">
-		<table class="table col">
-			<tbody>
-				<tr>
-					<th>Id</th>
-					<td>{{ user.id }}</td>
-				</tr>
-				<tr>
-					<th>Email</th>
-					<td>{{ user.email }}</td>
-				</tr>
-				<tr>
-					<th>{% trans %}FirstName{% endtrans %}</th>
-					<td>{{ user.firstName }}</td>
-				</tr>
-				<tr>
-					<th>{% trans %}LastName{% endtrans %}</th>
-					<td>{{ user.lastName }}</td>
-				</tr>
-				<tr>
-					<th>Password</th>
-					<td>{{ user.password }}</td>
-				</tr>
-				<tr>
-					<th>Genre</th>
-					<td>{{ user.genre }}</td>
-				</tr>
-				<tr>
-					<th>Roles</th>
-					<td>{{ user.roles ? user.roles|json_encode : '' }}</td>
-				</tr>
-				<tr>
-					<th>{% trans %}IsVerified{% endtrans %}</th>
-					<td>{{ user.isVerified ? 'Yes' : 'No' }}</td>
-				</tr>
-				<tr>
-					<th>Pseudo</th>
-					<td>{{ user.pseudo }}</td>
-				</tr>
-			</tbody>
-		</table>
-		<img class="rounded-circle img-fluid" src="{{ user.picture }}" alt=""/>
-	</div>
-	<a class="btn btn-outline-primary" href="{{ path('app_admin_index') }}">{% trans %}Back to the list{% endtrans %}</a>
-	<a class="btn btn-outline-warning" href="{{ path('app_admin_edit', {'id': user.id}) }}">{% trans %}Edit user{% endtrans %}</a> {{ include('admin/_delete_form.html.twig') }}
+    <h1>{% trans %}Utilisateur{% endtrans %}</h1>
+<div class="container-fluid  table-responsive">
+
+        <table class="table col">
+            <tbody>
+                <tr>
+                    <th>Id</th>
+                    <td>{{ user.id }}</td>
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <td>{{ user.email }}</td>
+                </tr>
+                <tr>
+                    <th>{% trans %}FirstName{% endtrans %}</th>
+                    <td>{{ user.firstName }}</td>
+                </tr>
+                <tr>
+                    <th>{% trans %}LastName{% endtrans %}</th>
+                    <td>{{ user.lastName }}</td>
+                </tr>
+                <tr>
+                    <th>Password</th>
+                    <td>{{ user.password }}</td>
+                </tr>
+                <tr>
+                    <th>Genre</th>
+                    <td>{{ user.genre }}</td>
+                </tr>
+                <tr>
+                    <th>Roles</th>
+                    <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
+                </tr>
+                <tr>
+                    <th>{% trans %}IsVerified{% endtrans %}</th>
+                    <td>{{ user.isVerified ? 'Yes' : 'No' }}</td>
+                </tr>
+                <tr>
+                    <th>Pseudo</th>
+                    <td>{{ user.pseudo }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="user-picture">
+            <img class="rounded-circle img-fluid" src="{{ user.picture }}" alt="picture users"/>
+        </div>
+    </div>
+    <a class="btn btn-outline-primary" href="{{ path('app_admin_index') }}">{% trans %}Back to the list{% endtrans %}</a>
+    <a class="btn btn-outline-warning" href="{{ path('app_admin_edit', {'id': user.id}) }}">{% trans %}Edit user{% endtrans %}</a>
+    {{ include('admin/_delete_form.html.twig') }}
 {% endblock %}

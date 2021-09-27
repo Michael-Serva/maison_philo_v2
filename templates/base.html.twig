@@ -12,16 +12,17 @@
         {% include "component/atoms/head.html.twig" %}
         {% block stylesheet %}{% endblock %}
     </head>
-    <div>
+    <body>
         {% include "component/organisms/navbarComponent.html.twig" with {
             routePath : 'app_dashboard_home',
         } %}
-        {% block body %}{% endblock %}
-        {% block javascripts %}
-            {% include "component/atoms/script.html.twig" %}
-        {% endblock %}
+        <div class="main container-fluid"> {% block body %}{% endblock %}
+            {% block javascripts %}
+                {% include "component/atoms/script.html.twig" %}
+            {% endblock %}
+        </div>
         {% block footer %}
             {% include "component/atoms/footer.html.twig" %}
         {% endblock %}
-    </div>
+    </body>
 </html>

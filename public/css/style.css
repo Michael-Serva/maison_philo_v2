@@ -7,13 +7,21 @@
 html { 
     overflow-x: hidden;
 }
+table{
+    font-size: 1.3vw;
+}
+div.main.container-fluid{
+    min-height: 63vh;
+}
 nav img{
     max-height: 30px;
 }
 nav.navbar {
     background-color: var(--navbar-bg-color);
 }
-
+img.rounded-circle{
+    max-width: 7vw;
+}
 /* Cacher / afficher le mot de passe */
 .field-icon {
     float: right;
@@ -54,7 +62,7 @@ h2{
 }
 
 em{
-    font-size: 10px;
+    font-size: 1.3vw;
     color: var(--emcolor);
 }
 .text-site {
