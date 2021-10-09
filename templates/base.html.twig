@@ -16,13 +16,16 @@
         {% include "component/organisms/navbarComponent.html.twig" with {
             routePath : 'app_dashboard_home',
         } %}
-        <div class="main container-fluid"> {% block body %}{% endblock %}
+        <div class="main container-fluid"> 
+        {% block body %}{% endblock %}
             {% block javascripts %}
                 {% include "component/atoms/script.html.twig" %}
             {% endblock %}
         </div>
-        {% block footer %}
-            {% include "component/atoms/footer.html.twig" %}
-        {% endblock %}
+        <footer>
+            {% block footer %}
+                {% include "component/atoms/footer.html.twig" %}
+            {% endblock %}
+        </footer>
     </body>
 </html>

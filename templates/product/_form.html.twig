@@ -1,0 +1,29 @@
+{{ form_start(form, {
+        'attr' : {
+            class: 'mb-3 form-floating'
+        },
+    })
+    }}
+{{ form_row(form.title, {
+        label : 'Title'| trans,
+        attr : {
+            class : 'form-control'    
+        }
+    }) }}
+{{ form_row(form.image, {
+        label : 'Image'| trans,
+        attr : {
+            class : 'form-control',
+            onChange : 'loadFile(event)'
+        }
+    }) }}
+{{ form_row(form.price, {
+    label : 'Price',
+    attr :{
+        class : 'form-control'
+    }
+}) }}
+
+{% include "component/atoms/form_validation.html.twig" %}
+
+{{ form_end(form) }}
