@@ -10,15 +10,16 @@
             {% endblock %}
         </title>
         {% include "component/atoms/head.html.twig" %}
-        {% block stylesheet %}{% endblock %}
+        {% block stylesheet %}<link rel="stylesheet" href="{{asset('css/style.css')}}">
+        {% endblock %}
+
     </head>
     <body>
         {% include "component/organisms/navbarComponent.html.twig" with {
             routePath : 'app_dashboard_home',
         } %}
-        <div class="main container-fluid"> 
-        {% block body %}{% endblock %}
-            {% block javascripts %}
+        <div class="main container-fluid"> {% block body %}{% endblock %}
+            {% block scripts %}
                 {% include "component/atoms/script.html.twig" %}
             {% endblock %}
         </div>

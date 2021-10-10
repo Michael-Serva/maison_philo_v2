@@ -19,26 +19,27 @@
         </thead>
         <tbody>
             {% for user in users %}
-                <tr></tr>
-                <td class="">{{ user.id }}</td>
-                <td class=""><img class="rounded-circle" src="{{ user.picture }}" alt=""/></td>
-                <td class="">{{ user.pseudo }}</td>
-                <td class="">{{ user.email }}</td>
-                <td class="">{{user.genre == 'female' ? 'Mme' : 'Mr'|trans}}
-                    {{ user.firstName }}
-                    {{ user.lastName }}</td>
-                <td class="">{{ user.isVerified ? 'Yes' : 'No' }}</td>
-                <td class="">{{ user.roles ? user.roles|json_encode : '' }}</td>
-                <td class="">
-                    <a href="{{ path('app_admin_show', {'id': user.id}) }}">
-                        <i class="fas fa-eye btn-success btn"></i>
-                    </a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="11">{% trans %}No registered user{% endtrans %}</td>
-            </tr>
-        {% endfor %}
-    </tbody>
-</table>{% endblock %}
+                <tr>
+                    <td class="">{{ user.id }}</td>
+                    <td class=""><img class="rounded-circle" src="{{ user.picture }}" alt=""/></td>
+                    <td class="">{{ user.pseudo }}</td>
+                    <td class="">{{ user.email }}</td>
+                    <td class="">{{user.genre == 'female' ? 'Mme' : 'Mr'|trans}}
+                        {{ user.firstName }}
+                        {{ user.lastName }}</td>
+                    <td class="">{{ user.isVerified ? 'Yes' : 'No' }}</td>
+                    <td class="">{{ user.roles ? user.roles|json_encode : '' }}</td>
+                    <td class="">
+                        <a href="{{ path('app_admin_show', {'id': user.id}) }}">
+                            <i class="fas fa-eye btn-success btn"></i>
+                        </a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="11">{% trans %}No registered user{% endtrans %}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

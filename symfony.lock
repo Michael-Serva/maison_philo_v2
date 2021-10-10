@@ -445,9 +445,6 @@
     "symfony/options-resolver": {
         "version": "v5.3.4"
     },
-    "symfony/orm-pack": {
-        "version": "v2.1.0"
-    },
     "symfony/password-hasher": {
         "version": "v5.3.4"
     },
@@ -663,6 +660,9 @@
     },
     "twig/extra-bundle": {
         "version": "v3.3.1"
+    },
+    "twig/intl-extra": {
+        "version": "v3.3.3"
     },
     "twig/twig": {
         "version": "v3.3.2"

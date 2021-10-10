@@ -7,6 +7,9 @@ parameters:
     #{creation of an array to hold the languages}
     app.locales: [en, fr]
     webSiteName: "Maisonphilo"
+    image_product: '%kernel.project_dir%/public/images/imagesUpload'
+    
+    currency: CFA
 
 services:
     # default configuration for services in *this* file

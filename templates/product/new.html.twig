@@ -1,14 +1,19 @@
 {% extends 'base.html.twig' %}
-{% block title %}New Product
+{% block title %}New Product{% endblock %}
+{% block stylesheet %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{asset('css/formImage.css')}}">
 {% endblock %}
 {% block body %}
     {% embed "component/molecules/formDesign.html.twig" %}
         {% block form_content %}
             <h1>Create new Product</h1>
-
             {{ include('product/_form.html.twig') }}
-
-            <a href="{{ path('app_product_index') }}">back to list</a>
+            <a href="{{ path('app_product_index') }}">{% trans %}Back to list{% endtrans %}</a>
         {% endblock %}
     {% endembed %}
+{% endblock %}
+{% block scripts %}
+    {{ parent() }}
+    <script src="{{ asset('js/dragAndDrop.js') }}"></script>
 {% endblock %}

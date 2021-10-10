@@ -67,6 +67,4 @@ modalConfirm(function(confirm) {
     } else {
 
     }
-
-
 });

@@ -12,7 +12,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
- * @Route("/product")
+ * @Route("/product/admin")
  * 
  */
 class ProductController extends AbstractController
@@ -37,13 +37,58 @@ class ProductController extends AbstractController
         $product = new Product();
         $form = $this->createForm(ProductType::class, $product);
         $form->handleRequest($request);
-
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $imageFile = $form->get('image')->getData();
+
+            //dump($request->request);
+            //dd($imageFile);
+            if ($imageFile) // si $imageFile n'est pas vide (une image a été upload)
+            {
+                // 3 étapes pour le traitement de l'image
+
+
+                // 1e : renommer l'image
+
+                $nomReelImage = str_replace(" ", "-", $imageFile->getClientOriginalName());
+                $nomImage = date("YmdHis") . "-" . uniqid() . "-" . $nomReelImage;
+                // création d'une class pour le traitement de l'image
+                // 20210622121848-60d1b9081f50d-montre5.jpg
+                //dd($nomImage);
+
+
+                // 2e : Envoyer l'image dans le dossier public / images / imagesUpload
+
+                // move() permet de déplacer un fichier
+                // 2 arguments :
+                // 1e : le placement : getParameter()
+                // 2e : le nom qu'aura le fichier 
+
+
+                // getParameter() renvoit sur le fichier config/services.yaml 
+                // Paramater à définir
+                // reprendre le nom : associer le chemin 
+                // %kernel.project_dir% c'est le projet
+                // suivi du chemin : ex : public / images etc... 
+
+                $imageFile->move(
+                    $this->getParameter("image_product"),
+                    $nomImage
+                );
+
+
+                // 3e étape : envoyer $nomImage en bdd
+
+                $product->setImage($nomImage);
+            }
+
+
+
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($product);
             $entityManager->flush();
 
-            return $this->redirectToRoute('product_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_product_index', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('product/new.html.twig', [
@@ -64,7 +109,8 @@ class ProductController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="product_edit", methods={"GET","POST"})
+     * @Route("/{id}/edit", methods={"GET","POST"})
+     * @Template
      */
     public function edit(Request $request, Product $product): Response
     {
@@ -88,7 +134,7 @@ class ProductController extends AbstractController
      */
     public function delete(Request $request, Product $product): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$product->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $product->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($product);
             $entityManager->flush();

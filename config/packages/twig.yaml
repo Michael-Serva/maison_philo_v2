@@ -3,6 +3,7 @@ twig:
     globals:
         locales: "%app.locales%"
         webSiteName: "%webSiteName%"
+        currency: "%currency%"
 when@test:
     twig:
         strict_variables: true
