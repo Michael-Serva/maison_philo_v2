@@ -118,6 +118,52 @@ class ProductController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $imageFile = $form->get('imageFile')->getData();
+
+
+            if ($imageFile) // si image upload
+            {
+
+                $nomImage = date('YmdHis') . "-" . uniqid() . "-" . $imageFile->getClientOriginalName();
+                //dd(strlen($nomImage));
+
+
+                $imageFile->move(
+                    $this->getParameter('image_product'),
+                    $nomImage
+                );
+
+                //dump($product->getImage());
+
+                // unlink() permet de supprimer un fichier
+                // 1 argument : chemin avec le nom du fichier 
+
+                if ($product->getImage()) {
+                    unlink($this->getParameter('image_product') . '/' . $product->getImage());
+                }
+
+
+
+                $product->setImage($nomImage);
+                //dd($product->getImage());
+
+
+            }
+            // image null => image null           OK
+            // image null => upload image         OK
+            // upload image => inchangé           OK
+            // upload image => upload nouvelle image  (supp l'ancienne)   OK
+            // upload image => image null (supp l'ancienne) 
+
+            if ($request->request->get('imageQuestion') == "oui") {
+                unlink($this->getParameter('image_product') . '/' . $product->getImage());
+                $product->setImage(NULL);
+            }
+
+
+
+
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('product_index', [], Response::HTTP_SEE_OTHER);
@@ -125,7 +171,7 @@ class ProductController extends AbstractController
 
         return $this->renderForm('product/edit.html.twig', [
             'product' => $product,
-            'form' => $form,
+            'form' => $form
         ]);
     }
 

@@ -1,8 +1,13 @@
 {% extends 'base.html.twig' %}
-{% block title %}Edit Product{% endblock %}
+{% block title %}Edit Product
+{% endblock %}
 {% block body %}
-    <h1>Edit Product</h1>
-    {{ include('product/_form.html.twig', {'button_label': 'Update'}) }}
-    <a href="{{ path('app_product_index') }}">back to list</a>
+    {% embed "component/molecules/formDesign.html.twig" %}
+        {% block form_content %}
+            <h1>Edit Product</h1>
+            {{ include('product/_form.html.twig', {'button_label': 'Update'}) }}
+            <a href="{{ path('app_product_index') }}">back to list</a>
+        {% endblock %}
+    {% endembed %}
     {{ include('product/_delete_form.html.twig') }}
 {% endblock %}
