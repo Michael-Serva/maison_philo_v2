@@ -8,7 +8,6 @@ parameters:
     app.locales: [en, fr]
     webSiteName: "Maisonphilo"
     image_product: '%kernel.project_dir%/public/images/imagesUpload'
-    
     currency: CFA
 
 services:

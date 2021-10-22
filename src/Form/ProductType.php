@@ -53,6 +53,7 @@ class ProductType extends AbstractType
                 ]
             ])
             ->add("category", EntityType::class, [
+                "required" => false,
                 "class" => Category::class,
                 "choice_label" => "title",
                 "multiple" => false,
@@ -75,9 +76,12 @@ class ProductType extends AbstractType
                     "constraints" => [
                         new File([
                             "mimeTypes" => [
+                                "maxSize" => "1024k",
                                 "image/png",
                                 "image/jpg",
-                                "image/jpeg"
+                                "image/jpeg",
+                                "application/pdf",
+                                "application/x-pdf",
                             ],
                             "mimeTypesMessage" => "Extensions autorisées : PNG - JPG ",
                         ]),

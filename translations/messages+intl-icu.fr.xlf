@@ -234,15 +234,15 @@
       </trans-unit>
       <trans-unit id="ch5bKau" resname="Utilisateur">
         <source>Utilisateur</source>
-        <target>__Utilisateur</target>
+        <target>Utilisateur</target>
       </trans-unit>
       <trans-unit id="S0NuJIW" resname="Retour à la liste des utilisateurs">
         <source>Retour à la liste des utilisateurs</source>
-        <target>__Retour à la liste des utilisateurs</target>
+        <target>etour à la liste des utilisateurs</target>
       </trans-unit>
       <trans-unit id="BHRymkI" resname="Modification d'un utilisateur">
         <source>Modification d'un utilisateur</source>
-        <target>__Modification d'un utilisateur</target>
+        <target>Modification d'un utilisateur</target>
       </trans-unit>
       <trans-unit id="DZO3ehf" resname="Edit Category">
         <source>Edit Category</source>
@@ -270,7 +270,7 @@
       </trans-unit>
       <trans-unit id="nz33U6Q" resname="Create new">
         <source>Create new</source>
-        <target>Création d'une noivelle catégorie</target>
+        <target>Création d'une nouvelle catégorie</target>
       </trans-unit>
       <trans-unit id="Ogh45Pp" resname="New Category">
         <source>New Category</source>
@@ -299,6 +299,46 @@
       <trans-unit id="BbiNGPw" resname="Edit user">
         <source>Edit user</source>
         <target>Modifier un utilisateur</target>
+      </trans-unit>
+      <trans-unit id="wds64DL" resname="Plan du site">
+        <source>Plan du site</source>
+        <target>Plan du site</target>
+      </trans-unit>
+      <trans-unit id="yq9oQvd" resname="Edit Product">
+        <source>Edit Product</source>
+        <target>Modification d'un produit</target>
+      </trans-unit>
+      <trans-unit id="EhVukhv" resname="Id">
+        <source>Id</source>
+        <target>Id</target>
+      </trans-unit>
+      <trans-unit id="k8kchR5" resname="Price">
+        <source>Price</source>
+        <target>prix</target>
+      </trans-unit>
+      <trans-unit id="1crefvM" resname="Stock">
+        <source>Stock</source>
+        <target>Stock</target>
+      </trans-unit>
+      <trans-unit id="GqTLC8y" resname="Image">
+        <source>Image</source>
+        <target>Image</target>
+      </trans-unit>
+      <trans-unit id="Kw3N1AA" resname="actions">
+        <source>actions</source>
+        <target>actions</target>
+      </trans-unit>
+      <trans-unit id="9ZheX9T" resname="Product index">
+        <source>Product index</source>
+        <target>Liste des produits</target>
+      </trans-unit>
+      <trans-unit id="xGLeTFY" resname="Create new Product">
+        <source>Create new Product</source>
+        <target>Ajout de produits</target>
+      </trans-unit>
+      <trans-unit id="eV7.2Hy" resname="New Product">
+        <source>New Product</source>
+        <target>Nouveau produit</target>
       </trans-unit>
     </body>
   </file>

@@ -2,8 +2,11 @@
 
 namespace App\Entity;
 
-use App\Repository\ProductRepository;
+use App\Entity\Category;
+
+use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\ProductRepository;
 
 /**
  * @ORM\Entity(repositoryClass=ProductRepository::class)
@@ -19,11 +22,22 @@ class Product
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="Veuillez renseigner le titre")
+     * @Assert\Length(
+     * min = 3,
+     * max = 30,
+     * minMessage = "3 caractères minimum",
+     * maxMessage = "30 caractères maximum"
+     * )
      */
+     
     private $title;
 
     /**
      * @ORM\Column(type="float")
+     * @Assert\NotBlank(message="Veuillez renseigner le prix")
+     * @Assert\Positive
+     * @Assert\Valid
      */
     private $price;
 
@@ -34,6 +48,7 @@ class Product
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * 
      */
     private $image;
 
@@ -45,7 +60,7 @@ class Product
     public function getId(): ?int
     {
         return $this->id;
-    }
+    } 
 
     public function getTitle(): ?string
     {
