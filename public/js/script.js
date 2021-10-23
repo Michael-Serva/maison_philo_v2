@@ -5,7 +5,7 @@ AOS.init();
 function messageOff() {
     if (document.querySelector('.disparition')) {
         setTimeout(
-            function() {
+            function () {
                 document.querySelector('.disparition').style.display = "none";
             }, 4000
         );
@@ -13,18 +13,17 @@ function messageOff() {
 
 }
 
-
 /* Preview de l'image upload CRUD PRODUIT */
-
-let loadFile = function(event) {
-    // document.querySelector('#boxImage').classList.remove('d-none');
-    let image = document.getElementById('image');
-    image.src = URL.createObjectURL(event.target.files[0]);
-};
-
+document.getElementById('product_image').onchange = function (event) {
+    var output = document.getElementById('output');
+    output.src = URL.createObjectURL(event.target.files[0]);
+    output.onload = function () {
+        URL.revokeObjectURL(output.src) // free memory
+    }
+}
 
 /* Afficher / cacher le password */
-$(".toggle-password").click(function() {
+$(".toggle-password").click(function () {
 
     $(this).toggleClass("fa-eye fa-eye-slash");
     var input = $($(this).attr("toggle"));
@@ -39,30 +38,30 @@ $(".toggle-password").click(function() {
 messageOff();
 
 /*  */
-var modalConfirm = function(callback) {
+var modalConfirm = function (callback) {
 
-    $("#btn-confirm").on("click", function() {
+    $("#btn-confirm").on("click", function () {
         $("#mi-modal").modal('show');
     });
 
-    $("#modal-btn-si").on("click", function() {
+    $("#modal-btn-si").on("click", function () {
         callback(true);
         $("#mi-modal").modal('hide');
     });
 
-    $("#modal-btn-no").on("click", function() {
+    $("#modal-btn-no").on("click", function () {
         callback(false);
         $("#mi-modal").modal('hide');
     });
 };
 
-modalConfirm(function(confirm) {
+modalConfirm(function (confirm) {
     if (confirm) {
         swal(
             'Vous avez bien té déconnecté', {
-                icon: "info",
+            icon: "info",
 
-            });
+        });
 
     } else {
 

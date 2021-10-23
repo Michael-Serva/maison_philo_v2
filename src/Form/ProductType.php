@@ -86,13 +86,12 @@ class ProductType extends AbstractType
                             "mimeTypesMessage" => "Extensions autorisées : PNG - JPG ",
                         ]),
                         "attr" => [
-                            "class" => "mb-3"
+                            "class" => "mb-3",
                         ],
                     ]
                 ]
             );
     }
-
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
