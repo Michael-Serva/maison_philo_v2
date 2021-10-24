@@ -14,25 +14,25 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
 
 /**
- * @Route("/")
+ * @Route("/customer/product")
  */
-class ProductController extends AbstractController
+class ProductCustomerController extends AbstractController
 {
     /**
-     * @Route("product/", name="app_product_index", methods={"GET"})
+     * @Route("/")
      * @Template
      */
-    public function index(ProductRepository $productRepository): Response
+    public function index( ProductRepository $productRepository ): array
     {
-        return $this->render('product/index.html.twig', [
-            'products' => $productRepository->findAll(),
-        ]);
+        return[
+             'products' => $productRepository->findAll()
+        ];
     }
 
     /**
      * @Route("/new", name="app_product_new", methods={"GET","POST"})
      */
-    public function new(Request $request, SluggerInterface $slugger): Response
+  /*   public function new(Request $request, SluggerInterface $slugger): Response
     {
         $product = new Product();
         $form = $this->createForm(ProductType::class, $product);
@@ -80,22 +80,22 @@ class ProductController extends AbstractController
             'product' => $product,
             'form' => $form,
         ]);
-    }
+    } */
 
     /**
      * @Route("/{id}", name="app_product_show", methods={"GET"})
      */
-    public function show(Product $product): Response
+  /*   public function show(Product $product): Response
     {
         return $this->render('product/show.html.twig', [
             'product' => $product,
         ]);
-    }
+    } */
 
     /**
      * @Route("/{id}/edit", name="app_product_edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, Product $product): Response
+   /*  public function edit(Request $request, Product $product): Response
     {
         $form = $this->createForm(ProductType::class, $product);
         $form->handleRequest($request);
@@ -111,11 +111,11 @@ class ProductController extends AbstractController
             'form' => $form,
         ]);
     }
-
+ */
     /**
      * @Route("/{id}", name="app_product_delete", methods={"POST"})
      */
-    public function delete(Request $request, Product $product): Response
+  /*   public function delete(Request $request, Product $product): Response
     {
         if ($this->isCsrfTokenValid('delete' . $product->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
@@ -124,5 +124,5 @@ class ProductController extends AbstractController
         }
 
         return $this->redirectToRoute('app_product_index', [], Response::HTTP_SEE_OTHER);
-    }
+    } */
 }

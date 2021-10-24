@@ -17,12 +17,10 @@ nav img{
     max-height: 30px;
 }
 
-a.nav-link{
-    color: aliceblue;
-}
 a.nav-link:hover{
     color: var(--h2color);
 }
+
 nav.navbar {
     background-color: var(--navbar-bg-color);
     color: aliceblue;

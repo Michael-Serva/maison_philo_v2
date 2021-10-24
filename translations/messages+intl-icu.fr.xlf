@@ -270,7 +270,7 @@
       </trans-unit>
       <trans-unit id="nz33U6Q" resname="Create new">
         <source>Create new</source>
-        <target>Création d'une nouvelle catégorie</target>
+        <target>Ajouter</target>
       </trans-unit>
       <trans-unit id="Ogh45Pp" resname="New Category">
         <source>New Category</source>
@@ -339,6 +339,26 @@
       <trans-unit id="eV7.2Hy" resname="New Product">
         <source>New Product</source>
         <target>Nouveau produit</target>
+      </trans-unit>
+      <trans-unit id="MOEFjAz" resname="Product |">
+        <source>Product |</source>
+        <target>produit |</target>
+      </trans-unit>
+      <trans-unit id="A8DjWw1" resname="Mobility aid">
+        <source>Mobility aid</source>
+        <target>Aide à la mobilité</target>
+      </trans-unit>
+      <trans-unit id="naSSXCU" resname="health care">
+        <source>health care</source>
+        <target>Hygiène et soins</target>
+      </trans-unit>
+      <trans-unit id="AZdX.P9" resname="incontinence">
+        <source>incontinence</source>
+        <target>Incontinence</target>
+      </trans-unit>
+      <trans-unit id="oFYf1kn" resname="access">
+        <source>access</source>
+        <target>Voir</target>
       </trans-unit>
     </body>
   </file>

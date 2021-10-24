@@ -1,7 +1,7 @@
-<nav class="navbar navbar-expand-lg">
+<nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="{{path(routePath)}} ">
-            <img src="{{asset('images/logo_maison_philo.png')}}" col="logo" alt="">
+            <img src="{{asset('images/logo_maison_philo2.png')}}" class="bg-light w-100" col="logo" alt="">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -10,7 +10,7 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item"></li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         {% trans %}welcome to our house{% endtrans %}
                     </a>
                     <ul class="dropdown-menu text-center" aria-labelledby="navbarDropdown">
@@ -22,7 +22,7 @@
                                 <a class="dropdown-item d-none col fw-bold text-site " href="#">
                                     {% trans %}Our objective{% endtrans %}
                                 </a>
-                                <a class="dropdown-item col fw-bold text-site " href="#">
+                                <a class="dropdown-item col fw-bold text-site " href="{{path('app_productcustomer_index')}}">
                                     {% trans %}Our products{% endtrans %}
                                 </a>
                                 <a class="dropdown-item col fw-bold text-site " href="#">
@@ -36,13 +36,23 @@
                                 <a class="dropdown-item col text-site-or " href="#"></a>
                                 <a class="dropdown-item col text-site-or d-none" href="#"></a>
                                 <a class="dropdown-item col text-site-or " href="#">
-                                    {% trans %}Our range of wheelchairs{% endtrans %}
+                                    {% trans %}Mobility aid{% endtrans %}
                                 </a>
                                 <a class="dropdown-item col text-site-or " href="#"></a>
                                 <a class="dropdown-item col text-site-or " href="#">
                                     {% trans %}Ivory Coast{% endtrans %}
                                 </a>
                             </div>
+                            <div class="row">
+                                <a class="dropdown-item col text-site-or " href="#"></a>
+                                <a class="dropdown-item col text-site-or d-none" href="#"></a>
+                                <a class="dropdown-item col text-site-or " href="#">
+                                    {% trans %}health care{% endtrans %}
+                                </a>
+                                <a class="dropdown-item col text-site-or " href="#"></a>
+                                <a class="dropdown-item col text-site-or " href="#"></a>
+                            </div>
+
                         </li>
                     </ul>
                 </li>
@@ -50,13 +60,13 @@
                 {#{{ (test == 10) ? "oui" : "non" }} #}
                 {% if app.user %}
                     <li
-                        class="nav-item ">
+                        class="nav-item text-light">
                         {# {{ (test == 10) ? 'bg-danger' : 'bg-warning' }} #}
                         <a class="nav-link" href="">{% trans %}Profile{% endtrans %}</a>
                     </li>
                     {% if app.user.roles[0] == "ROLE_ADMIN" %}
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" class="text-light">
                                 {% trans %}Site management{% endtrans %}
                             </a>
                             <ul class="dropdown-menu text-center" aria-labelledby="navbarDropdown">
@@ -90,9 +100,7 @@
                 {% endif %}
                 {% if app.user %}
                     <li class="d-flex">
-                        <a href="{{ path('app_logout')}}" class="btn text-light">
-                            {% trans %}Log out{% endtrans %}
-                        </a>
+                        <a href="{{ path('app_logout')}}" class="btn text-danger">{% trans %}Log out{% endtrans %}</a>
                     </li>
                 {% endif %}
             </ul>

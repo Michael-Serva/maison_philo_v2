@@ -47,12 +47,6 @@ php bin/console doctrine:fixtures:load
 
 `https://www.bastideleconfortmedical.com/fauteuil-roulant-v300-xr-viking.html`
 
+### Product site
 
-
-
-
-
-
-
-
-
+`https://codepen.io/albertoleon/pen/jONyrvY`
