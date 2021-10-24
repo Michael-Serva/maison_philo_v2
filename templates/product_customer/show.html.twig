@@ -1,0 +1,122 @@
+{% extends 'product_customer/layout.html.twig' %}
+{% block title %}
+    {% trans %}Product main page |{% endtrans %}{{ parent() }}
+{% endblock %}
+{% block body %}
+
+    <main>
+        <section class="results-header">
+            <h1>{% trans %}Mobility  aid{% endtrans %}</h1>
+            <div class="results-header__option">
+                <div class="option__button option--grid selected">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span>Grid</span>
+                </div>
+                <div class="option__button option--list">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span>List</span>
+                </div>
+            </div>
+        </section>
+        <div class="filter-section__wrapper">
+            <section class="filter-section">
+                <h6>{% trans %}Filters{% endtrans %}</h6>
+                <div class="filters">
+                    <h5 class="filters__title">Dog Type</h5>
+                    <div class="filters__item">
+                        <div class="checkbox">
+                            <input id="checkbox-1" type="checkbox"/>
+                            <label for="checkbox-1">Puppy<span class="box"></span>
+                                <div class="tooltip top" data-tooltip="Younger than 18 months.">
+                                    <span>
+                                        <i class="icon-info"></i>
+                                    </span>
+                                </div>
+                            </label>
+                        </div>
+                        <span class="badge status-primary">10</span>
+                    </div>
+                    <div class="filters__item">
+                        <div class="checkbox">
+                            <input id="checkbox-2" type="checkbox" checked="checked"/>
+                            <label for="checkbox-2">Young<span class="box"></span>
+                            </label>
+                        </div>
+                        <span class="badge status-primary">5</span>
+                    </div>
+                    <div class="filters__item">
+                        <div class="checkbox">
+                            <input id="checkbox-3" type="checkbox"/>
+                            <label for="checkbox-3">Adult<span class="box"></span>
+                            </label>
+                        </div>
+                        <span class="badge status-primary">20</span>
+                    </div>
+                    <div class="filters__item">
+                        <div class="checkbox">
+                            <input id="checkbox-4" type="checkbox"/>
+                            <label for="checkbox-4">Senior<span class="box"></span>
+                            </label>
+                        </div>
+                        <span class="badge status-primary">8</span>
+                    </div>
+                </div>
+                <div class="filters">
+                    <h5 class="filters__title">Dog Size</h5>
+                    <div class="filters__item">
+                        <div class="checkbox">
+                            <input id="checkbox-5" type="checkbox"/>
+                            <label for="checkbox-5">Small<span class="box"></span>
+                            </label>
+                        </div>
+                        <span class="badge status-primary">9</span>
+                    </div>
+                    <div class="filters__item">
+                        <div class="checkbox">
+                            <input id="checkbox-6" type="checkbox" checked="checked"/>
+                            <label for="checkbox-6">Medium<span class="box"></span>
+                            </label>
+                        </div>
+                        <span class="badge status-primary">12</span>
+                    </div>
+                    <div class="filters__item">
+                        <div class="checkbox">
+                            <input id="checkbox-7" type="checkbox"/>
+                            <label for="checkbox-7">Large<span class="box"></span>
+                            </label>
+                        </div>
+                        <span class="badge status-primary">17</span>
+                    </div>
+                    <div class="filters__item">
+                        <div class="checkbox">
+                            <input id="checkbox-8" type="checkbox"/>
+                            <label for="checkbox-8">XL<span class="box"></span>
+                            </label>
+                        </div>
+                        <span class="badge status-primary">3</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <section class="results-section results--grid">
+            {% for product in products %}
+                <div class="profile">
+                    <div class="profile__image img-fluid"><img src="{{asset('images/imagesUpload/' ~ product.image)}}" alt="Doggo"/></div>
+                    <div class="profile__info">
+                        <h3>{{product.title}}</h3>
+                        <p class="profile__info__extra">{{product.description ?? 'Description à venir'}}</p>
+                    </div>
+                    <span class="fs-5 fw-bold text-color-maisonphilo ms-1">{{product.price|format_currency('CFA')}}</span>
+                </div>
+            {% endfor %}
+
+
+        </div>
+    </section>
+</main>{% endblock %}

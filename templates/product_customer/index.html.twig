@@ -3,44 +3,49 @@
     {% trans %}Product |{% endtrans %}{{ parent() }}
 {% endblock %}
 {% block body %}
-<div id="toast"></div>
-<div id="toast-cart"></div>
-<div class="container">
-    <div class="row">
-        <div class="col-lg-4 mb-2">
-            <div class="card" >
-                <img src="{{asset('images/hygienne et soin-presentation.jpg')}}" class="first-image">
-                <div class="card-body">
-                    <a href="#" onclick="addCart()">
-                        <center>{% trans %}access{% endtrans %}</center>
+    <div id="toast"></div>
+    <div id="toast-cart"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mb-2">
+                <div class="card">
+                    <a href="{{path('app_productcustomer_show')}}">
+                        <img src="{{asset('images/hygienne et soin-presentation.jpg')}}" class="first-image">
                     </a>
-                    <hr>
-                    <center>
-                        <h5 class="card-title">{% trans %}health care{% endtrans %}</h5>
-                    </center>
+                    <div class="card-body">
+                        <a href="#" onclick="addCart()">
+                            <center>{% trans %}access{% endtrans %}</center>
+                        </a>
+                        <hr>
+                        <center>
+                            <h5 class="card-title">{% trans %}health care{% endtrans %}</h5>
+                        </center>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-lg-4 mb-2">
-            <div class="card">
-                <img src="{{asset('images/incontinence-presentation.png')}}" class="first-image text-dark">
-                <div class="card-body">
-                    <a href="#" onclick="addCart()">
-                        <center>{% trans %}access{% endtrans %}</center>
+            <div class="col-lg-4 mb-2">
+                <div class="card">
+                    <a href="{{path('app_productcustomer_show')}}">
+                        <img src="{{asset('images/incontinence-presentation.png')}}" class="first-image text-dark">
                     </a>
-                    <hr>
-                    <center>
-                        <h5 class="card-title">{% trans %}incontinence{% endtrans %}</h5>
-                    </center>
+                    <div class="card-body">
+                        <a href="{{path('app_productcustomer_show')}}">
+                            <center>{% trans %}access{% endtrans %}</center>
+                        </a>
+                        <hr>
+                        <center>
+                            <h5 class="card-title">{% trans %}incontinence{% endtrans %}</h5>
+                        </center>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-lg-4 mb-2">
-            <div class="card">
-                </span>
-                <img src="{{asset('/images/fauteuil-roulant-presentation.jpg')}}" class="first-image">
+            <div class="col-lg-4 mb-2" href="{{path('app_productcustomer_show')}}">
+                <div class="card"></span>
+                <a href="{{path('app_productcustomer_show')}}">
+                    <img src="{{asset('/images/fauteuil-roulant-presentation.jpg')}}" class="first-image">
+                </a>
                 <div class="card-body">
-                    <a href="#" onclick="addCart()">
+                    <a href="{{path('app_productcustomer_show')}}">
                         <center>{% trans %}access{% endtrans %}</center>
                     </a>
                     <hr>
@@ -51,6 +56,4 @@
             </div>
         </div>
     </div>
-</div>
-{% endblock %}
-
+</div>{% endblock %}

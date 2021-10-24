@@ -166,7 +166,7 @@
       </trans-unit>
       <trans-unit id="kN0JXaa" resname="Aging">
         <source>Aging</source>
-        <target>Vieillissement</target>
+        <target>Dossier vieillissement</target>
       </trans-unit>
       <trans-unit id="itK2TSY" resname="Country file">
         <source>Country file</source>
@@ -359,6 +359,50 @@
       <trans-unit id="oFYf1kn" resname="access">
         <source>access</source>
         <target>Voir</target>
+      </trans-unit>
+      <trans-unit id="BPtACwx" resname="Who are we?">
+        <source>Who are we?</source>
+        <target>Qui sommes nous?</target>
+      </trans-unit>
+      <trans-unit id="kkfLYgo" resname="Our story">
+        <source>Our story</source>
+        <target>Notre histoire</target>
+      </trans-unit>
+      <trans-unit id="JkL5PdK" resname="Our vision">
+        <source>Our vision</source>
+        <target>Notre vision</target>
+      </trans-unit>
+      <trans-unit id="fu2kUok" resname="Incontinence">
+        <source>Incontinence</source>
+        <target>Incontinence</target>
+      </trans-unit>
+      <trans-unit id="Um4Ah8w" resname="Description">
+        <source>Description</source>
+        <target>Description</target>
+      </trans-unit>
+      <trans-unit id="mLFI6qC" resname="Product main page |">
+        <source>Product main page |</source>
+        <target>produit |</target>
+      </trans-unit>
+      <trans-unit id="FMtzudq" resname="Mobility  aid">
+        <source>Mobility  aid</source>
+        <target>Aide à la mobilité</target>
+      </trans-unit>
+      <trans-unit id="VG67jrm" resname="Filters">
+        <source>Filters</source>
+        <target>Filtres</target>
+      </trans-unit>
+      <trans-unit id="pXTQZQa" resname="In Africa">
+        <source>In Africa</source>
+        <target>En Afrique</target>
+      </trans-unit>
+      <trans-unit id="VphpnMo" resname="In the world">
+        <source>In the world</source>
+        <target>Dans le monde</target>
+      </trans-unit>
+      <trans-unit id="KSAOZHw" resname="The Aging : a coming challenge for Africa">
+        <source>The Aging : a coming challenge for Africa</source>
+        <target>Le vieillissement de la population : un défi à venir pour l'Afrique</target>
       </trans-unit>
     </body>
   </file>

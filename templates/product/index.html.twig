@@ -9,10 +9,10 @@
         {% block table_content %}
             <thead>
                 <tr>
-                    <th>{% trans %}Id{% endtrans %}</th>
                     <th>{% trans %}Title{% endtrans %}</th>
                     <th>{% trans %}Price{% endtrans %}</th>
                     <th>{% trans %}Stock{% endtrans %}</th>
+                    <th>{% trans %}Description{% endtrans %}</th>
                     <th>{% trans %}Image{% endtrans %}</th>
                     <th>{% trans %}actions{% endtrans %}</th>
                 </tr>
@@ -20,10 +20,10 @@
             <tbody>
                 {% for product in products %}
                     <tr>
-                        <td>{{ product.id }}</td>
                         <td>{{ product.title|trans }}</td>
                         <td>{{ product.price }}</td>
                         <td>{{ product.stock }}</td>
+                        <td>{{ product.description }}</td>
                         <td>
                             <a href="{{ asset('/images/imagesUpload/' ~ product.image) }}" target="blank">
                                 <img src="{{ asset('/images/imagesUpload/' ~ product.image) }}" alt="" class="rounded-circle w-25">

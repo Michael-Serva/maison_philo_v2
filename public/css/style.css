@@ -1,6 +1,6 @@
 :root{
-    --h2color : #eb9839;
-    --emcolor : #f7c790;
+    --h2color : #a0350a;
+    --emcolor : #e06c00;
     --navbar-bg-color : #043106;
     --presentation-bg-color :#5d8b06;
 }
@@ -10,8 +10,14 @@ html {
 table{
     font-size: 1.3vw;
 }
+.text-color-maisonphilo{
+    color: var(--navbar-bg-color);
+}
 div.main.container-fluid{
     min-height: 63vh;
+}
+div.text{
+    text-justify: inter-word;
 }
 .nav-text-maisonphilo{
     color: aliceblue!important;
@@ -19,7 +25,9 @@ div.main.container-fluid{
 nav img{
     max-height: 30px;
 }
-
+.text-h2-color{
+    color: var(--h2color);
+}
 a.nav-link:hover{
     color: var(--h2color);
 }
@@ -49,6 +57,11 @@ img.rounded-circle{
     background-image: url('../images/presentation-bg.png');
     background-size: cover;
 }
+.history-bg{
+    background-image: url('../images/history-bg.png');
+    background-size: cover;
+}
+
 .presentation span{
     color: aliceblue;
     font-size: 1.8vh;
@@ -61,9 +74,6 @@ img.rounded-circle{
 
 h1 {
     font-family: 'Tangerine', cursive;
-}
-span{
-    font-size: 5vh;
 }
 
 h2{
@@ -125,3 +135,4 @@ h1.connexion {
     color: #d3c37b;
     font-size: 1.5vh;
 }
+

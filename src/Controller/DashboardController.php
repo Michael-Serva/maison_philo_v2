@@ -31,8 +31,8 @@ class DashboardController extends AbstractController
             ],
             [
                 'title' => 'Afrique',
-                'header' => 'Souvent présenté comme un continent jeune, l’Afrique n’échappe pas au phénomène de vieillissement de population.',
-                'body' => "Les projections d’ici 2050 indiquent que la progression des effectifs de personnes âgées y sera considérable : suivant les contextes nationaux, le nombre de personnes âgées de 60 ans et plus devrait aller jusqu’à quadrupler en 35 ans et le nombre de personnes âgées de 80 ans et plus devrait lui aussi très fortement augmenter",
+                'header' => 'L’Afrique n’échappe pas au phénomène de vieillissement de population.',
+                'body' => "Les projections d’ici 2050 indiquent que la progression des effectifs de personnes âgées y sera considérable. Suivant les contextes nationaux, le nombre de personnes âgées de 60 ans et plus devrait aller jusqu’à quadrupler en 35 ans.",
                 'footer' => " (Sajoux, Golaz et Lefèvre, 2015)"
             ]
         ];
@@ -75,4 +75,14 @@ class DashboardController extends AbstractController
         return $this->redirect($request->headers->get('referer'));
         /* We redirect the user to the page where he came from */
     }
+
+    /**
+     * @Route("/history")
+     * @Template
+     */
+    public function history(): array
+    {
+        return [];
+    }
+    
 }

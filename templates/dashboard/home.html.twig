@@ -6,17 +6,20 @@
     <h1 class"font-tangerine">
         {% trans %}Welcome to{% endtrans %}
         {{webSiteName}}
-        {% if app.user.pseudo is defined %}        
-        "{{app.user.pseudo}}"
+        {% if app.user.pseudo is defined %}
+            "{{app.user.pseudo}}"
         {% endif %}
     </h1>
-    <div class="row container-fluid mb-1">
-        <span class="side col-lg-12 text-center mb-2">Le vieillissement à venir est un défi supplémentaire auquel l'Afrique doit se préparer</span>
+    <div class="row mb-1">
+        <span class="side col-lg-12 text-center mb-2">{% trans %}The Aging : a coming challenge for Africa{% endtrans %}</span>
         <div class="mb-1 col-12 col-sm-12 col-md-12 col-lg-6 col-xlg-7 ">
             <img class="img-fluid" src="{{ asset('images/couple_agees2.jpg') }}" data-aos="fade-down-right" data-aos-duration="2000">
         </div>
-        {% include "component/atoms/presentation.html.twig" with {
+        <div class="">
+            {% include "component/atoms/presentation.html.twig" with {
             presentationContents : presentationContents
         } %}
+        </div>
+
     </div>
 {% endblock %}

@@ -52,6 +52,7 @@ class ProductType extends AbstractType
                     "class" => "form-control mb-3",
                 ]
             ])
+            ->add("description")
             ->add("category", EntityType::class, [
                 "required" => false,
                 "class" => Category::class,
