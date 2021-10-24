@@ -3,30 +3,49 @@
     {% trans %}Product main page |{% endtrans %}{{ parent() }}
 {% endblock %}
 {% block body %}
+    {% for product in products %}
+        <div class="col-lg-2 mb-2 mt-5">
+            <div class="card">
 
-    <main>
-        <section class="results-header">
-            <h1>{% trans %}Mobility  aid{% endtrans %}</h1>
-            <div class="results-header__option">
-                <div class="option__button option--grid selected">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span>Grid</span>
-                </div>
-                <div class="option__button option--list">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span>List</span>
+                <a href="{{path('app_productcustomer_show')}}">
+                    <img src="{{asset('images/imagesUpload/' ~ product.image)}}" alt="Doggo" class="first-image">
+                </a>
+                <div class="card-body">
+                    <a href="#" onclick="addCart()">
+                        <center>{% trans %}access{% endtrans %}</center>
+                    </a>
+                    <hr>
+                    <center>
+                        <h5 class="card-title">{{product.title}}</h5>
+                        <h5 class="text-color-maisonphilo fw-bold">{{product.price|format_currency('CFA')}}</h5>
+                    </center>
                 </div>
             </div>
-        </section>
-        <div class="filter-section__wrapper">
+        </div>
+    {% endfor %}
+    {# <main>
+                            <section class="results-header">
+                                <h1>{% trans %}Mobility  aid{% endtrans %}</h1>
+                                <div class="results-header__option">
+                                    <div class="option__button option--grid selected">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span>Grid</span>
+                                    </div>
+                                    <div class="option__button option--list">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span>List</span>
+                                    </div>
+                                </div>
+                            </section> #}
+{# <div class="filter-section__wrapper">
             <section class="filter-section">
                 <h6>{% trans %}Filters{% endtrans %}</h6>
-                <div class="filters">
+                 <div class="filters">
                     <h5 class="filters__title">Dog Type</h5>
                     <div class="filters__item">
                         <div class="checkbox">
@@ -38,6 +57,7 @@
                                     </span>
                                 </div>
                             </label>
+                            
                         </div>
                         <span class="badge status-primary">10</span>
                     </div>
@@ -57,6 +77,7 @@
                         </div>
                         <span class="badge status-primary">20</span>
                     </div>
+
                     <div class="filters__item">
                         <div class="checkbox">
                             <input id="checkbox-4" type="checkbox"/>
@@ -102,21 +123,22 @@
                     </div>
                 </div>
             </section>
-        </div>
-
-        <section class="results-section results--grid">
-            {% for product in products %}
-                <div class="profile">
-                    <div class="profile__image img-fluid"><img src="{{asset('images/imagesUpload/' ~ product.image)}}" alt="Doggo"/></div>
-                    <div class="profile__info">
-                        <h3>{{product.title}}</h3>
-                        <p class="profile__info__extra">{{product.description ?? 'Description à venir'}}</p>
-                    </div>
-                    <span class="fs-5 fw-bold text-color-maisonphilo ms-1">{{product.price|format_currency('CFA')}}</span>
-                </div>
-            {% endfor %}
-
-
-        </div>
-    </section>
-</main>{% endblock %}
+        </div> 
+ #}
+    {# <section class="results-section results--grid">
+                                {% for product in products %}
+                                    <div class="profile">
+                                        <div class="profile__image img-fluid"><img src="{{asset('images/imagesUpload/' ~ product.image)}}" alt="Doggo"/></div>
+                                        <div class="profile__info">
+                                            <h3>{{product.title}}</h3>
+                                            <p class="profile__info__extra">{{product.description ?? 'Description à venir'}}</p>
+                                        </div>
+                                        <span class="fs-5 fw-bold text-color-maisonphilo ms-1">{{product.price|format_currency('CFA')}}</span>
+                                    </div>
+                                {% endfor %}
+                    
+                    
+                            </div> 
+                
+                </main>#}
+{% endblock %}

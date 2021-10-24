@@ -52,7 +52,6 @@ class ProductType extends AbstractType
                     "class" => "form-control mb-3",
                 ]
             ])
-            ->add("description")
             ->add("category", EntityType::class, [
                 "required" => false,
                 "class" => Category::class,
@@ -65,11 +64,19 @@ class ProductType extends AbstractType
                 ],
                 "query_builder" => function (EntityRepository $er) {
                     return $er->createQueryBuilder("c")
-                        ->orderBy("c.title", "DESC");
+                    ->orderBy("c.title", "DESC");
                 },
-            ])
-            ->add(
-                "image",
+                ])
+                ->add("description", TextType::class, [
+                    "label" => false,
+                    "required" => false,
+                    "attr" => [
+                        "class" => "mb-3 form-control",
+                        "placeholder" => "Description du produit",  "size" => 4,      
+                    ]
+                ]) 
+                ->add(
+                    "image",
                 FileType::class,
                 array("data_class" => null),
                 [
