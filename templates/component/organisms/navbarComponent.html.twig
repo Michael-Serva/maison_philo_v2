@@ -10,7 +10,7 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item"></li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle text-light nav-text-maisonphilo" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         {% trans %}welcome to our house{% endtrans %}
                     </a>
                     <ul class="dropdown-menu text-center" aria-labelledby="navbarDropdown">
@@ -36,7 +36,7 @@
                                 <a class="dropdown-item col text-site-or " href="#"></a>
                                 <a class="dropdown-item col text-site-or d-none" href="#"></a>
                                 <a class="dropdown-item col text-site-or " href="#">
-                                    {% trans %}Mobility aid{% endtrans %}
+                                    {% trans %}health care{% endtrans %}
                                 </a>
                                 <a class="dropdown-item col text-site-or " href="#"></a>
                                 <a class="dropdown-item col text-site-or " href="#">
@@ -47,11 +47,21 @@
                                 <a class="dropdown-item col text-site-or " href="#"></a>
                                 <a class="dropdown-item col text-site-or d-none" href="#"></a>
                                 <a class="dropdown-item col text-site-or " href="#">
-                                    {% trans %}health care{% endtrans %}
+                                    {% trans %}Incontinence{% endtrans %}
                                 </a>
                                 <a class="dropdown-item col text-site-or " href="#"></a>
                                 <a class="dropdown-item col text-site-or " href="#"></a>
                             </div>
+                            <div class="row">
+                                <a class="dropdown-item col text-site-or " href="#"></a>
+                                <a class="dropdown-item col text-site-or d-none" href="#"></a>
+                                <a class="dropdown-item col text-site-or " href="#">
+                                    {% trans %}Mobility aid{% endtrans %}
+                                </a>
+                                <a class="dropdown-item col text-site-or " href="#"></a>
+                                <a class="dropdown-item col text-site-or " href="#"></a>
+                            </div>
+
 
                         </li>
                     </ul>
@@ -62,11 +72,11 @@
                     <li
                         class="nav-item text-light">
                         {# {{ (test == 10) ? 'bg-danger' : 'bg-warning' }} #}
-                        <a class="nav-link" href="">{% trans %}Profile{% endtrans %}</a>
+                        <a class="nav-link nav-text-maisonphilo" href="">{% trans %}Profile{% endtrans %}</a>
                     </li>
                     {% if app.user.roles[0] == "ROLE_ADMIN" %}
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" class="text-light">
+                            <a class="nav-link dropdown-toggle nav-text-maisonphilo" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" class="text-light">
                                 {% trans %}Site management{% endtrans %}
                             </a>
                             <ul class="dropdown-menu text-center" aria-labelledby="navbarDropdown">
@@ -100,7 +110,7 @@
                 {% endif %}
                 {% if app.user %}
                     <li class="d-flex">
-                        <a href="{{ path('app_logout')}}" class="btn text-danger">{% trans %}Log out{% endtrans %}</a>
+                        <a href="{{ path('app_logout')}}" class="btn text-warning">{% trans %}Log out{% endtrans %}</a>
                     </li>
                 {% endif %}
             </ul>

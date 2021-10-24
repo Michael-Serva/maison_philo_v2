@@ -50,3 +50,7 @@ php bin/console doctrine:fixtures:load
 ### Product site
 
 `https://codepen.io/albertoleon/pen/jONyrvY`
+
+## Eslint auto-modify js files
+
+`https://eslint.org/docs/user-guide/getting-started`

@@ -13,6 +13,9 @@ table{
 div.main.container-fluid{
     min-height: 63vh;
 }
+.nav-text-maisonphilo{
+    color: aliceblue!important;
+}
 nav img{
     max-height: 30px;
 }
