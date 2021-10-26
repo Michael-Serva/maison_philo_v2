@@ -22,7 +22,7 @@ class AppFixtures extends Fixture
     {
         $faker = Factory::create('fr-Fr');
 
-        $adminRole = new Role;
+        $adminRole = new Role();
         $adminRole->setTitle('ROLE_ADMIN');
         $manager->persist($adminRole);
 
@@ -38,11 +38,11 @@ class AppFixtures extends Fixture
             ->setGenre('male')
             ->addUserRole($adminRole);
         $manager->persist($adminUser);
-                
-  
+
+
         $users = [];
         $genres = ['male', 'female'];
-        for ($i=1; $i < 30; $i++) {
+        for ($i = 1; $i < 30; $i++) {
             /* creation of a new user */
             $user = new User();
             /* creation of a random genre */
@@ -50,8 +50,8 @@ class AppFixtures extends Fixture
             $password = $this->encoder->hashPassword($user, '95610b405A!');
             //dd($password);
             $genre = $faker->randomElement($genres);
-            $pictureId = $faker->numberBetween(1, 99).'.jpg';
-            $picture = "https://randomuser.me/api/portraits/".($genre== 'male' ? 'men/' : 'women/').$pictureId;
+            $pictureId = $faker->numberBetween(1, 99) . '.jpg';
+            $picture = "https://randomuser.me/api/portraits/" . ($genre == 'male' ? 'men/' : 'women/') . $pictureId;
             if ($genre == 'male') {
                 $user->setfirstName($faker->firstNameMale);
             } elseif ($genre == 'female') {

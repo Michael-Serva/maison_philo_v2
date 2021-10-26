@@ -15,8 +15,24 @@
         <div class="mb-1 col-12 col-sm-12 col-md-12 col-lg-6 col-xlg-7 ">
             <img class="img-fluid" src="{{ asset('images/couple_agees2.jpg') }}" data-aos="fade-down-right" data-aos-duration="2000">
         </div>
-            {% include "component/atoms/presentation.html.twig" with {
+        {% include "component/atoms/presentation.html.twig" with {
             presentationContents : presentationContents
         } %}
     </div>
+    <table class="table table-success w-25">
+        <thead>
+            <h1>{% trans %}Covid case in Ivory Coast{% endtrans %}</h1>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="col">{% trans %}Covid case{% endtrans %}</th>
+                <td scope="col">{{datas.confirmed|number_format}}</td>
+            </tr>
+            <tr>
+                <th scope="col">{% trans %}Death{% endtrans %}</th>
+                <td scope="col">{{datas.deaths}}</td>
+            </tr>
+        </tbody>
+    </table>
+
 {% endblock %}

@@ -3,11 +3,9 @@
 namespace App\Form;
 
 use App\Entity\Role;
-
 use App\Entity\User;
 use App\Repository\RoleRepository;
 use Symfony\Component\Form\AbstractType;
-
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Validator\Constraints\Regex;
@@ -20,8 +18,8 @@ class UserType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder
-            /* ->add("email", EmailType::class, [
+      /*  $builder
+             ->add("email", EmailType::class, [
             "required" => false,
             "label" => false,
             "trim" => false,
@@ -40,20 +38,20 @@ class UserType extends AbstractType
             ]
         ])
         ; */
-            ->add('userRoles', EntityType::class, [
+      /*       ->add('userRoles', EntityType::class, [
                 'class' => Role::class,
                 'query_builder' => function (RoleRepository $er) {
                     return $er->createQueryBuilder('u')
                         ->orderBy('u.userRoles', 'ASC');
                 },
                 'choice_label' => 'userRoles',
-            ]);
-    }
+            ]); */
 
-    public function configureOptions(OptionsResolver $resolver)
+
+ /*    public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
             'data_class' => User::class,
-        ]);
+        ]);*/
     }
 }

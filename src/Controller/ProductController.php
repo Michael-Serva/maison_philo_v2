@@ -42,8 +42,7 @@ class ProductController extends AbstractController
             //dd(get_class_methods($form));
             $imageFile = $form->get('image')->getData();
 
-            if ($imageFile) // si image upload
-            {
+            if ($imageFile) { // si image upload
                 $originalFilename = pathinfo($imageFile->getClientOriginalName(), PATHINFO_FILENAME);
                 //this is needed to safely include the file name as part of the URL
                 $safeFilename = $slugger->slug($originalFilename);

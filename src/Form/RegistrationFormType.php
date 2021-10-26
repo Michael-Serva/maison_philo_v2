@@ -3,16 +3,12 @@
 namespace App\Form;
 
 use App\Entity\User;
-
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Validator\Constraints\Regex;
 use Symfony\Component\Validator\Constraints\IsTrue;
-
 use Symfony\Component\Validator\Constraints\Length;
-
 use Symfony\Component\Validator\Constraints\NotBlank;
-
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
@@ -32,7 +28,7 @@ class RegistrationFormType extends AbstractType
  * fields={"pseudo"},
  * message
  * ) */
-        
+
 
 
         $builder
@@ -58,7 +54,7 @@ class RegistrationFormType extends AbstractType
                     "pattern" => "^[A-Za-z0-9]+$^",
                     "message" => "Veuillez ne pas utiliser de caractères spéciaux pour votre pseudo"
                 ]),
-               
+
             ]
         ])
         ->add("email", EmailType::class, [
@@ -72,12 +68,12 @@ class RegistrationFormType extends AbstractType
             "constraints" => [
                 new Regex([
                     "pattern" => "^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$^",
-                    "message" => "Veuillez entrer une adresse mail valide" 
+                    "message" => "Veuillez entrer une adresse mail valide"
                 ]),
                 new NotBlank([
                     "message" => "Veuillez indiquer votre adresse mail"
                 ])
-            ]       
+            ]
         ])
         /* ->add("agreeTerms", CheckboxType::class, [
             "label" => "Veuillez cliquer ici pour accepter nos conditions générales de vente",
@@ -93,7 +89,7 @@ class RegistrationFormType extends AbstractType
             "first_name" => "first",
             "second_name" => "second",
             "invalid_message" => "Les mots de passe ne sont pas identiques",
-                "attr" => [  
+                "attr" => [
                 "class" => "form-control mt-3"
                 ],
             "first_options" => [
@@ -115,7 +111,7 @@ class RegistrationFormType extends AbstractType
                     "message" => "Veuillez saisir un mot de passe",
                 ]),
             ]
-        ]);       
+        ]);
     }
 
     public function configureOptions(OptionsResolver $resolver)

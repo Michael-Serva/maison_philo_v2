@@ -72,14 +72,14 @@ class ProductType extends AbstractType
                     "required" => false,
                     "attr" => [
                         "class" => "mb-3 form-control",
-                        "placeholder" => "Description du produit",  "size" => 4,      
+                        "placeholder" => "Description du produit",  "size" => 4,
                     ]
-                ]) 
+                ])
                 ->add(
                     "image",
-                FileType::class,
-                array("data_class" => null),
-                [
+                    FileType::class,
+                    array("data_class" => null),
+                    [
                     "required" => false,
                     "constraints" => [
                         new File([
@@ -97,8 +97,8 @@ class ProductType extends AbstractType
                             "class" => "mb-3",
                         ],
                     ]
-                ]
-            );
+                    ]
+                );
     }
     public function configureOptions(OptionsResolver $resolver)
     {

@@ -76,7 +76,7 @@ class User implements UserInterface
     private $password;
 
     // ------- @Assert\NotBlank(message="Veuillez confirmer votre mot de passe")
-     
+
     // public $confirmPassword;
 
 
@@ -172,9 +172,9 @@ class User implements UserInterface
         return $this;
     }
 
- 
-    
-    public function getUsername() : ?string
+
+
+    public function getUsername(): ?string
     {
         return(string) $this->email;
     }

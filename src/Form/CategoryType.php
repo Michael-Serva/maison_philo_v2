@@ -15,7 +15,7 @@ class CategoryType extends AbstractType
             ->add('title')
         ;
     }
-    
+
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([

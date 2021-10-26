@@ -22,10 +22,10 @@ class ProductCustomerController extends AbstractController
      * @Route("/")
      * @Template
      */
-    public function index(  ): array
+    public function index(): array
     {
         return[
-   
+
         ];
     }
 

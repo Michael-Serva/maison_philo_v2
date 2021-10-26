@@ -53,4 +53,8 @@ php bin/console doctrine:fixtures:load
 
 ## Eslint auto-modify js files
 
-`https://eslint.org/docs/user-guide/getting-started`
+## Phpcs
+
+`https://github.com/squizlabs/PHP_CodeSniffer`
+`phpcs -v --standard=PSR12 --ignore=./src/Kernel.php ./src` => for check the code
+`phpcbf -v --standard=PSR12 --ignore=./src/Kernel.php ./src` => for fix the code

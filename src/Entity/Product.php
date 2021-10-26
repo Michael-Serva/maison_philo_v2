@@ -3,7 +3,6 @@
 namespace App\Entity;
 
 use App\Entity\Category;
-
 use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\ProductRepository;
@@ -30,7 +29,7 @@ class Product
      * maxMessage = "30 caractères maximum"
      * )
      */
-     
+
     private $title;
 
     /**
@@ -48,7 +47,7 @@ class Product
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
-     * 
+     *
      */
     private $image;
 
@@ -65,7 +64,7 @@ class Product
     public function getId(): ?int
     {
         return $this->id;
-    } 
+    }
 
     public function getTitle(): ?string
     {

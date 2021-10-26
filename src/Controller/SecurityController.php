@@ -27,17 +27,17 @@ class SecurityController extends AbstractController
     public function register(Request $request, EntityManagerInterface $manager, UserPasswordHasherInterface $encoder)
     {
         // UserPasswordEncoderInterface
-        $user = new User;
+        $user = new User();
         $form = $this->createForm(RegistrationFormType::class, $user, array("registration" => true));
         $form->handleRequest($request);
-        
+
         if ($form->isSubmitted() && $form->isValid()) {
             /* password encode */
             $hash = $encoder->hashPassword($user, $user->getPassword());
             $user->setPassword($hash);
             $manager->persist($user);
             $manager->flush();
-            
+
             $this->addFlash("success", $user->getPseudo() . ", votre inscription a bien été enregistrée");
 
             return $this->redirectToRoute("app_security_login");
@@ -45,10 +45,10 @@ class SecurityController extends AbstractController
 
         return $this->render('security\register.html.twig', [
             "registrationForm" => $form->createView(),
-            
+
         ]);
     }
-   
+
     /**
      * @Route("/login", name="app_security_login")
      * @Template
@@ -59,7 +59,7 @@ class SecurityController extends AbstractController
         $error = $authenticationUtils->getLastAuthenticationError();
         // last username entered by the user
         $lastUsername = $authenticationUtils->getLastUsername();
-        
+
         return $this->render('security/login.html.twig', [
             'last_username' => $lastUsername, 'error' => $error
         ]);
@@ -70,6 +70,8 @@ class SecurityController extends AbstractController
      */
     public function logout()
     {
-        throw new \LogicException('This method can be blank - it will be intercepted by the logout key on your firewall.');
+        throw new \LogicException(
+            'This method can be blank - it will be intercepted by the logout key on your firewall.'
+        );
     }
 }

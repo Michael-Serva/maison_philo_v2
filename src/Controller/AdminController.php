@@ -3,18 +3,12 @@
 namespace App\Controller;
 
 use App\Entity\User;
-
 use App\Form\UserType;
-
 use App\Repository\UserRepository;
-
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-
 use Symfony\Component\Routing\Annotation\Route;
-
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
-
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
@@ -52,7 +46,7 @@ class AdminController extends AbstractController
      * @Route("/{id}/edit", name="app_admin_edit", methods={"GET","POST"})
      * @Template
      */
-    public function edit(Request $request, User $user): Response
+   /*  public function edit(Request $request, User $user): Response
     {
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
@@ -67,14 +61,14 @@ class AdminController extends AbstractController
             'user' => $user,
             'form' => $form,
         ]);
-    }
+    } */
 
     /**
      * @Route("/{id}", name="app_admin_delete", methods={"POST"})
      */
     public function delete(Request $request, User $user): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$user->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $user->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($user);
             $entityManager->flush();
