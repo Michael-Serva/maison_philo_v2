@@ -10,7 +10,6 @@ function messageOff() {
             }, 4000
         );
     }
-
 }
 
 /* Preview de l'image upload CRUD PRODUIT */
@@ -67,3 +66,4 @@ modalConfirm(function (confirm) {
 
     }
 });
+

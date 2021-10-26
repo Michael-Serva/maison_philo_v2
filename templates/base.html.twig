@@ -10,7 +10,9 @@
             {% endblock %}
         </title>
         {% include "component/atoms/head.html.twig" %}
-        {% block stylesheet %}<link rel="stylesheet" href="{{asset('css/style.css')}}">
+        {% block stylesheet %}
+        <link rel="stylesheet" href="{{asset('css/style.css')}}">
+        <link rel="stylesheet" href="{{asset('css/alert.css')}}">
         {% endblock %}
 
     </head>

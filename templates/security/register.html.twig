@@ -1,10 +1,6 @@
-{% extends 'base.html.twig' %}
+{% extends "security/layout.html.twig" %}
 {% block title %}
     {% trans %}Register{% endtrans %}
-{% endblock %}
-{% block stylesheet %}
-{{ parent() }}
-    <link rel="stylesheet" href="{{asset('css/formSecurity.css')}}"/>
 {% endblock %}
 {% block body %}
     {% embed "component/molecules/formDesign.html.twig" %}

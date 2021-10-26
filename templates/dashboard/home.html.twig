@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends "dashboard/layout.html.twig" %}
 {% block title %}
     {% trans %}Home |{% endtrans %}{{ parent() }}
 {% endblock %}
@@ -10,6 +10,11 @@
             "{{app.user.pseudo}}"
         {% endif %}
     </h1>
+    {% for message in app.flashes('dashboard') %}
+        {% include "component/molecules/alertDesign.html.twig" with {
+            congrats : 'Well Done! '
+        } %}
+    {% endfor %}
     <div class="row mb-1 gx-0">
         <span class="side col-lg-12 text-center mb-2">{% trans %}The Aging : a coming challenge for Africa{% endtrans %}</span>
         <div class="mb-1 col-12 col-sm-12 col-md-12 col-lg-6 col-xlg-7 ">
@@ -26,13 +31,12 @@
         <tbody>
             <tr>
                 <th scope="col">{% trans %}Covid case{% endtrans %}</th>
-                <td scope="col">{{datas.confirmed|number_format}}</td>
+                <td scope="col">{{datas.confirmed|format_number({grouping_size:3})}}</td>
             </tr>
             <tr>
                 <th scope="col">{% trans %}Death{% endtrans %}</th>
-                <td scope="col">{{datas.deaths}}</td>
+                <td scope="col">{{datas.deaths|format_number({grouping_size:3})}}</td>
             </tr>
         </tbody>
     </table>
-
 {% endblock %}

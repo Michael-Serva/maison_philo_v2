@@ -38,17 +38,13 @@ class SecurityController extends AbstractController
             $manager->persist($user);
             $manager->flush();
 
-            $this->addFlash("success", $user->getPseudo() . ", votre inscription a bien été enregistrée");
-
+            $this->addFlash("notice", $user->getPseudo() . ", votre inscription a bien été enregistrée");
             return $this->redirectToRoute("app_security_login");
         }
-
         return $this->render('security\register.html.twig', [
             "registrationForm" => $form->createView(),
-
         ]);
     }
-
     /**
      * @Route("/login", name="app_security_login")
      * @Template
@@ -60,11 +56,14 @@ class SecurityController extends AbstractController
         // last username entered by the user
         $lastUsername = $authenticationUtils->getLastUsername();
 
+        $this->addFlash(
+            'dashboard',
+            'You are well connected'
+        );
         return $this->render('security/login.html.twig', [
             'last_username' => $lastUsername, 'error' => $error
         ]);
     }
-
     /**
      * @Route("/logout", name="app_logout")
      */

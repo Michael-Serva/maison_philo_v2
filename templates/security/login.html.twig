@@ -1,18 +1,19 @@
-{% extends 'base.html.twig' %}
+{% extends "security/layout.html.twig" %}
 {% block title %}Log in!
-{% endblock %}
-{% block stylesheet %}
-{{ parent() }}
-    <link rel="stylesheet" href="{{asset('css/formSecurity.css')}}"/>
 {% endblock %}
 {% block body %}
     <form method="post">
         {% if error %}
             <div class="alert alert-danger text-center">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
         {% endif %}
-        {% if app.flashes.success is defined %}
-            <div class="alert alert-success text-center">{{ app.flashes.success|trans() }}</div>
-        {% endif %}
+
+{% for message in app.flashes('login') %}
+    <div class="alert alert_success">
+        {{ message }}
+    </div>
+{% endfor %}
+
+
         {% embed "component/molecules/formDesign.html.twig" %}
             {% block form_content %}
                 <h1 class="fs-2 mb-3 fw-bold">{% trans %}Please login{% endtrans %}</h1>
@@ -31,4 +32,3 @@
         {% endembed %}
     </form>
 {% endblock %}
-

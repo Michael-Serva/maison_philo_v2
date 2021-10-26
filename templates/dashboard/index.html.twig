@@ -1,0 +1,60 @@
+{% extends 'product_customer/layout.html.twig' %}
+{% block title %}
+    {% trans %}Product |{% endtrans %}{{ parent() }}
+{% endblock %}
+{% block body %}
+    <div id="toast"></div>
+    <div id="toast-cart"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mb-2">
+                <div class="card">
+                    <a href="{{path('app_dashboard_history')}}">
+                        <img src="{{asset('images/philo.jpg')}}" class="first-image">
+                    </a>
+                    <div class="card-body">
+                        <a href="#" onclick="addCart()">
+                            <center>{% trans %}access{% endtrans %}</center>
+                        </a>
+                        <hr>
+                        <center>
+                            <h1 class="card-title">{% trans %}Our history{% endtrans %}</h1>
+                        </center>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-2">
+                <div class="card">
+                    <a href="{{path('app_productcustomer_show')}}">
+                        <img src="{{asset('images/logo_maison_philo2.png')}}" class="first-image text-dark">
+                    </a>
+                    <div class="card-body">
+                        <a href="{{path('app_productcustomer_show')}}">
+                            <center>{% trans %}access{% endtrans %}</center>
+                        </a>
+                        <hr>
+                        <center>
+                            <h1 class="card-title">{% trans %}Our vision{% endtrans %}</h1>
+                        </center>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-2" href="{{path('app_productcustomer_show')}}">
+                <div class="card"></span>
+                <a href="{{path('app_productcustomer_show')}}">
+                    <img src="{{asset('images/ourobjective1.jpg')}}" class="first-image">
+                </a>
+                <div class="card-body">
+                    <a href="{{path('app_productcustomer_show')}}">
+                        <center>{% trans %}access{% endtrans %}</center>
+                    </a>
+                    <hr>
+                    <center>
+                        <h1 class="card-title">{% trans %}Our objective{% endtrans %}</h1>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>{% endblock %}
+

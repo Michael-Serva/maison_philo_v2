@@ -9,6 +9,10 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
+/**
+ * @Route("/")
+ */
+
 class DashboardController extends AbstractController
 {
 
@@ -91,6 +95,15 @@ class DashboardController extends AbstractController
      * @Template
      */
     public function history(): array
+    {
+        return [];
+    }
+
+    /**
+     * @Route("/index")
+     * @Template
+     */
+    public function index(): array
     {
         return [];
     }

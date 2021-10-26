@@ -404,6 +404,18 @@
         <source>The Aging : a coming challenge for Africa</source>
         <target>Le vieillissement de la population : un défi à venir pour l'Afrique</target>
       </trans-unit>
+      <trans-unit id="MRaWa4P" resname="Covid case in Ivory Coast">
+        <source>Covid case in Ivory Coast</source>
+        <target>Evolution de l'épiddémie de Covid-19 en Côte d'Ivoire</target>
+      </trans-unit>
+      <trans-unit id="KZT3EOK" resname="Covid case">
+        <source>Covid case</source>
+        <target>Cas de Covid-19</target>
+      </trans-unit>
+      <trans-unit id=".Nb_py3" resname="Death">
+        <source>Death</source>
+        <target>décès</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

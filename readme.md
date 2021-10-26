@@ -15,7 +15,7 @@ symfony server:start
 php bin/console translation:update --force fr
 php bin/console doctrine:fixtures:load
 ```
- 
+
 ## GitHub
 
 `https://github.com/Michael-Serva/maisonphilo.git`
@@ -41,7 +41,7 @@ php bin/console doctrine:fixtures:load
 
 `https://analytics.google.com/analytics/web/provision/?_ga=2.83265046.1804555890.1629906954-457951912.1629906954#/provision`
 
-`https://www.malt.fr/t/barometre-tarifs` 
+`https://www.malt.fr/t/barometre-tarifs`
 
 ## Site web
 
@@ -58,3 +58,7 @@ php bin/console doctrine:fixtures:load
 `https://github.com/squizlabs/PHP_CodeSniffer`
 `phpcs -v --standard=PSR12 --ignore=./src/Kernel.php ./src` => for check the code
 `phpcbf -v --standard=PSR12 --ignore=./src/Kernel.php ./src` => for fix the code
+
+## Boostrap alert
+
+`https://bbbootstrap.com/snippets/bootstrap-messages-alerts-58736812`
