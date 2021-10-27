@@ -10,6 +10,8 @@
             "{{app.user.pseudo}}"
         {% endif %}
     </h1>
+
+    Bonjour Anne 
     {% for message in app.flashes('dashboard') %}
         {% include "component/molecules/alertDesign.html.twig" with {
             congrats : 'Well Done! '
@@ -39,4 +41,6 @@
             </tr>
         </tbody>
     </table>
+
+
 {% endblock %}
