@@ -13,9 +13,6 @@ table{
 .text-color-maisonphilo{
     color: var(--navbar-bg-color);
 }
-div.main.container-fluid{
-    min-height: 72vh;
-}
 div.text{
     text-justify: inter-word;
 }
@@ -36,6 +33,9 @@ nav.navbar {
     background-color: var(--navbar-bg-color);
     color: aliceblue;
 }
+ul.dropdown-menu{
+font-size: 0.45em;
+}
 img.rounded-circle{
     max-width: 7vw;
 }
@@ -52,10 +52,12 @@ img.rounded-circle{
     padding-top: 50px;
     margin: auto;
 }
+div.presentation{
+     background-image: url('../images/history-bg.png');
+}
 .presentation{
-    /* background-color: var(--presentation-bg-color); */
-    background-image: url('../images/presentation-bg.png');
     background-size: cover;
+    font-size: 2em;
 }
 .history-bg{
     background-image: url('../images/history-bg.png');

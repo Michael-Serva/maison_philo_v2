@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta
-        charset="UTF-8">
-        {# Declaration of the title of my site #}
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>
             {% block title %}
                 {{webSiteName|trans}}
@@ -11,8 +11,8 @@
         </title>
         {% include "component/atoms/head.html.twig" %}
         {% block stylesheet %}
-        <link rel="stylesheet" href="{{asset('css/style.css')}}">
-        <link rel="stylesheet" href="{{asset('css/alert.css')}}">
+            <link rel="stylesheet" href="{{asset('css/style.css')}}">
+            <link rel="stylesheet" href="{{asset('css/alert.css')}}">
         {% endblock %}
 
     </head>
@@ -20,16 +20,18 @@
         {% include "component/organisms/navbarComponent.html.twig" with {
             routePath : 'app_dashboard_home',
         } %}
-        <div class="main container-fluid"> 
-        {% block body %}{% endblock %}
+        <div class="container-fluid"> {% block body %}{% endblock %}
             {% block scripts %}
                 {% include "component/atoms/script.html.twig" %}
             {% endblock %}
         </div>
         <footer>
-            {% block footer %}
-                {% include "component/atoms/footer.html.twig" %}
-            {% endblock %}
+            <div class="container-fluid">
+                {% block footer %}
+                    {% include "component/atoms/footer.html.twig" %}
+                {% endblock %}
+            </div>
+
         </footer>
     </body>
 </html>

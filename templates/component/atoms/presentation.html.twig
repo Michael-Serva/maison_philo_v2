@@ -1,8 +1,10 @@
-<div class='col-12 col-sm-12 col-md-12 col-lg-6 row' data-aos="fade-down-left" data-aos-duration="2000">
-    {% for presentationContent in presentationContents %}
-        <div class="col me-1 presentation">
+<div class='col-12 col-sm-12 col-md-12 col-lg-6 align-item-center' data-aos="fade-down-left" data-aos-duration="2000">
 
-            <span class="text-center d-block mt-5">
+
+    {% for presentationContent in presentationContents %}
+        <div class="col presentation">
+
+            <span class="text-center d-block">
                 {{presentationContent.header|trans}}
             </span>
             <span class="text-center d-block">

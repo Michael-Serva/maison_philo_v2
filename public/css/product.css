@@ -1,7 +1,5 @@
 
-.container{
-  margin-top: 50px;
-}
+
 
 .card{
   box-shadow: 0px 15px 35px -5px rgba(50, 88, 130, 0.32);
@@ -129,25 +127,8 @@ h5{
   15%,85%{opacity:1;top:30px}
 }
 
-/* a{
-  z-index: -1;
-} */
 :root {
   --canvasColor: #f9f9f9;
-}
-
-body {
-  background: var(--canvasColor);
-  font-family: "Poppins", sans-serif;
-  font-weight: 300;
-  line-height: 1.5;
-  font-size: 16px;
-  text-align: center;
-  transition: all 0.3s ease;
-}
-
-* {
-  box-sizing: border-box;
 }
 
 main {
@@ -167,7 +148,7 @@ main {
 }
 
 /*overall layout*/
-main {
+/* main {
   width: 90%;
   margin: 3em auto 0;
   max-width: 1500px;
@@ -177,7 +158,7 @@ main {
 
 main section {
   position: relative;
-}
+} */
 
 /*typography*/
 strong {
@@ -218,75 +199,7 @@ h6 {
   text-transform: uppercase;
 }
 
-/*checkboxes*/
-input:disabled ~ * {
-  opacity: 0.3;
-  user-select: none;
-  pointer-events: none;
-}
 
-.checkbox {
-  position: relative;
-  user-select: none;
-  margin-bottom: 10px;
-}
-.checkbox input {
-  display: none;
-}
-.checkbox label {
-  position: relative;
-  vertical-align: middle;
-  cursor: pointer;
-  font-weight: 500;
-  padding-left: 35px;
-}
-.checkbox span.box {
-  display: inline-block;
-  width: 20px;
-  border-radius: var(--borderRadius);
-  border: 1px solid var(--grayColor);
-  width: 24px;
-  height: 24px;
-  vertical-align: middle;
-  margin-right: 3px;
-  transition: 0.3s ease;
-  position: absolute;
-  left: 0;
-}
-.checkbox span.box:before, .checkbox span.box:after {
-  content: "";
-  position: absolute;
-  width: 4px;
-  height: 16px;
-  border-radius: 40px;
-  background: var(--backgroundColor);
-  transition: all 0.3s ease;
-}
-.checkbox span.box:before {
-  transform: rotate(45deg) translateY(-5px) translateX(10px) scale(0);
-}
-.checkbox span.box:after {
-  height: 8px;
-  transform: rotate(-45deg) translateY(10px) translateX(-4px) scale(0);
-}
-.checkbox input:checked + label span.box {
-  background: var(--accent2Color);
-  border-color: var(--accent2Color);
-}
-.checkbox input:checked + label span.box:before {
-  transform: rotate(45deg) translateY(-5px) translateX(10px) scale(1);
-}
-.checkbox input:checked + label span.box:after {
-  height: 8px;
-  transform: rotate(-45deg) translateY(10px) translateX(-4px) scale(1);
-}
-.checkbox input:disabled:checked + span.box {
-  background: var(--grayColor);
-  border: var(--grayColor);
-}
-.checkbox input:disabled:checked ~ label:before, .checkbox input:disabled:checked ~ label:after {
-  background: black;
-}
 
 /*buttons & links*/
 .buttons {
@@ -302,24 +215,7 @@ input:disabled ~ * {
   margin-right: 20px;
 }
 
-a.button,
-input.button,
-button {
-  outline: none;
-  width: 100%;
-  text-align: center;
-  display: inline-block;
-  border: none;
-  font: 500 16px/1 "Poppins", sans-serif;
-  padding: 20px;
-  cursor: pointer;
-  border-radius: var(--borderRadius);
-  background: var(--primaryColor);
-  color: var(--backgroundColor);
-  position: relative;
-  top: 0;
-  transition: 0.2s ease;
-}
+
 a.button:hover, a.button.hover,
 input.button:hover,
 input.button.hover,
@@ -417,51 +313,6 @@ button.accent3.active {
   background: var(--accent3Shade4);
 }
 
-/*badges*/
-.badge {
-  display: inline-block;
-  padding: 6px 12px;
-  border-radius: 50px;
-  font-weight: 500;
-  text-transform: uppercase;
-  line-height: 1;
-}
-
-.alert {
-  margin-bottom: 15px;
-  display: block;
-  padding: 10px 15px;
-  border-radius: var(--borderRadius);
-  font-weight: 500;
-  position: relative;
-  cursor: pointer;
-}
-.alert.non-collapsible:before, .alert.non-collapsible:after {
-  content: none;
-}
-.alert:before, .alert:after {
-  content: "";
-  position: absolute;
-  width: 4px;
-  height: 16px;
-  border-radius: 40px;
-  right: 30px;
-  top: 8px;
-}
-.alert:before {
-  transform: rotate(45deg) translateY(-5.5px) translateX(13.5px);
-}
-.alert:after {
-  transform: rotate(-45deg) translateY(13.5px) translateX(5.5px);
-}
-
-.status-primary {
-  background: var(--primaryShade1);
-  color: var(--primaryShade5);
-}
-.status-primary:before, .status-primary:after {
-  background: var(--primaryShade5);
-}
 
 /*tooltips*/
 .tooltip {

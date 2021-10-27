@@ -1,10 +1,10 @@
 {% extends 'base.html.twig' %}
 {% block stylesheet %}
-    <link rel="stylesheet" href="{{asset('css/product.css')}}">
     {{ parent() }}
+    <link rel="stylesheet" href="{{asset('css/product.css')}}">
 {% endblock %}
 {% block scripts %}
-    {{ parent() }}
     <script src="{{ asset('js/product.js') }}"></script>
+    {{ parent() }}
 {% endblock %}
 
