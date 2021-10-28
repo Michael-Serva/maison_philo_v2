@@ -1,0 +1,63 @@
+<nav id="navigation sticky-bottom">
+    <div class="menu-icon">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+    </div>
+    <ul class="menu-items-container">
+        <li>
+            <span class="menu-text-icons circle-icon home-icon">
+                <i class="fa fa-home" aria-hidden="true"></i>
+            </span>
+            <span class="menu-text">
+                <a class="dropdown-item col fw-bold text-site " href="{{path('app_dashboard_index')}}">
+                    {% trans %}Who are we?{% endtrans %}
+                </a>
+            </span>
+            <div class="bottom-border"></div>
+        </li>
+        <li>
+            <span class="menu-text-icons circle-icon about-icon">
+                <i class="fa fa-info" aria-hidden="true"></i>
+            </span>
+            <span class="menu-text">
+                <a class="dropdown-item col fw-bold text-site " href="{{path('app_productcustomer_index')}}">
+                    {% trans %}Our products{% endtrans %}
+                </a>
+            </span>
+            <div class="bottom-border"></div>
+        </li>
+        <li>
+            <span class="menu-text-icons circle-icon profile-icon">
+                <i class="fa fa-user" aria-hidden="true"></i>
+            </span>
+            <span class="menu-text">
+                <a class="dropdown-item col fw-bold text-site " href="#">
+                    {% trans %}Aging{% endtrans %}
+                </a>
+            </span>
+            <div class="bottom-border"></div>
+        </li>
+        <li>
+            <span class="menu-text-icons circle-icon gallery-icon">
+                <i class="fa fa-picture-o" aria-hidden="true"></i>
+            </span>
+            <span class="menu-text">
+                <a class="dropdown-item col fw-bold text-site " href="#">
+                    {% trans %}Country file{% endtrans %}
+                </a>
+            </span>
+            <div class="bottom-border"></div>
+        </li>
+        <li class="row text-center">
+            <a href="https://www.sante.gouv.ci/" target="blank">
+                <h1 class="col-12 text-center">{% trans %}Covid case in Ivory Coast{% endtrans %}</h1>
+                <span class="col-12 d-block">{% trans %}Covid case{% endtrans %}
+                    =>
+                    {{datas.confirmed|format_number({grouping_size:3})}}</span>
+                <span class="col-12 d-block">{% trans %}Death{% endtrans %}
+                    =>
+                    {{datas.deaths|format_number({grouping_size:3})}}</span>
+            </a>
+            <div class="bottom-border"></div>
+        </li>
+    </ul>
+</nav>

@@ -1,31 +1,31 @@
-:root{
-    --h2color : #a0350a;
-    --emcolor : #e06c00;
-    --navbar-bg-color : #043106;
-    --presentation-bg-color :#5d8b06;
+:root {
+    --h2color: #a0350a;
+    --emcolor: #e06c00;
+    --navbar-bg-color: #043106;
+    --presentation-bg-color: #5d8b06;
 }
-html { 
+html {
     overflow-x: hidden;
 }
-table{
+table {
     font-size: 1.3vw;
 }
-.text-color-maisonphilo{
+.text-color-maisonphilo {
     color: var(--navbar-bg-color);
 }
-div.text{
+div.text {
     text-justify: inter-word;
 }
-.nav-text-maisonphilo{
-    color: aliceblue!important;
+.nav-text-maisonphilo {
+    color: aliceblue !important;
 }
-nav img{
+nav img {
     max-height: 30px;
 }
-.text-h2-color{
+.text-h2-color {
     color: var(--h2color);
 }
-a.nav-link:hover{
+a.nav-link:hover {
     color: var(--h2color);
 }
 
@@ -33,10 +33,10 @@ nav.navbar {
     background-color: var(--navbar-bg-color);
     color: aliceblue;
 }
-ul.dropdown-menu{
-font-size: 0.45em;
+ul.dropdown-menu {
+    font-size: 0.45em;
 }
-img.rounded-circle{
+img.rounded-circle {
     max-width: 7vw;
 }
 /* Cacher / afficher le mot de passe */
@@ -52,37 +52,37 @@ img.rounded-circle{
     padding-top: 50px;
     margin: auto;
 }
-div.presentation{
-     background-image: url('../images/history-bg.png');
+div.presentation {
+    background-image: url("../images/history-bg.png");
 }
-.presentation{
+.presentation {
     background-size: cover;
     font-size: 2em;
 }
-.history-bg{
-    background-image: url('../images/history-bg.png');
+.history-bg {
+    background-image: url("../images/history-bg.png");
     background-size: cover;
 }
 
-.presentation span{
+.presentation span {
     color: aliceblue;
     font-size: 1.8vh;
 }
-.side{
+.side {
     font-size: 3vh;
     color: var(--h2color);
     font-style: italic;
 }
 
 h1 {
-    font-family: 'Tangerine', cursive;
+    font-family: "Tangerine", cursive;
 }
 
-h2{
+h2 {
     color: var(--h2color);
 }
 
-em{
+em {
     font-size: 1.3vw;
     color: var(--emcolor);
 }
@@ -99,13 +99,13 @@ em{
 }
 
 .dropdown-menu {
-    box-shadow: 0 .5rem 1rem #00000026!important;
+    box-shadow: 0 0.5rem 1rem #00000026 !important;
     margin-top: 0px !important;
     width: 100% !important;
 }
 
 .dropdown-menu:hover {
-    background-color: #a7b8a7
+    background-color: #a7b8a7;
 }
 
 a {
@@ -114,7 +114,7 @@ a {
 }
 
 .active a {
-    color: #0bac0b!important;
+    color: #0bac0b !important;
 }
 
 .form-error-message {

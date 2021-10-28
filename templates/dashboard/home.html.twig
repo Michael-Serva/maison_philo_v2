@@ -3,7 +3,7 @@
     {% trans %}Home |{% endtrans %}{{ parent() }}
 {% endblock %}
 {% block body %}
-    <h1 class"font-tangerine">
+    <h1>
         {% trans %}Welcome to{% endtrans %}
         {{webSiteName}}
         {% if app.user.pseudo is defined %}
@@ -25,21 +25,6 @@
             presentationContents : presentationContents
         } %}
     </div>
-    <table class="table table-success w-25">
-       {#  <thead>
-            <span>{% trans %}Covid case in Ivory Coast{% endtrans %}</span>
-        </thead> #}
-        <tbody>
-            <tr>
-                <th scope="col">{% trans %}Covid case{% endtrans %}</th>
-                <td scope="col">{{datas.confirmed|format_number({grouping_size:3})}}</td>
-            </tr>
-            <tr>
-                <th scope="col">{% trans %}Death{% endtrans %}</th>
-                <td scope="col">{{datas.deaths|format_number({grouping_size:3})}}</td>
-            </tr>
-        </tbody>
-    </table>
-
+    {% include "component/atoms/popupMenu.html.twig" %}
 
 {% endblock %}

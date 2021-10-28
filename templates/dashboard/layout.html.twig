@@ -1,1 +1,9 @@
 {% extends 'base.html.twig' %}
+{% block stylesheet %}
+    <link rel="stylesheet" href="{{asset('css/popupMenu.css')}} ">
+    {{ parent() }}
+{% endblock %}
+{% block scripts %}
+    {{ parent() }}
+    <script src="{{asset('js/popupMenu.js')}}"></script>
+{% endblock %}

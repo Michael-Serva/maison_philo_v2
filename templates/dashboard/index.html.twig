@@ -18,43 +18,42 @@
                         </a>
                         <hr>
                         <center>
-                            <h1 class="card-title">{% trans %}Our history{% endtrans %}</h1>
+                            <span class="fs-5">{% trans %}Our history{% endtrans %}</span>
                         </center>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 mb-2">
                 <div class="card">
-                    <a href="{{path('app_productcustomer_show')}}">
+                    <a href="{{path('app_dashboard_index')}}">
                         <img src="{{asset('images/logo_maison_philo2.png')}}" class="first-image text-dark">
                     </a>
                     <div class="card-body">
-                        <a href="{{path('app_productcustomer_show')}}">
+                        <a href="{{path('app_dashboard_index')}}">
                             <center>{% trans %}access{% endtrans %}</center>
                         </a>
                         <hr>
                         <center>
-                            <h1 class="card-title">{% trans %}Our vision{% endtrans %}</h1>
+                            <span class="card-title fs-5">{% trans %}Our vision{% endtrans %}</span>
                         </center>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 mb-2" href="{{path('app_productcustomer_show')}}">
+            <div class="col-lg-4 mb-2" href="{{path('app_dashboard_index')}}">
                 <div class="card"></span>
-                <a href="{{path('app_productcustomer_show')}}">
+                <a href="{{path('app_dashboard_index')}}">
                     <img src="{{asset('images/ourobjective1.jpg')}}" class="first-image">
                 </a>
                 <div class="card-body">
-                    <a href="{{path('app_productcustomer_show')}}">
+                    <a href="{{path('app_dashboard_index')}}">
                         <center>{% trans %}access{% endtrans %}</center>
                     </a>
                     <hr>
                     <center>
-                        <h1 class="card-title">{% trans %}Our objective{% endtrans %}</h1>
+                        <span class="card-title fs-5">{% trans %}Our objective{% endtrans %}</span>
                     </center>
                 </div>
             </div>
         </div>
     </div>
 </div>{% endblock %}
-
