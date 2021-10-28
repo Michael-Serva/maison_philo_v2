@@ -14,12 +14,12 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
 
 /**
- * @Route("/")
+ * @Route("/product")
  */
 class ProductController extends AbstractController
 {
     /**
-     * @Route("product/", name="app_product_index", methods={"GET"})
+     * @Route("/index", name="app_product_index", methods={"GET"})
      * @Template
      */
     public function index(ProductRepository $productRepository): Response
