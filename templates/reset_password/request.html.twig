@@ -1,22 +1,27 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-	{% trans %}Reset your password{% endtrans %}
+    {% trans %}Reset your password{% endtrans %}
 {% endblock %}
-
 {% block body %}
-	{% for flashError in app.flashes('reset_password_error') %}
-		<div class="alert alert-danger" role="alert">{{ flashError }}</div>
-	{% endfor %}
-	<h1>{% trans %}Reset your password{% endtrans %}</h1>
-
-	{{ form_start(requestForm) }}
-	{{ form_row(requestForm.email) }}
-	<div>
-		<small>{% trans %}
-			Enter your email address and we we will send you a link to reset your password.{% endtrans %}
-		</small>
-	</div>
-	<button class="btn btn-primary">{% trans %}Send password reset email{% endtrans %}</button>
-	{{ form_end(requestForm) }}
+    {% for flashError in app.flashes('reset_password_error') %}
+        <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+    {% endfor %}
+    {% embed "component/molecules/formDesign.html.twig" %}
+        {% block form_content %}
+            <h1>{% trans %}Reset your password{% endtrans %}</h1>
+            {{ form_start(requestForm) }}
+            {{ form_row(requestForm.email) }}
+            <div>
+                <small>{% trans %}
+                    Enter your email address and we we will send you a link to reset your password.{% endtrans %}
+                </small>
+            </div>
+			{% include "component/atoms/form_validation.html.twig" with {
+				buttonLabel : "Send password reset email"
+			} %}
+           {#  <button class="btn btn-primary">{% trans %}Send password reset email{% endtrans %}</button> #}
+            {{ form_end(requestForm) }}
+        {% endblock %}
+    {% endembed %}
 {% endblock %}

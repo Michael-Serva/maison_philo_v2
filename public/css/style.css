@@ -8,7 +8,7 @@ html {
     overflow-x: hidden;
 }
 div.main{
-    min-height: 80%;
+    min-height: 40em;
 }
 table {
     font-size: 1.3vw;
@@ -144,5 +144,5 @@ h1.connexion {
     color: #d3c37b;
     font-size: 1.5vh;
     padding-bottom: 30px;
-    min-height: 20%;
+    min-height: 20em;
 }
