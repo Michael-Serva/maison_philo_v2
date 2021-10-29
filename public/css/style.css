@@ -7,6 +7,9 @@
 html {
     overflow-x: hidden;
 }
+div.main{
+    min-height: 80%;
+}
 table {
     font-size: 1.3vw;
 }
@@ -34,7 +37,7 @@ nav.navbar {
     color: aliceblue;
 }
 ul.dropdown-menu {
-    font-size: 0.45em;
+    font-size: 1em;
 }
 img.rounded-circle {
     max-width: 7vw;
@@ -67,6 +70,10 @@ div.presentation {
 .presentation span {
     color: aliceblue;
     font-size: 1.8vh;
+}
+.presentation em {
+    color: var(--emcolor);
+    font-size: 1.5vh;
 }
 .side {
     font-size: 3vh;

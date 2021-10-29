@@ -136,10 +136,6 @@
         <source>Search</source>
         <target>Recherche</target>
       </trans-unit>
-      <trans-unit id="8xYdfzw" resname="lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem">
-        <source>lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem</source>
-        <target>french textlorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem</target>
-      </trans-unit>
       <trans-unit id="P9IMfgh" resname="Terms of Sales">
         <source>Terms of Sales</source>
         <target>Conditions générales de vente</target>
@@ -415,6 +411,10 @@
       <trans-unit id=".Nb_py3" resname="Death">
         <source>Death</source>
         <target>décès</target>
+      </trans-unit>
+      <trans-unit id="cKRES0w" resname="If an account matching your email exists, then an email was just sent that contains a link that you can use to reset your password. This link will expire in">
+        <source>If an account matching your email exists, then an email was just sent that contains a link that you can use to reset your password. This link will expire in</source>
+        <target>S'il existe un compte correspondant à votre e-mail, vous recevrez un mail contenant le lien à utiliser pour réinitialiser votre mot de passe. Ce lien expirera dans</target>
       </trans-unit>
     </body>
   </file>
