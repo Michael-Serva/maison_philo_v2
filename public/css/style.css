@@ -144,4 +144,5 @@ h1.connexion {
     color: #d3c37b;
     font-size: 1.5vh;
     padding-bottom: 30px;
+    min-height: 20%;
 }

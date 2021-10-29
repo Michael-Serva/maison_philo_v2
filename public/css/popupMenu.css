@@ -1,5 +1,5 @@
 
-ul, ul li {
+html, body, ul, ul li {
   margin: 0;
   padding: 0;
 }
@@ -20,14 +20,13 @@ ul, ul li {
   color: #fff;
   line-height: 48px;
   border-radius: 100%;
-  border: 1px solid #f95759;
-  background-color: #f95759;
+  background-color: #043106;
   cursor: pointer;
   position: absolute;
-  top: 50%;
+  top: 25%;
   transform: translateY(-50%);
-  left: 0;
-  right: 0;
+/*   left: 0;
+  right: 0; */
   margin: 0 auto;
   -webkit-box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.25);
   -moz-box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.25);
