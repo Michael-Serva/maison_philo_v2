@@ -38,8 +38,8 @@ class ProductRepository extends ServiceEntityRepository
     public function findWheelchair($value)
     {
         return $this->createQueryBuilder('p')
-            ->join('p.category', "c")
-            ->andWhere("c.title ='chaise roulante'")
+           /*  ->join('p.category', "c")
+            ->andWhere("c.title ='chaise roulante'") */
             ->setMaxResults($value)
             ->getQuery()
             ->getResult();

@@ -36,7 +36,7 @@ class ProductCustomerController extends AbstractController
     public function show_wheelchair(ProductRepository $productRepository): array
     {
         return [
-            'products' => $productRepository->findWheelchair(10)
+            'products' => $productRepository->findWheelchair(25)
         ];
     }
 }
