@@ -28,6 +28,7 @@ class Category
      * @ORM\OneToMany(targetEntity=Product::class, mappedBy="category")
      */
     private $category_id;
+    private $category_title;
 
     public function __construct()
     {
@@ -65,6 +66,24 @@ class Category
         if (!$this->category_id->contains($category_id)) {
             $this->category_id[] = $category_id;
             $category_id->setCategory($this);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Product[]
+     */
+    public function getcategory_title(): Collection
+    {
+        return $this->category_title;
+    }
+
+    public function addcategory_title(Product $category_title): self
+    {
+        if (!$this->category_title->contains($category_title)) {
+            $this->category_title[] = $category_title;
+            $category_title->setCategory($this);
         }
 
         return $this;

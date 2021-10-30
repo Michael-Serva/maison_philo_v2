@@ -42,6 +42,9 @@ ul.dropdown-menu {
 img.rounded-circle {
     max-width: 7vw;
 }
+img.user-picture{
+    max-width: 10vh;
+}
 /* Cacher / afficher le mot de passe */
 .field-icon {
     float: right;

@@ -4,10 +4,14 @@
 {% endblock %}
 {% block body %}
     <h1>{% trans %}Utilisateur{% endtrans %}</h1>
-    <div class="container-fluid  table-responsive">
+   
+        <img class="rounded-circle img-fluid user-picture" src="{{ user.picture }}" alt="picture users"/>
+  
 
-        <table class="table col">
-            <tbody>
+    {% embed "component/molecules/tableDesign.html.twig" %}
+        {% block table_content %}
+
+            <tbody class="text-start">
                 <tr>
                     <th>Id</th>
                     <td>{{ user.id }}</td>
@@ -32,21 +36,15 @@
                     <th>Roles</th>
                     <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
                 </tr>
-               {#  <tr>
-                    <th>{% trans %}IsVerified{% endtrans %}</th>
-                    <td>{{ user.isVerified ? 'Yes' : 'No' }}</td>
-                </tr> #}
                 <tr>
                     <th>Pseudo</th>
                     <td>{{ user.pseudo }}</td>
                 </tr>
             </tbody>
-        </table>
-        <div class="user-picture">
-            <img class="rounded-circle img-fluid" src="{{ user.picture }}" alt="picture users"/>
-        </div>
-    </div>
-    <div></div>
+
+
+        {% endblock %}
+    {% endembed %}
     <a class="btn btn-outline-primary" href="{{ path('app_admin_index') }}">{% trans %}Back to the list{% endtrans %}</a>
     <div class="mt-2">{{ include('admin/_delete_form.html.twig') }}</div>
 {% endblock %}

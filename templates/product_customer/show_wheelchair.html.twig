@@ -1,0 +1,27 @@
+{% extends 'product_customer/layout.html.twig' %}
+{% block title %}
+    {% trans %}Product main page |{% endtrans %}{{ parent() }}
+{% endblock %}
+{% block body %}
+    <div class="row">
+        {% for product in products %}
+            <div class="col-lg-2 mb-2 mt-5">
+                <div class="card">
+                    <a href="{{path('app_productcustomer_show_wheelchair')}}">
+                        <img src="{# {{asset('images/imagesUpload/' ~ product.image)}} #}{{product.image}}" alt="Doggo" class="first-image">
+                    </a>
+                    <div class="card-body">
+                        <a href="#" onclick="addCart()">
+                            <center>{% trans %}access{% endtrans %}</center>
+                        </a>
+                        <hr>
+                        <center>
+                            <h5 class="card-title">{{product.title}}</h5>
+                            <h5 class="text-color-maisonphilo fw-bold">{{product.price|format_currency('CFA')}}</h5>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

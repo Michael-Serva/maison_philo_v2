@@ -66,4 +66,3 @@ modalConfirm(function (confirm) {
 
     }
 });
-

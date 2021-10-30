@@ -2,14 +2,14 @@
 
 {% block title %}Product
 {% endblock %}
-
 {% block body %}
-    {% include "component/molecules/tableDesign.html.twig" %}
-    {% block table_content %}
-        <h1>Product</h1>
-
-        <table class="table">
-            <tbody>
+    {% embed "component/molecules/tableDesign.html.twig" %}
+        {% block table_content %}
+            <a href="{{ path('app_product_index') }}">
+                <i class="fas fa-long-arrow-alt-left text-color-maisonphilo fs-1"></i>
+            </a>
+            <h1>{% trans %}Product{% endtrans %}</h1>
+            <tbody class="text-start">
                 <tr>
                     <th>Id</th>
                     <td>{{ product.id }}</td>
@@ -32,13 +32,16 @@
                 </tr>
                 <tr>
                     <th>Image</th>
-                    <td>{{ product.image }}</td>
+                    <td><img src="{{asset('images/imagesUpload/' ~ product.image)}}" class="rounded-circle w-50" alt="Image d'une chaise roulante"></td>
                 </tr>
             </tbody>
-        </tr>
-    </tbody>
-</table>
+        {% endblock %}
+    {% endembed %}
+    <div class="justify-content-center">
+        <a href="{{ path('app_product_edit', {'id': product.id}) }}" class="fs-1">
+            <i class="fas fa-edit text-warning"></i>
+        </a>
+        {{ include('product/_delete_form.html.twig') }}
+    </div>
 
-<a href="{{ path('app_product_index') }}">back to list</a>
-
-<a href="{{ path('app_product_edit', {'id': product.id}) }}">edit</a>{% endblock %}{{ include('product/_delete_form.html.twig') }}{% endblock %}
+{% endblock %}
