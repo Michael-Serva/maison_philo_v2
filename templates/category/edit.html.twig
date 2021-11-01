@@ -1,9 +1,15 @@
-{% extends 'base.html.twig' %}
+{% extends 'category/layout.html.twig' %}
 {% set label = 'save' %}
 {% block title %}
-	{% trans %}Edit Category{% endtrans %}
+    {% trans %}Edit Category{% endtrans %}
 {% endblock %}
 {% block body %}
-	<h1>{% trans %}Edit Category{% endtrans %}</h1> {{ include('category/_form.html.twig', {'button_label': label|trans}) }}
-	<a href="{{ path('app_category_index') }}">{% trans %}back to list{% endtrans %}</a> {{ include('category/_delete_form.html.twig') }}
+    {% embed "component/molecules/formDesign.html.twig" %}
+        {% block form_content %}
+            <h1>{% trans %}Edit Category{% endtrans %}</h1>
+            {{ include('category/_form.html.twig', {'button_label': label|trans}) }}
+            <a href="{{ path('app_category_index') }}" class="btn btn-outline-primary">{% trans %}back to list{% endtrans %}</a>
+            {{ include('category/_delete_form.html.twig') }}
+        {% endblock %}
+    {% endembed %}
 {% endblock %}

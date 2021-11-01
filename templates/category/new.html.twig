@@ -1,8 +1,13 @@
-{% extends 'base.html.twig' %}
+{% extends 'category/layout.html.twig' %}
 {% block title %}
-	{% trans %}New Category{% endtrans %}
+    {% trans %}New Category{% endtrans %}
 {% endblock %}
 {% block body %}
-	<h1>{% trans %}Create new Category{% endtrans %}</h1> {{ include('category/_form.html.twig') }}
-	<a href="{{ path('app_category_index') }}">{% trans %}back to list{% endtrans %}</a>
+    {% embed "component/molecules/formDesign.html.twig" %}
+        {% block form_content %}
+            <h1>{% trans %}Create new Category{% endtrans %}</h1>
+            {{ include('category/_form.html.twig') }}
+            <a href="{{ path('app_category_index') }}">{% trans %}back to list{% endtrans %}</a>
+        {% endblock %}
+    {% endembed %}
 {% endblock %}

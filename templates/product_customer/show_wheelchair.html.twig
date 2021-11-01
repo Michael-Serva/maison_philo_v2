@@ -3,9 +3,12 @@
     {% trans %}Product main page |{% endtrans %}{{ parent() }}
 {% endblock %}
 {% block body %}
-    <div class="row">
+    <div class="d-none">
+        <span id="add-cart">{% trans %}Ce produit a bien été ajouté au panier{% endtrans %}</span>
+    </div>
+    <div class="row justify-content-center">
         {% for product in products %}
-            <div class="col-lg-2 mb-2 mt-5">
+            <div class="col-xlg-2 col-lg-2 col-md-4 col-sm-6 col-6 mb-2 mt-5 h-25">
                 <div class="card">
                     <a href="{{path('app_productcustomer_show_wheelchair')}}">
                         <img src="{# {{asset('images/imagesUpload/' ~ product.image)}} #}{{product.image}}" alt="Doggo" class="first-image">
@@ -20,6 +23,9 @@
                             <h5 class="text-color-maisonphilo fw-bold">{{product.price|format_currency('CFA')}}</h5>
                         </center>
                     </div>
+                    <button class="button-philo add-cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        {% trans %}Add to cart{% endtrans %}</button>
                 </div>
             </div>
         {% endfor %}

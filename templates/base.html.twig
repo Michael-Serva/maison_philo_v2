@@ -20,7 +20,9 @@
         {% include "component/organisms/navbarComponent.html.twig" with {
             routePath : 'app_dashboard_home',
         } %}
-        <div class="container-fluid main"> {% block body %}{% endblock %}
+        <div class="container-fluid main"> 
+            {% block header %}{% endblock %}
+            {% block body %}{% endblock %}
             {% block scripts %}
                 {% include "component/atoms/script.html.twig" %}
             {% endblock %}

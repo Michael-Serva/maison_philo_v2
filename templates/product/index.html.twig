@@ -1,10 +1,10 @@
-{% extends 'base.html.twig' %}
-
+{% extends 'product/layout.html.twig' %}
 {% block title %}
     {% trans %}Product index{% endtrans %}
 {% endblock %}
 {% block body %}
     <h1>{% trans %}Product index{% endtrans %}</h1>
+    <a href="{{ path('app_product_new') }}" class="btn btn-outline-warning mb-3">{% trans %}Create new{% endtrans %}</a>
     {% embed "component/molecules/tableDesign.html.twig" %}
         {% block table_content %}
             <thead>
@@ -13,7 +13,8 @@
                     <th>{% trans %}Price{% endtrans %}</th>
                     <th>{% trans %}Stock{% endtrans %}</th>
                     <th>{% trans %}Description{% endtrans %}</th>
-                    <th>{% trans %}Category{% endtrans %} </th>
+                    <th>{% trans %}Category{% endtrans %}
+                    </th>
                     <th>{% trans %}Image{% endtrans %}</th>
                     <th>{% trans %}actions{% endtrans %}</th>
                 </tr>
@@ -32,8 +33,12 @@
                             </a>
                         </td>
                         <td>
-                            <a href="{{ path('app_product_show', {'id': product.id}) }}"><i class="fas fa-eye text-primary"></i></a>
-                            <a href="{{ path('app_product_edit', {'id': product.id}) }}"><i class="fas fa-edit text-warning ms-2"></i></a>
+                            <a href="{{ path('app_product_show', {'id': product.id}) }}">
+                                <i class="fas fa-eye text-primary"></i>
+                            </a>
+                            <a href="{{ path('app_product_edit', {'id': product.id}) }}">
+                                <i class="fas fa-edit text-warning ms-2"></i>
+                            </a>
                         </td>
                     </tr>
                 {% else %}
@@ -44,5 +49,4 @@
             </tbody>
         {% endblock %}
     {% endembed %}
-    <a href="{{ path('app_product_new') }}">{% trans %}Create new{% endtrans %}</a>
 {% endblock %}

@@ -1,16 +1,9 @@
 {% extends 'base.html.twig' %}
-{% block stylesheet %}
-    <link rel="stylesheet" href="{{asset('css/popupMenu.css')}} ">
-    {{ parent() }}
-{% endblock %}
 {% block header %}
     <span class="btn">
         <i class="fas fa-arrow-circle-left fs-3 text-color-maisonphilo p-3" onclick="window.history.back()">
             {% trans %}Go Back{% endtrans %}
         </i>
     </span>
-{% endblock %}
-{% block scripts %}
-    {{ parent() }}
-    <script src="{{asset('js/popupMenu.js')}}"></script>
+
 {% endblock %}

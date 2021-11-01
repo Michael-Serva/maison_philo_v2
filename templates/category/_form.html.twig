@@ -1,2 +1,6 @@
-{{ form_start(form) }} {{ form_widget(form) }}
-<button class="btn">{{ button_label|default('Save')|trans }}</button> {{ form_end(form) }}
+{{ form_start(form) }}
+{{ form_widget(form) }}
+<button class="btn button-philo mb-3 mt-3">
+    {{ buttonLabel|default('Save')|trans }}
+</button>
+{{ form_end(form) }}

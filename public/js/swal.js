@@ -1,5 +1,3 @@
-const { format } = require("core-js/core/date");
-
 /* $(function () {
     $('form.confirm').click(function (e) {
         e.preventDefault();
@@ -42,6 +40,18 @@ function swalConfirm() {
     });
     return false;
 }
+$(document).ready(function(){
+$(".add-cart").click(function(){
+    swal({
+        title: $("#add-cart").text() ,
+        text: "",
+        icon: "success",
+        timer: 1000
+    });
+})
+
+})
+
 
 
 

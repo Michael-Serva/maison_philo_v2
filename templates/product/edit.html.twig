@@ -1,11 +1,11 @@
-{% extends 'base.html.twig' %}
+{% extends 'product/layout.html.twig' %}
 {% block title %} {% trans %}Edit Product{% endtrans %}{% endblock %}
 {% block body %}
     {% embed "component/molecules/formDesign.html.twig" %}
         {% block form_content %}
             <h1>{% trans %}Edit Product{% endtrans %}</h1>
             {{ include('product/_form.html.twig', {'button_label': 'Update'}) }}
-            <a href="{{ path('app_product_index') }}">{% trans %}back to list{% endtrans %} </a>
+            <a href="{{ path('app_product_index') }}" class="btn btn-outline-prmimary">{% trans %}back to list{% endtrans %} </a>
             {{ include('product/_delete_form.html.twig') }}
         {% endblock %}
     {% endembed %}
