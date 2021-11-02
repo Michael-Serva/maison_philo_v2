@@ -7,11 +7,11 @@
             <div class="alert alert-danger text-center">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
         {% endif %}
 
-{% for message in app.flashes('login') %}
-    <div class="alert alert_success">
-        {{ message }}
-    </div>
-{% endfor %}
+        {% for message in app.flashes('login') %}
+            <div class="alert alert_success">
+                {{ message }}
+            </div>
+        {% endfor %}
 
 
         {% embed "component/molecules/formDesign.html.twig" %}
@@ -24,10 +24,17 @@
                 <input
                 type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
                 {# Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.See https://symfony.com/doc/current/security/remember_me.html<div class="checkbox mb-3"><label><input type="checkbox" name="_remember_me"> Remember me</label></div> #}
-                <input type="submit" value="Connexion" class="button_philo btn btn-success col-md-12 mt-3 mb-3">
-                <a href="{{path('app_forgot_password_request')}}">
-                    {% trans %}Forgot your password{% endtrans %}
-                </a>
+                <input type="submit" value="Connexion" class="button-philo col-md-12 mt-3 mb-3">
+                <div class="text-danger">
+                    <a href="{{path('app_forgot_password_request')}} text-danger">
+                        {% trans %}Forgot your password{% endtrans %}
+                    </a>
+                </div>
+                <span class="d-block text-end mt-3">
+                    <a href="{{path('app_security_register')}} ">
+                        {% trans %}Create a account{% endtrans %}
+                    </a>
+                </span>
             {% endblock %}
         {% endembed %}
     </form>

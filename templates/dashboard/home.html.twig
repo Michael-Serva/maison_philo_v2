@@ -2,19 +2,23 @@
 {% block title %}
     {% trans %}Home |{% endtrans %}{{ parent() }}
 {% endblock %}
+{% block header %}
+    <div class="row">
+        <h1 class="col text-no-break">
+            {% trans %}Welcome to{% endtrans %}
+            {{webSiteName}}
+            {% if app.user.pseudo is defined %}
+                "{{app.user.pseudo}}"
+            {% endif %}
+        </h1>
+    </div>
+{% endblock %}
 {% block body %}
-    <h1>
-        {% trans %}Welcome to{% endtrans %}
-        {{webSiteName}}
-        {% if app.user.pseudo is defined %}
-            "{{app.user.pseudo}}"
-        {% endif %}
-    </h1>
     {#     {% for message in app.flashes('dashboard') %}
-            {% include "component/molecules/alertDesign.html.twig" with {
-                congrats : 'Well Done! '
-            } %}
-        {% endfor %} #}
+                            {% include "component/molecules/alertDesign.html.twig" with {
+                                congrats : 'Well Done! '
+                            } %}
+                        {% endfor %} #}
     <div class="row mb-1 justify-content-center">
 
         <span class="side col-lg-12 text-center mb-2">{% trans %}The Aging : a coming challenge for Africa{% endtrans %}</span>

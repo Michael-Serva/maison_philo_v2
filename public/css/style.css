@@ -54,10 +54,6 @@ img.user-picture{
     z-index: 2;
 }
 
-.container {
-    padding-top: 50px;
-    margin: auto;
-}
 div.presentation {
     background-image: url("../images/history-bg.png");
 }

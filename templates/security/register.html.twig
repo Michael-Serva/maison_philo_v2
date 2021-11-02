@@ -12,7 +12,11 @@
             {{ form_row(registrationForm.password)}}
             <input type="submit" value="Inscription" class="button_philo btn btn-success col-md-12 mt-3 mb-3">
             {{ form_end(registrationForm) }}
-            <a class="mt-3" href="">{% trans %}You already have an account, click here!{% endtrans %}</a>
+            <div>
+                <a class="mt-3" href="{{path('app_security_login')}} ">
+                    {% trans %}You already have an account, click here!{% endtrans %}
+                </a>
+            </div>
         {% endblock %}
     {% endembed %}
 {% endblock %}

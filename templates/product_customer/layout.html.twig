@@ -7,4 +7,6 @@
     <script src="{{ asset('js/product.js') }}"></script>
     {{ parent() }}
 {% endblock %}
-
+{% block header %}
+    {% include "component/atoms/history_back.html.twig" %}
+{% endblock %}

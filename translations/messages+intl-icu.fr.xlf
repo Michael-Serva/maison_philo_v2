@@ -416,6 +416,30 @@
         <source>If an account matching your email exists, then an email was just sent that contains a link that you can use to reset your password. This link will expire in</source>
         <target>S'il existe un compte correspondant à votre e-mail, vous recevrez un mail contenant le lien à utiliser pour réinitialiser votre mot de passe. Ce lien expirera dans</target>
       </trans-unit>
+      <trans-unit id="BERQBOo" resname="Create new category">
+        <source>Create new category</source>
+        <target>Creer une nouvelle catégorie</target>
+      </trans-unit>
+      <trans-unit id="_574lBd" resname="Product">
+        <source>Product</source>
+        <target>Produit</target>
+      </trans-unit>
+      <trans-unit id="KEt.3F1" resname="Edit the product">
+        <source>Edit the product</source>
+        <target>Modifier le produit</target>
+      </trans-unit>
+      <trans-unit id="0eFlJ9x" resname="Ce produit a bien été ajouté au panier">
+        <source>Ce produit a bien été ajouté au panier</source>
+        <target>Ce produit a bien été ajouté au panier</target>
+      </trans-unit>
+      <trans-unit id="DpQINTx" resname="Add to cart">
+        <source>Add to cart</source>
+        <target>Ajouter au panier</target>
+      </trans-unit>
+      <trans-unit id="yhxw8jt" resname="Create a account">
+        <source>Create a account</source>
+        <target>Créer un compte</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
