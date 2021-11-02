@@ -54,27 +54,6 @@ class DashboardController extends AbstractController
             'datas' => $datas
         ];
     }
-    // /**
-    //  * This method is used to modify the language of the site
-    //  * @Route("/changeLocale/{locale}", name="app_dashboard_changeLocale")
-    //  * @Template
-    //  */
-    // public function changeLocal($locale, Request $request)
-    // {
-    //     dump($request);
-
-    //     /* we store the requested language in the session */
-    //     //$request->getSession()->set('_locale', $locale);
-    //     //dd($_SESSION);
-    //     $request->setDefaultLocale($locale);
-    //     //dd($request);
-
-    //     //dd($request->getDefaultLocale());
-    //     //dd($_SESSION);
-    //     /* We reload the page in the requested language */
-    //     return $this->redirect($request->headers->get('referer'));
-    //     /* We redirect the user to the page where he came from */
-    // }
 
     /**
      * This method is used to modify the language of the site
