@@ -6,14 +6,17 @@
         {% if error %}
             <div class="alert alert-danger text-center">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
         {% endif %}
-
+        {% for flashError in app.flashes('verify_email_error') %}
+            <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+        {% endfor %}
         {% for message in app.flashes('login') %}
             <div class="alert alert_success">
                 {{ message }}
             </div>
         {% endfor %}
-
-
+<pre>
+    {{ dump(app) }}
+</pre>
         {% embed "component/molecules/formDesign.html.twig" %}
             {% block form_content %}
                 <h1 class="fs-2 mb-3 fw-bold">{% trans %}Please login{% endtrans %}</h1>

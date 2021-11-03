@@ -17,7 +17,7 @@ class ResetPasswordRequestFormType extends AbstractType
                 "required" => false,
                 'attr' => [
                     'autocomplete' => 'email',
-                    'class'=> "form-control",
+                    'class' => "form-control",
 
                 ],
                 'constraints' => [
