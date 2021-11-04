@@ -21,25 +21,6 @@ class AppFixtures extends Fixture
     public function load(ObjectManager $manager)
     {
         $faker = Factory::create('fr-Fr');
-
-        $adminRole = new Role();
-        $adminRole->setTitle('ROLE_ADMIN');
-        $manager->persist($adminRole);
-
-        /* creation of an admin user */
-        $adminUser = new User();
-        $adminUser
-            ->setFirstName('Mike')
-            ->setLastName('Serva')
-            ->setEmail('admin@gmail.com')
-            ->setPseudo('admin')
-            ->setPassword($this->encoder->hashPassword($adminUser, '95610b405A!'))
-            ->setPicture('https://randomuser.me/api/portraits/lego/0.jpg')
-            ->setGenre('male')
-            ->addUserRole($adminRole);
-        $manager->persist($adminUser);
-
-
         $users = [];
         $genres = ['male', 'female'];
         for ($i = 1; $i < 30; $i++) {
@@ -47,7 +28,7 @@ class AppFixtures extends Fixture
             $user = new User();
             /* creation of a random genre */
 
-            $password = $this->encoder->hashPassword($user, '95610b405A!');
+            $password = $this->encoder->hashPassword($user, 'hyJKK!p5246');
             //dd($password);
             $genre = $faker->randomElement($genres);
             $pictureId = $faker->numberBetween(1, 99) . '.jpg';

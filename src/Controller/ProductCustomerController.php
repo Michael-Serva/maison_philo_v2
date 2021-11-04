@@ -33,7 +33,7 @@ class ProductCustomerController extends AbstractController
      * @Route("/mobility")
      * @Template
      */
-    public function show_wheelchair(ProductRepository $productRepository): array
+    public function showWheelchair(ProductRepository $productRepository): array
     {
         return [
             'products' => $productRepository->findWheelchair(25)

@@ -26,10 +26,10 @@
                         <td>{{ product.price }}</td>
                         <td>{{ product.stock }}</td>
                         <td>{{ product.description }}</td>
-                        <td></td>
+                        <td>{{product.category.title ?? ''}}</td>
                         <td>
                             <a href="{{ asset('/images/imagesUpload/' ~ product.image) }}" target="blank">
-                                <img src="{{ asset('/images/imagesUpload/' ~ product.image) }}" alt="" class="rounded-circle w-25">
+                                <img src="{{ asset('/images/imagesUpload/' ~ product.image) }}" alt="" class="rounded-circle">
                             </a>
                         </td>
                         <td>
@@ -49,4 +49,5 @@
             </tbody>
         {% endblock %}
     {% endembed %}
+    <div class="fs-5">{{ knp_pagination_render(products) }}</div>
 {% endblock %}

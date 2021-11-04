@@ -27,12 +27,12 @@ class Category
     /**
      * @ORM\OneToMany(targetEntity=Product::class, mappedBy="category")
      */
-    private $category_id;
-    private $category_title;
+    private $categoryId;
+    private $categoryTitle;
 
     public function __construct()
     {
-        $this->category_id = new ArrayCollection();
+        $this->categoryId = new ArrayCollection();
     }
 
 
@@ -56,16 +56,16 @@ class Category
     /**
      * @return Collection|Product[]
      */
-    public function getcategory_id(): Collection
+    public function getcategoryId(): Collection
     {
-        return $this->category_id;
+        return $this->categoryId;
     }
 
-    public function addcategory_id(Product $category_id): self
+    public function addcategoryId(Product $categoryId): self
     {
-        if (!$this->category_id->contains($category_id)) {
-            $this->category_id[] = $category_id;
-            $category_id->setCategory($this);
+        if (!$this->categoryId->contains($categoryId)) {
+            $this->categoryId[] = $categoryId;
+            $categoryId->setCategory($this);
         }
 
         return $this;
@@ -74,27 +74,27 @@ class Category
     /**
      * @return Collection|Product[]
      */
-    public function getcategory_title(): Collection
+    public function getcategoryTitle(): Collection
     {
-        return $this->category_title;
+        return $this->categoryTitle;
     }
 
-    public function addcategory_title(Product $category_title): self
+    public function addcategoryTitle(Product $categoryTitle): self
     {
-        if (!$this->category_title->contains($category_title)) {
-            $this->category_title[] = $category_title;
-            $category_title->setCategory($this);
+        if (!$this->categoryTitle->contains($categoryTitle)) {
+            $this->categoryTitle[] = $categoryTitle;
+            $categoryTitle->setCategory($this);
         }
 
         return $this;
     }
 
-    public function removecategory_id(Product $category_id): self
+    public function removecategoryId(Product $categoryId): self
     {
-        if ($this->category_id->removeElement($category_id)) {
+        if ($this->categoryId->removeElement($categoryId)) {
             // set the owning side to null (unless already changed)
-            if ($category_id->getCategory() === $this) {
-                $category_id->setCategory(null);
+            if ($categoryId->getCategory() === $this) {
+                $categoryId->setCategory(null);
             }
         }
 

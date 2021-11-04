@@ -4,10 +4,7 @@ namespace App\Form;
 
 use App\Entity\Product;
 use App\Entity\Category;
-use App\Form\CategoryType;
-use Doctrine\DBAL\Types\FloatType;
 use Doctrine\ORM\EntityRepository;
-use App\Repository\CategoryRepository;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
@@ -16,40 +13,50 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\MoneyType;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
-use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+
 
 class ProductType extends AbstractType
 {
-    public function buildForm(FormBuilderInterface $builder, array $options)
+    public function buildForm(FormBuilderInterface $builder, array $option)
     {
+        function __construct(Product $product)
+        {
+        }
+
         $builder
 
             ->add("title", TextType::class, [
                 "required" => false,
-                "label" => false,
+                "label" => "Title",
                 "attr" => [
-                    "placeholder" => "Le nom du produit",
+                    "placeholder" => "Product name",
                     "class" => "form-control mb-3"
                 ],
+                "row_attr" => [
+                    "class" => "form-floating"
+                ]
             ])
-            ->add("price", NumberType::class, [
+            ->add("price", MoneyType::class, [
+                "currency" => "CFA",
                 "required" => false,
                 "label" => false,
                 "attr" => [
-                    "placeholder" => "Prix",
-                    "class" => "form-control mb-3"
+                    "class" => "form-control"
                 ],
+                "row_attr" => [
+                    "class" => "form-floating mb-3"
+                ]
             ])
-
             ->add("stock", IntegerType::class, [
                 "required" => false,
                 "label" => false,
                 "attr" => [
-                    "placeholder" => "Stock disponible",
-                    "class" => "form-control mb-3",
+                    /* "placeholder" => "Stock disponible", */
+                    "class" => "form-control",
+                ],
+                "row_attr" => [
+                    '"class' => "form-floating mb-3"
                 ]
             ])
             ->add("category", EntityType::class, [
@@ -57,30 +64,38 @@ class ProductType extends AbstractType
                 "class" => Category::class,
                 "choice_label" => "title",
                 "multiple" => false,
-                "label" => false,
-                "preferred_choices" => "title",
+                "label" => "Catégorie",
                 "attr" => [
-                    "class" => "form-control mb-3",
+                    "class" => "form-control",
+                ],
+                "row_attr" => [
+                    "class" => "form-floating mb-3"
                 ],
                 "query_builder" => function (EntityRepository $er) {
                     return $er->createQueryBuilder("c")
-                    ->orderBy("c.title", "DESC");
+                        ->orderBy("c.title", "DESC");
                 },
-                ])
-                ->add("description", TextType::class, [
-                    "label" => false,
+            ])
+            ->add("description", TextType::class, [
+                "label" => "Description",
+                "required" => false,
+                "attr" => [
+                    "class" => "mb-3 form-control",
+                    "placeholder" => "Description du produit",  "size" => 4,
+                ],
+                "row_attr" => [
+                    "class" => "form-floating"
+                ]
+            ])
+            ->add(
+                "image",
+                FileType::class,
+                [
                     "required" => false,
-                    "attr" => [
-                        "class" => "mb-3 form-control",
-                        "placeholder" => "Description du produit",  "size" => 4,
-                    ]
-                ])
-                ->add(
-                    "image",
-                    FileType::class,
-                    array("data_class" => null),
-                    [
-                    "required" => false,
+                    "data_class" => null,
+                    "empty_data" => null
+                ],
+                [
                     "constraints" => [
                         new File([
                             "mimeTypes" => [
@@ -91,14 +106,14 @@ class ProductType extends AbstractType
                                 "application/pdf",
                                 "application/x-pdf",
                             ],
-                            "mimeTypesMessage" => "Extensions autorisées : PNG - JPG ",
+                            "mimeTypesMessage" => "Extensions autorisées : PNG - JPG - JPEG - PDF ",
                         ]),
                         "attr" => [
                             "class" => "mb-3",
                         ],
                     ]
-                    ]
-                );
+                ]
+            );
     }
     public function configureOptions(OptionsResolver $resolver)
     {

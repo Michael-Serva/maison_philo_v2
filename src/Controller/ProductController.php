@@ -2,9 +2,13 @@
 
 namespace App\Controller;
 
+use App\Entity\Category;
 use App\Entity\Product;
 use App\Form\ProductType;
+use App\Repository\CategoryRepository;
 use App\Repository\ProductRepository;
+use Doctrine\ORM\EntityManagerInterface;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -22,10 +26,23 @@ class ProductController extends AbstractController
      * @Route("/index", name="app_product_index", methods={"GET"})
      * @Template
      */
-    public function index(ProductRepository $productRepository): Response
-    {
+    public function index(
+        ProductRepository $productRepository,
+        CategoryRepository $categoryRepository,
+        PaginatorInterface $paginator,
+        Request $request
+    ): Response {
+        $datas = $productRepository->findAll();
+        $products = $paginator->paginate(
+            $datas,
+            $request->query->getInt('page', 1),
+            5
+        );
+        $category = $categoryRepository->findAll();
         return $this->render('product/index.html.twig', [
-            'products' => $productRepository->findAll(),
+            'products' => $products,
+            'category' => $category
+
         ]);
     }
 
@@ -94,16 +111,51 @@ class ProductController extends AbstractController
     /**
      * @Route("/{id}/edit", name="app_product_edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, Product $product): Response
+    public function edit(Request $request, Product $product, SluggerInterface $slugger, EntityManagerInterface $entityManager): Response
     {
         $form = $this->createForm(ProductType::class, $product);
         $form->handleRequest($request);
+        //dd($product->getImage());
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
+            //dd(get_class_methods($form));
+            $imageFile = $form->get('image')->getData();
 
+            if ($imageFile) { // si image upload
+                $originalFilename = pathinfo($imageFile->getClientOriginalName(), PATHINFO_FILENAME);
+                //this is needed to safely include the file name as part of the URL
+                $safeFilename = $slugger->slug($originalFilename);
+                $newFilename = date("YmdHis") . $safeFilename . "-" . uniqid() . '.' . $imageFile->guessExtension();
+                // Move the file to the directory where brochures are stored
+                try {
+                    $imageFile->move(
+                        $this->getParameter('image_product'),
+                        $newFilename
+                    );
+                } catch (FileException $e) {
+                    // ... handle exception if something happens during file upload
+                }
+
+                // updates the 'brochureFilename' property to store the PDF file name
+                // instead of its contents
+                $product->setImage($newFilename);
+
+                if ($request->request->get('imageQuestion') == "oui") {
+                    dd($newFilename);
+                    unlink($this->getParameter('image_product') . '/' . $product->getImage());
+                    $product->setImage(null);
+                }
+            }
             return $this->redirectToRoute('app_product_index', [], Response::HTTP_SEE_OTHER);
+        } else {
+            $imageFile = $product->getImage();
+            $product->setImage($imageFile);
         }
+
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->persist($product);
+        $entityManager->flush();
+
 
         return $this->renderForm('product/edit.html.twig', [
             'product' => $product,

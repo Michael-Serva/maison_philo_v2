@@ -7,7 +7,7 @@
         {% block form_content %}
             <h1>{% trans %}Create new Category{% endtrans %}</h1>
             {{ include('category/_form.html.twig') }}
-            <a href="{{ path('app_category_index') }}">{% trans %}back to list{% endtrans %}</a>
+            <a href="{{ path('app_category_index') }}" class="btn btn-outline-primary" >{% trans %}back to list{% endtrans %}</a>
         {% endblock %}
     {% endembed %}
 {% endblock %}
