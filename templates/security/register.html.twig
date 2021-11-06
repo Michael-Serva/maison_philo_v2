@@ -6,9 +6,7 @@
     {% for flashError in app.flashes('verify_email_error') %}
         <div class="alert alert-danger" role="alert">{{ flashError }}</div>
     {% endfor %}
-<pre>
-    {{ dump(app) }}
-</pre>
+   
     {% embed "component/molecules/formDesign.html.twig" %}
         {% block form_content %}
             <h1 class="inscription ">{% trans %}Register{% endtrans %}</h1>

@@ -13,8 +13,6 @@ class ProductFixtures extends Fixture
 
     public function load(ObjectManager $manager)
     {
-
-
         $faker = Factory::create('fr-Fr');
         for ($i = 1; $i < 30; $i++) {
             # code...

@@ -85,6 +85,10 @@ button.close {
     background-color: #ffdbdb;
     border: 1px solid #f95668
 }
+.fade_error {
+    background-color: #ffdbdb;
+    border: 1px solid #f95668
+}
 
 .fade_error .close {
     color: #f95668

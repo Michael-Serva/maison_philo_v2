@@ -2,17 +2,18 @@
 
 namespace App\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
+use DateTimeImmutable;
 use Symfony\Component\Uid\Uuid;
 use Doctrine\ORM\Mapping as ORM;
-use App\Repository\UserRepository;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Validator\Constraints\Regex;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
- * @ORM\Entity(repositoryClass=UserRepository::class)
+ * @ORM\Entity(repositoryClass=App\Repository\UserRepository::class)
  * @UniqueEntity(
  * fields={"email"},
  * message="Cet email est déjà associé à un compte"
@@ -33,8 +34,9 @@ class User implements UserInterface
     public function __construct()
     {
         $this->id = Uuid::v4();
-        //$this->roles = new ArrayCollection();
         $this->userRoles = new ArrayCollection();
+        $this->createdAt = new DateTimeImmutable();
+        $this->isVerified = false;
     }
 
     public function getId(): Uuid
@@ -43,8 +45,8 @@ class User implements UserInterface
     }
 
     /**
-    * @ORM\Column(type="string", length=255)
-    */
+     * @ORM\Column(type="string", length=255)
+     */
     private $email;
 
     /**
@@ -64,10 +66,7 @@ class User implements UserInterface
 
     /* -------
        @Assert\NotBlank(message="Veuillez saisir un mot de passe")
-       @Assert\EqualTo(
-       propertyPath="confirmPassword",
-       message="Les mots de passe ne sont pas identiques"
-       )
+    
     */
 
     /**
@@ -99,6 +98,11 @@ class User implements UserInterface
      * @ORM\ManyToMany(targetEntity=Role::class, mappedBy="userRoles")
      */
     private $userRoles;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $createdAt;
 
     public function getEmail(): ?string
     {
@@ -176,7 +180,7 @@ class User implements UserInterface
 
     public function getUsername(): ?string
     {
-        return(string) $this->email;
+        return (string) $this->email;
     }
 
     public function getUserIdentifier()
@@ -230,8 +234,8 @@ class User implements UserInterface
     }
 
     /**
-    * @return Collection|Role[]
-    */
+     * @return Collection|Role[]
+     */
     public function getUserRoles(): Collection
     {
         return $this->userRoles;
@@ -252,6 +256,18 @@ class User implements UserInterface
         if ($this->userRoles->removeElement($userRole)) {
             $userRole->removeUserRole($this);
         }
+
+        return $this;
+    }
+
+    public function getCreatedAt(): ?\DateTimeInterface
+    {
+        return $this->createdAt;
+    }
+
+    public function setCreatedAt(\DateTimeInterface $createdAt): self
+    {
+        $this->createdAt = $createdAt;
 
         return $this;
     }

@@ -4,19 +4,30 @@
 {% block body %}
     <form method="post">
         {% if error %}
-            <div class="alert alert-danger text-center">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+            {% include "component/molecules/alertDesign.html.twig" with {
+                message : error.messageKey|trans(error.messageData, 'security'),
+                alert : "danger"
+            } %}
         {% endif %}
-        {% for flashError in app.flashes('verify_email_error') %}
-            <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+   
+        {% for flashError in app.flashes('verify-email-error') %}
+            {% include "component/molecules/alertDesign.html.twig" with {
+                message : flashError,
+                alert : "error"
+            } %}
         {% endfor %}
         {% for message in app.flashes('login') %}
-            <div class="alert alert_success">
-                {{ message }}
-            </div>
+            {% include "component/molecules/alertDesign.html.twig" with {
+                message : message,
+                alert : "success"
+            } %}
         {% endfor %}
-<pre>
-    {{ dump(app) }}
-</pre>
+        {% for message in app.flashes('confirmation-mail') %}
+            {% include "component/molecules/alertDesign.html.twig" with {
+                message : message,
+                alert : "warning"
+            } %}
+        {% endfor %}
         {% embed "component/molecules/formDesign.html.twig" %}
             {% block form_content %}
                 <h1 class="fs-2 mb-3 fw-bold">{% trans %}Please login{% endtrans %}</h1>

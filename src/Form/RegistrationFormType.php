@@ -110,8 +110,13 @@ class RegistrationFormType extends AbstractType
                     new NotBlank([
                         "message" => "Veuillez saisir un mot de passe",
                     ]),
+                    new Regex([
+                        "pattern" => "/^(?=.*[A-Z]).{5,}$/",
+                        "message" => "Votre mot de passe doit contenir au moins 5 caractères et une lettre majuscule"
+                    ]),
                 ]
-            ]);
+            ],
+        );
     }
 
     public function configureOptions(OptionsResolver $resolver)

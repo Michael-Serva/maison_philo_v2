@@ -14,13 +14,13 @@
     </div>
 {% endblock %}
 {% block body %}
-    {#     {% for message in app.flashes('dashboard') %}
-                            {% include "component/molecules/alertDesign.html.twig" with {
-                                congrats : 'Well Done! '
-                            } %}
-                        {% endfor %} #}
+{% for message in app.flashes('email-verified') %}
+    {% include "component/molecules/alertDesign.html.twig" with {
+                message : message,
+                alert : "success"
+            } %}
+{% endfor %}
     <div class="row mb-1 justify-content-center">
-
         <span class="side col-lg-12 text-center mb-2">{% trans %}The Aging : a coming challenge for Africa{% endtrans %}</span>
         <div class="mb-1 col-12 col-sm-12 col-md-12 col-lg-8 col-xlg-5 text-center">
             <img class="img-fluid" src="{{ asset('images/couple_agees2.jpg') }}" data-aos="fade-down-right" data-aos-duration="2000">
@@ -42,8 +42,6 @@
                 </div>
             {% endfor %}
         </div>
-
     </div>
     {% include "component/atoms/popupMenu.html.twig" %}
-
 {% endblock %}

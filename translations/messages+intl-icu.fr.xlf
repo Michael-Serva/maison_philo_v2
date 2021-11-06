@@ -57,8 +57,7 @@
       <trans-unit id="RZAKJNl" resname="If an account matching your email exists, then an email was just sent that contains a link that you can use to reset your password.&#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;This link will expire in">
         <source>If an account matching your email exists, then an email was just sent that contains a link that you can use to reset your password.
 								This link will expire in</source>
-        <target>__If an account matching your email exists, then an email was just sent that contains a link that you can use to reset your password.
-								This link will expire in</target>
+        <target>S'il existe un compte correspondant à votre e-mail, un e-mail vient d'être envoyé contenant un lien que vous pouvez utiliser pour réinitialiser votre mot de passe. Ce lien expirera dans</target>
       </trans-unit>
       <trans-unit id="Sm_IPf9" resname="Please login">
         <source>Please login</source>
@@ -232,14 +231,6 @@
         <source>Utilisateur</source>
         <target>Utilisateur</target>
       </trans-unit>
-      <trans-unit id="S0NuJIW" resname="Retour à la liste des utilisateurs">
-        <source>Retour à la liste des utilisateurs</source>
-        <target>etour à la liste des utilisateurs</target>
-      </trans-unit>
-      <trans-unit id="BHRymkI" resname="Modification d'un utilisateur">
-        <source>Modification d'un utilisateur</source>
-        <target>Modification d'un utilisateur</target>
-      </trans-unit>
       <trans-unit id="DZO3ehf" resname="Edit Category">
         <source>Edit Category</source>
         <target>Modification des catégories</target>
@@ -295,10 +286,6 @@
       <trans-unit id="BbiNGPw" resname="Edit user">
         <source>Edit user</source>
         <target>Modifier un utilisateur</target>
-      </trans-unit>
-      <trans-unit id="wds64DL" resname="Plan du site">
-        <source>Plan du site</source>
-        <target>Plan du site</target>
       </trans-unit>
       <trans-unit id="yq9oQvd" resname="Edit Product">
         <source>Edit Product</source>
@@ -428,10 +415,6 @@
         <source>Edit the product</source>
         <target>Modifier le produit</target>
       </trans-unit>
-      <trans-unit id="0eFlJ9x" resname="Ce produit a bien été ajouté au panier">
-        <source>Ce produit a bien été ajouté au panier</source>
-        <target>Ce produit a bien été ajouté au panier</target>
-      </trans-unit>
       <trans-unit id="DpQINTx" resname="Add to cart">
         <source>Add to cart</source>
         <target>Ajouter au panier</target>
@@ -439,6 +422,22 @@
       <trans-unit id="yhxw8jt" resname="Create a account">
         <source>Create a account</source>
         <target>Créer un compte</target>
+      </trans-unit>
+      <trans-unit id="GF_NsyJ" resname="Hello">
+        <source>Hello</source>
+        <target>Bonjour</target>
+      </trans-unit>
+      <trans-unit id="vSTb9IR" resname="Hi! Please confirm your email!">
+        <source>Hi! Please confirm your email!</source>
+        <target>Bonjour! Veuillez confirmer votre adresse Email</target>
+      </trans-unit>
+      <trans-unit id="Ry3Xo6w" resname="Please confirm your email address by clicking the following link:">
+        <source>Please confirm your email address by clicking the following link:</source>
+        <target>Veuillez confirmer votre adresse e-mail en cliquant sur le lien suivant :</target>
+      </trans-unit>
+      <trans-unit id="ITaQX9q" resname="Confirm my Email">
+        <source>Confirm my Email</source>
+        <target>Confirmer mon mail</target>
       </trans-unit>
     </body>
   </file>

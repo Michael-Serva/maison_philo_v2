@@ -1,9 +1,9 @@
 <div classs="container p-5 text-center text-color-maisonphilo">
     <div>
         <button aria-hidden="true" data-dismiss="alert" class="close" type="button">
-            <div class="alert fade_success .fade" role="alert">
+            <div class="alert fade_{{alert}} .fade" role="alert">
                 <h4 class="alert-heading">
-                    {{congrats}}
+                <span>{% trans %}Hello {% endtrans %}{{user.pseudo}} </span>          
                     <span>{{message|trans}}</span>
                 </h4>
             </div>

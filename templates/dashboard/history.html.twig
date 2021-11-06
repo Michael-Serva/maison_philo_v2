@@ -4,11 +4,13 @@
 {% endblock %}
 {% block body %}
     <div class="row">
-        <h1 class="text-h2-color">Notre histoire</h1>
+        <h1 class="text-h2-color">{% trans %}Notre histoire{% endtrans %}</h1>
         <div class="col-12 row text-color-maisonphilo mb-2 ">
             <div class=" col-md-4 col-12 my-auto text-center mx-auto">
-                <div><img src="{{asset('/images/colombe.png')}}" class="img-fluid w-25" alt=""></div>
-                Elle s’appelait Philo… C’était ma Mémé, une femme exceptionnelle.
+                <div><img src="{{asset('/images/colombe.png')}}" class="img-fluid w-25" alt="">
+                </div>
+                <span>{% trans %}Elle s’appelait Philo… C’était ma Mémé, une femme exceptionnelle.{% endtrans %}
+                </span>
                 <div><img src="{{asset('/images/colombe.png')}}" class="img-fluid w-25" alt=""></div>
             </div>
             <div class="col-md-4 col-12 text-center"><img src="{{asset('/images/philo.jpg')}} " alt="Photo de philomene" class="img-fluid"></div>
@@ -17,25 +19,37 @@
                     <div><img src="{{asset('/images/colombe.png')}}" class="img-fluid w-25" alt=""></div>
                     Par sa vie, elle m’a inspirée. Par sa mort, elle m’a fait cadeau d’une mission.
                     <div><img src="{{asset('/images/colombe.png')}}" class="img-fluid w-25" alt=""></div>
-
                 </div>
             </div>
         </div>
         <div class="col history-bg text-light text-center">
-            <div class="mb-2">Lorsque Mémé a perdu son autonomie, nous nous sommes trouvés face à une
-                absence de personnel qualifié et d’infrastructure de prise en charge adaptée
-                malgré le fait qu’elle ait rejoint sa fille à Abidjan, capitale économique de la
-                Côte d’Ivoire.</div>
-            <div class="mb-2">Bien que la famille ait eu, à un moment donné, la volonté ainsi que les moyens
-                financiers de la mettre dans un cadre de prise en charge gériatrique pour
-                qu’elle puisse vivre le moins douloureusement possible ses derniers jours, nous
-                n’avons pas eu accès à une offre correspondant à nos attentes. Son décès a
-                donc été un véritable déclic pour moi sur la question de la prise en charge de
-                nos ainés en Afrique.</div>
-
-            <div class="mb-2">J’ai pris conscience de l’urgence d’identifier et de mettre en œuvre des
-                solutions d’accompagnement de la vieillesse adaptées aux réalités locales
-                africaines.</div>
+            <div class="mb-2">
+                <span>
+                    {% trans %}
+                    Lorsque Mémé a perdu son autonomie, nous nous sommes trouvés face à une
+                    absence de personnel qualifié et d’infrastructure de prise en charge adaptée
+                    malgré le fait qu’elle ait rejoint sa fille à Abidjan, capitale économique de la
+                    Côte d’Ivoire.
+                    {% endtrans %}</span>
+            </div>
+            <div class="mb-2">
+                <span>{% trans %}
+                    Bien que la famille ait eu, à un moment donné, la volonté ainsi que les moyens
+                    financiers de la mettre dans un cadre de prise en charge gériatrique pour
+                    qu’elle puisse vivre le moins douloureusement possible ses derniers jours, nous
+                    n’avons pas eu accès à une offre correspondant à nos attentes. Son décès a
+                    donc été un véritable déclic pour moi sur la question de la prise en charge de
+                    nos ainés en Afrique.
+                    {% endtrans %}</span>
+            </div>
+            <div class="mb-2">
+                <span>
+                    {% trans %}
+                    J’ai pris conscience de l’urgence d’identifier et de mettre en œuvre des
+                    solutions d’accompagnement de la vieillesse adaptées aux réalités locales
+                    africaines.
+                    {% endtrans %}</span>
+            </div>
             <div class="text-color-maisonphilo text-end">Nina TANO SERVA</div>
         </div>
     </div>
