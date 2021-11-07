@@ -1,0 +1,5 @@
+<ul class="list-group">
+    {% for product in product.description|split('|') %}
+        <li class="list-group-item bg-transparent text-light">{{product|trans}}</li>
+    {% endfor %}
+</ul>

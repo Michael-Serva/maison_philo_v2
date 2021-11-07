@@ -56,6 +56,42 @@ class DashboardController extends AbstractController
     }
 
     /**
+     * @Route("/index")
+     * @Template
+     */
+    public function index(): array
+    {
+        return [];
+    }
+
+    /**
+     * @Route("/history")
+     * @Template
+     */
+    public function history(): array
+    {
+        return [];
+    }
+
+    /**
+     * @Route("/vision")
+     * @Template
+     */
+    public function vision(): array
+    {
+        return[];
+    }
+
+    /**
+     * @Route("/objective")
+     * @Template
+     */
+    public function objective(): array
+    {
+        return [];
+    }
+
+    /**
      * This method is used to modify the language of the site
      * @Route("/changeLocale/{locale}", name="change_locale")
      * @Template
@@ -69,21 +105,4 @@ class DashboardController extends AbstractController
         /* We redirect the user to the page where he came from */
     }
 
-    /**
-     * @Route("/history")
-     * @Template
-     */
-    public function history(): array
-    {
-        return [];
-    }
-
-    /**
-     * @Route("/index")
-     * @Template
-     */
-    public function index(): array
-    {
-        return [];
-    }
 }

@@ -7,26 +7,28 @@
     <table class="table table-hover table-dark text-center align-middle">
         <thead>
             <tr>
-                <th>Id</th>
                 <th>{% trans %}Picture{% endtrans %}</th>
-                <th>Pseudo</th>
-                <th>Email</th>
-                <th>{% trans %}Name{% endtrans %}</th>
+                <th>{% trans %}Pseudo{% endtrans %}</th>
+                <th>{% trans %}Email{% endtrans %}</th>
+                <th>{% trans %}Last name{% endtrans %}</th>
+                <th>{% trans %}firstname{% endtrans %}</th>
                 <th>{% trans %}IsVerified{% endtrans %}</th>
-                <th>Roles</th>
-                <th>actions</th>
+                <th>{% trans %}Roles{% endtrans %}</th>
+                <th>{% trans %}Actions{% endtrans %}</th>
             </tr>
         </thead>
         <tbody>
             {% for user in users %}
                 <tr>
-                    <td class="">{{ user.id }}</td>
                     <td class=""><img class="rounded-circle" src="{{ user.picture }}" alt=""/></td>
                     <td class="">{{ user.pseudo }}</td>
                     <td class="">{{ user.email }}</td>
-                    <td class="">{{user.genre == 'female' ? 'Mme' : 'Mr'|trans}}
-                        {{ user.firstName }}
-                        {{ user.lastName }}</td>
+                    <td>
+                        {% if user.genre is not empty %}
+                            {{user.genre == 'female' ? 'Mme' : 'Mr'|trans}}{{user.lastname}}
+                        {% endif %}
+                    </td>
+                    <td>{{ user.firstName }}</td>
                     <td class="">{{ user.isVerified ? 'Yes' : 'No' }}</td>
                     <td class="">{{ user.roles ? user.roles|json_encode : '' }}</td>
                     <td class="">

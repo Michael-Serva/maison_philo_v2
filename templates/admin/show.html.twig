@@ -4,16 +4,17 @@
 {% endblock %}
 {% block body %}
     <h1>{% trans %}Utilisateur{% endtrans %}</h1>
-   
-        <img class="rounded-circle img-fluid user-picture" src="{{ user.picture }}" alt="picture users"/>
-  
-
+    {% if user.picture is not empty %}
+        <img class="rounded-circle img-fluid user-picture" src="{{asset('/images/imagesUpload/' ~ user.picture) }}" alt="picture users"/>
+        {% else %}
+         <i class="fas fa-user fs-1"></i>
+    {% endif %}
     {% embed "component/molecules/tableDesign.html.twig" %}
         {% block table_content %}
 
             <tbody class="text-start">
                 <tr>
-                    <th>Id</th>
+                    <th>{% trans %}Id{% endtrans %}</th>
                     <td>{{ user.id }}</td>
                 </tr>
                 <tr>
@@ -25,8 +26,9 @@
                     <td>{{ user.firstName }}</td>
                 </tr>
                 <tr>
-                    <th>{% trans %}LastName{% endtrans %}</th>
-                    <td>{{ user.lastName }}</td>
+                    {% if user.genre is not empty %}
+                        {{user.genre == 'female' ? 'Mme' : 'Mr'|trans}}{{user.lastname}}
+                    {% endif %}
                 </tr>
                 <tr>
                     <th>Genre</th>

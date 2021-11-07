@@ -132,7 +132,9 @@ h1.inscription,
 h1.connexion {
     color: #043106;
 }
-
+.text-area-height{
+    height: 100px;
+}
 .button-philo {
     border: 2px solid #d3c37b;
     background-color: #043106;

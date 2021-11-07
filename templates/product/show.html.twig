@@ -4,13 +4,10 @@
 {% block body %}
     {% embed "component/molecules/tableDesign.html.twig" %}
         {% block table_content %}
-            <a href="{{ path('app_product_index') }}">
-                <i class="fas fa-long-arrow-alt-left text-color-maisonphilo fs-1"></i>
-            </a>
             <h1>{% trans %}Product{% endtrans %}</h1>
             <tbody class="text-start">
                 <tr>
-                    <th>Id</th>
+                    <th>{% trans %}Product reference number{% endtrans %}</th>
                     <td>{{ product.id }}</td>
                 </tr>
                 <tr>
@@ -37,9 +34,16 @@
         {% endblock %}
     {% endembed %}
     <div class="justify-content-center">
-        <a href="{{ path('app_product_edit', {'id': product.id}) }}" class="btn btn-outline-warning">
-            {% trans %}Edit the product{% endtrans %}
-        </a>
+        <div class="mb-3">
+            <a href="{{ path('app_product_edit', {'id': product.id}) }}" class="btn btn-outline-warning">
+                {% trans %}Edit the product{% endtrans %}
+            </a>
+        </div>
+        <div>
+            <a href="{{ path('app_product_index') }}" class="btn btn-outline-primary">
+                {% trans %}Back to the product list{% endtrans %}
+            </a>
+        </div>
         {{ include('product/_delete_form.html.twig') }}
     </div>
 {% endblock %}

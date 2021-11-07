@@ -4,7 +4,9 @@ namespace App\Form;
 
 use App\Entity\Product;
 use App\Entity\Category;
+use Doctrine\Common\Collections\Expr\Value;
 use Doctrine\ORM\EntityRepository;
+use PhpParser\Node\Stmt\Label;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
@@ -14,7 +16,7 @@ use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\MoneyType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
-
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 class ProductType extends AbstractType
 {
@@ -40,9 +42,10 @@ class ProductType extends AbstractType
             ->add("price", MoneyType::class, [
                 "currency" => "CFA",
                 "required" => false,
-                "label" => false,
+                "label" => " ",
                 "attr" => [
-                    "class" => "form-control"
+                    "class" => "form-control",
+                    "placeholder" => "Prix",
                 ],
                 "row_attr" => [
                     "class" => "form-floating mb-3"
@@ -52,7 +55,7 @@ class ProductType extends AbstractType
                 "required" => false,
                 "label" => false,
                 "attr" => [
-                    /* "placeholder" => "Stock disponible", */
+                    "placeholder" => "Stock disponible",
                     "class" => "form-control",
                 ],
                 "row_attr" => [
@@ -76,12 +79,61 @@ class ProductType extends AbstractType
                         ->orderBy("c.title", "DESC");
                 },
             ])
-            ->add("description", TextType::class, [
-                "label" => "Description",
+            ->add("description", TextareaType::class, [
+                "label" => "Description courte",
+                "required" => false,
+                "attr" => [
+                    "class" => "mb-3 form-control text-area-height",
+                    "placeholder" => "Description du produit",
+                    "style" => "height:100px"
+                ],
+                "row_attr" => [
+                    "class" => "form-floating "
+                ]
+            ])
+            ->add("description1", TextareaType::class, [
+                "label" => "Description complète",
                 "required" => false,
                 "attr" => [
                     "class" => "mb-3 form-control",
-                    "placeholder" => "Description du produit",  "size" => 4,
+                    "placeholder" => "Description du produit",
+                    "style" => "height:100px"
+                ],
+                "row_attr" => [
+                    "class" => "form-floating"
+                ]
+            ])
+            ->add("description2", TextareaType::class, [
+                "label" => "Marque",
+                "required" => false,
+                "attr" => [
+                    "class" => "mb-3 form-control",
+                    "placeholder" => "Description du produit",
+                    "style" => "height:100px"
+                ],
+                "row_attr" => [
+                    "class" => "form-floating"
+                ]
+            ])
+            ->add("description3", TextareaType::class, [
+                "label" => "Description longue",
+                "required" => false,
+                "attr" => [
+                    "class" => "mb-3 form-control",
+                    "placeholder" => "Description du produit",
+                    "style" => "height:100px"
+                ],
+                "row_attr" => [
+                    "class" => "form-floating"
+                ]
+            ])
+            ->add("description4", TextareaType::class, [
+                "label" => "Description4",
+                "required" => false,
+                "attr" => [
+                    "class" => "mb-3 form-control",
+                    "placeholder" => "Description du produit",
+                    "style" => "height:100px"
                 ],
                 "row_attr" => [
                     "class" => "form-floating"

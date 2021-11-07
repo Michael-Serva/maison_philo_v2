@@ -6,6 +6,7 @@ use App\Entity\Category;
 use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\ProductRepository;
+use Symfony\Component\Uid\Uuid;
 
 /**
  * @ORM\Entity(repositoryClass=ProductRepository::class)
@@ -14,19 +15,22 @@ class Product
 {
     /**
      * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="uuid", unique=true)
      */
     private $id;
 
+    public function __construct()
+    {
+        $this->id = Uuid::v4();
+    }
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank(message="Veuillez renseigner le titre")
      * @Assert\Length(
      * min = 3,
-     * max = 30,
+     * max = 100,
      * minMessage = "3 caractères minimum",
-     * maxMessage = "30 caractères maximum"
+     * maxMessage = "100 caractères maximum"
      * )
      */
 
@@ -61,7 +65,27 @@ class Product
      */
     private $description;
 
-    public function getId(): ?int
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $description1;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $description2;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $description3;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $description4;
+
+    public function getId(): Uuid
     {
         return $this->id;
     }
@@ -134,6 +158,54 @@ class Product
     public function setDescription(?string $description): self
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    public function getDescription1(): ?string
+    {
+        return $this->description1;
+    }
+
+    public function setDescription1(?string $description1): self
+    {
+        $this->description1 = $description1;
+
+        return $this;
+    }
+
+    public function getDescription2(): ?string
+    {
+        return $this->description2;
+    }
+
+    public function setDescription2(?string $description2): self
+    {
+        $this->description2 = $description2;
+
+        return $this;
+    }
+
+    public function getDescription3(): ?string
+    {
+        return $this->description3;
+    }
+
+    public function setDescription3(string $description3): self
+    {
+        $this->description3 = $description3;
+
+        return $this;
+    }
+
+    public function getDescription4(): ?string
+    {
+        return $this->description4;
+    }
+
+    public function setDescription4(?string $description4): self
+    {
+        $this->description4 = $description4;
 
         return $this;
     }

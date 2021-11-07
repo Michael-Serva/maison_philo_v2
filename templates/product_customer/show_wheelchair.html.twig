@@ -8,26 +8,74 @@
     </div>
     <div class="row justify-content-center">
         {% for product in products %}
-            <div class="col-xlg-2 col-lg-2 col-md-4 col-sm-6 col-6 mb-2 mt-5 h-25">
-                <div class="card">
-                    <a href="{{path('app_productcustomer_showwheelchair')}}">
-                        <img src="{# {{asset('images/imagesUpload/' ~ product.image)}} #}{{product.image}}" alt="Doggo" class="first-image">
-                    </a>
-                    <div class="card-body">
-                        <a href="#" onclick="addCart()">
-                            <center>{% trans %}access{% endtrans %}</center>
-                        </a>
-                        <hr>
-                        <center>
-                            <h5 class="card-title">{{product.title}}</h5>
-                            <h5 class="text-color-maisonphilo fw-bold">{{product.price|format_currency('CFA')}}</h5>
-                        </center>
-                    </div>
-                    <button class="button-philo add-cart">
-                        <i class="fas fa-shopping-cart"></i>
-                        {% trans %}Add to cart{% endtrans %}</button>
-                </div>
+            <div class="main">
+                <h1>Responsive Card Grid Layout</h1>
+                <ul class="cards">
+                    <li class="cards_item">
+                        <div class="card">
+                            <div class="card_image"><img src="https://picsum.photos/500/300/?image=10"></div>
+                            <div class="card_content">
+                                <h2 class="card_title">Card Grid Layout</h2>
+                                <p class="card_text">Demo of pixel perfect pure CSS simple responsive card grid layout</p>
+                                <button class="btn card_btn">Read More</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="cards_item">
+                        <div class="card">
+                            <div class="card_image"><img src="https://picsum.photos/500/300/?image=5"></div>
+                            <div class="card_content">
+                                <h2 class="card_title">Card Grid Layout</h2>
+                                <p class="card_text">Demo of pixel perfect pure CSS simple responsive card grid layout</p>
+                                <button class="btn card_btn">Read More</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="cards_item">
+                        <div class="card">
+                            <div class="card_image"><img src="https://picsum.photos/500/300/?image=11"></div>
+                            <div class="card_content">
+                                <h2 class="card_title">Card Grid Layout</h2>
+                                <p class="card_text">Demo of pixel perfect pure CSS simple responsive card grid layout</p>
+                                <button class="btn card_btn">Read More</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="cards_item">
+                        <div class="card">
+                            <div class="card_image"><img src="https://picsum.photos/500/300/?image=14"></div>
+                            <div class="card_content">
+                                <h2 class="card_title">Card Grid Layout</h2>
+                                <p class="card_text">Demo of pixel perfect pure CSS simple responsive card grid layout</p>
+                                <button class="btn card_btn">Read More</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="cards_item">
+                        <div class="card">
+                            <div class="card_image"><img src="https://picsum.photos/500/300/?image=17"></div>
+                            <div class="card_content">
+                                <h2 class="card_title">Card Grid Layout</h2>
+                                <p class="card_text">Demo of pixel perfect pure CSS simple responsive card grid layout</p>
+                                <button class="btn card_btn">Read More</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="cards_item">
+                        <div class="card">
+                            <div class="card_image"><img src="https://picsum.photos/500/300/?image=2"></div>
+                            <div class="card_content">
+                                <h2 class="card_title">Card Grid Layout</h2>
+                                <p class="card_text">Demo of pixel perfect pure CSS simple responsive card grid layout</p>
+                                <button class="btn card_btn">Read More</button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
             </div>
+
+            <h3 class="made_by">Made with ♡</h3>
+
         {% endfor %}
     </div>
 {% endblock %}

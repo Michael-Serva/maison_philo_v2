@@ -46,6 +46,7 @@ php bin/console doctrine:fixtures:load
 ## Site web
 
 `https://www.bastideleconfortmedical.com/fauteuil-roulant-v300-xr-viking.html`
+`https://www.wordreference.com/fren/r%C3%A9f%C3%A9rence`
 
 ### Product site
 

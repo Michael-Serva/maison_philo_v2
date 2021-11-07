@@ -115,10 +115,8 @@ class ProductController extends AbstractController
     {
         $form = $this->createForm(ProductType::class, $product);
         $form->handleRequest($request);
-        //dd($product->getImage());
 
         if ($form->isSubmitted() && $form->isValid()) {
-            //dd(get_class_methods($form));
             $imageFile = $form->get('image')->getData();
 
             if ($imageFile) { // si image upload
@@ -146,6 +144,10 @@ class ProductController extends AbstractController
                     $product->setImage(null);
                 }
             }
+
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($product);
+            $entityManager->flush();
             return $this->redirectToRoute('app_product_index', [], Response::HTTP_SEE_OTHER);
         } else {
             $imageFile = $product->getImage();
@@ -155,7 +157,6 @@ class ProductController extends AbstractController
         $entityManager = $this->getDoctrine()->getManager();
         $entityManager->persist($product);
         $entityManager->flush();
-
 
         return $this->renderForm('product/edit.html.twig', [
             'product' => $product,

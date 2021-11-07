@@ -20,29 +20,36 @@
             </thead>
             <tbody>
                 {% for product in products %}
-                    <tr>
-                        <td>{{ product.title|trans }}</td>
-                        <td>{{ product.price }}</td>
-                        <td>{{ product.stock }}</td>
-                        <td>{{ product.description }}</td>
-                        <td>{{product.category.title ?? ''}}</td>
-                        <td>
-                            <a href="{{ asset('/images/imagesUpload/' ~ product.image) }}" target="blank">
-                                <img src="{{ asset('/images/imagesUpload/' ~ product.image) }}" alt="" class="rounded-circle">
-                            </a>
-                        </td>
-                        <td>
-                            <a href="{{ path('app_product_show', {'id': product.id}) }}">
-                                <i class="fas fa-eye text-primary"></i>
-                            </a>
-                            <a href="{{ path('app_product_edit', {'id': product.id}) }}">
-                                <i class="fas fa-edit text-warning ms-2"></i>
-                            </a>
-                        </td>
-                    </tr>
+                        <tr>
+                            <td>{{ product.title|trans }}</td>
+                            <td>{{ product.price|format_number }}
+                                {{ 'CFA'|currency_symbol }}</td>
+                            <td class={{product.stock > 0 ? 'text-success' : 'text-danger'}}>
+                                {{ product.stock }}
+                            </td>
+                            <td>
+                                {% include "component/atoms/description_ul.html.twig" %}
+                            </td>
+                            <td>{{product.category.title ?? ''}}</td>
+                            <td>
+                                <a href="{{ asset('/images/imagesUpload/' ~ product.image) }}" target="blank">
+                                    <img src="{{ asset('/images/imagesUpload/' ~ product.image) }}" alt="" class="rounded-circle">
+                                </a>
+                            </td>
+                            <td>
+                                <a href="{{ path('app_product_show', {'id': product.id}) }}">
+                                    <i class="fas fa-eye text-primary"></i>
+                                </a>
+                                <a href="{{ path('app_product_edit', {'id': product.id}) }}">
+                                    <i class="fas fa-edit text-warning ms-2"></i>
+                                </a>
+                            </td>
+                        </tr>
                 {% else %}
                     <tr>
-                        <td colspan="7">{% trans %}no records found{% endtrans %}</td>
+                        <td colspan="7">
+                            {% trans %}no products records found{% endtrans %}
+                        </td>
                     </tr>
                 {% endfor %}
             </tbody>
