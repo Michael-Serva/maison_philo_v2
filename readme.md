@@ -67,3 +67,21 @@ php bin/console doctrine:fixtures:load
 ### Popupmenu
 
 `https://codepen.io/darkcider/pen/PgBqMG`
+
+## SEO
+
+`[searchgoogle testmobile friendly](https://search.google.com/test/mobile-friendly)`
+usages des alt 7 balises
+normes 3wc
+meta descriptions
+balise title 
+arborescence coherente
+
+pertinence des contenus
+evitez les contenus dupliqués
+
+robot.txt
+sitemaps.xml => generateur en ligne
+.htaccess
+
+capgemini soprasteria accenture

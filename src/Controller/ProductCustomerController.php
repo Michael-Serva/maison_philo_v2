@@ -39,4 +39,16 @@ class ProductCustomerController extends AbstractController
             'products' => $productRepository->findWheelchair(25)
         ];
     }
+
+    /**
+     * @Route("/{id}", name="app_productcustomer_show", methods={"GET"})
+     * @Template
+     */
+    public function show(Product $product): array
+    {
+        return  [
+            'product' => $product,
+        ];
+    }
+
 }

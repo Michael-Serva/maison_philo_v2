@@ -1,13 +1,13 @@
 
 
 
-.card{
+.card-index{
   box-shadow: 0px 15px 35px -5px rgba(50, 88, 130, 0.32);
   border-radius: 15px;
   transition: transform .2s;
 }
 
-.card-body{
+.card-index-body{
   padding: 10px;
   margin-top: -50px;
   -webkit-transition: all 1s ease;
@@ -45,11 +45,11 @@ h5{
   transition: all 1s ease-in-out;
 }
 
-.card-body a{
+.card-index-body a{
   visibility: hidden;
 }
 
-.card:hover > .card-body{
+.card-index:hover > .card-index-body{
   margin-top: -0px;
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
@@ -57,11 +57,11 @@ h5{
   transition: all 1s ease;
 }
 
-.card:hover{
+.card-index:hover{
   transform: scale(1.02);
 }
 
-.card:hover > .card-body > a{
+.card-index:hover > .card-index-body > a{
   visibility: visible;
 }
 
@@ -691,7 +691,7 @@ input.variation + label {
   border-bottom: 7px solid var(--secondaryShade5);
 }
 
-/* PROFILE CARDS */
+/* PROFILE card-indexS */
 .results-header {
   grid-column: span 2;
   display: grid;

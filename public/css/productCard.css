@@ -1,0 +1,24 @@
+:root {
+    --h2color: #a0350a;
+    --emcolor: #e06c00;
+    --navbar-bg-color: #043106;
+    --presentation-bg-color: #5d8b06;
+}
+.car-header{
+    height: 18rem;
+}
+.card-title{
+    height: 4rem;
+}
+.card-body li{
+    height: 3rem;
+    font-size: 0.8em;
+}
+.bg-homypay{
+    background-color: var(--navbar-bg-color);
+}
+.logo{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
