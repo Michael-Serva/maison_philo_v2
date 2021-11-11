@@ -46,7 +46,6 @@ class CartController extends AbstractController
      */
     public function add($id, SessionInterface $session, FlashBagInterface $flashbag)
     {
-       
         // we initialize the cart to a empty array 
         $cart = $session->get('cart', []);
         if (!empty($cart[$id])) {
@@ -59,8 +58,9 @@ class CartController extends AbstractController
         //we add a product with an id for key
 
         //we save the contents of the cart in the session
-        $session->set('cart', $cart);
+        $session->set('cart', $cart); 
         
+        return $this->redirectToRoute('app_cart_index');
     }
 
    /**
