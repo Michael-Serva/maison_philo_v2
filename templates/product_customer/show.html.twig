@@ -5,7 +5,7 @@
 {% block body %}
     {% embed "component/molecules/productDesign.html.twig" %}
         {% block product_content %}
-            <div class="card mb-3 border-success" style="max-width: 1000px;">
+            <div class="card mb-3 border-success">
                 <div class="row g-0">
                     <div class="col-md-4 d-flex align-items-center">
                         <img src="{{asset('images/imagesUpload/' ~ product.image)}} " class="img-fluid rounded-start" alt="{{product.title}} ">
@@ -30,14 +30,17 @@
                             {% endfor %}
                         </ul>
                     </small>
-                    <div class="col  justify-content-center">
-                        <a href="#" class="btn btn-success col-7 mb-2">{% trans %}Add to cart{% endtrans %}</a>
-                        <div class="card bg-homypay text-light text-center mb-2 col-7">{{product.price|format_currency('CFA')}}
+                    <div class="col justify-content-center">
+                        <div class="text-center row justify-content-center">
+                            <a href="#" class="btn btn-success col-7 mb-2">{% trans %}Add to cart{% endtrans %}</a>
+                            <div class="card bg-homypay text-light text-center mb-2 mx-auto col-7">{{product.price|format_currency('CFA')}}
+                            </div>
                         </div>
-                        <img src="{{asset('images/logo_maison_philo1.png')}}" alt="" style="width:30em" class="logo mb-1 me-1">
+
                     </div>
                 </div>
             </div>
+            <img src="{{asset('images/logo_maison_philo1.png')}}" alt="" style="width:5em" class="logo mb-1 me-1">
         {% endblock %}
     {% endembed %}
 {% endblock %}

@@ -1,0 +1,61 @@
+{% extends 'cart/layout.html.twig' %}
+{% block title %}
+    {% trans %}Cart{% endtrans %}
+{% endblock %}
+{% block body %}
+    <h1>{% trans %}Your cart{% endtrans %}</h1>
+    {% if cartDatas|length > 0 %}
+        {% embed "component/molecules/tableDesign.html.twig" %}
+            {% block table_content %}
+                {% for cartData in cartDatas %}
+                    <thead>
+                        <tr>
+                            <th>{% trans %}Image{% endtrans %}</th>
+                            <th>{% trans %}Name{% endtrans %}</th>
+                            <th>{% trans %}Price{% endtrans %}</th>
+                            <th>{% trans %}Quantity{% endtrans %}</th>
+                            <th>{% trans %}Action{% endtrans %}</th>
+                            <th>{% trans %}Total Price{% endtrans %}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <img class="img-fluid" style="width:5em" src="{{asset('images/imagesUpload/' ~ cartData.product.image)}}" alt="{% trans %}Image of{% endtrans %} ~ {{cartData.product.title}}">
+                            </td>
+                            <td>{{cartData.product.title}}</td>
+                            <td>{{cartData.product.price}}</td>
+                            <td>{{cartData.quantity}}</td>
+                            <td>
+                                <a href="{{path('app_cart_remove', {'id': cartData.product.id}) }} " class="btn-sm btn-danger">
+                                    <i class="fas fa-trash"></i>
+                                </a>
+                            </td>
+                            <td>{{(cartData.product.price * cartData.quantity)|format_currency('CFA')}}</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="5" class="text-end">{% trans %}Total :{% endtrans %}</td>
+                            <td>
+                                {{total|format_currency('CFA')}}</td>
+                        </tr>
+                    </tfoot>
+
+                {% endfor %}
+
+            {% endblock %}
+        {% endembed %}
+    {% else %}
+        {% embed "component/molecules/formDesign.html.twig" %}
+            {% block form_content %}
+                <div class="text-center">
+                    <h1>
+                        {% trans %}Your cart is empty{% endtrans %}
+                    </h1>
+                    <a href="{{path("app_productcustomer_index")}} ">{% trans %}Click here for buy some products{% endtrans %}</a>
+                </div>
+            {% endblock %}
+        {% endembed %}
+    {% endif %}
+{% endblock %}

@@ -3,57 +3,34 @@
     {% trans %}Product |{% endtrans %}{{ parent() }}
 {% endblock %}
 {% block body %}
-    <div id="toast"></div>
-    <div id="toast-cart"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4 mb-2">
-                <div class="card-index">
-                    <a href="{{path('app_dashboard_history')}}">
-                        <img src="{{asset('images/philo.jpg')}}" class="first-image">
-                    </a>
-                    <div class="card-index-body">
-                        <a href="#" onclick="addCart()">
-                            <center>{% trans %}access{% endtrans %}</center>
-                        </a>
-                        <hr>
-                        <center>
-                            <span class="fs-5">{% trans %}Our history{% endtrans %}</span>
-                        </center>
-                    </div>
-                </div>
+    <div class="row justify-content-evenly mb-3">
+        <div class="card col-md-4 mb-2 shadow" style="width: 30rem;">
+            <div class="index-img">
+                <img src="{{asset('images/philo.jpg')}}" class="card-img-top" alt="{% trans %}Image health care{% endtrans %}"></div>
+
+            <div class="card-body text-center">
+                <h5 class="card-title">{% trans %}Our history{% endtrans %}</h5>
+
+                <a href="{{path('app_dashboard_history')}}" class="btn button-success button-philo">{% trans %}Access{% endtrans %}</a>
             </div>
-            <div class="col-lg-4 mb-2">
-                <div class="card-index">
-                    <a href="{{path('app_dashboard_index')}}">
-                        <img src="{{asset('images/logo_maison_philo2.png')}}" class="first-image text-dark">
-                    </a>
-                    <div class="card-index-body">
-                        <a href="{{path('app_dashboard_index')}}">
-                            <center>{% trans %}access{% endtrans %}</center>
-                        </a>
-                        <hr>
-                        <center>
-                            <span class="card-index-title fs-5">{% trans %}Our vision{% endtrans %}</span>
-                        </center>
-                    </div>
-                </div>
+        </div>
+        <div class="card col-md-4 mb-2 shadow" style="width: 30rem;">
+            <div class="index-img">
+                <img src="{{asset('images/logo_maison_philo2.png')}}" class="card-img-top" alt="{% trans %}Image health care{% endtrans %}">
             </div>
-            <div class="col-lg-4 mb-2" href="{{path('app_dashboard_index')}}">
-                <div class="card-index"></span>
-                <a href="{{path('app_dashboard_index')}}">
-                    <img src="{{asset('images/ourobjective1.jpg')}}" class="first-image">
-                </a>
-                <div class="card-index-body">
-                    <a href="{{path('app_dashboard_index')}}">
-                        <center>{% trans %}access{% endtrans %}</center>
-                    </a>
-                    <hr>
-                    <center>
-                        <span class="card-index-title fs-5">{% trans %}Our objective{% endtrans %}</span>
-                    </center>
-                </div>
+            <div class="card-body text-center">
+                <h5 class="card-title">{% trans %}Our vision{% endtrans %}</h5>
+                <a href="{{path('app_dashboard_index')}}" class="btn button-philo">{% trans %}Access{% endtrans %}</a>
+            </div>
+        </div>
+        <div class="card col-md-4 mb-2 shadow" style="width: 30rem;">
+            <div class="index-img">
+                <img src="{{asset('images/ourobjective1.jpg')}} " class="card-img-top" alt="{% trans %}Image health care{% endtrans %}">
+            </div>
+            <div class="card-body text-center">
+                <h5 class="card-title">{% trans %}Our objective{% endtrans %}</h5>
+                <a href="{{path('app_dashboard_index')}}" class="btn button-philo">{% trans %}Access{% endtrans %}</a>
             </div>
         </div>
     </div>
-</div>{% endblock %}
+{% endblock %}

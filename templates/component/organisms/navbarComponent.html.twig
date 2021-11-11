@@ -113,12 +113,11 @@
                     </li>
                 {% endif %}
             </ul>
-            <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">
-                    {% trans %}Search{% endtrans %}
-                </button>
-            </form>
+            <div class="d-flex">
+                <a class="btn btn-transparent" href="{{path('app_cart_index')}} ">
+                    <i class="fas fa-2x fa-shopping-cart text-light"></i>
+                </a>
+            </div>
             {% include "component/atoms/language.html.twig" %}
         </div>
     </div>
