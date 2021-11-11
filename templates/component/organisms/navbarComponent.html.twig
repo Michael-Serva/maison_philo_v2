@@ -113,12 +113,13 @@
                     </li>
                 {% endif %}
             </ul>
-            <div class="d-flex">
+            <div class="text-end">
                 <a class="btn btn-transparent" href="{{path('app_cart_index')}} ">
                     <i class="fas fa-2x fa-shopping-cart text-light"></i>
                 </a>
             </div>
-            {% include "component/atoms/language.html.twig" %}
+            <div class="text-end">
+                {% include "component/atoms/language.html.twig" %}</div>
         </div>
     </div>
 </nav>
