@@ -21,6 +21,18 @@ class AppFixtures extends Fixture
     public function load(ObjectManager $manager)
     {
         $faker = Factory::create('fr-Fr');
+
+        $userAdmin = new User();
+        $password = $this->encoder->hashPassword($userAdmin, 'AAAAA');
+        $userAdmin
+            ->setEmail("Servam95@gmail.com")
+            ->setPseudo("Admin")
+            ->setPicture("https://randomuser.me/api/portraits/women")
+            ->setPassword($password);
+        $manager->persist($userAdmin);
+        $manager->flush();
+
+        $faker = Factory::create('fr-Fr');
         $users = [];
         $genres = ['male', 'female'];
         for ($i = 1; $i < 30; $i++) {

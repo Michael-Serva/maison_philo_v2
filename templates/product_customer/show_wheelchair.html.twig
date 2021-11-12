@@ -3,10 +3,16 @@
     {% trans %}Product main page |{% endtrans %}{{ parent() }}
 {% endblock %}
 {% block body %}
-
+    <h1>{% trans %}Page{% endtrans %}
+        {{products.page}}
+    </h1>
+    {% include "component/atoms/pagination.html.twig" %}
     <div class="row justify-content-evenly align-middle">
         {% for product in products %}
-            <div class="card col-lg-2 border-success border-2 pb-5" style="width: 18rem;">
+            <div class="card col-lg-2 border-success border-2 pb-5 mb-2" style="width: 18rem;">
+                <div class="card bg-homypay text-light text-center mt-2">
+                    {{product.price|format_currency('CFA')}}
+                </div>
                 <a href="{{path('app_productcustomer_show', {'id' : product.id }) }} ">
                     <div class="card-header">
                         <img src="{{asset('images/imagesUpload/' ~ product.image)}}" class="card-img-top img-fluid" alt="{% trans %}Image of{% endtrans %} {{product.title}} ">
@@ -18,12 +24,11 @@
                     } %}</p>
                     </a>
                 </div>
-                <div class="card bg-homypay text-light text-center mb-2">{{product.price|format_currency('CFA')}}
-                </div>
                 <div class="text-center mb-2 position-absolute fixed-bottom">
                     <a href="{{path('app_cart_add', {'id' : product.id})}} " class="btn btn-success">{% trans %}Add to cart{% endtrans %}</a>
                 </div>
             </div>
         {% endfor %}
     </div>
+    {% include "component/atoms/pagination.html.twig" %}
 {% endblock %}

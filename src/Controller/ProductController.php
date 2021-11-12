@@ -111,13 +111,17 @@ class ProductController extends AbstractController
     /**
      * @Route("/{id}/edit", name="app_product_edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, Product $product, SluggerInterface $slugger, EntityManagerInterface $entityManager): Response
-    {
+    public function edit(
+        Request $request,
+        Product $product,
+        SluggerInterface $slugger,
+        EntityManagerInterface $entityManager
+    ): Response {
         $form = $this->createForm(ProductType::class, $product);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $imageFile = $form->get('image')->getData();
-            
+
             if ($imageFile) { // si image upload
                 $originalFilename = pathinfo($imageFile->getClientOriginalName(), PATHINFO_FILENAME);
                 //this is needed to safely include the file name as part of the URL

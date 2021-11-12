@@ -115,8 +115,7 @@ class RegistrationFormType extends AbstractType
                         "message" => "Votre mot de passe doit contenir au moins 5 caractères et une lettre majuscule"
                     ]),
                 ]
-            ],
-        );
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver)

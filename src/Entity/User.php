@@ -64,7 +64,7 @@ class User implements UserInterface
 
     /* -------
        @Assert\NotBlank(message="Veuillez saisir un mot de passe")
-    
+
     */
 
     /**

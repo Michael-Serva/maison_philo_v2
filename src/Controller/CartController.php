@@ -29,10 +29,10 @@ class CartController extends AbstractController
             ];
         }
 
-        $total=0;
+        $total = 0;
         foreach ($cartDatas as $cartData) {
-           $cartDataTotalPrice = $cartData['product']->getPrice() *$cartData['quantity'];
-           $total += $cartDataTotalPrice;
+            $cartDataTotalPrice = $cartData['product']->getPrice() * $cartData['quantity'];
+            $total += $cartDataTotalPrice;
         }
         //dd($cartDatas);
         return [
@@ -46,7 +46,7 @@ class CartController extends AbstractController
      */
     public function add($id, SessionInterface $session, FlashBagInterface $flashbag)
     {
-        // we initialize the cart to a empty array 
+        // we initialize the cart to a empty array
         $cart = $session->get('cart', []);
         if (!empty($cart[$id])) {
             //allows you to buy the same product several times
@@ -58,21 +58,22 @@ class CartController extends AbstractController
         //we add a product with an id for key
 
         //we save the contents of the cart in the session
-        $session->set('cart', $cart); 
-        
+        $session->set('cart', $cart);
+
         return $this->redirectToRoute('app_cart_index');
     }
 
    /**
     * @Route("/remove/{id}")
     */
-   public function remove($id, SessionInterface $session)
-   {
-       $cart = $session->get('cart', []);
-       if (!empty($cart[$id])) {
-           unset($cart[$id]);
-       }
-       $session->set('cart', $cart);;
+    public function remove($id, SessionInterface $session)
+    {
+        $cart = $session->get('cart', []);
+        if (!empty($cart[$id])) {
+            unset($cart[$id]);
+        }
+        $session->set('cart', $cart);
+        ;
         return $this->redirectToRoute('app_cart_index');
-   }
+    }
 }

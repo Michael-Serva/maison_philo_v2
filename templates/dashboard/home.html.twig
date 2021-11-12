@@ -14,31 +14,34 @@
     </div>
 {% endblock %}
 {% block body %}
-{% for message in app.flashes('email-verified') %}
-    {% include "component/molecules/alertDesign.html.twig" with {
+    {% for message in app.flashes('email-verified') %}
+        {% include "component/molecules/alertDesign.html.twig" with {
                 message : message,
                 alert : "success"
             } %}
-{% endfor %}
+    {% endfor %}
     <div class="row mb-1 justify-content-center">
         <span class="side col-lg-12 text-center mb-2">{% trans %}The Aging : a coming challenge for Africa{% endtrans %}</span>
-        <div class="mb-1 col-12 col-sm-12 col-md-12 col-lg-6 col-xlg-5 text-center">
+        <div class="mb-1 col-12 col-sm-12 col-md-6 col-lg-6 col-xlg-5 text-center">
             <img class="img-fluid" src="{{ asset('images/couple_agees2.jpg') }}" data-aos="fade-down-right" data-aos-duration="2000">
         </div>
-        <div class='col-12 col-sm-12 col-md-12 col-lg-6 align-item-center' data-aos="fade-down-left" data-aos-duration="2000">
+        <div class='col-12 col-sm-12 col-lg-6 align-item-center  row' data-aos="fade-down-left" data-aos-duration="2000">
             {% for presentationContent in presentationContents %}
-                <div class="col presentation">
-                    <span class="text-center d-block">
-                        {{presentationContent.header|trans}}
-                    </span>
-                    <span class="text-center d-block">
-                        {{presentationContent.body|trans}}
-                    </span>
-                    <em class="text-center d-block mt-3">
+                <div class="col-md-6 col-12 presentation mb-1">
+                    <h2 class="text-center mt-3">
+                        {{presentationContent.title|trans}}
+                    </h2>
+                    <div style="min-height:10em" class="p-1 fs-5">
+                        <span class="text-center d-block">
+                            {{presentationContent.header|trans}}
+                        </span>
+                        <span class="text-center d-block">
+                            {{presentationContent.body|trans}}
+                        </span>
+                    </div>
+                    <em class="text-center d-block my-auto fs-5">
                         {{presentationContent.footer|trans}}
                     </em>
-                    <h2 class="text-center mt-3">{{presentationContent.title|trans}}
-                    </h2>
                 </div>
             {% endfor %}
         </div>

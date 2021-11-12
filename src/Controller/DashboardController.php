@@ -104,5 +104,4 @@ class DashboardController extends AbstractController
         return $this->redirect($request->headers->get('referer'));
         /* We redirect the user to the page where he came from */
     }
-
 }

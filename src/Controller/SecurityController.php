@@ -64,7 +64,12 @@ class SecurityController extends AbstractController
             );
             // do anything else you need here, like send an email
 
-            $this->addFlash("confirmation-mail", $user->getPseudo() . ", A confirmation email has been sent to the following address:".$user->getEmail());
+            $this->addFlash(
+                "confirmation-mail",
+                $user->getPseudo() .
+                    ", A confirmation email has been sent to the following address:"
+                    . $user->getEmail()
+            );
             return $this->redirectToRoute("app_verify_email");
         }
         return $this->render('security\register.html.twig', [
@@ -97,17 +102,15 @@ class SecurityController extends AbstractController
      */
     public function login(AuthenticationUtils $authenticationUtils, Request $request): Response
     {
-       
-             // get the login error if there is one
+
+        // get the login error if there is one
         $error = $authenticationUtils->getLastAuthenticationError();
         // last username entered by the user
         $lastUsername = $authenticationUtils->getLastUsername();
- 
+
         return $this->render('security/login.html.twig', [
             'last_username' => $lastUsername, 'error' => $error
         ]);
-       
-       
     }
     /**
      * @Route("/logout", name="app_logout")
