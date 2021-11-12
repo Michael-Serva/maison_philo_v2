@@ -6,7 +6,9 @@
     <h1>{% trans %}Page{% endtrans %}
         {{products.page}}
     </h1>
-    {% include "component/atoms/pagination.html.twig" %}
+    <div class="mx-auto">
+        {% include "component/atoms/pagination.html.twig" %}
+    </div>
     <div class="row justify-content-evenly align-middle">
         {% for product in products %}
             <div class="card col-lg-2 border-success border-2 pb-5 mb-2" style="width: 18rem;">
@@ -30,5 +32,7 @@
             </div>
         {% endfor %}
     </div>
-    {% include "component/atoms/pagination.html.twig" %}
+    <div class="text-center">
+        {% include "component/atoms/pagination.html.twig" %}
+    </div>
 {% endblock %}

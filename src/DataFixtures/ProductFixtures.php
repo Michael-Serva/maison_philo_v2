@@ -106,7 +106,9 @@ class ProductFixtures extends Fixture
                 'description' => "
                     Démontage ultra facile (moins d'une minute!) et sans outil|
                     Carénages personnalisables|
-                    Très facile à manœuvrer grâce à l'un des plus faible encombrement du marché et son poids plume (42kg!)
+                    Très facile à manœuvrer|
+                    Plus faible encombrement du marché|
+                    Poids plume (42kg!)
                 ",
                 'description1' => "
                     Le nouveau scooter électrique Invacare Colibri 3 roues est très

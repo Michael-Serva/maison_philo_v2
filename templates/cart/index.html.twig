@@ -7,11 +7,11 @@
     {% if cartDatas|length > 0 %}
         <div data-aos="zoom-in" data-aos-duration=" 2000">
             {% embed "component/molecules/tableDesign.html.twig" with {
-            tableColor:'dark'
+            tableColor:'light'
         } %}
                 {% block table_content %}
                     <thead>
-                        <tr>
+                        <tr class="text-color-maisonphilo ">
                             <th>{% trans %}Image{% endtrans %}</th>
                             <th>{% trans %}Name{% endtrans %}</th>
                             <th>{% trans %}Price{% endtrans %}</th>
@@ -30,8 +30,8 @@
                                 <td>{{cartData.product.price}}</td>
                                 <td>{{cartData.quantity}}</td>
                                 <td>
-                                    <a href="{{path('app_cart_remove', {'id': cartData.product.id}) }} " class="btn-sm btn-danger">
-                                        <i class="fas fa-trash"></i>
+                                    <a href="{{path('app_cart_remove', {'id': cartData.product.id}) }} " class="btn text-center">
+                                        <i class="fas fa-trash text-danger fs-5"></i>
                                     </a>
                                 </td>
                                 <td>{{(cartData.product.price * cartData.quantity)|format_currency('CFA')}}</td>
@@ -39,7 +39,7 @@
                         </tbody>
                     {% endfor %}
                     <tfoot>
-                        <tr>
+                        <tr class="fw-bold text-color-maisonphilo ">
                             <td colspan="5" class="text-end">{% trans %}Total :{% endtrans %}</td>
                             <td>
                                 {{total|format_currency('CFA')}}</td>
@@ -48,8 +48,6 @@
                 {% endblock %}
             {% endembed %}
         </div>
-
-
     {% else %}
         {% embed "component/molecules/formDesign.html.twig" %}
             {% block form_content %}
