@@ -5,9 +5,11 @@
 {% block body %}
     <h1>{% trans %}Your cart{% endtrans %}</h1>
     {% if cartDatas|length > 0 %}
-        {% embed "component/molecules/tableDesign.html.twig" %}
-            {% block table_content %}
-                {% for cartData in cartDatas %}
+        <div data-aos="zoom-in" data-aos-duration=" 2000">
+            {% embed "component/molecules/tableDesign.html.twig" with {
+            tableColor:'dark'
+        } %}
+                {% block table_content %}
                     <thead>
                         <tr>
                             <th>{% trans %}Image{% endtrans %}</th>
@@ -18,22 +20,24 @@
                             <th>{% trans %}Total Price{% endtrans %}</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <img class="img-fluid" style="width:5em" src="{{asset('images/imagesUpload/' ~ cartData.product.image)}}" alt="{% trans %}Image of{% endtrans %} ~ {{cartData.product.title}}">
-                            </td>
-                            <td>{{cartData.product.title}}</td>
-                            <td>{{cartData.product.price}}</td>
-                            <td>{{cartData.quantity}}</td>
-                            <td>
-                                <a href="{{path('app_cart_remove', {'id': cartData.product.id}) }} " class="btn-sm btn-danger">
-                                    <i class="fas fa-trash"></i>
-                                </a>
-                            </td>
-                            <td>{{(cartData.product.price * cartData.quantity)|format_currency('CFA')}}</td>
-                        </tr>
-                    </tbody>
+                    {% for cartData in cartDatas %}
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <img class="img-fluid" style="width:5em" src="{{asset('images/imagesUpload/' ~ cartData.product.image)}}" alt="{% trans %}Image of{% endtrans %} ~ {{cartData.product.title}}">
+                                </td>
+                                <td>{{cartData.product.title}}</td>
+                                <td>{{cartData.product.price}}</td>
+                                <td>{{cartData.quantity}}</td>
+                                <td>
+                                    <a href="{{path('app_cart_remove', {'id': cartData.product.id}) }} " class="btn-sm btn-danger">
+                                        <i class="fas fa-trash"></i>
+                                    </a>
+                                </td>
+                                <td>{{(cartData.product.price * cartData.quantity)|format_currency('CFA')}}</td>
+                            </tr>
+                        </tbody>
+                    {% endfor %}
                     <tfoot>
                         <tr>
                             <td colspan="5" class="text-end">{% trans %}Total :{% endtrans %}</td>
@@ -41,11 +45,11 @@
                                 {{total|format_currency('CFA')}}</td>
                         </tr>
                     </tfoot>
+                {% endblock %}
+            {% endembed %}
+        </div>
 
-                {% endfor %}
 
-            {% endblock %}
-        {% endembed %}
     {% else %}
         {% embed "component/molecules/formDesign.html.twig" %}
             {% block form_content %}

@@ -35,7 +35,7 @@ class ProductCustomerController extends AbstractController
         Request $request
     ): array {
 
-        $productPerPage = 2;
+        $productPerPage = 5;
         $datas = $productRepository->findWheelchair(25);
         $products = $paginator->paginate(
             $datas,
