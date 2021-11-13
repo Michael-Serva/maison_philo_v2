@@ -1,4 +1,8 @@
-
+:root{
+  --home-bg-color: #124107;
+  --product-color:#d3c37b;
+  --aging-color:#a0350a;
+}
 html, body, ul, ul li {
   margin: 0;
   padding: 0;
@@ -23,7 +27,7 @@ html, body, ul, ul li {
   background-color: #043106;
   cursor: pointer;
   position: absolute;
-  top: 25%;
+  top: 55%;
   transform: translateY(-50%);
 /*   left: 0;
   right: 0; */
@@ -56,16 +60,15 @@ html, body, ul, ul li {
 }
 .menu-items-container li:hover {
   cursor: pointer;
-  color: #fff;
 }
 .menu-items-container li:nth-child(1):hover {
-  background-color: #3bb1f4;
+  background-color: var(--home-bg-color);
 }
 .menu-items-container li:nth-child(2):hover {
-  background-color: #f8dc3d;
+  background-color: var(--product-color);
 }
 .menu-items-container li:nth-child(3):hover {
-  background-color: #dd4b39;
+  background-color: var(--aging-color);
 }
 .menu-items-container li:nth-child(4):hover {
   background-color: #429f46;
@@ -83,16 +86,16 @@ html, body, ul, ul li {
   border-radius: 100%;
 }
 .home-icon {
-  background-color: #3bb1f4;
-  border: #3bb1f4;
+  background-color: var(--home-bg-color);
+  border: var(--home-bg-color);
 }
 .about-icon {
-  background-color: #f8dc3d;
-  border: #f8dc3d;
+  background-color: var(--product-color);
+  border: var(--product-color);
 }
 .profile-icon {
-  background-color: #dd4b39;
-  border: #dd4b39;
+  background-color: var(--aging-color);
+  border: var(--aging-color);
 }
 .gallery-icon {
   background-color: #429f46;
@@ -136,4 +139,6 @@ html, body, ul, ul li {
   clear: both;
 }
 /* An overlay div that holds the navigation menu */
-
+a:hover{
+  color: black;
+}

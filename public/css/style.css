@@ -3,6 +3,7 @@
     --emcolor: #e06c00;
     --navbar-bg-color: #043106;
     --presentation-bg-color: #5d8b06;
+    --text-link:#d3c37b;
 }
 html {
     overflow-x: hidden;
@@ -89,7 +90,7 @@ em {
 }
 
 .text-site-or {
-    color: #d3c37b;
+    color: var(--text-link);
 }
 
 .dropdown {
@@ -105,7 +106,7 @@ em {
 }
 a {
     text-decoration: none;
-    color: #d3c37b;
+    color: var(--text-link);
 }
 .active a {
     color: #0bac0b !important;
@@ -116,23 +117,27 @@ a {
 }
 h1.inscription,
 h1.connexion {
-    color: #043106;
+    color: var(--navbar-bg-color);
 }
 .text-area-height {
     height: 100px;
 }
 .button-philo {
-    border: 2px solid #d3c37b;
-    background-color: #043106;
+    border: 2px solid var(--text-link);
+    background-color: var(--navbar-bg-color);
     color: aliceblue;
 }
 
 .footer {
-    color: #d3c37b;
+    color: var(--text-link);
     font-size: 1.5vh;
     padding-bottom: 30px;
     min-height: 20em;
 }
 .index-image {
     height: 18rem;
+}
+.bg-vision{
+    background-color: var(--presentation-bg-color);
+    
 }

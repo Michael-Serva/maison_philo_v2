@@ -16,16 +16,16 @@
 {% block body %}
     {% for message in app.flashes('email-verified') %}
         {% include "component/molecules/alertDesign.html.twig" with {
-                message : message,
-                alert : "success"
-            } %}
+            message : message,
+            alert : "success"
+        } %}
     {% endfor %}
     <div class="row mb-1 justify-content-center">
         <span class="side col-lg-12 text-center mb-2">{% trans %}The Aging : a coming challenge for Africa{% endtrans %}</span>
         <div class="mb-1 col-12 col-sm-12 col-md-6 col-lg-6 col-xlg-5 text-center">
             <img class="img-fluid" src="{{ asset('images/couple_agees2.jpg') }}" data-aos="fade-down-right" data-aos-duration="2000">
         </div>
-        <div class='col-12 col-sm-12 col-lg-6 align-item-center  row' data-aos="fade-down-left" data-aos-duration="2000">
+        <div class='col-12 col-sm-12 col-lg-6 row justify-content-evenly' data-aos="fade-down-left" data-aos-duration="2000">
             {% for presentationContent in presentationContents %}
                 <div class="col-md-6 col-12 presentation mb-1">
                     <h2 class="text-center mt-3">
