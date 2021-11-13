@@ -2,3 +2,7 @@
 {% block header %}
     {% include "component/atoms/history_back.html.twig" %}
 {% endblock %}
+{% block stylesheet %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{asset('css/pagination.css')}} ">
+{% endblock %}

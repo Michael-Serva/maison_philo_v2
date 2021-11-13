@@ -5,6 +5,7 @@
 {% block body %}
     <h1>{% trans %}Product index{% endtrans %}</h1>
     <a href="{{ path('app_product_new') }}" class="btn btn-outline-warning mb-3">{% trans %}Create new{% endtrans %}</a>
+    {% include "component/atoms/pagination.html.twig" %}
     {% embed "component/molecules/tableDesign.html.twig" %}
         {% block table_content %}
             <thead>
@@ -20,31 +21,30 @@
             </thead>
             <tbody>
                 {% for product in products %}
-                        <tr>
-                            <td>{{ product.title|trans }}</td>
-                            <td>{{ product.price|format_number }}
-                                {{ 'CFA'|currency_symbol }}</td>
-                            <td class={{product.stock > 0 ? 'text-success' : 'text-danger'}}>
-                                {{ product.stock }}
-                            </td>
-                            <td>
-                                {% include "component/atoms/description_ul.html.twig" %}
-                            </td>
-                            <td>{{product.category.title ?? ''}}</td>
-                            <td>
-                                <a href="{{ asset('/images/imagesUpload/' ~ product.image) }}" target="blank">
-                                    <img src="{{ asset('/images/imagesUpload/' ~ product.image) }}" alt="" class="rounded-circle">
-                                </a>
-                            </td>
-                            <td>
-                                <a href="{{ path('app_product_show', {'id': product.id}) }}">
-                                    <i class="fas fa-eye text-primary"></i>
-                                </a>
-                                <a href="{{ path('app_product_edit', {'id': product.id}) }}">
-                                    <i class="fas fa-edit text-warning ms-2"></i>
-                                </a>
-                            </td>
-                        </tr>
+                    <tr>
+                        <td>{{ product.title|trans }}</td>
+                        <td>{{ product.price|format_currency('CFA') }}</td>
+                        <td class={{product.stock > 0 ? 'text-success' : 'text-danger'}}>
+                            {{ product.stock }}
+                        </td>
+                        <td>
+                            {% include "component/atoms/description_ul.html.twig" %}
+                        </td>
+                        <td>{{product.category.title ?? ''}}</td>
+                        <td>
+                            <a href="{{ asset('/images/imagesUpload/' ~ product.image) }}" target="blank">
+                                <img src="{{ asset('/images/imagesUpload/' ~ product.image) }}" alt="" class="rounded-circle">
+                            </a>
+                        </td>
+                        <td>
+                            <a href="{{ path('app_product_show', {'id': product.id}) }}">
+                                <i class="fas fa-eye text-primary"></i>
+                            </a>
+                            <a href="{{ path('app_product_edit', {'id': product.id}) }}">
+                                <i class="fas fa-edit text-warning ms-2"></i>
+                            </a>
+                        </td>
+                    </tr>
                 {% else %}
                     <tr>
                         <td colspan="7">
@@ -55,5 +55,5 @@
             </tbody>
         {% endblock %}
     {% endembed %}
-    <div class="fs-5">{{ knp_pagination_render(products) }}</div>
+    {% include "component/atoms/pagination.html.twig" %}
 {% endblock %}

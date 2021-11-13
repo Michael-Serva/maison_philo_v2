@@ -4,6 +4,7 @@
 {% endblock %}
 {% block body %}
     <h1>{% trans %}Users list{% endtrans %}</h1>
+    {% include "component/atoms/paginationUser.html.twig" %}
     <table class="table table-hover table-dark text-center align-middle">
         <thead>
             <tr>
@@ -44,5 +45,5 @@
             {% endfor %}
         </tbody>
     </table>
-    <div class="fs-5">{{ knp_pagination_render(users) }}</div>
+    {% include "component/atoms/paginationUser.html.twig" %}
 {% endblock %}

@@ -16,11 +16,17 @@ class AppFixtures extends Fixture
     public function __construct(UserPasswordHasherInterface $encoder)
     {
         $this->encoder = $encoder;
+    
         //dd(get_class_methods(($encoder)));
     }
     public function load(ObjectManager $manager)
     {
         $faker = Factory::create('fr-Fr');
+
+        $adminRole = new Role();
+        $adminRole->setTitle('ROLE_ADMIN');
+        $manager->persist($adminRole);
+        $manager->flush();
 
         $userAdmin = new User();
         $password = $this->encoder->hashPassword($userAdmin, 'AAAAA');
@@ -28,7 +34,9 @@ class AppFixtures extends Fixture
             ->setEmail("Servam95@gmail.com")
             ->setPseudo("Admin")
             ->setPicture("https://randomuser.me/api/portraits/women")
+            ->addUserRole($adminRole)
             ->setPassword($password);
+   
         $manager->persist($userAdmin);
         $manager->flush();
 

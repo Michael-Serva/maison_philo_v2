@@ -3,7 +3,7 @@
         <button aria-hidden="true" data-dismiss="alert" class="close" type="button">
             <div class="alert fade_{{alert}} .fade" role="alert">
                 <h4 class="alert-heading">
-                <span>{% trans %}Hello {% endtrans %}{{user.pseudo}} </span>          
+                <span>{% trans %}Hello {% endtrans %}{{app.user.pseudo ??  app.user.email}} </span>          
                     <span>{{message|trans}}</span>
                 </h4>
             </div>

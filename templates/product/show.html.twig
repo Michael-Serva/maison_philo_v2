@@ -11,20 +11,24 @@
                     <td>{{ product.id }}</td>
                 </tr>
                 <tr>
-                    <th>Title</th>
+                    <th>{% trans %}Title{% endtrans %}</th>
                     <td>{{ product.title }}</td>
                 </tr>
                 <tr>
-                    <th>Price</th>
+                    <th>{% trans %}Price{% endtrans %}</th>
                     <td>{{ product.price }}</td>
                 </tr>
                 <tr>
-                    <th>Stock</th>
+                    <th>{% trans %}Stock{% endtrans %}</th>
                     <td>{{ product.stock }}</td>
                 </tr>
                 <tr>
-                    <th>Description</th>
-                    <td>{{ product.description }}</td>
+                    <th>{% trans %}Description{% endtrans %}</th>
+                    <td>{{ product.description1 }}</td>
+                </tr>
+                <tr>
+                    <th>{% trans %}Category{% endtrans %}</th>
+                    <td>{{product.category.title|trans}} </td>
                 </tr>
                 <tr>
                     <th>Image</th>

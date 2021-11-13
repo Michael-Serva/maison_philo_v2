@@ -3,6 +3,7 @@
 namespace App\DataFixtures;
 
 use App\Entity\Product;
+use App\Entity\Category;
 use Doctrine\Persistence\ObjectManager;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 
@@ -383,7 +384,11 @@ class ProductFixtures extends Fixture
                 "
             ],
         ];
-
+        $wheelchairCategory = new Category();
+        $wheelchairCategory->setTitle("fauteuil roulant");
+        $manager->persist($wheelchairCategory);
+        $manager->flush();
+        
         foreach ($wheelchairs as $wheelchair) {
             $product = new Product();
             $product
@@ -391,6 +396,7 @@ class ProductFixtures extends Fixture
                 ->setPrice($wheelchair['price'])
                 ->setImage($wheelchair['image'])
                 ->setStock($wheelchair['stock'])
+                ->setCategory($wheelchairCategory)
                 ->setDescription($wheelchair['description'])
                 ->setDescription1($wheelchair['description1'])
                 ->setDescription2($wheelchair['description2'])

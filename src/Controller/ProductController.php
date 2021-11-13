@@ -32,17 +32,19 @@ class ProductController extends AbstractController
         PaginatorInterface $paginator,
         Request $request
     ): Response {
+
+        $productPerPage = 5;
         $datas = $productRepository->findAll();
         $products = $paginator->paginate(
             $datas,
             $request->query->getInt('page', 1),
-            5
+             $productPerPage
         );
-        $category = $categoryRepository->findAll();
+
+        $productsTotalPage = ceil(count($datas) / $productPerPage);
         return $this->render('product/index.html.twig', [
             'products' => $products,
-            'category' => $category
-
+            'productsTotalPage' => $productsTotalPage
         ]);
     }
 

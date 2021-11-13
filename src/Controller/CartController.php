@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Repository\ProductRepository;
+use App\Service\CartService;
 use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
@@ -18,62 +19,34 @@ class CartController extends AbstractController
     /**
      * @Route("/")
      */
-    public function index(SessionInterface $session, ProductRepository $productRepository): array
+    public function index(CartService $cartService): array
     {
-        $cart = $session->get('cart', []);
-        $cartDatas = [];
-        foreach ($cart as $id => $quantity) {
-            $cartDatas[] = [
-                'product' => $productRepository->find($id),
-                'quantity' => $quantity
-            ];
-        }
-
-        $total = 0;
-        foreach ($cartDatas as $cartData) {
-            $cartDataTotalPrice = $cartData['product']->getPrice() * $cartData['quantity'];
-            $total += $cartDataTotalPrice;
-        }
+        $cartDatas = $cartService->getTotalCart();
+        $total = $cartService->getTotal();
+        
         //dd($cartDatas);
         return [
             'cartDatas' => $cartDatas,
             'total' => $total
+            
         ];
     }
 
     /**
      * @Route("/add/{id}")
      */
-    public function add($id, SessionInterface $session, FlashBagInterface $flashbag)
+    public function add($id, CartService $cartService)
     {
-        // we initialize the cart to a empty array
-        $cart = $session->get('cart', []);
-        if (!empty($cart[$id])) {
-            //allows you to buy the same product several times
-            $cart[$id]++;
-        } else {
-            $cart[$id] = 1;
-        }
-        $flashbag->add('Success', "Le produit a bien été ajouté à votre panier");
-        //we add a product with an id for key
-
-        //we save the contents of the cart in the session
-        $session->set('cart', $cart);
-
+        $cartService->add($id);
         return $this->redirectToRoute('app_cart_index');
     }
 
-   /**
-    * @Route("/remove/{id}")
-    */
-    public function remove($id, SessionInterface $session)
+    /**
+     * @Route("/remove/{id}")
+     */
+    public function remove($id, CartService $cartService)
     {
-        $cart = $session->get('cart', []);
-        if (!empty($cart[$id])) {
-            unset($cart[$id]);
-        }
-        $session->set('cart', $cart);
-        ;
+        $cartService->remove($id);
         return $this->redirectToRoute('app_cart_index');
     }
 }

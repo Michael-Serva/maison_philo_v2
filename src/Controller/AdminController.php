@@ -28,14 +28,17 @@ class AdminController extends AbstractController
      */
     public function index(UserRepository $userRepository, PaginatorInterface $paginator, Request $request): Response
     {
+        $userPerPage = 5;
         $datas = $userRepository->findAll();
         $users = $paginator->paginate(
             $datas,
             $request->query->getInt('page', 1),
-            5
+            $userPerPage
         );
+        $usersTotalPage = ceil(count($datas) / $userPerPage);
         return $this->render('admin/index.html.twig', [
             'users' => $users,
+            'usersTotalPage' => $usersTotalPage
         ]);
     }
 

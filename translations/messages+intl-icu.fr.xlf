@@ -227,10 +227,6 @@
         <source>welcome to our house</source>
         <target>Bienvenue chez nous</target>
       </trans-unit>
-      <trans-unit id="ch5bKau" resname="Utilisateur">
-        <source>Utilisateur</source>
-        <target>Utilisateur</target>
-      </trans-unit>
       <trans-unit id="DZO3ehf" resname="Edit Category">
         <source>Edit Category</source>
         <target>Modification des catégories</target>
@@ -269,7 +265,7 @@
       </trans-unit>
       <trans-unit id="KSwG8AR" resname="Category">
         <source>Category</source>
-        <target>catégorie</target>
+        <target>Catégorie</target>
       </trans-unit>
       <trans-unit id="4tClSWj" resname="Delete">
         <source>Delete</source>
@@ -297,7 +293,7 @@
       </trans-unit>
       <trans-unit id="k8kchR5" resname="Price">
         <source>Price</source>
-        <target>prix</target>
+        <target>Prix</target>
       </trans-unit>
       <trans-unit id="1crefvM" resname="Stock">
         <source>Stock</source>
@@ -325,7 +321,7 @@
       </trans-unit>
       <trans-unit id="MOEFjAz" resname="Product |">
         <source>Product |</source>
-        <target>produit |</target>
+        <target>Produit |</target>
       </trans-unit>
       <trans-unit id="A8DjWw1" resname="Mobility aid">
         <source>Mobility aid</source>
@@ -397,7 +393,7 @@
       </trans-unit>
       <trans-unit id=".Nb_py3" resname="Death">
         <source>Death</source>
-        <target>décès</target>
+        <target>Décès</target>
       </trans-unit>
       <trans-unit id="cKRES0w" resname="If an account matching your email exists, then an email was just sent that contains a link that you can use to reset your password. This link will expire in">
         <source>If an account matching your email exists, then an email was just sent that contains a link that you can use to reset your password. This link will expire in</source>
@@ -438,6 +434,111 @@
       <trans-unit id="ITaQX9q" resname="Confirm my Email">
         <source>Confirm my Email</source>
         <target>Confirmer mon mail</target>
+      </trans-unit>
+      <trans-unit id="BH9Ys5T" resname="Pseudo">
+        <source>Pseudo</source>
+        <target>Pseudo</target>
+      </trans-unit>
+      <trans-unit id="lpzL089" resname="Email">
+        <source>Email</source>
+        <target>Email</target>
+      </trans-unit>
+      <trans-unit id="e0iIBJR" resname="Last name">
+        <source>Last name</source>
+        <target>Nom</target>
+      </trans-unit>
+      <trans-unit id="TP3eab3" resname="firstname">
+        <source>firstname</source>
+        <target>prénom</target>
+      </trans-unit>
+      <trans-unit id="wlM3BVR" resname="Roles">
+        <source>Roles</source>
+        <target>Roles</target>
+      </trans-unit>
+      <trans-unit id=".4BZ3Gd" resname="Actions">
+        <source>Actions</source>
+        <target>Actions</target>
+      </trans-unit>
+      <trans-unit id="giurjUG" resname="Quantity">
+        <source>Quantity</source>
+        <target>Quantité</target>
+      </trans-unit>
+      <trans-unit id="ZM.xMZ0" resname="Action">
+        <source>Action</source>
+        <target>Action</target>
+      </trans-unit>
+      <trans-unit id="PLPwUX7" resname="Total Price">
+        <source>Total Price</source>
+        <target>Prix total</target>
+      </trans-unit>
+      <trans-unit id="Inn2vQh" resname="Image of">
+        <source>Image of</source>
+        <target>Image :</target>
+      </trans-unit>
+      <trans-unit id="VnRzuMZ" resname="Total :">
+        <source>Total :</source>
+        <target>Total :</target>
+      </trans-unit>
+      <trans-unit id="W9LkaV0" resname="Your cart is empty">
+        <source>Your cart is empty</source>
+        <target>Votre panier est vide</target>
+      </trans-unit>
+      <trans-unit id="mkGHl7u" resname="Click here for buy some products">
+        <source>Click here for buy some products</source>
+        <target>Cliquez ici pour accéder à la boutique</target>
+      </trans-unit>
+      <trans-unit id="bS1ZrtR" resname="Cart">
+        <source>Cart</source>
+        <target>Panier</target>
+      </trans-unit>
+      <trans-unit id="frEmLFz" resname="Your cart">
+        <source>Your cart</source>
+        <target>Votre panier</target>
+      </trans-unit>
+      <trans-unit id="pXsIpIC" resname="Previous">
+        <source>Previous</source>
+        <target>Précédent</target>
+      </trans-unit>
+      <trans-unit id="H.V6Kdf" resname="Next">
+        <source>Next</source>
+        <target>Suivant</target>
+      </trans-unit>
+      <trans-unit id="yVuth8c" resname="Elle s’appelait Philo… C’était ma Mémé, une femme exceptionnelle.">
+        <source>Elle s’appelait Philo… C’était ma Mémé, une femme exceptionnelle.</source>
+        <target>__Elle s’appelait Philo… C’était ma Mémé, une femme exceptionnelle.</target>
+      </trans-unit>
+   
+      <trans-unit id="Ro95A9P" resname="Image health care">
+        <source>Image health care</source>
+        <target>Image hygiène et soin</target>
+      </trans-unit>
+      <trans-unit id="7Fugq7c" resname="Access">
+        <source>Access</source>
+        <target>Voir</target>
+      </trans-unit>
+      <trans-unit id="ORn.8Oj" resname="no products records found">
+        <source>no products records found</source>
+        <target>Aucun produit enregistré</target>
+      </trans-unit>
+      <trans-unit id="0p82njN" resname="Product reference number">
+        <source>Product reference number</source>
+        <target>Référence produit</target>
+      </trans-unit>
+      <trans-unit id="uysyw3M" resname="Back to the product list">
+        <source>Back to the product list</source>
+        <target>Retour à la liste produits</target>
+      </trans-unit>
+      <trans-unit id="PiKcte." resname="Product page">
+        <source>Product page</source>
+        <target>Page produit</target>
+      </trans-unit>
+      <trans-unit id="BS0bz3Q" resname="Product show">
+        <source>Product show</source>
+        <target>Affichage des produits</target>
+      </trans-unit>
+      <trans-unit id="CjCoFdZ" resname="Page">
+        <source>Page</source>
+        <target>Page</target>
       </trans-unit>
     </body>
   </file>
