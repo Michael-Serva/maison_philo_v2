@@ -23,12 +23,21 @@ class CartController extends AbstractController
     {
         $cartDatas = $cartService->getTotalCart();
         $total = $cartService->getTotal();
-        
-        //dd($cartDatas);
+
+        $cart[] = [
+            'productname' => $cartDatas[0]['product']->getId(),
+            'productPrice' => $cartDatas[0]['product']->getPrice(),
+
+        ];
+                dd($cartDatas[0]['product']);
+
+        //dd($cart);
+
+        //dd($cartDatas[0]['product']->getId());
         return [
             'cartDatas' => $cartDatas,
             'total' => $total
-            
+
         ];
     }
 

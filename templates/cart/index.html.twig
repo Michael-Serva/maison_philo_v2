@@ -42,8 +42,13 @@
                         <tr class="fw-bold text-color-maisonphilo ">
                             <td colspan="5" class="text-end">{% trans %}Total :{% endtrans %}</td>
                             <td>
-                                {{total|format_currency('CFA')}}</td>
+                                {{total|format_currency('CFA')}}
+                            </td>
+
                         </tr>
+                        <td colspan=6 class="text-end">
+                            <a href="https://buy.stripe.com/dR6036fgGcoTgnucMM" class="btn btn-outline-success" target="_blank">{% trans %}Payment{% endtrans %}</a>
+                        </td>
                     </tfoot>
                 {% endblock %}
             {% endembed %}
