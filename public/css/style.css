@@ -5,6 +5,13 @@
     --presentation-bg-color: #5d8b06;
     --text-link:#d3c37b;
 }
+.africa{
+    background-image: url('../images/objective.png');
+    background-size: cover;
+}
+.text-em{
+    color: var(--emcolor);
+}
 html {
     overflow-x: hidden;
 }

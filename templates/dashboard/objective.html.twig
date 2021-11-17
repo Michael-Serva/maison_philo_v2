@@ -1,2 +1,22 @@
-{% extends "dashboard/layout.html.twig" %}
-
+{% extends 'dashboard/layout.html.twig' %}
+{% block body %}
+    <div class="row justify-content-center">
+        <div class="offset-md-1 col-md-4">
+            <h1>Notre objectif:</h1>
+            <hr class="p-2 text-em">
+            <div class="ms-2 fs-2">
+                <ul>
+                    <li>
+                        <span class="text-color-maisonphilo fw-bold">Identifier les solutions de prise en charge</span>
+                        des personnes âgées
+                        <span class="text-color-maisonphilo fw-bold">déjà en place</span>
+                        dans l’espace UEMOA (phase pilote: Côte d’Ivoire) afin de permettre une meilleure connaissance de l’existant et de
+                        <span class="text-color-maisonphilo fw-bold">simplifier l’accès à cette information.</span>
+                    </li>
+                    <li>Cela permettra à terme de pouvoir <span class="text-color-maisonphilo fw-bold">identifier les pistes d’amélioration de la prise en charge des ainés les mieux adaptées aux situations locales.</span> </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-7"><img src="{{asset('images/objective.png')}}" class="img-fluid" alt="{% trans %}Map of Africa{% endtrans %}"></div>
+    </div>
+{% endblock %}
