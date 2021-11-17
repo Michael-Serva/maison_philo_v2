@@ -5,8 +5,8 @@
 {% block body %}
     {% embed "component/molecules/productDesign.html.twig" %}
         {% block product_content %}
-            <div class="card mb-3 border-success">
-                <div class="row g-0">
+            <div class="card mb-3 border-success phone">
+                <div class="row g-0 phone">
                     <div class="col-md-4 d-flex align-items-center">
                         <img src="{{asset('images/imagesUpload/' ~ product.image)}} " class="img-fluid rounded-start" alt="{{product.title}} ">
                     </div>
@@ -30,7 +30,7 @@
                             {% endfor %}
                         </ul>
                     </small>
-                    <div class="col justify-content-center">
+                    <div class="col-12 col-md justify-content-center">
                         <div class="text-center row justify-content-center">
                             <a href="#" class="btn btn-success col-7 mb-2">{% trans %}Add to cart{% endtrans %}</a>
                             <div class="card bg-homypay text-light text-center mb-2 mx-auto col-7">{{product.price|format_currency('CFA')}}

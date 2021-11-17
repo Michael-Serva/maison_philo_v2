@@ -1,13 +1,11 @@
-<div class="row">
+<div class="row filter">
     <div class="fs-3 fw-bold text-center">{% trans %}Product filter{% endtrans %}</div>
     {{form_start(form, {attr: {class: "filter"}}) }}
     {{form_row(form.q)}}
     {% include "component/molecules/filterTitle.html.twig" with {
     title: "Category"
-} %}
+    } %}
     {{form_row(form.category)}}
-
-
     <h4 class="fw-bold text-secondary">{% trans %}Price{% endtrans %}</h4>
     <div class="row">
         {{form_row(form.min)}}
