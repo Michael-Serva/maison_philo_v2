@@ -2,6 +2,7 @@
 
 namespace App\Repository;
 
+use App\Data\SearchData;
 use App\Entity\Product;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
@@ -35,10 +36,50 @@ class ProductRepository extends ServiceEntityRepository
         ;
     }
     */
+    /**
+     * @return Product[]
+     */
+    public function findSearch(SearchData $search): array
+    {
+        $query = $this
+            ->createQueryBuilder('p')
+            ->select('c', 'p')
+            ->join('p.category', 'c');
+
+        if (!empty($search->q)) {
+            $query = $query
+                ->andWhere('p.title LIKE :q')
+                ->setParameter('q', "%{$search->q}%");
+        }
+        if (!empty($search->min)) {
+            $query = $query
+                ->andWhere('p.price >= :min')
+                ->setParameter('min', $search->min);
+        }
+
+        if (!empty($search->max)) {
+            $query = $query
+                ->andWhere('p.price <= :max')
+                ->setParameter('max', $search->max);
+        }
+
+        if (!empty($search->promo)) {
+            $query = $query
+                ->andWhere('p.promo = 1');
+        }
+        if (!empty($search->category)) {
+            $query = $query
+                ->andWhere('c.id IN (:category)')
+                ->setParameter('category', $search->category);
+        }
+
+        return $query->getQuery()->getResult();
+    }
+
     public function findWheelchair($value)
     {
         return $this->createQueryBuilder('p')
-           /*  ->join('p.category', "c")
+            /*  ->join('p.category', "c")
             ->andWhere("c.title ='chaise roulante'") */
             ->setMaxResults($value)
             ->getQuery()

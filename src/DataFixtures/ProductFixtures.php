@@ -15,6 +15,7 @@ class ProductFixtures extends Fixture
 
         $wheelchairs = [
             [
+                'promo' => true,
                 'title' => 'Fauteuil Roulant Pliant Enigma LAWC001',
                 'price' => 177000,
                 'stock' => 6,
@@ -47,6 +48,7 @@ class ProductFixtures extends Fixture
                 11,5 Kg sans les roues",
             ],
             [
+                'promo' => true,
                 'title' => "Fauteuil roulant Vermeiren V300 XXL Dossier Fixe",
                 'price' => 363000,
                 'stock' => "1",
@@ -100,6 +102,7 @@ class ProductFixtures extends Fixture
                 "
             ],
             [
+                'promo' => false,
                 'title' => "Scooter Invacare 3 roues Colibrie",
                 'price' => 586453,
                 'stock' => 57,
@@ -163,6 +166,7 @@ class ProductFixtures extends Fixture
                 "
             ],
             [
+                'promo' => true,
                 'title' => "Vermeiren INOVYS II Electrique",
                 'price' => 720780,
                 'stock' => "38",
@@ -198,6 +202,7 @@ class ProductFixtures extends Fixture
                 "
             ],
             [
+                'promo' => false,
                 'title' => "Fauteuil roulant actif SAGITTA",
                 'price' => 798100,
                 'stock' => 41,
@@ -237,6 +242,7 @@ class ProductFixtures extends Fixture
                 "
             ],
             [
+                'promo' => false,
                 'title' => "Eco Buggy Poussette canne pliante à dossier inclinable",
                 'price' => 376116,
                 'stock' => 150,
@@ -276,6 +282,7 @@ class ProductFixtures extends Fixture
                     Encombrement réduit après pliage
                 "
             ], [
+                'promo' => false,
                 'title' => "Poussette pliable Jazz Easys",
                 'price' => 1736426,
                 'stock' => "2",
@@ -315,6 +322,7 @@ class ProductFixtures extends Fixture
                 "
             ],
             [
+                'promo' => 1,
                 'title' => "Fauteuil Roulant AvantGarde CS Otto Bock",
                 'price' => 1441561,
                 'stock' => "9",
@@ -345,8 +353,9 @@ class ProductFixtures extends Fixture
                     Châssis avant standard ou avec abduction|
                     Potences fixes 70° ou 80°
                 "
-            ], 
+            ],
             [
+                'promo' => false,
                 'title' => "Invacare Rea Dahlia 45 degrés",
                 'price' => 1323615,
                 'stock' => 37,
@@ -388,10 +397,11 @@ class ProductFixtures extends Fixture
         $wheelchairCategory->setTitle("fauteuil roulant");
         $manager->persist($wheelchairCategory);
         $manager->flush();
-        
+
         foreach ($wheelchairs as $wheelchair) {
             $product = new Product();
             $product
+                ->setPromo($wheelchair['promo'])
                 ->setTitle($wheelchair['title'])
                 ->setPrice($wheelchair['price'])
                 ->setImage($wheelchair['image'])
@@ -405,5 +415,63 @@ class ProductFixtures extends Fixture
             $manager->persist($product);
             $manager->flush();
         }
+
+
+        /* Add health and care product */
+        $categories = [
+            [
+                'promo' => false,
+                'title' => 'Strapontin de douche Bornéo',
+                'price' => 64923,
+                'stock' => 220,
+                'image' =>
+                'Strapontin-de-douche-Borneo.jpg',
+                'description' => '
+                    Siège de douche mural strapontin|
+                    Découpe anatomique|
+                    Poids Maxi 110 kg
+                ',
+                'description1' => "
+                    d'équilibre.|
+                    L'ensemble est repliable contre le mur pour faciliter l'accès et permettre aux autres personnes du foyer de prendre une douche debout.|
+                    Les pieds se règlent en hauteur pour positionner l'assise à la hauteur désirée.|
+                    Un réglage fin est possible sur chaque pied pour compenser la pente du receveur de douche.|
+                    L'assise anatomique est construite en matériau plastifié.|
+                    La structure est en acier traité epoxy blanc avec fixations en inox.
+                ",
+                'description2' => 'Identité',
+                'description3' => "
+                    Assise réglable en hauteur de 450 à 560 mm|
+                    Assise avec découpe anatomique|
+                    Assise: Larg. 438 mm Prof. 378 mm|
+                    Ajustage précis de chaque pied|
+                    Relevable, profondeur plié : 130 mm|
+                    Dimensions Hors Tout Larg. x Prof. 450x455 mm",
+            ],
+        ];
+
+
+        $healthAndCareCategory = new Category();
+        $healthAndCareCategory->setTitle("hygiene");
+        $manager->persist($healthAndCareCategory);
+        $manager->flush();
+
+           foreach ($categories as $category) {
+            $product = new Product();
+            $product
+                ->setPromo($category['promo'])
+                ->setTitle($category['title'])
+                ->setPrice($category['price'])
+                ->setImage($category['image'])
+                ->setStock($category['stock'])
+                ->setCategory($healthAndCareCategory)
+                ->setDescription($category['description'])
+                ->setDescription1($category['description1'])
+                ->setDescription2($category['description2'])
+                ->setDescription3($category['description3']);
+
+            $manager->persist($product);
+            $manager->flush();
+        } 
     }
 }

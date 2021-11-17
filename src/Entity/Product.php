@@ -56,7 +56,7 @@ class Product
     private $image;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="createdAt")
+     * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="categoryId")
      */
     private $category;
 
@@ -84,6 +84,11 @@ class Product
      * @ORM\Column(type="text", nullable=true)
      */
     private $description4;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $promo;
 
     public function getId(): Uuid
     {
@@ -206,6 +211,18 @@ class Product
     public function setDescription4(?string $description4): self
     {
         $this->description4 = $description4;
+
+        return $this;
+    }
+
+    public function getPromo(): ?bool
+    {
+        return $this->promo;
+    }
+
+    public function setPromo(?bool $promo): self
+    {
+        $this->promo = $promo;
 
         return $this;
     }
