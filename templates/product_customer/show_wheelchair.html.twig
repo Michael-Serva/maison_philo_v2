@@ -14,6 +14,20 @@
             <div class="justify-content-center">
                 {% include "component/atoms/pagination.html.twig" %}
             </div>
+            <div class="d-flex justify-content-evenly mb-2">
+                <button class="bg-success rounded text-light">
+                    {{knp_pagination_sortable(products, 'Price'|trans, 'p.price')}}
+                    <i class="fas fa-sort"></i>
+                </button>
+                <button class="bg-success rounded text-light">
+                    {{knp_pagination_sortable(products, 'Promo'|trans, 'p.promo')}}
+                    <i class="fas fa-sort"></i>
+                </button>
+                <button class="bg-success rounded text-light">
+                    {{knp_pagination_sortable(products, 'Title'|trans, 'p.title')}}
+                    <i class="fas fa-sort"></i>
+                </button>
+            </div>
             {% for product in products %}
                 {% include "component/organisms/productShow.html.twig" %}
             {% endfor %}

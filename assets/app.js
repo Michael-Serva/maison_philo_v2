@@ -13,7 +13,6 @@ import './scripts/swal';
 import './scripts/script';
 import './scripts/active';
 
-
 // start the Stimulus application
 import './bootstrap';
 

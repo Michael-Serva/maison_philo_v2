@@ -41,7 +41,7 @@ class ProductCustomerController extends AbstractController
         $data = new SearchData();
         $form = $this->createForm(SearchType::class, $data);
         $form->handleRequest($request);
-        //dd($data);
+      
 
         $productPerPage = 5;
         $datas = $productRepository->findSearch($data);
@@ -58,6 +58,7 @@ class ProductCustomerController extends AbstractController
             'products' => $products,
             'productsTotalPage' => $productsTotalPage,
             'form' => $form->createView(),
+          
         ];
     }
 
