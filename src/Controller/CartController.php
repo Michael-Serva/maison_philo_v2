@@ -2,13 +2,12 @@
 
 namespace App\Controller;
 
-use App\Repository\ProductRepository;
 use App\Service\CartService;
 use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
-use Symfony\Component\HttpFoundation\Session\SessionInterface;
+
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Session\Flash\FlashBagInterface;
+
 
 /**
  * @Route("/cart")
@@ -23,21 +22,15 @@ class CartController extends AbstractController
     {
         $cartDatas = $cartService->getTotalCart();
         $total = $cartService->getTotal();
-
-        $cart[] = [
-            'productname' => $cartDatas[0]['product']->getId(),
-            'productPrice' => $cartDatas[0]['product']->getPrice(),
-
-        ];
-                dd($cartDatas[0]['product']);
-
-        //dd($cart);
-
-        //dd($cartDatas[0]['product']->getId());
+        if ($cartDatas) {
+            $cart[] = [
+                'productname' => $cartDatas[0]['product']->getId(),
+                'productPrice' => $cartDatas[0]['product']->getPrice(),
+            ];
+        }
         return [
             'cartDatas' => $cartDatas,
             'total' => $total
-
         ];
     }
 

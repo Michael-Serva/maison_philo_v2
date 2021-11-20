@@ -1,10 +1,9 @@
 body{
-    background-image: url(../images/sunshine.jpg);
+    background-image: url('/public/images/sunshine.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 }
 div.shadow-lg a{
     color: rgb(0, 88, 27);
-    font-weight: 900;
-    
+    font-weight: 900; 
 }

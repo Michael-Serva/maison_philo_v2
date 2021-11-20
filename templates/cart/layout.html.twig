@@ -4,5 +4,6 @@
 {% endblock %}
 {% block stylesheet %}
     {{ parent() }}
-     <link rel="stylesheet" href="{{asset('css/table.css')}}">
+    {{encore_entry_link_tags('cart')}}
 {% endblock %}
+

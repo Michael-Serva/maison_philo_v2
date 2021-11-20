@@ -1,6 +1,5 @@
 /* librairie AOOS */
 AOS.init();
-
 /* notification */
 function messageOff() {
     if (document.querySelector('.disparition')) {
@@ -11,18 +10,19 @@ function messageOff() {
         );
     }
 }
-
 /* Preview de l'image upload CRUD PRODUIT */
-document.getElementById('product_image').onchange = function (event) {
-    var output = document.getElementById('output');
-    output.src = URL.createObjectURL(event.target.files[0]);
-    output.onload = function () {
-        URL.revokeObjectURL(output.src) // free memory
+if (document.getElementById('product_image')) {
+    document.getElementById('product_image').onchange = function (event) {
+        var output = document.getElementById('output');
+        output.src = URL.createObjectURL(event.target.files[0]);
+        output.onload = function () {
+            URL.revokeObjectURL(output.src) // free memory
+        }
     }
 }
 
 /* Afficher / cacher le password */
-$(".toggle-password").click(function () {
+/* $(".toggle-password").on("click", handler)(function () {
 
     $(this).toggleClass("fa-eye fa-eye-slash");
     var input = $($(this).attr("toggle"));
@@ -31,7 +31,7 @@ $(".toggle-password").click(function () {
     } else {
         input.attr("type", "password");
     }
-});
+}); */
 
 /* Appel de la fonction */
 messageOff();

@@ -1,12 +1,11 @@
 {% extends 'base.html.twig' %}
 {% block stylesheet %}
     {{ parent() }}
-    <link rel="stylesheet" href="{{asset('css/productCard.css')}}">
-    <link rel="stylesheet" href="{{asset('css/pagination.css')}} ">
+    {{encore_entry_link_tags('productCustomer')}}
 {% endblock %}
 {% block scripts %}
-    <script src="{{ asset('js/product.js') }}"></script>
     {{ parent() }}
+    {{encore_entry_script_tags('productCustomer')}}
 {% endblock %}
 {% block header %}
     {% include "component/atoms/history_back.html.twig" %}

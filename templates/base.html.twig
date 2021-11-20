@@ -11,8 +11,7 @@
         </title>
         {% include "component/atoms/head.html.twig" %}
         {% block stylesheet %}
-            <link rel="stylesheet" href="{{asset('css/style.css')}}">
-            <link rel="stylesheet" href="{{asset('css/alert.css')}}">
+            {{encore_entry_link_tags('app')}}
         {% endblock %}
 
     </head>
@@ -20,10 +19,9 @@
         {% include "component/organisms/navbarComponent.html.twig" with {
             routePath : 'app_dashboard_home',
         } %}
-        <div class="container-fluid main"> 
-            {% block header %}{% endblock %}
-            {% block body %}{% endblock %}
+        <div class="container-fluid main"> {% block header %}{% endblock %}{% block body %}{% endblock %}
             {% block scripts %}
+                {{encore_entry_script_tags('app'| replace({"src=" :  "defer src="}) |raw )}}
                 {% include "component/atoms/script.html.twig" %}
             {% endblock %}
         </div>

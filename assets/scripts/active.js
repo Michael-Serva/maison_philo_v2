@@ -9,7 +9,6 @@
 // }
 // window.onload = setActive;
 
-
 function setActive() {
     var aObj = document.getElementById('navbarSupportedContent').getElementsByTagName('a');
     for (var i = 0; i < aObj.length; i++) {

@@ -3,14 +3,14 @@
     {% trans %}Product main page |{% endtrans %}{{ parent() }}
 {% endblock %}
 {% block body %}
-    <h1>{% trans %}Page{% endtrans %}
-        {{products.page|default('1')}}
-    </h1>
     <div class="row justify-content-evenly gx-0">
         <div class="col-md-3 col-12 filter bg-light p-2">
             {% include "component/molecules/filter.html.twig" %}
         </div>
         <div class="col-md-9 col-12 row justify-content-evenly align-middle">
+            <h1>{% trans %}Page{% endtrans %}
+                {{products.page|default('1')}}
+            </h1>
             <div class="justify-content-center">
                 {% include "component/atoms/pagination.html.twig" %}
             </div>
@@ -22,5 +22,4 @@
             </div>
         </div>
     </div>
-
 {% endblock %}

@@ -1,5 +1,3 @@
-$(document).ready(function () {
-
     //Define Defaults - Elements to be targets by user interaction/events
     var $defaults = {
         navigation: $('nav#navigation'),
@@ -25,4 +23,4 @@ $(document).ready(function () {
         }
     });
 
-});
+

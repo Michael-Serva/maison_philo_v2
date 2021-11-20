@@ -40,18 +40,17 @@ function swalConfirm() {
     });
     return false;
 }
-$(document).ready(function(){
-$(".add-cart").click(function(){
-    swal({
-        title: $("#add-cart").text() ,
-        text: "",
-        icon: "success",
-        timer: 1000
-    });
-})
+$(document).ready(function () {
+    $(".add-cart").click(function () {
+        swal({
+            title: $("#add-cart").text(),
+            text: "",
+            icon: "success",
+            timer: 1000
+        });
+    })
 
 })
-
 
 
 

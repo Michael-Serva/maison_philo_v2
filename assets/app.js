@@ -7,6 +7,14 @@
 
 // any CSS you import will output into a single css file (app.css in this case)
 import './styles/app.css';
+import './styles/alert.css';
+/* import scripts */
+import './scripts/swal';
+import './scripts/script';
+import './scripts/active';
+
 
 // start the Stimulus application
 import './bootstrap';
+
+

@@ -1,12 +1,12 @@
 {% extends 'base.html.twig' %}
 {% block stylesheet %}
-    <link rel="stylesheet" href="{{asset('css/popupMenu.css')}} ">
     {{ parent() }}
+    {{encore_entry_link_tags('dashboard')}}
 {% endblock %}
 {% block header %}
     {% include "component/atoms/history_back.html.twig" %}
 {% endblock %}
 {% block scripts %}
     {{ parent() }}
-    <script src="{{asset('js/popupMenu.js')}}"></script>
+    {{encore_entry_script_tags('dashboard')}}
 {% endblock %}
