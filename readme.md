@@ -14,7 +14,21 @@
 symfony server:start
 php bin/console translation:update --force fr
 php bin/console doctrine:fixtures:load
+php composer.phar dump-env prod
 ```
+
+#### install noode js
+
+```bash
+curl -o- https://raw.githubusercontent.com/nvm... | bash 
+nvm install node
+```
+
+### Webpack
+
+```bash
+npx encore dev-server --hot
+````
 
 ## GitHub
 
@@ -74,7 +88,7 @@ php bin/console doctrine:fixtures:load
 usages des alt 7 balises
 normes 3wc
 meta descriptions
-balise title 
+balise title
 arborescence coherente
 
 pertinence des contenus

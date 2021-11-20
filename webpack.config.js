@@ -26,7 +26,6 @@ Encore
     .addEntry('admin', './assets/admin.js')
     .addEntry('cart', './assets/cart.js')
     .addEntry('category', './assets/category.js')
-    .addEntry('payment', './assets/payment.js')
     .addEntry('product', './assets/product.js')
     .addEntry('registration', './assets/registration.js')
     .addEntry('security', './assets/security.js')
