@@ -505,9 +505,8 @@
       </trans-unit>
       <trans-unit id="yVuth8c" resname="Elle s’appelait Philo… C’était ma Mémé, une femme exceptionnelle.">
         <source>Elle s’appelait Philo… C’était ma Mémé, une femme exceptionnelle.</source>
-        <target>__Elle s’appelait Philo… C’était ma Mémé, une femme exceptionnelle.</target>
+        <target>Elle s’appelait Philo… C’était ma Mémé, une femme exceptionnelle.</target>
       </trans-unit>
-   
       <trans-unit id="Ro95A9P" resname="Image health care">
         <source>Image health care</source>
         <target>Image hygiène et soin</target>
@@ -539,6 +538,118 @@
       <trans-unit id="CjCoFdZ" resname="Page">
         <source>Page</source>
         <target>Page</target>
+      </trans-unit>
+      <trans-unit id="ch5bKau" resname="Utilisateur">
+        <source>Utilisateur</source>
+        <target>Utilisateur</target>
+      </trans-unit>
+      <trans-unit id="cEjzizP" resname="Payment">
+        <source>Payment</source>
+        <target>Paiement</target>
+      </trans-unit>
+      <trans-unit id="wds64DL" resname="Plan du site">
+        <source>Plan du site</source>
+        <target>Plan du site</target>
+      </trans-unit>
+      <trans-unit id="zRQo_x7" resname="Product filter">
+        <source>Product filter</source>
+        <target>Filtre produits</target>
+      </trans-unit>
+      <trans-unit id="jGoAJNr" resname="Promotion">
+        <source>Promotion</source>
+        <target>Promotion</target>
+      </trans-unit>
+      <trans-unit id="QGEau92" resname="Validate">
+        <source>Validate</source>
+        <target>Validation</target>
+      </trans-unit>
+      <trans-unit id="ZSzZYDr" resname="Notre histoire">
+        <source>Notre histoire</source>
+        <target>Notre histoire</target>
+      </trans-unit>
+      <trans-unit id="Cs8ddRd" resname="Lorsque Mémé a perdu son autonomie, nous nous sommes trouvés face à une&#10;                    absence de personnel qualifié et d’infrastructure de prise en charge adaptée&#10;                    malgré le fait qu’elle ait rejoint sa fille à Abidjan, capitale économique de la&#10;                    Côte d’Ivoire.">
+        <source>Lorsque Mémé a perdu son autonomie, nous nous sommes trouvés face à une
+                    absence de personnel qualifié et d’infrastructure de prise en charge adaptée
+                    malgré le fait qu’elle ait rejoint sa fille à Abidjan, capitale économique de la
+                    Côte d’Ivoire.</source>
+        <target>Lorsque Mémé a perdu son autonomie, nous nous sommes trouvés face à une
+                    absence de personnel qualifié et d’infrastructure de prise en charge adaptée
+                    malgré le fait qu’elle ait rejoint sa fille à Abidjan, capitale économique de la
+                    Côte d’Ivoire.</target>
+      </trans-unit>
+      <trans-unit id="pJkXKgD" resname="Bien que la famille ait eu, à un moment donné, la volonté ainsi que les moyens&#10;                    financiers de la mettre dans un cadre de prise en charge gériatrique pour&#10;                    qu’elle puisse vivre le moins douloureusement possible ses derniers jours, nous&#10;                    n’avons pas eu accès à une offre correspondant à nos attentes. Son décès a&#10;                    donc été un véritable déclic pour moi sur la question de la prise en charge de&#10;                    nos ainés en Afrique.">
+        <source>Bien que la famille ait eu, à un moment donné, la volonté ainsi que les moyens
+                    financiers de la mettre dans un cadre de prise en charge gériatrique pour
+                    qu’elle puisse vivre le moins douloureusement possible ses derniers jours, nous
+                    n’avons pas eu accès à une offre correspondant à nos attentes. Son décès a
+                    donc été un véritable déclic pour moi sur la question de la prise en charge de
+                    nos ainés en Afrique.</source>
+        <target>Bien que la famille ait eu, à un moment donné, la volonté ainsi que les moyens
+                    financiers de la mettre dans un cadre de prise en charge gériatrique pour
+                    qu’elle puisse vivre le moins douloureusement possible ses derniers jours, nous
+                    n’avons pas eu accès à une offre correspondant à nos attentes. Son décès a
+                    donc été un véritable déclic pour moi sur la question de la prise en charge de
+                    nos ainés en Afrique.</target>
+      </trans-unit>
+      <trans-unit id="A4rr8s9" resname="J’ai pris conscience de l’urgence d’identifier et de mettre en œuvre des&#10;                    solutions d’accompagnement de la vieillesse adaptées aux réalités locales&#10;                    africaines.">
+        <source>J’ai pris conscience de l’urgence d’identifier et de mettre en œuvre des
+                    solutions d’accompagnement de la vieillesse adaptées aux réalités locales
+                    africaines.</source>
+        <target>J’ai pris conscience de l’urgence d’identifier et de mettre en œuvre des
+                    solutions d’accompagnement de la vieillesse adaptées aux réalités locales
+                    africaines.</target>
+      </trans-unit>
+      <trans-unit id="erDR_PL" resname="Map of Africa">
+        <source>Map of Africa</source>
+        <target>Carte de l'Afrique</target>
+      </trans-unit>
+      <trans-unit id="D_S6tFM" resname="Contribuer au">
+        <source>Contribuer au</source>
+        <target>Contribuer au</target>
+      </trans-unit>
+      <trans-unit id="sWQKBor" resname="Bien Vieillir en Afrique">
+        <source>Bien Vieillir en Afrique</source>
+        <target>Bien Vieillir en Afrique</target>
+      </trans-unit>
+      <trans-unit id="VujHbMl" resname="L’Afrique n’échappe pas au phénomène de vieillissement de la population.">
+        <source>L’Afrique n’échappe pas au phénomène de vieillissement de la population.</source>
+        <target>L’Afrique n’échappe pas au phénomène de vieillissement de la population.</target>
+      </trans-unit>
+      <trans-unit id="xlaaZuO" resname="La prise en charge de nos ainés dont le nombre est appelé à augmenter doit être pensée pour préparer dès aujourd’hui les conditions du Bien vieillir en Afrique des séniors de demain.">
+        <source>La prise en charge de nos ainés dont le nombre est appelé à augmenter doit être pensée pour préparer dès aujourd’hui les conditions du Bien vieillir en Afrique des séniors de demain.</source>
+        <target>La prise en charge de nos ainés dont le nombre est appelé à augmenter doit être pensée pour préparer dès aujourd’hui les conditions du Bien vieillir en Afrique des séniors de demain.</target>
+      </trans-unit>
+      <trans-unit id="8TVll9J" resname="La prise en charge des personnes âgées">
+        <source>La prise en charge des personnes âgées</source>
+        <target>La prise en charge des personnes âgées</target>
+      </trans-unit>
+      <trans-unit id="Cv1aRou" resname="dans les pays africains ne doit pas se réduire à un copier-coller de solutions qui ont pu fonctionner (ou pas d’ailleurs) sous d’autres cieux. Elle">
+        <source>dans les pays africains ne doit pas se réduire à un copier-coller de solutions qui ont pu fonctionner (ou pas d’ailleurs) sous d’autres cieux. Elle</source>
+        <target>_dans les pays africains ne doit pas se réduire à un copier-coller de solutions qui ont pu fonctionner (ou pas d’ailleurs) sous d’autres cieux. Elle</target>
+      </trans-unit>
+      <trans-unit id="MpfhMc9" resname="doit être pensée de manière méthodique et prendre en compte nos réalités locales, nos traditions.">
+        <source>doit être pensée de manière méthodique et prendre en compte nos réalités locales, nos traditions.</source>
+        <target>_doit être pensée de manière méthodique et prendre en compte nos réalités locales, nos traditions.</target>
+      </trans-unit>
+      <trans-unit id="mV8LTQA" resname="Le sujet de la place des personnes âgées doit devenir un thème de société">
+        <source>Le sujet de la place des personnes âgées doit devenir un thème de société</source>
+        <target>Le sujet de la place des personnes âgées doit devenir un thème de société</target>
+      </trans-unit>
+      <trans-unit id="hd8dhbN" resname="pour que les mentalités se préparent et évoluent afin d’envisager plus sereinement toutes les options permettant un Bien Vieillir.">
+        <source>pour que les mentalités se préparent et évoluent afin d’envisager plus sereinement toutes les options permettant un Bien Vieillir.</source>
+        <target>pour que les mentalités se préparent et évoluent afin d’envisager plus sereinement toutes les options permettant un Bien Vieillir.</target>
+      </trans-unit>
+      <trans-unit id="EwWCHlL" resname="Promo">
+        <source>Promo</source>
+        <target>Promo</target>
+      </trans-unit>
+      <trans-unit id="KQCNneT" resname="Min price">
+        <source>Min price</source>
+        <target>Prix min</target>
+      </trans-unit>
+      <trans-unit id="mVDomJp" resname="Max price">
+        <source>Max price</source>
+        <target>Prix max</target>
       </trans-unit>
     </body>
   </file>

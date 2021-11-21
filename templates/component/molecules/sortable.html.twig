@@ -1,0 +1,11 @@
+<span class="float-end ms-1 text-site-or">
+    {% if products.sort == attr %}
+        {% if products.params.direction == 'desc' %}
+            <i class="fa fa-sort-down"></i>
+        {% else %}
+            <i class="fa fa-sort-up"></i>
+        {% endif %}
+    {% else %}
+        <i class="fa fa-sort"></i>
+    {% endif %}
+</span>

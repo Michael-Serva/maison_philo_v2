@@ -15,17 +15,23 @@
                 {% include "component/atoms/pagination.html.twig" %}
             </div>
             <div class="d-flex justify-content-evenly mb-2">
-                <button class="bg-success rounded text-light">
-                    {{knp_pagination_sortable(products, 'Price'|trans, 'p.price')}}
-                    <i class="fas fa-sort"></i>
+                <button class="bg-success rounded">
+                    {{knp_pagination_sortable(products, 'Price'|trans, 'price')}}
+                    {% include "component/molecules/sortable.html.twig" with {
+                    attr : 'price'
+                }  %}
                 </button>
-                <button class="bg-success rounded text-light">
-                    {{knp_pagination_sortable(products, 'Promo'|trans, 'p.promo')}}
-                    <i class="fas fa-sort"></i>
+                <button class="bg-success rounded">
+                    {{knp_pagination_sortable(products, 'Promo'|trans, 'promo')}}
+                    {% include "component/molecules/sortable.html.twig" with {
+                    attr : 'promo'
+                }  %}
                 </button>
-                <button class="bg-success rounded text-light">
-                    {{knp_pagination_sortable(products, 'Title'|trans, 'p.title')}}
-                    <i class="fas fa-sort"></i>
+                <button class="bg-success rounded">
+                    {{knp_pagination_sortable(products, 'Title'|trans, 'title')}}
+                    {% include "component/molecules/sortable.html.twig" with {
+                    attr : 'title'
+                }  %}
                 </button>
             </div>
             {% for product in products %}

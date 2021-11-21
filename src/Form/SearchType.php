@@ -12,18 +12,29 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 class SearchType extends AbstractType
 {
 
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+
+        function __construct(TranslatorInterface $translatorInterface)
+        {
+            $placeholder = [
+                $translatorInterface->trans('Search'),
+                $translatorInterface->trans('Min price'),
+                $translatorInterface->trans('Max price'),
+            ];
+        }
+
         $builder
             ->add('q', TextType::class, [
                 'label' => 'Search',
                 'required' => false,
                 'attr' => [
-                    'placeholder' => 'Rechercher',
+                    'placeholder' => 'Search',
                     "class" => "form-control"
                 ],
                 "row_attr" => [
