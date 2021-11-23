@@ -1,4 +1,4 @@
-<div class="phone card col-lg-2 border-{{product.promo ? 'warning shadow' : 'success'}} border-2 pb-5 mb-2" style="width: 18rem;">
+<div class="phone col-lg-4 card border-{{product.promo ? 'warning shadow' : 'success'}} border-2 pb-5 mb-2" style="width: 18rem;">
     <div class="card bg-homypay text-light text-center mt-2">
         {{product.price|format_currency('CFA')}}
     </div>
@@ -8,13 +8,18 @@
         </div>
         <div class="card-body">
             <h5 class="card-title text-secondary text-center">{{product.title}}</h5>
-            <p class="text-dark">{% include "component/atoms/description_ul.html.twig" with {
+            <p class="text-dark">
+                {% include "component/atoms/description_ul.html.twig" with {
                         "class" : "text-dark"
-                    } %}</p>
-        </a>
-    </div>
+                } %}
+            </p>
+        </div>
+    </a>
     {% if product.promo %}
-        <div class="text-center text-warning">Promo en cours <span class="fs-5 text-success d-block">-10%</span></div>
+        <div class="text-center text-warning">
+            <span>Promo en cours</span>
+            <span class="fs-5 text-success d-block">-10%</span>
+        </div>
     {% endif %}
     <div class="text-center mb-2 position-absolute fixed-bottom">
         <a href="{{path('app_cart_add', {'id' : product.id})}} " class="btn btn-success">{% trans %}Add to cart{% endtrans %}</a>

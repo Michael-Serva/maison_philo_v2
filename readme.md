@@ -26,6 +26,10 @@ php composer-setup.php
 php -r "unlink('composer-setup.php');"
 ```
 
+```bash
+php composer.phar update
+```
+
 #### install noode js
 
 ```bash
@@ -37,6 +41,7 @@ nvm install node
 
 ```bash
 npx encore dev-server --hot
+npx encore production
 ````
 
 ## GitHub

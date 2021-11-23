@@ -13,6 +13,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Knp\Component\Pager\Pagination\PaginationInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 /**
  * @Route("/customer/product")
@@ -36,17 +37,14 @@ class ProductCustomerController extends AbstractController
         ProductRepository $productRepository,
         PaginatorInterface $paginator,
         Request $request
-    ): array {
+    ) {
 
         $data = new SearchData();
         $form = $this->createForm(SearchType::class, $data);
         $form->handleRequest($request);
-      
-
+    
         $productPerPage = 5;
         $datas = $productRepository->findSearch($data);
-//dd($datas);
-
 
         $products = $paginator->paginate(
             $datas,
@@ -54,6 +52,14 @@ class ProductCustomerController extends AbstractController
             $productPerPage
         );
         $productsTotalPage =ceil(count($datas) / $productPerPage);
+
+        if ($request->isXmlHttpRequest()) {
+            return new JsonResponse([
+                'content' => $this->renderView('component/organisms/products.html.twig', ['products' => $products]),
+                'sorting' =>  $this->renderView('component/organisms/sorting.html.twig', ['products' => $products])
+            ]);
+        }
+
         return [
             'products' => $products,
             'productsTotalPage' => $productsTotalPage,
