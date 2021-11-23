@@ -10,9 +10,9 @@ export default class Filter {
      * @param {HTMLElement|null} element 
      */
     constructor(element) {
-  /*       if (element === null) {
-            return
-        } */
+        /*       if (element === null) {
+                  return
+              } */
         this.pagination = document.querySelector('.js-filter-pagination');
         this.content = document.querySelector('.js-filter-content');
         this.sorting = document.querySelector('.js-filter-sorting');
@@ -24,25 +24,29 @@ export default class Filter {
      * add behaviors to different elements
      */
     bindEvents() {
-        this.sorting.querySelectorAll('a').forEach(a => {
-            a.addEventListener('click', e => {
+        this.sorting.addEventListener('click', e => {
+            if (e.target.tagName === 'A') {
+
                 e.preventDefault()
-                this.loadUrl(a.getAttribute('href'))   
-            })
-        })
-    }
-    async loadUrl(url) {
-        const response = await fetch(url, {
-            headers: {
-                'X-Requested-with': 'XMLHttpRequest'
+                this.loadUrl(e.target.getAttribute('href'))
             }
         })
-        if (response.status >= 200 && response.status < 300) {
-            const data = await response.json()
-            this.content.innerHTML = data.content
-            this.sorting.innerHTML = data.sorting
-        } else {
-            console.error(response);
-        }
     }
+
+    async loadUrl(url) {
+    const response = await fetch(url, {
+        headers: {
+            'X-Requested-with': 'XMLHttpRequest'
+        }
+    })
+    if (response.status >= 200 && response.status < 300) {
+        const data = await response.json()
+        this.content.innerHTML = data.content
+        this.sorting.innerHTML = data.sorting
+        /* To manage the url page */
+        history.replaceState({},'',url)
+    } else {
+        console.error(response);
+    }
+}
 };
