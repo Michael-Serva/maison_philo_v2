@@ -1,6 +1,6 @@
-<div class="row filter js-filter-form">
+<div class="row filter">
     <div class="fs-3 fw-bold text-center">{% trans %}Product filter{% endtrans %}</div>
-    {{form_start(form, {attr: {class: "filter"}}) }}
+    {{form_start(form, {attr: {class: "filter js-filter-form"}}) }}
     {{form_row(form.q)}}
     {% include "component/molecules/filterTitle.html.twig" with {
     title: "Category"

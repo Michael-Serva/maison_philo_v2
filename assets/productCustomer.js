@@ -13,7 +13,7 @@ import './scripts/rangeButton';
  * @property {HTMLElement} pagination
  * @property {HTMLElement} content
  * @property {HTMLElement} sorting
- * @property {HTMLElement} form
+ * @property {HTMLFormElement} form
  */
 export default class Filter {
     /**
@@ -35,17 +35,35 @@ export default class Filter {
      * add behaviors to different elements
      */
     bindEvents() {
-        this.sorting.addEventListener('click', e => {
+       const aClickListener = e => {
             if (e.target.tagName === 'A') {
-
                 e.preventDefault()
                 this.loadUrl(e.target.getAttribute('href'))
             }
+        }
+
+        this.sorting.addEventListener('click', aClickListener)
+        this.pagination.addEventListener('click',aClickListener)
+        this.form.querySelectorAll('input').forEach(input => {
+            input.addEventListener('change', this.loadForm.bind(this))
         })
+    }
+    async loadForm() {
+        const data = new FormData(this.form)
+        /* creation of a new url / if it does not exist we retrieve the current url */
+        const url = new URL(this.form.getAttribute('action') || window.location.href)
+        /* Dynamic construction of url parameters */
+        const params = new URLSearchParams()
+        data.forEach((value, key) => {
+            params.append(key, value)
+        })
+        return this.loadUrl(url.pathname + '?' + params.toString())
     }
 
     async loadUrl(url) {
-        const response = await fetch(url, {
+        /* we build the url entirely so as not to display json if the user goes back */
+        const ajaxUrl = url + '&ajax=1'
+        const response = await fetch(ajaxUrl, {
             headers: {
                 'X-Requested-with': 'XMLHttpRequest'
             }
@@ -54,6 +72,7 @@ export default class Filter {
             const data = await response.json()
             this.content.innerHTML = data.content
             this.sorting.innerHTML = data.sorting
+            this.pagination.innerHTML = data.pagination
             /* To manage the url page */
             history.replaceState({}, '', url)
         } else {

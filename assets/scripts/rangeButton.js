@@ -14,7 +14,7 @@ if (slider) {
         step : 100,
         range: {
             'min': 1000,
-            'max': 1000000
+            'max': 2000000
         }
     })
     const min = document.getElementById('min')
@@ -26,5 +26,10 @@ if (slider) {
         if (handle === 1) {
             max.value = Math.round(values[1])
         }
+    })
+    /* When we complete the change in value */
+    range.on('end', function (values, handle) {
+        /* we create a change event */
+        min.dispatchEvent(new Event('change'))
     })
 }

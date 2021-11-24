@@ -53,10 +53,15 @@ class ProductCustomerController extends AbstractController
         );
         $productsTotalPage =ceil(count($datas) / $productPerPage);
 
-        if ($request->isXmlHttpRequest()) {
+        if ($request->get('ajax')) {
             return new JsonResponse([
+                
                 'content' => $this->renderView('component/organisms/products.html.twig', ['products' => $products]),
-                'sorting' =>  $this->renderView('component/organisms/sorting.html.twig', ['products' => $products])
+                'sorting' =>  $this->renderView('component/organisms/sorting.html.twig', ['products' => $products]),
+                'pagination' =>  $this->renderView('component/atoms/pagination.html.twig', [
+                    'products' => $products,
+                    'productsTotalPage' => $productsTotalPage
+                ])
             ]);
         }
 
