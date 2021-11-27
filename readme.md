@@ -17,7 +17,7 @@ php bin/console doctrine:fixtures:load
 php composer.phar dump-env prod
 ```
 
-#### Composer
+## Composer
 
 ```cmd
 php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
@@ -30,7 +30,7 @@ php -r "unlink('composer-setup.php');"
 php composer.phar update
 ```
 
-#### install noode js
+### install noode js
 
 ```bash
 curl -o- https://raw.githubusercontent.com/nvm... | bash 
