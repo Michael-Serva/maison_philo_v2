@@ -35,7 +35,7 @@ export default class Filter {
      * add behaviors to different elements
      */
     bindEvents() {
-       const aClickListener = e => {
+        const aClickListener = e => {
             if (e.target.tagName === 'A') {
                 e.preventDefault()
                 this.loadUrl(e.target.getAttribute('href'))
@@ -43,7 +43,7 @@ export default class Filter {
         }
 
         this.sorting.addEventListener('click', aClickListener)
-        this.pagination.addEventListener('click',aClickListener)
+        this.pagination.addEventListener('click', aClickListener)
         this.form.querySelectorAll('input').forEach(input => {
             input.addEventListener('change', this.loadForm.bind(this))
         })
@@ -62,6 +62,7 @@ export default class Filter {
 
     async loadUrl(url) {
         /* we build the url entirely so as not to display json if the user goes back */
+        this.showLoader(); //we display the spinner as long as the page is not fully loaded
         const ajaxUrl = url + '&ajax=1'
         const response = await fetch(ajaxUrl, {
             headers: {
@@ -77,7 +78,33 @@ export default class Filter {
             history.replaceState({}, '', url)
         } else {
             console.error(response);
+            this.hideLoader();//we hide the spinner at the full display of the page
         }
+    }
+    /**
+     * show the spinner
+     */
+    showLoader() {
+        this.form.classList.add('is-loading');
+        const loader = this.form.querySelector('.js-loading');
+        if (loader ===null) {
+            return
+        }
+        loader.setAttribute('aria-hidden', 'false') //for the field to be read by an automatic reader for the hearing impaired
+        loader.getElementsByClassName.display = null;//show spinner
+
+    }
+    /**
+     * Hide the spinner
+     */
+    hideLoader() {
+        this.form.classList.remove('is-loading');
+        const loader = this.form.querySelector('.js-loading');
+        if (loader === null) {
+            return
+        }
+        loader.setAttribute('aria-hidden', 'true') //for the field to be NOT read by an automatic reader for the hearing impaired
+        loader.getElementsByClassName.display = none;//hide spinner
     }
 };
 new Filter(document.querySelector('.js-filter'));
