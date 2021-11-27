@@ -41,6 +41,7 @@ nvm install node
 
 ```bash
 npx encore dev-server --hot
+npm install
 npx encore production
 ````
 

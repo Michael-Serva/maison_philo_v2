@@ -3,6 +3,7 @@
 import './styles/pagination.css';
 import './styles/productCard.css';
 import './styles/noUi.css';
+import './styles/spinner.css';
 /* import scripts */
 import './scripts/rangeButton';
 
@@ -62,9 +63,11 @@ export default class Filter {
 
     async loadUrl(url) {
         /* we build the url entirely so as not to display json if the user goes back */
-        this.showLoader(); //we display the spinner as long as the page is not fully loaded
-        const ajaxUrl = url + '&ajax=1'
-        const response = await fetch(ajaxUrl, {
+        this.showLoader();//we display the spinner as long as the page is not fully loaded
+        const params = new URLSearchParams(url.split('?')[1] || '')
+        params.set('ajax', 1)
+        
+        const response = await fetch(url.split('?')[0] + '?' + params.toString(), {
             headers: {
                 'X-Requested-with': 'XMLHttpRequest'
             }
@@ -74,12 +77,13 @@ export default class Filter {
             this.content.innerHTML = data.content
             this.sorting.innerHTML = data.sorting
             this.pagination.innerHTML = data.pagination
+            params.delete('ajax')
             /* To manage the url page */
-            history.replaceState({}, '', url)
+            history.replaceState({}, '', url.split('?')[0] + '?' + params.toString())
         } else {
             console.error(response);
-            this.hideLoader();//we hide the spinner at the full display of the page
         }
+        this.hideLoader();//we hide the spinner at the full display of the page
     }
     /**
      * show the spinner
@@ -87,11 +91,11 @@ export default class Filter {
     showLoader() {
         this.form.classList.add('is-loading');
         const loader = this.form.querySelector('.js-loading');
-        if (loader ===null) {
+        if (loader === null) {
             return
         }
         loader.setAttribute('aria-hidden', 'false') //for the field to be read by an automatic reader for the hearing impaired
-        loader.getElementsByClassName.display = null;//show spinner
+        loader.style.display = null;//show spinner
 
     }
     /**
@@ -104,7 +108,7 @@ export default class Filter {
             return
         }
         loader.setAttribute('aria-hidden', 'true') //for the field to be NOT read by an automatic reader for the hearing impaired
-        loader.getElementsByClassName.display = none;//hide spinner
+        loader.style.display = 'none';//hide spinner
     }
 };
 new Filter(document.querySelector('.js-filter'));

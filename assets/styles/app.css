@@ -145,7 +145,6 @@ h1.connexion {
     height: 18rem;
 }
 .bg-vision{
-    background-color: var(--presentation-bg-color);
-    
+    background-color: var(--presentation-bg-color); 
 }
 
