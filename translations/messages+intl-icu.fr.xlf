@@ -675,6 +675,34 @@
         <source>Loading</source>
         <target>Chargement</target>
       </trans-unit>
+      <trans-unit id="2S9Mka3" resname="your profile has been modified">
+        <source>your profile has been modified</source>
+        <target>Votre profil a bien été modifié</target>
+      </trans-unit>
+      <trans-unit id="AHqCPHc" resname="The comment section will be available soon">
+        <source>The comment section will be available soon</source>
+        <target>La section commentaires sera bientôt disponible</target>
+      </trans-unit>
+      <trans-unit id="wved9c6" resname="See my profile">
+        <source>See my profile</source>
+        <target>Voir on profil</target>
+      </trans-unit>
+      <trans-unit id="CG9UULI" resname="Edit my profile">
+        <source>Edit my profile</source>
+        <target>Modifier mon profil</target>
+      </trans-unit>
+      <trans-unit id="DnncRps" resname="See my comments">
+        <source>See my comments</source>
+        <target>Voir mes commentaires déposés</target>
+      </trans-unit>
+      <trans-unit id="OFuwE5z" resname="Profil image">
+        <source>Profil image</source>
+        <target>Image de profil</target>
+      </trans-unit>
+      <trans-unit id="H4msCWa" resname="Edit my password">
+        <source>Edit my password</source>
+        <target>Modifier mon mot de passe</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
