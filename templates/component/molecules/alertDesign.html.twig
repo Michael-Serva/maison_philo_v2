@@ -1,4 +1,4 @@
-<div classs="container p-5 text-center text-color-maisonphilo" id="alert" style="display:block">
+<div classs="p-5 text-center text-color-maisonphilo mx-auto" id="alert" style="display:block">
   <div>
     <button aria-hidden="true" data-dismiss="alert" class="close" type="button">
       <div class="alert fade_{{ alert }} .fade" role="alert">
@@ -6,7 +6,6 @@
           <span>
             {% block alert_content %}
             {% endblock %}
-            {{ app.user.pseudo ?? app.user.email }}
           </span>
           <span>{{ message|trans }}</span>
         </h4>

@@ -45,7 +45,6 @@ class ProductCustomerController extends AbstractController
 
         $productPerPage = 5;
         $datas = $productRepository->findSearch($data);
-
         $products = $paginator->paginate(
             $datas,
             $request->query->getInt('page', 1),
@@ -64,12 +63,10 @@ class ProductCustomerController extends AbstractController
                 ])
             ]);
         }
-
         return [
             'products' => $products,
             'productsTotalPage' => $productsTotalPage,
             'form' => $form->createView(),
-
         ];
     }
 

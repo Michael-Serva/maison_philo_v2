@@ -1,4 +1,4 @@
-<div class="phone col-lg-4 card border-{{product.promo ? 'warning shadow' : 'success'}} border-2 pb-5 mb-2" style="width: 18rem;">
+<div class="phone col-lg-4 card border-{{product.promo ? 'warning shadow' : 'success'}} border-2 pb-5 mb-2" style="width: 18rem;" data-aos="fade-up" data-aos-duration="1500">
     <div class="card bg-homypay text-light text-center mt-2">
         {{product.price|format_currency('CFA')}}
     </div>
@@ -21,7 +21,13 @@
             <span class="fs-5 text-success d-block">-10%</span>
         </div>
     {% endif %}
-    <div class="text-center mb-2 position-absolute fixed-bottom">
-        <a href="{{path('app_cart_add', {'id' : product.id})}} " class="btn btn-success">{% trans %}Add to cart{% endtrans %}</a>
-    </div>
+    {% if app.user %}
+        <div class="text-center mb-2 position-absolute fixed-bottom">
+            <a href="{{path('app_cart_add', {'id' : product.id})}} " class="btn btn-success">{% trans %}Add to cart{% endtrans %}</a>
+        </div>
+    {% else %}
+        <div class="text-center mb-2 position-absolute fixed-bottom">
+            <a href="{{path('app_security_register')}} " class="btn btn-success">{% trans %}Register{% endtrans %}</a>
+        </div>
+    {% endif %}
 </div>

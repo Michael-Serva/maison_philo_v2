@@ -13,7 +13,7 @@ if (comments) {
     })
 }
 if (alertHide) {
-    alert.addEventListener('click', function name(params) {
-        alert.style.display = 'none';
+    alertHide.addEventListener('click', function name(params) {
+        alertHide.style.display = 'none';
     })
 }
