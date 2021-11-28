@@ -53,9 +53,11 @@ class ProductFixtures extends Fixture
                 'price' => 363000,
                 'stock' => "1",
                 'image' => "Fauteuil-roulant-Vermeiren-V300-XXL-Dossier-Fixe.jpg",
-                'description' => "Meilleur rapport qualité prix des fauteuils XXL|Nombreuses possibilités de réglage|Design et léger",
+                'description' => "Meilleur rapport qualité prix des fauteuils XXL|
+                Nombreuses possibilités de réglage|Design et léger",
                 'description1' => "
-                    Le tout nouveau Vermeiren V300 XXL à dossier fixe est le fauteuil roulant modulable le mieux équipé du marché.|
+                    Le tout nouveau Vermeiren V300 XXL à dossier fixe est le fauteuil 
+                    roulant modulable le mieux équipé du marché.|
                     En effet, le V300 XXL dispose de nombreux réglages et est équipé de série d'une 
                     multitude d'éléments comme la roulette anti-bascule 2 en 1 avec monte trottoir 
                     intégré, une assise et un dossier rembourrés réglables en tension, les freins à 
@@ -433,7 +435,8 @@ class ProductFixtures extends Fixture
                 ',
                 'description1' => "
                     d'équilibre.|
-                    L'ensemble est repliable contre le mur pour faciliter l'accès et permettre aux autres personnes du foyer de prendre une douche debout.|
+                    L'ensemble est repliable contre le mur pour faciliter l'accès et permettre 
+                    aux autres personnes du foyer de prendre une douche debout.|
                     Les pieds se règlent en hauteur pour positionner l'assise à la hauteur désirée.|
                     Un réglage fin est possible sur chaque pied pour compenser la pente du receveur de douche.|
                     L'assise anatomique est construite en matériau plastifié.|
@@ -456,22 +459,22 @@ class ProductFixtures extends Fixture
         $manager->persist($healthAndCareCategory);
         $manager->flush();
 
-           foreach ($categories as $category) {
+        foreach ($categories as $category) {
             $product = new Product();
             $product
-                ->setPromo($category['promo'])
-                ->setTitle($category['title'])
-                ->setPrice($category['price'])
-                ->setImage($category['image'])
-                ->setStock($category['stock'])
-                ->setCategory($healthAndCareCategory)
-                ->setDescription($category['description'])
-                ->setDescription1($category['description1'])
-                ->setDescription2($category['description2'])
-                ->setDescription3($category['description3']);
+             ->setPromo($category['promo'])
+             ->setTitle($category['title'])
+             ->setPrice($category['price'])
+             ->setImage($category['image'])
+             ->setStock($category['stock'])
+             ->setCategory($healthAndCareCategory)
+             ->setDescription($category['description'])
+             ->setDescription1($category['description1'])
+             ->setDescription2($category['description2'])
+             ->setDescription3($category['description3']);
 
             $manager->persist($product);
             $manager->flush();
-        } 
+        }
     }
 }

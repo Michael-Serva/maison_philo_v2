@@ -1,35 +1,32 @@
 {% extends 'product_customer/layout.html.twig' %}
 {% block title %}
-  {% trans %}Product main page |{% endtrans %}{{ parent() }}
+    {% trans %}Product main page |{% endtrans %}{{ parent() }}
 {% endblock %}
 {% block body %}
-  <div class="row justify-content-evenly gx-0">
-    <div class="col-md-3 col-12 filter bg-light p-2">
-      {% include 'component/molecules/filter.html.twig' %}
+    <div class="row justify-content-evenly gx-0">
+        <div class="col-md-3 col-12 filter bg-light p-2">
+            {% include 'component/molecules/filter.html.twig' %}
+        </div>
+        <div class="col-md-9 col-12 row justify-content-evenly align-middle">
+            <h1>
+                {% trans %}Page{% endtrans %}
+                {{ products.page|default('1') }}
+            </h1>
+            <div class="justify-content-center js-filter-pagination">
+                {% include 'component/atoms/pagination.html.twig' %}
+            </div>
+            <div class="js-filter-sorting d-flex justify-content-evenly mb-2">
+                {% include 'component/organisms/sorting.html.twig' %}
+            </div>
+            <div class="spinner-border js-loading" role="status" aria-hidden="true" style="display:none">
+                <span class="sr-only">{% trans %}Loading{% endtrans %}...</span>
+            </div>
+            <div class="js-filter-content row justify-content-evenly" data-aos="fade-up" data-aos-duration="1500">
+                {% include 'component/organisms/products.html.twig' %}
+            </div>
+            <div class="text-center js-filter-pagination">
+                {% include 'component/atoms/pagination.html.twig' %}
+            </div>
+        </div>
     </div>
-    <div class="col-md-9 col-12 row justify-content-evenly align-middle">
-      <h1>
-        {% trans %}Page{% endtrans %}
-        {{ products.page|default('1') }}
-      </h1>
-      <div class="justify-content-center js-filter-pagination">
-        {% include 'component/atoms/pagination.html.twig' %}
-      </div>
-      <div class="js-filter-sorting d-flex justify-content-evenly mb-2">
-        {% include 'component/organisms/sorting.html.twig' %}
-      </div>
-      <div class="spinner-border js-loading"
-        role="status"
-        aria-hidden="true"
-        style="display:none">
-        <span class="sr-only">{% trans %}Loading{% endtrans %}...</span>
-      </div>
-      <div class="js-filter-content row justify-content-evenly">
-        {% include 'component/organisms/products.html.twig' %}
-      </div>
-      <div class="text-center js-filter-pagination">
-        {% include 'component/atoms/pagination.html.twig' %}
-      </div>
-    </div>
-  </div>
 {% endblock %}

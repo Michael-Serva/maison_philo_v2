@@ -5,9 +5,7 @@ namespace App\Controller;
 use App\Service\CartService;
 use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
-
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-
 
 /**
  * @Route("/cart")

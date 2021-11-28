@@ -59,26 +59,34 @@ class DashboardController extends AbstractController
      * @Route("/index")
      * @Template
      */
-    public function index(){}
+    public function index()
+    {
+    }
 
     /**
      * @Route("/history")
      * @Template
      */
-    public function history(){}
+    public function history()
+    {
+    }
 
     /**
      * @Route("/vision")
      * @Template
      */
-    public function vision(){}
+    public function vision()
+    {
+    }
 
     /**
      * @Route("/objective")
      * @Template
      */
-    public function objective(){}
-    
+    public function objective()
+    {
+    }
+
 
     /**
      * This method is used to modify the language of the site

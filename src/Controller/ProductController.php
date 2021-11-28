@@ -38,7 +38,7 @@ class ProductController extends AbstractController
         $products = $paginator->paginate(
             $datas,
             $request->query->getInt('page', 1),
-             $productPerPage
+            $productPerPage
         );
 
         $productsTotalPage = ceil(count($datas) / $productPerPage);

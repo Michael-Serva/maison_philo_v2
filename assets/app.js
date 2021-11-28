@@ -9,11 +9,13 @@
 import './styles/app.css';
 import './styles/alert.css';
 /* import scripts */
-import './scripts/swal';
 import './scripts/script';
 import './scripts/active';
+import './scripts/alert';
+import './scripts/formImage';
 
 // start the Stimulus application
 import './bootstrap';
+
 
 

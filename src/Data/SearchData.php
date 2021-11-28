@@ -9,7 +9,7 @@ class SearchData
     /**
      * @var string
      */
-    public $q =''; //keyword
+    public $q = ''; //keyword
 
 
     /**

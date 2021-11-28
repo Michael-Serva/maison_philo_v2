@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use App\Entity\Genre;
 use DateTimeImmutable;
 use Symfony\Component\Uid\Uuid;
 use Doctrine\ORM\Mapping as ORM;
@@ -101,6 +102,10 @@ class User implements UserInterface
      * @ORM\Column(type="datetime")
      */
     private $createdAt;
+    /**
+     * @ORM\ManyToOne(targetEntity=Genre::class, inversedBy="users")
+     */
+    private $genreType;
 
     public function getEmail(): ?string
     {
@@ -267,6 +272,17 @@ class User implements UserInterface
     {
         $this->createdAt = $createdAt;
 
+        return $this;
+    }
+
+    public function getGenreType(): ?Genre
+    {
+        return $this->genreType;
+    }
+
+    public function setGenreType(?Genre $genreType): self
+    {
+        $this->genreType = $genreType;
         return $this;
     }
 }

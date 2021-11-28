@@ -42,7 +42,7 @@ class ProductCustomerController extends AbstractController
         $data = new SearchData();
         $form = $this->createForm(SearchType::class, $data);
         $form->handleRequest($request);
-    
+
         $productPerPage = 5;
         $datas = $productRepository->findSearch($data);
 
@@ -51,11 +51,11 @@ class ProductCustomerController extends AbstractController
             $request->query->getInt('page', 1),
             $productPerPage
         );
-        $productsTotalPage =ceil(count($datas) / $productPerPage);
+        $productsTotalPage = ceil(count($datas) / $productPerPage);
 
         if ($request->get('ajax')) {
             return new JsonResponse([
-                
+
                 'content' => $this->renderView('component/organisms/products.html.twig', ['products' => $products]),
                 'sorting' =>  $this->renderView('component/organisms/sorting.html.twig', ['products' => $products]),
                 'pagination' =>  $this->renderView('component/atoms/pagination.html.twig', [
@@ -69,7 +69,7 @@ class ProductCustomerController extends AbstractController
             'products' => $products,
             'productsTotalPage' => $productsTotalPage,
             'form' => $form->createView(),
-          
+
         ];
     }
 

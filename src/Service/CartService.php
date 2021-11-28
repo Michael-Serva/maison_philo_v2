@@ -5,7 +5,8 @@ namespace App\Service;
 use App\Repository\ProductRepository;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
-class CartService{
+class CartService
+{
 
     protected $session;
 
@@ -15,7 +16,8 @@ class CartService{
         $this->productRepository = $productRepository;
     }
 
-    public function add($id){
+    public function add($id)
+    {
         // we initialize the cart to a empty array
         $cart = $this->session->get('cart', []);
         if (!empty($cart[$id])) {
@@ -24,22 +26,25 @@ class CartService{
         } else {
             $cart[$id] = 1;
         }
-     
+
         //we add a product with an id for key
 
         //we save the contents of the cart in the session
         $this->session->set('cart', $cart);
     }
 
-    public function remove($id){
+    public function remove($id)
+    {
         $cart = $this->session->get('cart', []);
         if (!empty($cart[$id])) {
             unset($cart[$id]);
         }
-        $this->session->set('cart', $cart);;
+        $this->session->set('cart', $cart);
+        ;
     }
 
-    public function getTotalCart(): array  {
+    public function getTotalCart(): array
+    {
         $cart = $this->session->get('cart', []);
         $cartDatas = [];
         foreach ($cart as $id => $quantity) {
@@ -51,7 +56,8 @@ class CartService{
         return $cartDatas;
     }
 
-     public function getTotal() : float {
+    public function getTotal(): float
+    {
         $total = 0;
         $cartDatas = $this->getTotalCart();
         foreach ($cartDatas as $cartData) {
@@ -59,5 +65,5 @@ class CartService{
             $total += $cartDataTotalPrice;
         }
         return $total;
-     } 
+    }
 }

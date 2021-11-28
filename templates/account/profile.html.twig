@@ -1,0 +1,39 @@
+{% extends 'account/layout.html.twig' %}
+{% block title %}
+    {% trans %}Profile{% endtrans %}
+{% endblock %}
+{% block body %}
+    {% for message in app.flashes('edit') %}
+        {% embed 'component/molecules/alertDesign.html.twig' with {
+            message: message,
+            alert: 'success'
+        } %}{% endembed %}
+    {% endfor %}
+    {% embed 'component/molecules/formDesign.html.twig' %}
+        {% block form_content %}
+            <div class="card text-darkj bg-light mb-3">
+                <div class="card-header text-center">
+                    <img src="{{ asset('/images/imagesUpload/' ~ app.user.picture) }} " alt="{% trans %}Profil image{% endtrans %}" style="max-width: 18rem;" class="rounded-circle"/>
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title">
+                        {{app.user.pseudo ?? app.user.email}}
+                    </h1>
+                    <p class="card-text">
+                        <div class="card" style="width: 18rem;">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">{{app.user.email}}</li>
+                                <li class="list-group-item">{{app.user.firstName}}</li>
+                                <li class="list-group-item">{{app.user.lastName}}</li>
+                            </ul>
+                       </div>
+                    </p>
+                </div>
+                <div class="card-footer row justify-content-evenly">
+                <a href="{{path('app_account_edit')}} " class="btn btn-warning col-md-5 col-5"><i class="fas fa-edit ms-2"></i>{% trans %}Edit my profile{% endtrans %}</a>
+                <a href="" class="btn btn-danger col-md-5 col-5"><i class="fas fa-unlock-alt ms-2"></i>{% trans %}Edit my password{% endtrans %}</a>
+                </div>
+            </div>
+        {% endblock %}
+    {% endembed %}
+{% endblock %}

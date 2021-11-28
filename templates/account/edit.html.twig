@@ -1,0 +1,22 @@
+{% extends 'account/layout.html.twig' %}
+{% block title %}
+    {% trans %}Profile page{% endtrans %}
+{% endblock %}
+{% block body %}
+    {% embed 'component/molecules/formDesign.html.twig' %}
+        {% block form_content %}
+            <h1>
+                {% trans %}Profile modification{% endtrans %}
+            </h1>
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <img id="output" class="rounded-circle d-block" {% if app.user.picture %} src={{asset('images/imagesUpload/' ~ app.user.picture)}} {% endif %}>
+            <div class="row">
+                <button type="submit" class="btn btn-outline-success">
+                    {% trans %}Save{% endtrans %}
+                </button>
+            </div>
+            {{ form_end(form) }}
+        {% endblock %}
+    {% endembed %}
+{% endblock %}

@@ -651,6 +651,30 @@
         <source>Max price</source>
         <target>Prix max</target>
       </trans-unit>
+      <trans-unit id="ZHz6kbI" resname="Firstname">
+        <source>Firstname</source>
+        <target>Prénom</target>
+      </trans-unit>
+      <trans-unit id="htiPHRy" resname="Lastname">
+        <source>Lastname</source>
+        <target>Nom de famille</target>
+      </trans-unit>
+      <trans-unit id="FQn1YfJ" resname="Save">
+        <source>Save</source>
+        <target>Sauvegarder</target>
+      </trans-unit>
+      <trans-unit id="cEY_n2K" resname="Profile modification">
+        <source>Profile modification</source>
+        <target>Modification de votre profil</target>
+      </trans-unit>
+      <trans-unit id="r47DhhL" resname="Profile page">
+        <source>Profile page</source>
+        <target>Page de profil</target>
+      </trans-unit>
+      <trans-unit id="3DgIiMT" resname="Loading">
+        <source>Loading</source>
+        <target>Chargement</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

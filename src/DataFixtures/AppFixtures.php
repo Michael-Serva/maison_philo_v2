@@ -5,6 +5,7 @@ namespace App\DataFixtures;
 use Faker\Factory;
 use App\Entity\Role;
 use App\Entity\User;
+use App\Entity\Genre;
 use Doctrine\Persistence\ObjectManager;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
@@ -16,7 +17,7 @@ class AppFixtures extends Fixture
     public function __construct(UserPasswordHasherInterface $encoder)
     {
         $this->encoder = $encoder;
-    
+
         //dd(get_class_methods(($encoder)));
     }
     public function load(ObjectManager $manager)
@@ -36,13 +37,14 @@ class AppFixtures extends Fixture
             ->setPicture("https://randomuser.me/api/portraits/women")
             ->addUserRole($adminRole)
             ->setPassword($password);
-   
+
         $manager->persist($userAdmin);
         $manager->flush();
 
         $faker = Factory::create('fr-Fr');
         $users = [];
         $genres = ['male', 'female'];
+
         for ($i = 1; $i < 30; $i++) {
             /* creation of a new user */
             $user = new User();
@@ -63,8 +65,8 @@ class AppFixtures extends Fixture
                 ->setPseudo($faker->city)
                 ->setLastName($faker->lastName)
                 ->setPassword($password)
-                ->setPicture($picture)
-                ->setGenre($genre);
+                ->setPicture($picture);
+                //->setGenreType($genre);
             $manager->persist($user);
             $users[] = $user;
         }
