@@ -45,8 +45,9 @@ security:
     access_control:
         - { path: ^/admin, roles: ROLE_ADMIN }
         - { path: ^/category, roles: ROLE_ADMIN }
-        - { path: ^/profil, roles: IS_AUTHENTICATED_FULLY }
-        - { path: ^/login, roles: IS_ANONYMOUS }
+        - { path: ^/account, roles: IS_AUTHENTICATED_FULLY }
+        - { path: ^/cart, roles: IS_AUTHENTICATED_FULLY }
+        - { path: ^/security/login, roles: IS_ANONYMOUS}
         - { path: ^/register, roles: IS_ANONYMOUS }
         - { path: ^/deconnexion, roles: IS_AUTHENTICATED_FULLY }
         - { path: ^/roles, roles: IS_AUTHENTICATED_FULLY }

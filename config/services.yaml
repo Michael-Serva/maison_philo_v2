@@ -7,6 +7,8 @@ parameters:
     #{creation of an array to hold the languages}
     app.locales: [en, fr]
     webSiteName: "Maisonphilo"
+    webSiteMail: "maisonphilo.contact@gmail.com"
+    webSitePhone: "+33644005872"
     image_product: '%kernel.project_dir%/public/images/imagesUpload'
     currency: CFA
 

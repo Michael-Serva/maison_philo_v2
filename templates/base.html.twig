@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="icon" type="image/png" sizes="32x32" href="{{asset('/images/logo_maison_philo.png')}}">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,6 +23,15 @@
         {% include "component/organisms/navbarComponent.html.twig" with {
             routePath : 'app_dashboard_home',
         } %}
+        <div class="position-absolute" style="top:0; right:0">
+            {% include "component/molecules/alertDefault.html.twig" with {
+                alert: 'info',
+                message: "This section comming soon",
+                icon : "smile-wink"
+            } %}
+        </div>
+
+
         <div class="container-fluid main"> {% block header %}{% endblock %}{% block body %}{% endblock %}
             {% block scripts %}
                 {{encore_entry_script_tags('app'| replace({"src=" :  "defer src="}) |raw )}}

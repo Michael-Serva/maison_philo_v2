@@ -1,0 +1,91 @@
+{% extends "footer/layout.html.twig" %}
+{% block body %}
+    <div class="row justify-content-evenly text-center">
+        <div class="col">
+            <h1>
+                {% trans %}welcome to our house{% endtrans %}
+            </h1>
+            <ul>
+                <li class="list-group-item ">
+                    <a href="{{path('app_dashboard_home')}}">{% trans %}Home page{% endtrans %}</a>
+                </li>
+                <li class="list-group-item ">
+                    <a href="{{path('app_dashboard_index')}}">{% trans %}Who are we?{% endtrans %}</a>
+                </li>
+                <li class="list-group-item ">
+                    <a href="{{path('app_dashboard_vision')}}">{% trans %}Our vision{% endtrans %}</a>
+                </li>
+                <li class="list-group-item ">
+                    <a href="{{path('app_dashboard_objective')}}">{% trans %}Our objective{% endtrans %}</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col">
+            <h1>
+                {% trans %}Products Page{% endtrans %}
+            </h1>
+            <ul>
+                <li class="list-group-item ">
+                    <a href="{{path('app_productcustomer_index')}}">
+                        {% trans %}Our products{% endtrans %}
+                    </a>
+
+                </li>
+                <li class="list-group-item ">
+                    <a href="#">
+                        {% trans %}health care{% endtrans %}
+                    </a>
+                </li>
+                <li class="list-group-item ">
+                    <a href="#">
+                        {% trans %}Incontinence{% endtrans %}
+                    </a>
+                </li>
+                <li class="list-group-item ">
+                    <a href="{{path('app_productcustomer_showwheelchair')}}">
+                        {% trans %}Mobility aid{% endtrans %}
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="col">
+            <h1>
+                {% trans %}Users connection{% endtrans %}
+            </h1>
+            <ul>
+                <li class="list-group-item ">
+                    <a href="{{ path('app_security_register')}}">
+                        {% trans %}Register{% endtrans %}
+                    </a>
+                </li>
+                <li class="list-group-item ">
+                    <a href="{{ path('app_security_login')}}">
+                        {% trans %}Log in{% endtrans %}
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="col">
+            <h1>
+                {% trans %}Profil page{% endtrans %}
+            </h1>
+            <ul>
+                <li class="list-group-item ">
+                    <a href="{{path('app_account_index')}}">
+                        <i class="fas fa-user"></i>
+                        {% trans %}Profile{% endtrans %}</a>
+                </li>
+                <li class="list-group-item ">
+                    <a href="{{path('app_account_profile')}} ">
+                        {% trans %}See my profile{% endtrans %}
+                    </a>
+                </li>
+                <li class="list-group-item ">
+                    <a href="{{path('app_account_edit')}}">
+                        {% trans %}Edit my profile{% endtrans %}
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}

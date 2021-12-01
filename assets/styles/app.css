@@ -5,6 +5,9 @@
     --presentation-bg-color: #5d8b06;
     --text-link:#d3c37b;
 }
+.text-justify{
+    text-align: justify;
+}
 .africa{
      background-image: url('/public/images/objective.png');
     background-size: cover;

@@ -8,9 +8,10 @@ use App\Entity\User;
 use App\Entity\Genre;
 use Doctrine\Persistence\ObjectManager;
 use Doctrine\Bundle\FixturesBundle\Fixture;
+use Doctrine\Common\DataFixtures\AbstractFixture;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
-class AppFixtures extends Fixture
+class AppFixtures extends AbstractFixture
 {
     private $encoder;
     /*allows to use $this->encoder in the whole fixture */

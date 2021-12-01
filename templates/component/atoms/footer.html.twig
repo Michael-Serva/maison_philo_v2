@@ -4,11 +4,9 @@
             &copy; SERV Group TN
         </em>
         <div class="mb-2">
-            <a href="#">{% trans %}Plan du site{% endtrans %}</a>
-            |<a href="">
-                Mentions légales
-            </a>|
-            <a href="#">{% trans %}Terms of Sales{% endtrans %}</a>
+            <a href="{{path('app_footer_map')}}">{% trans %}Plan du site |{% endtrans %}</a>
+         
+            <a href="{{path('app_footer_cgv')}}">{% trans %}Terms of Sales{% endtrans %}</a>
         </div>
     </section>
     <section class="row">
@@ -16,17 +14,17 @@
             <img src="{{asset('images/logo_maison_philo2.png')}}" width="50vh" alt="logo du site" class="d-block mx-auto">
         </div>
         {#  <div class="col row">
-                            <a class="col" href="#">Accès</a>
-                            |
-                            <a class="col" href="#">Contact</a>
-                            |
-                            <a class="col" href="#">Recrutement</a>
-                            |
-                            <a class="col" href="#">Presse</a>
-                            |
-                            <a class="col" href="#">Galerie</a>
-                            |
-                        </div> #}
+                                    <a class="col" href="#">Accès</a>
+                                    |
+                                    <a class="col" href="#">Contact</a>
+                                    |
+                                    <a class="col" href="#">Recrutement</a>
+                                    |
+                                    <a class="col" href="#">Presse</a>
+                                    |
+                                    <a class="col" href="#">Galerie</a>
+                                    |
+                                </div> #}
         <div class="reseau col">
             <a href="#">
                 <i class="fab fa-facebook-square fs-5"></i>
