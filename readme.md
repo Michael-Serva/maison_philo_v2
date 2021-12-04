@@ -43,7 +43,13 @@ nvm install node
 npx encore dev-server --hot
 npm install
 npx encore production
-````
+```
+
+### prod
+
+```bash
+php composer.phar dump-env prod
+```
 
 ## GitHub
 

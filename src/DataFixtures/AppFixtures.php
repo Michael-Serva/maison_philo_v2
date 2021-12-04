@@ -5,9 +5,7 @@ namespace App\DataFixtures;
 use Faker\Factory;
 use App\Entity\Role;
 use App\Entity\User;
-use App\Entity\Genre;
 use Doctrine\Persistence\ObjectManager;
-use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\DataFixtures\AbstractFixture;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
@@ -18,8 +16,6 @@ class AppFixtures extends AbstractFixture
     public function __construct(UserPasswordHasherInterface $encoder)
     {
         $this->encoder = $encoder;
-
-        //dd(get_class_methods(($encoder)));
     }
     public function load(ObjectManager $manager)
     {
@@ -29,7 +25,6 @@ class AppFixtures extends AbstractFixture
         $adminRole->setTitle('ROLE_ADMIN');
         $manager->persist($adminRole);
         $manager->flush();
-
         $userAdmin = new User();
         $password = $this->encoder->hashPassword($userAdmin, 'AAAAA');
         $userAdmin

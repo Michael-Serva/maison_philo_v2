@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20211204183706 extends AbstractMigration
+final class Version20211204191130 extends AbstractMigration
 {
     public function getDescription(): string
     {
@@ -40,7 +40,7 @@ final class Version20211204183706 extends AbstractMigration
     public function down(Schema $schema): void
     {
         // this down() migration is auto-generated, please modify it to your needs
-        $this->addSql('ALTER TABLE product DROP FOREIGN KEY FK_D34A04AD12469DE2');
+        /* $this->addSql('ALTER TABLE product DROP FOREIGN KEY FK_D34A04AD12469DE2');
         $this->addSql('ALTER TABLE user DROP FOREIGN KEY FK_8D93D649FEC91F6B');
         $this->addSql('ALTER TABLE comments DROP FOREIGN KEY FK_5F9E962A6C8A81A9');
         $this->addSql('ALTER TABLE role_user DROP FOREIGN KEY FK_332CA4DDD60322AC');
@@ -54,6 +54,6 @@ final class Version20211204183706 extends AbstractMigration
         $this->addSql('DROP TABLE reset_password_request');
         $this->addSql('DROP TABLE role');
         $this->addSql('DROP TABLE role_user');
-        $this->addSql('DROP TABLE user');
+        $this->addSql('DROP TABLE user'); */
     }
 }
