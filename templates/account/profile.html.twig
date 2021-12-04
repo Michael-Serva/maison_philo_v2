@@ -3,6 +3,7 @@
     {% trans %}Profile{% endtrans %}
 {% endblock %}
 {% block body %}
+    {% set profile = 'Please complete your profile' %}
     {% for message in app.flashes('edit') %}
         {% embed 'component/molecules/alertDesign.html.twig' with {
             message: message,
@@ -13,25 +14,37 @@
         {% block form_content %}
             <div class="card text-darkj bg-light mb-3">
                 <div class="card-header text-center">
-                    <img src="{{ asset('/images/imagesUpload/' ~ app.user.picture) }} " alt="{% trans %}Profil image{% endtrans %}" style="max-width: 18rem;" class="rounded-circle"/>
+                    {% if app.user.picture %}
+                        <img src="{{ asset('/images/imagesUpload/' ~ app.user.picture) }} " alt="{% trans %}Profil image{% endtrans %}" style="max-width: 18rem;" class="rounded-circle"/>
+                    {% else %}
+                        <i class="fas fa-user fs-1"></i>
+                    {% endif %}
                 </div>
                 <div class="card-body">
                     <h1 class="card-title">
-                        {{app.user.pseudo ?? app.user.email}}
+                        {{(app.user.pseudo ?? app.user.email)|capitalize}}
                     </h1>
                     <p class="card-text">
-                        <div class="card" style="width: 18rem;">
+                        <div class="card text-center mx-auto" style="width: 18rem;" >
                             <ul class="list-group list-group-flush">
+                                <span class="text-muted fst-italic">{% trans %}Email{% endtrans %}</span>
                                 <li class="list-group-item">{{app.user.email}}</li>
-                                <li class="list-group-item">{{app.user.firstName}}</li>
+                                <span class="text-muted fst-italic">{% trans %}First name{% endtrans %}</span>
+                                <li class="list-group-item">{{app.user.firstName ?? profile|trans }}</li>
+                                <span class="text-muted fst-italic">{% trans %}Last name{% endtrans %}</span>
+                                <li class="list-group-item">{{app.user.firstName ?? profile|trans }}</li>
                                 <li class="list-group-item">{{app.user.lastName}}</li>
                             </ul>
-                       </div>
+                        </div>
                     </p>
                 </div>
                 <div class="card-footer row justify-content-evenly">
-                <a href="{{path('app_account_edit')}} " class="btn btn-warning col-md-5 col-5"><i class="fas fa-edit ms-2"></i>{% trans %}Edit my profile{% endtrans %}</a>
-                <a href="" class="btn btn-danger col-md-5 col-5"><i class="fas fa-unlock-alt ms-2"></i>{% trans %}Edit my password{% endtrans %}</a>
+                    <a href="{{path('app_account_edit')}} " class="btn btn-warning col-md-5 col-5">
+                        <i class="fas fa-edit ms-2"></i>
+                        {% trans %}Edit my profile{% endtrans %}</a>
+                    <a href="" class="btn btn-danger col-md-5 col-5">
+                        <i class="fas fa-unlock-alt ms-2"></i>
+                        {% trans %}Edit my password{% endtrans %}</a>
                 </div>
             </div>
         {% endblock %}

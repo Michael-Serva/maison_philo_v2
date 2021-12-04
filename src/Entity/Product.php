@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Entity\Category;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\ProductRepository;
@@ -22,6 +24,7 @@ class Product
     public function __construct()
     {
         $this->id = Uuid::v4();
+        $this->comments = new ArrayCollection();
     }
     /**
      * @ORM\Column(type="string", length=255)
@@ -89,6 +92,10 @@ class Product
      * @ORM\Column(type="boolean", nullable=true)
      */
     private $promo;
+    /**
+     * @ORM\OneToMany(targetEntity=Comments::class, mappedBy="products", orphanRemoval=true)
+     */
+    private $comments;
 
     public function getId(): Uuid
     {
@@ -225,5 +232,45 @@ class Product
         $this->promo = $promo;
 
         return $this;
+    }
+
+    /**
+     * @return Collection|Comments[]
+     */
+    public function getComments(): Collection
+    {
+        return $this->comments;
+    }
+
+    public function addComment(Comments $comment): self
+    {
+        if (!$this->comments->contains($comment)) {
+            $this->comments[] = $comment;
+            $comment->setProducts($this);
+        }
+
+        return $this;
+    }
+
+    public function removeComment(Comments $comment): self
+    {
+        if ($this->comments->removeElement($comment)) {
+            // set the owning side to null (unless already changed)
+            if ($comment->getProducts() === $this) {
+                $comment->setProducts(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getAverageRatings()
+    {
+        //sum of notations
+        $sum = array_reduce($this->comments->toArray(), function($total, $comment){
+            return $total + $comment->getRating();
+        }, 0);
+        if (count($this->comments) > 0) return $average = $sum / count($this->comments); //if there are no comments returns zero
+        return 0;
     }
 }

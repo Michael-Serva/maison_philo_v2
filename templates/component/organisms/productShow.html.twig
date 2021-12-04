@@ -1,11 +1,14 @@
-<div class="phone col-lg-4 card border-{{product.promo ? 'warning shadow' : 'success'}} border-2 pb-5 mb-2" style="width: 18rem;" data-aos="fade-up" data-aos-duration="1500">
-    <div class="card bg-homypay text-light text-center mt-2">
+<div class="card phone col-lg-4 card border-{{product.promo ? 'warning shadow' : 'success'}} border-2 pb-5 mb-2" style="width: 18rem;" data-aos="fade-up" data-aos-duration="1500">
+
+    <div class="rounded bg-homypay text-light text-center mt-2">
         {{product.price|format_currency('CFA')}}
     </div>
-    <a href="{{path('app_productcustomer_show', {'id' : product.id }) }} ">
-        <div class="card-header overflow-hidden">
-            <img src="{{asset('images/imagesUpload/' ~ product.image)}}" class="card-img-top img-fluid" alt="{% trans %}Image of{% endtrans %} {{product.title}} ">
-        </div>
+    <div>
+        <a href="{{path('app_productcustomer_show', {'id' : product.id }) }} ">
+            <div class="card-header overflow-hidden position-relative">
+                <img src="{{asset('images/imagesUpload/' ~ product.image)}}" class="card-img-top img-fluid" alt="{% trans %}Image of{% endtrans %} {{product.title}} ">
+            </div>
+        </a>
         <div class="card-body">
             <h5 class="card-title text-secondary text-center">{{product.title}}</h5>
             <p class="text-dark">
@@ -13,14 +16,20 @@
                         "class" : "text-dark"
                 } %}
             </p>
+            <div>
+                <div>
+                    {% if product.promo %}
+                        <div class="text-center text-danger fw-bold fs-4">
+                            <span class="">Promo en cours</span>
+                            <span>-10%</span>
+                        </div>
+                    {% endif %}
+
+                </div>
+            </div>
         </div>
-    </a>
-    {% if product.promo %}
-        <div class="text-center text-warning">
-            <span>Promo en cours</span>
-            <span class="fs-5 text-success d-block">-10%</span>
-        </div>
-    {% endif %}
+
+    </div>
     {% if app.user %}
         <div class="text-center mb-2 position-absolute fixed-bottom">
             <a href="{{path('app_cart_add', {'id' : product.id})}} " class="btn btn-success">{% trans %}Add to cart{% endtrans %}</a>

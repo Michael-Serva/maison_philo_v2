@@ -3,16 +3,24 @@
     --emcolor: #e06c00;
     --navbar-bg-color: #043106;
     --presentation-bg-color: #5d8b06;
-    --text-link:#d3c37b;
+    --text-link: #d3c37b;
 }
-.text-justify{
+.card{
+    transition: .2s;
+}
+.card:hover {
+    -ms-transform: scale(1.03); /* IE 9 */
+    -webkit-transform: scale(1.03); /* Safari 3-8 */
+    transform: scale(1.03);
+}
+.text-justify {
     text-align: justify;
 }
-.africa{
-     background-image: url('/public/images/objective.png');
+.africa {
+    background-image: url("/public/images/objective.png");
     background-size: cover;
 }
-.text-em{
+.text-em {
     color: var(--emcolor);
 }
 html {
@@ -64,12 +72,12 @@ img.user-picture {
     z-index: 2;
 }
 .presentation {
-     background-image: url("/public/images/presentation-bg.png"); 
+    background-image: url("/public/images/presentation-bg.png");
     background-size: cover;
     font-size: 2em;
 }
 .history-bg {
-    background-image: url("/public/images/history-bg.png"); 
+    background-image: url("/public/images/history-bg.png");
     background-size: cover;
 }
 .presentation span {
@@ -147,7 +155,6 @@ h1.connexion {
 .index-image {
     height: 18rem;
 }
-.bg-vision{
-    background-color: var(--presentation-bg-color); 
+.bg-vision {
+    background-color: var(--presentation-bg-color);
 }
-

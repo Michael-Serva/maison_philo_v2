@@ -703,6 +703,116 @@
         <source>Edit my password</source>
         <target>Modifier mon mot de passe</target>
       </trans-unit>
+      <trans-unit id="n8cy_PA" resname="Your comment">
+        <source>Your comment</source>
+        <target>Déposez votre commentaire</target>
+      </trans-unit>
+      <trans-unit id="DNC4zs5" resname="Your comment are empty">
+        <source>Your comment are empty</source>
+        <target>Votre commentaire est vide</target>
+      </trans-unit>
+      <trans-unit id="cC75Ie0" resname="First name">
+        <source>First name</source>
+        <target>Prénom</target>
+      </trans-unit>
+      <trans-unit id="d1tb_WR" resname="Created at">
+        <source>Created at</source>
+        <target>Crée le</target>
+      </trans-unit>
+      <trans-unit id="pGmrTKT" resname="Page not found">
+        <source>Page not found</source>
+        <target>Page introuvable</target>
+      </trans-unit>
+      <trans-unit id="5I3yIxG" resname="The requested page couldn't be located. Checkout for any URL&#10;                misspelling or">
+        <source>The requested page couldn't be located. Checkout for any URL
+                misspelling or</source>
+        <target>La page demandée n'a pas pu être localisée, je vous prie de vérifier votre URL</target>
+      </trans-unit>
+      <trans-unit id="yBAbsaq" resname="return to the homepage">
+        <source>return to the homepage</source>
+        <target>Revenir sur votre site Maisonphilo</target>
+      </trans-unit>
+      <trans-unit id="r0FL2I2" resname="The requested page couldn't be located. Checkout for any URL&#10;        misspelling or">
+        <source>The requested page couldn't be located. Checkout for any URL
+        misspelling or</source>
+        <target>La page demandée n'a pas pu être localisée, je vous prie de vérifier votre URL</target>
+      </trans-unit>
+      <trans-unit id="h4u4tx5" resname="Plan du site |">
+        <source>Plan du site |</source>
+        <target>__Plan du site |</target>
+      </trans-unit>
+      <trans-unit id="2u52BrM" resname="Reset">
+        <source>Reset</source>
+        <target>Remise à zéro</target>
+      </trans-unit>
+      <trans-unit id="QxbOhuW" resname="See the comments">
+        <source>See the comments</source>
+        <target>Voir les commentaires</target>
+      </trans-unit>
+      <trans-unit id="EdWLCN6" resname="Home page">
+        <source>Home page</source>
+        <target>Page d'accueil</target>
+      </trans-unit>
+      <trans-unit id="y4WwZCs" resname="Products Page">
+        <source>Products Page</source>
+        <target>Page produits</target>
+      </trans-unit>
+      <trans-unit id="h92O2b." resname="Users connection">
+        <source>Users connection</source>
+        <target>Connexion utilisateur</target>
+      </trans-unit>
+      <trans-unit id="biuNblO" resname="Profil page">
+        <source>Profil page</source>
+        <target>Page de profil</target>
+      </trans-unit>
+      <trans-unit id="CJJ8rz0" resname="Please submit your comment">
+        <source>Please submit your comment</source>
+        <target>Veuillez déposer votre commentaire</target>
+      </trans-unit>
+      <trans-unit id="9vRoj.I" resname="Send">
+        <source>Send</source>
+        <target>Envoyer</target>
+      </trans-unit>
+      <trans-unit id="nylTBGT" resname="Rating">
+        <source>Rating</source>
+        <target>Veuillez noter ce produit sur 5</target>
+      </trans-unit>
+      <trans-unit id="NV958p1" resname="Comments">
+        <source>Comments</source>
+        <target>Les 5 derniers commentaires</target>
+      </trans-unit>
+      <trans-unit id="KzMbw2Q" resname="Posted by">
+        <source>Posted by</source>
+        <target>Publié par</target>
+      </trans-unit>
+      <trans-unit id="uNMehSc" resname="on">
+        <source>on</source>
+        <target>le</target>
+      </trans-unit>
+      <trans-unit id="7SNfOc9" resname="Rating :">
+        <source>Rating :</source>
+        <target>Veuillez noter ce produit</target>
+      </trans-unit>
+      <trans-unit id="VSIAtLF" resname="No comments for this product">
+        <source>No comments for this product</source>
+        <target>Aucun commentaire déposé pour cet article</target>
+      </trans-unit>
+      <trans-unit id="OLikdvJ" resname="Register to be able to leave a comment">
+        <source>Register to be able to leave a comment</source>
+        <target>Veuillez vous connecter afin de pouvoir laisser un avis</target>
+      </trans-unit>
+      <trans-unit id="2t6aJxz" resname="Rating product :">
+        <source>Rating product :</source>
+        <target>Note :</target>
+      </trans-unit>
+      <trans-unit id="DO3rKcc" resname="Global rating">
+        <source>Global rating</source>
+        <target>Note moyenne</target>
+      </trans-unit>
+      <trans-unit id="Ogk5r9." resname="This rating is based on an average of">
+        <source>This rating is based on an average of</source>
+        <target>sur</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

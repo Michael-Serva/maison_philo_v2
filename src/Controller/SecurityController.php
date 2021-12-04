@@ -53,7 +53,7 @@ class SecurityController extends AbstractController
             $manager->flush();
 
             // generate a signed url and email it to the user
-            $this->emailVerifier->sendEmailConfirmation(
+            /*    $this->emailVerifier->sendEmailConfirmation(
                 'app_verify_email',
                 $user,
                 (new TemplatedEmail())
@@ -61,16 +61,17 @@ class SecurityController extends AbstractController
                     ->to($user->getEmail())
                     ->subject('Veuillez confirmer votre adresse mail')
                     ->htmlTemplate('registration/confirmation_email.html.twig')
-            );
+            ); */
             // do anything else you need here, like send an email
 
-            $this->addFlash(
+            /*          $this->addFlash(
                 "confirmation-mail",
                 $user->getPseudo() .
                     ", A confirmation email has been sent to the following address:"
                     . $user->getEmail()
             );
-            return $this->redirectToRoute("app_verify_email");
+            return $this->redirectToRoute("app_verify_email"); */
+            $this->addFlash('register', 'Your registration is valid');
         }
         return $this->render('security\register.html.twig', [
             "registrationForm" => $form->createView(),
@@ -82,6 +83,7 @@ class SecurityController extends AbstractController
     public function verifyUserEmail(Request $request): Response
     {
         $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+
 
         // validate email confirmation link, sets User::isVerified=true and persists
         try {
@@ -107,7 +109,7 @@ class SecurityController extends AbstractController
         $error = $authenticationUtils->getLastAuthenticationError();
         // last username entered by the user
         $lastUsername = $authenticationUtils->getLastUsername();
-
+        $this->addFlash('login', 'Successful connection');
         return $this->render('security/login.html.twig', [
             'last_username' => $lastUsername, 'error' => $error
         ]);

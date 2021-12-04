@@ -9,23 +9,16 @@
                 alert : "danger"
             } %}
         {% endif %}
-   
         {% for flashError in app.flashes('verify-email-error') %}
             {% include "component/molecules/alertDesign.html.twig" with {
                 message : flashError,
                 alert : "error"
             } %}
         {% endfor %}
-        {% for message in app.flashes('login') %}
+        {% for message in app.flashes('register') %}
             {% include "component/molecules/alertDesign.html.twig" with {
                 message : message,
                 alert : "success"
-            } %}
-        {% endfor %}
-        {% for message in app.flashes('confirmation-mail') %}
-            {% include "component/molecules/alertDesign.html.twig" with {
-                message : message,
-                alert : "warning"
             } %}
         {% endfor %}
         {% embed "component/molecules/formDesign.html.twig" %}
@@ -40,7 +33,7 @@
                 {# Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.See https://symfony.com/doc/current/security/remember_me.html<div class="checkbox mb-3"><label><input type="checkbox" name="_remember_me"> Remember me</label></div> #}
                 <input type="submit" value="Connexion" class="button-philo col-md-12 mt-3 mb-3">
                 <div class="text-danger">
-                    <a href="{{path('app_forgot_password_request')}} text-danger">
+                    <a href="{{path('app_forgot_password_request')}}">
                         {% trans %}Forgot your password{% endtrans %}
                     </a>
                 </div>

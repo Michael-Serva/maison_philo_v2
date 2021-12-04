@@ -17,21 +17,13 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
-use Symfony\Contracts\Translation\TranslatorInterface;
 
 class AccountType extends AbstractType
 {
-    public function __construct(TranslatorInterface $trans)
-    {
-        $trans->trans('Firstname');
-        $trans->trans('Lastname');
-        $trans->trans('Save');
-    }
-
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('genreType', EntityType::class, [
+            ->add('GenreType', EntityType::class, [
                 "required" => false,
                 "class" => Genre::class,
                 "choice_label" => "title",

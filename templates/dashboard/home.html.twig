@@ -14,7 +14,7 @@
     </div>
 {% endblock %}
 {% block body %}
-    {% for message in app.flashes('email-verified') %}
+    {% for message in app.flashes('login') %}
         {% include "component/molecules/alertDesign.html.twig" with {
             message : message,
             alert : "success"

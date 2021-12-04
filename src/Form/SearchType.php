@@ -20,15 +20,6 @@ class SearchType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
 
-        function __construct(TranslatorInterface $translatorInterface)
-        {
-            $placeholder = [
-                $translatorInterface->trans('Search'),
-                $translatorInterface->trans('Min price'),
-                $translatorInterface->trans('Max price'),
-            ];
-        }
-
         $builder
             ->add('q', TextType::class, [
                 'label' => 'Search',

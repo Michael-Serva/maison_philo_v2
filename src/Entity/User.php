@@ -36,6 +36,7 @@ class User implements UserInterface
         $this->userRoles = new ArrayCollection();
         $this->createdAt = new DateTimeImmutable();
         $this->isVerified = false;
+        $this->comments = new ArrayCollection();
     }
 
     public function getId(): Uuid
@@ -106,6 +107,11 @@ class User implements UserInterface
      * @ORM\ManyToOne(targetEntity=Genre::class, inversedBy="users")
      */
     private $genreType;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Comments::class, mappedBy="users")
+     */
+    private $comments;
 
     public function getEmail(): ?string
     {
@@ -283,6 +289,36 @@ class User implements UserInterface
     public function setGenreType(?Genre $genreType): self
     {
         $this->genreType = $genreType;
+        return $this;
+    }
+
+    /**
+     * @return Collection|Comments[]
+     */
+    public function getComments(): Collection
+    {
+        return $this->comments;
+    }
+
+    public function addComment(Comments $comment): self
+    {
+        if (!$this->comments->contains($comment)) {
+            $this->comments[] = $comment;
+            $comment->setUsers($this);
+        }
+
+        return $this;
+    }
+
+    public function removeComment(Comments $comment): self
+    {
+        if ($this->comments->removeElement($comment)) {
+            // set the owning side to null (unless already changed)
+            if ($comment->getUsers() === $this) {
+                $comment->setUsers(null);
+            }
+        }
+
         return $this;
     }
 }

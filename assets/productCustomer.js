@@ -42,12 +42,14 @@ export default class Filter {
                 this.loadUrl(e.target.getAttribute('href'))
             }
         }
+        if (this.pagination) {
 
-        this.sorting.addEventListener('click', aClickListener)
-        this.pagination.addEventListener('click', aClickListener)
-        this.form.querySelectorAll('input').forEach(input => {
-            input.addEventListener('change', this.loadForm.bind(this))
-        })
+            this.sorting.addEventListener('click', aClickListener)
+            this.pagination.addEventListener('click', aClickListener)
+            this.form.querySelectorAll('input').forEach(input => {
+                input.addEventListener('change', this.loadForm.bind(this))
+            })
+        }
     }
     async loadForm() {
         const data = new FormData(this.form)
@@ -66,7 +68,7 @@ export default class Filter {
         this.showLoader();//we display the spinner as long as the page is not fully loaded
         const params = new URLSearchParams(url.split('?')[1] || '')
         params.set('ajax', 1)
-        
+
         const response = await fetch(url.split('?')[0] + '?' + params.toString(), {
             headers: {
                 'X-Requested-with': 'XMLHttpRequest'

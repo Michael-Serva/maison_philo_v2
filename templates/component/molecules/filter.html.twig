@@ -17,6 +17,6 @@
         <h4 class="fw-bold text-secondary">{% trans %}Promotion{% endtrans %}</h4>
     </div>
     {{form_row(form.promo)}}
-    <button type="submit" class="btn btn-outline-success d-block col-12">{% trans %}Validate{% endtrans %}</button>
+    <a class="btn btn-outline-success d-block col-12" href="{{path('app_productcustomer_showproducts')}} ">{% trans %}Reset{% endtrans %}</a>
     {{form_end(form)}}
 </div>

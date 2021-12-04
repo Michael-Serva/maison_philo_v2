@@ -15,6 +15,7 @@
                 <th>{% trans %}firstname{% endtrans %}</th>
                 <th>{% trans %}IsVerified{% endtrans %}</th>
                 <th>{% trans %}Roles{% endtrans %}</th>
+                <th>{% trans %}Created at{% endtrans %}</th>
                 <th>{% trans %}Actions{% endtrans %}</th>
             </tr>
         </thead>
@@ -32,6 +33,7 @@
                     <td>{{ user.firstName }}</td>
                     <td class="">{{ user.isVerified ? 'Yes' : 'No' }}</td>
                     <td class="">{{ user.roles ? user.roles|json_encode : '' }}</td>
+                    <td>{{user.createdAt|format_date}}</td>
                     <td class="">
                         <a href="{{ path('app_admin_show', {'id': user.id}) }}">
                             <i class="fas fa-eye btn-success btn"></i>

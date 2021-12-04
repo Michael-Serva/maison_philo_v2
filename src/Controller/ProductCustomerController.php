@@ -2,18 +2,29 @@
 
 namespace App\Controller;
 
+use App\Entity\User;
+use DateTimeImmutable;
 use App\Entity\Product;
 use App\Data\SearchData;
+use App\Entity\Comments;
 use App\Form\SearchForm;
 use App\Form\SearchType;
+use App\Form\CommentsType;
+use App\Repository\CommentsRepository;
 use App\Repository\ProductRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
-use Knp\Component\Pager\Pagination\PaginationInterface;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Session\Session;
+use Knp\Component\Pager\Pagination\PaginationInterface;
+use Symfony\Component\Security\Core\User\UserInterface;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\String\Slugger\SluggerInterface;
+use Symfony\Component\Validator\Constraints\Length;
 
 /**
  * @Route("/customer/product")
@@ -33,7 +44,7 @@ class ProductCustomerController extends AbstractController
      * @Route("/mobility")
      * @Template
      */
-    public function showWheelchair(
+    public function showProducts(
         ProductRepository $productRepository,
         PaginatorInterface $paginator,
         Request $request
@@ -63,10 +74,13 @@ class ProductCustomerController extends AbstractController
                 ])
             ]);
         }
+
+
         return [
             'products' => $products,
             'productsTotalPage' => $productsTotalPage,
             'form' => $form->createView(),
+
         ];
     }
 
@@ -74,10 +88,53 @@ class ProductCustomerController extends AbstractController
      * @Route("/{id}", name="app_productcustomer_show", methods={"GET"})
      * @Template
      */
-    public function show(Product $product): array
-    {
+    public function show(
+        Product $product,
+        Request $request,
+        EntityManagerInterface $entityManager,
+        CommentsRepository $commentsRepository,
+        PaginatorInterface $paginator,
+        ?UserInterface $user
+    ) {
+        //comment creation
+        $comment = new Comments;
+        $commentForm = $this->createForm(CommentsType::class, $comment);
+        $commentForm->handleRequest($request);
+        if ($user) {
+            if ($commentForm->isSubmitted() && $commentForm->isValid()) {
+                $comment->setCreatedAt(new DateTimeImmutable('now'));
+                $comment->setProducts($product);
+                $comment->setUsers($user);
+                $entityManager->persist($comment);
+                $entityManager->flush();
+                $this->addFlash('comment', 'Votre commentaire a bien été déposé');
+                return $this->redirectToRoute('app_productcustomer_show', ['id' => $product->getId()]);
+            }
+        }
+
+        $commentPerPage = 5;
+        $datas = $commentsRepository->findByProducts($product->getTitle());
+        $comments = $paginator->paginate(
+            $datas,
+            $request->query->getInt('page', 1),
+            $commentPerPage
+        );
+        //dd($datas);
+        $users = [];
+        for ($i = 0; $i < count($datas); $i++) {
+            array_push($users, $datas[$i]->getUsers()->getPseudo());
+        }
+
+
+        $commentsTotal = ceil(count($datas) / $commentPerPage);
         return  [
             'product' => $product,
+            'commentForm' => $commentForm->createView(),
+            'pagination' => [
+                "comments" => $comments,
+                "commentsTotal" => $commentsTotal,
+            ]
+
         ];
     }
 }
