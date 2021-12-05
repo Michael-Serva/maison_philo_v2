@@ -3,15 +3,7 @@
     --emcolor: #e06c00;
     --navbar-bg-color: #043106;
     --presentation-bg-color: #5d8b06;
-    --text-link: #d3c37b;
-}
-.card{
-    transition: .2s;
-}
-.card:hover {
-    -ms-transform: scale(1.03); /* IE 9 */
-    -webkit-transform: scale(1.03); /* Safari 3-8 */
-    transform: scale(1.03);
+    --text-link: #796408;
 }
 .text-justify {
     text-align: justify;
@@ -126,6 +118,9 @@ a {
     text-decoration: none;
     color: var(--text-link);
 }
+a.sortable{
+    color: aliceblue;
+}
 .active a {
     color: #0bac0b !important;
 }
@@ -156,5 +151,11 @@ h1.connexion {
     height: 18rem;
 }
 .bg-vision {
-    background-color: var(--presentation-bg-color);
+    background-color: #e1f5d4;
+}
+.text-yellow{
+    color: #f58d38;
+}
+.text-yellow:hover{
+    color: rgb(16, 137, 243);
 }

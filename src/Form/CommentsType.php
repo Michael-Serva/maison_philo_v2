@@ -40,6 +40,8 @@ class CommentsType extends AbstractType
                 "attr" => [
                     "placeholder" => "Rating",
                     "class" => "form-control",
+                    "min" => 0,
+                    "max" => 5,
                 ],
                 "row_attr" => [
                     'class' => "form-floating my-1"

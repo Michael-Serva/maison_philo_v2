@@ -79,7 +79,7 @@ class ProductCustomerController extends AbstractController
         return [
             'products' => $products,
             'productsTotalPage' => $productsTotalPage,
-            'form' => $form->createView(),
+            'form' => $form->createView()
 
         ];
     }
@@ -89,7 +89,7 @@ class ProductCustomerController extends AbstractController
      * @Template
      */
     public function show(
-        Product $product,
+        ?Product $product,
         Request $request,
         EntityManagerInterface $entityManager,
         CommentsRepository $commentsRepository,
@@ -111,7 +111,6 @@ class ProductCustomerController extends AbstractController
                 return $this->redirectToRoute('app_productcustomer_show', ['id' => $product->getId()]);
             }
         }
-
         $commentPerPage = 5;
         $datas = $commentsRepository->findByProducts($product->getTitle());
         $comments = $paginator->paginate(
@@ -119,13 +118,10 @@ class ProductCustomerController extends AbstractController
             $request->query->getInt('page', 1),
             $commentPerPage
         );
-        //dd($datas);
         $users = [];
         for ($i = 0; $i < count($datas); $i++) {
             array_push($users, $datas[$i]->getUsers()->getPseudo());
         }
-
-
         $commentsTotal = ceil(count($datas) / $commentPerPage);
         return  [
             'product' => $product,

@@ -241,7 +241,12 @@ class Product
     {
         return $this->comments;
     }
-
+/**
+ * Undocumented function
+ *
+ * @param Comments $comment
+ * @return self
+ */
     public function addComment(Comments $comment): self
     {
         if (!$this->comments->contains($comment)) {
@@ -251,7 +256,12 @@ class Product
 
         return $this;
     }
-
+/**
+ * remove comment
+ *
+ * @param Comments $comment
+ * @return self
+ */
     public function removeComment(Comments $comment): self
     {
         if ($this->comments->removeElement($comment)) {
@@ -263,14 +273,18 @@ class Product
 
         return $this;
     }
-
+   /**
+    *
+    * @return float
+    */
     public function getAverageRatings()
     {
         //sum of notations
-        $sum = array_reduce($this->comments->toArray(), function($total, $comment){
+        $sum = array_reduce($this->comments->toArray(), function ($total, $comment) {
             return $total + $comment->getRating();
         }, 0);
         if (count($this->comments) > 0) return $average = $sum / count($this->comments); //if there are no comments returns zero
         return 0;
     }
+    
 }

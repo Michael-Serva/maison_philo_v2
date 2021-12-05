@@ -71,7 +71,7 @@
                     <li
                         class="nav-item text-light">
                         {# {{ (test == 10) ? 'bg-danger' : 'bg-warning' }} #}
-                        <a class="nav-link nav-text-maisonphilo" href="{{path('app_account_index')}}">
+                        <a class="nav-link nav-text-maisonphilo" href="{{path('app_account_profile')}}">
                             <i class="fas fa-user"></i>
                             {% trans %}Profile{% endtrans %}</a>
                     </li>
@@ -111,7 +111,7 @@
                 {% endif %}
                 {% if app.user %}
                     <li class="d-flex">
-                        <a href="{{ path('app_logout')}}" class="btn text-warning" onclick="return confirm('Confirm, please.');">{% trans %}Log out{% endtrans %}</a>
+                        <a href="{{ path('app_logout')}}" class="btn text-yellow" onclick="return confirm('Confirm, please.');">{% trans %}Log out{% endtrans %}</a>
                     </li>
                 {% endif %}
             </ul>

@@ -21,27 +21,27 @@
         } %}
     {% endfor %}
     <div class="row mb-1 justify-content-center">
-        <span class="side col-lg-12 text-center mb-2">{% trans %}The Aging : a coming challenge for Africa{% endtrans %}</span>
+        <span class="side col-lg-12 text-center mb-2 text-site-or">{% trans %}The Aging : a coming challenge for Africa{% endtrans %}</span>
         <div class="mb-1 col-12 col-sm-12 col-md-6 col-lg-6 col-xlg-5 text-center">
             <img class="img-fluid" src="{{ asset('images/couple_agees2.jpg') }}" data-aos="fade-down-right" data-aos-duration="2000">
         </div>
         <div class='col-12 col-sm-12 col-lg-6 row justify-content-evenly' data-aos="fade-down-left" data-aos-duration="2000">
             {% for presentationContent in presentationContents %}
                 <div class="col-md-6 col-12 presentation mb-1">
-                    <h2 class="text-center mt-3">
+                    <h2 class="text-center mb-3 mt-2 text-site-or fw-bold">
                         {{presentationContent.title|trans}}
                     </h2>
                     <div style="min-height:10em" class="p-1 fs-5">
-                        <span class="text-center d-block">
+                        <span class="text-center d-block fs-5">
                             {{presentationContent.header|trans}}
                         </span>
-                        <span class="text-center d-block">
+                        <span class="text-center d-block fs-5">
                             {{presentationContent.body|trans}}
                         </span>
                     </div>
-                    <em class="text-center d-block my-auto fs-5">
+                    <span class="text-center fst-italic d-block my-auto mt-3">
                         {{presentationContent.footer|trans}}
-                    </em>
+                    </span>
                 </div>
             {% endfor %}
         </div>

@@ -1,12 +1,13 @@
 <div class="btn btn-success">
-  {{ knp_pagination_sortable(products, 'Price'|trans, 'price') }}
-  {% include 'component/molecules/sortable.html.twig' with {
+    <span class="text-light">
+        {{ knp_pagination_sortable(products, 'Price'|trans, 'price') }}</span>
+    {% include 'component/molecules/sortable.html.twig' with {
     attr: 'price'
   } %}
 </div>
 <div class="btn btn-success">
-  {{ knp_pagination_sortable(products, 'Title'|trans, 'title') }}
-  {% include 'component/molecules/sortable.html.twig' with {
+    {{ knp_pagination_sortable(products, 'Title'|trans, 'title') }}
+    {% include 'component/molecules/sortable.html.twig' with {
     attr: 'title'
   } %}
 </div>

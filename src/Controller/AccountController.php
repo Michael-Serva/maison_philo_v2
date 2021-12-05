@@ -74,4 +74,13 @@ class AccountController extends AbstractController
             'form' => $form->createView()
         ];
     }
+/**
+ * Undocumented function
+ *
+ * @return void
+ */
+    public function passwordEdit()
+    {
+        
+    }
 }

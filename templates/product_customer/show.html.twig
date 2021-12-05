@@ -17,6 +17,7 @@
             <div class="col-md-8">
                 <div class="card-body" data-aos="fade-up" data-aos-duuration="3000">
                     <h5 class="card-title">{{product.title}}</h5>
+                    {# product description #}
                     <p class="card-text">
                         {% for product in product.description1|split('|') %}
                             <p>{{product}}</p>
@@ -37,8 +38,9 @@
                 </small>
                 <div class="col-md" data-aos="fade-up" data-aos-duuration="3000">
                     <ul class="list-group border border-success mb-2 p-1">
-                        <h1>{% trans %}Comments{% endtrans %}</h1>
+                        <h1>{% trans %}The last 5 comments{% endtrans %}</h1>
                         {% if pagination.comments|length > 0 %}
+                            {# comments list #}
                             {% for comment in pagination.comments %}
                                 <strong class="fw-bold">{% trans %}Posted by{% endtrans %}
                                     {{comment.users.pseudo ?? comment.users.email}}
@@ -52,6 +54,7 @@
                                     <span>{% trans %}Rating product :
                                         {% endtrans %}
                                     </span>
+                                    {# rating #}
                                     <div class="col">
                                         {% include "component/atoms/rating.html.twig" %}
                                     </div>
@@ -63,7 +66,7 @@
                             </li>
                         {% endif %}
                     </ul>
-
+                    {# Average grade #}
                     <div class="alert alert-success">
                         <h4 class="alert-heading text-center">
                             <div class="row">
@@ -87,20 +90,48 @@
                                     {% endif %}
                                 </span>
                             </div>
-
                         </h4>
                     </div>
-                    <hr class="text-site-or p-2">
+                    <hr
+                    class="text-site-or p-2">
+                    {# form #}
                     {% if app.user %}
                         <div class="col text-end rounded shadow" data-aos="zoom-in" data-aos-duration="2000">
-                            {{form_start(commentForm)}}
-                            {{form_end(commentForm)}}
+                            {% if pagination.comments.items %}
+                                {% set userComment = [] %}
+                                {% for comment in pagination.comments %}
+                                    {% if comment.users.pseudo == app.user.pseudo %}
+                                        {% set userComment = userComment|merge([true]) %}
+
+                                    {% else %}
+                                        {% set userComment = userComment|merge([false]) %}
+                                    {% endif %}
+                                    {% if loop.last %}
+                                        {% if true in userComment %}
+                                            <h1 class="text-center">{% trans %}You have already posted a comment{% endtrans %}
+                                            </h1>
+                                        {% else %}
+                                            {{form_start(commentForm)}}
+                                            {{form_row(commentForm.content)}}
+                                            {{form_row(commentForm.rating)}}
+                                            {{form_end(commentForm)}}
+                                        {% endif %}
+                                    {% endif %}
+                                {% endfor %}
+                            {% else %}
+                                {{form_start(commentForm)}}
+                                {{form_row(commentForm.content)}}
+                                {{form_row(commentForm.rating)}}
+                                {{form_end(commentForm)}}
+                            {% endif %}
+
                         </div>
                     {% else %}
                         <a class="col btn btn-success button-philo d-flex justify-content-center">{% trans %}Register to be able to leave a comment{% endtrans %}</a>
                     {% endif %}
                 </div>
             </div>
+            {# add cart #}
             <div class="col-12 col-md justify-content-center" data-aos="fade-up" data-aos-duuration="3000">
                 <div class="text-center row justify-content-center">
                     <a href="#" class="btn btn-success col-7 mb-2">{% trans %}Add to cart{% endtrans %}</a>
