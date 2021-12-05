@@ -1,7 +1,7 @@
 {% extends "footer/layout.html.twig" %}
 {% block body %}
     <div class="row justify-content-evenly text-center">
-        <div class="col">
+        <div class="col-12 col-md-5 col-lg-4">
             <h1>
                 {% trans %}welcome to our house{% endtrans %}
             </h1>
@@ -20,35 +20,43 @@
                 </li>
             </ul>
         </div>
-        <div class="col">
+        <div class="col-12 col-md-5 col-lg-4">
+            <h1>
+                {% trans %}Aging file{% endtrans %}
+            </h1>
+            <ul>
+                <li class="list-group-item ">
+                    <a href="{{path('app_dashboard_aging')}}">
+                        <i class="fas fa-user"></i>
+                        {% trans %}Aging{% endtrans %}</a>
+                </li>
+                <li class="list-group-item ">
+                    <a href="{{path('app_dashboard_world')}} ">
+                        {% trans %}world{% endtrans %}
+                    </a>
+                </li>
+                <li class="list-group-item ">
+                    <a href="{{path('app_dashboard_africa')}}">
+                        {% trans %}Africa{% endtrans %}
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-12 col-md-5 col-lg-4">
             <h1>
                 {% trans %}Products Page{% endtrans %}
             </h1>
             <ul>
                 <li class="list-group-item ">
-                    <a href="{{path('app_productcustomer_index')}}">
+                    <a href="{{path('app_productcustomer_showproducts')}}">
+                        <i class="fas fa-shopping-bag"></i>
                         {% trans %}Our products{% endtrans %}
                     </a>
 
                 </li>
-                <li class="list-group-item ">
-                    <a href="#">
-                        {% trans %}health care{% endtrans %}
-                    </a>
-                </li>
-                <li class="list-group-item ">
-                    <a href="#">
-                        {% trans %}Incontinence{% endtrans %}
-                    </a>
-                </li>
-                <li class="list-group-item ">
-                    <a href="{{path('app_productcustomer_showwheelchair')}}">
-                        {% trans %}Mobility aid{% endtrans %}
-                    </a>
-                </li>
             </ul>
         </div>
-        <div class="col">
+        <div class="col-12 col-md-5 col-lg-4">
             <h1>
                 {% trans %}Users connection{% endtrans %}
             </h1>
@@ -65,7 +73,7 @@
                 </li>
             </ul>
         </div>
-        <div class="col">
+        <div class="col-12 col-md-5 col-lg-4">
             <h1>
                 {% trans %}Profil page{% endtrans %}
             </h1>

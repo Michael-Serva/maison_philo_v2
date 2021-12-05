@@ -1,0 +1,42 @@
+{% extends "dashboard/layout.html.twig" %}
+{% block title %}
+    {% trans %}World |{% endtrans %}{{ parent() }}
+{% endblock %}
+{% block body %}
+    <div>
+        <div>
+            <h1 class="text-site-or">
+                Le vieillissement dans le monde
+            </h1>
+            <div data-aos="fade-up" data-aos-duration="3000">
+                La population mondiale est estimée à 7,7 milliards de personnes en 2020. Les projections à 2050 prévoient une croissance de plus de 25% de la population mondiale qui devrait être de l’ordre de 9.7 milliards.
+            </div>
+            <div data-aos="fade-up" data-aos-duration="3000">
+                Les prévisions concernant la croissance du nombre de personnes âgées de 60 ans & plus sont beaucoup plus marquées. En effet,
+                <span class="text-site-or fw-bold">
+                    estimée à 1 milliard de personnes en 2020, la population âgée de 60 ans & plus devrait doubler d’ici 2050 dans le monde.
+                </span>
+            </div>
+        </div>
+        <div class="mt-5 mb-3 text-color-maisonphilo fw-bold text-center" data-aos="fade-up" data-aos-duration="3000">Répartition de la population totale et des personnes âgées de 60 ans & plus par zone géographique en 2020 et selon les projections 2050
+        </div>
+        <picture class="justify-content-center d-flex" data-aos="fade-up" data-aos-duration="3000">
+            <img src="{{asset('images/worldaging2050.jpg')}}" class="img-fluid" alt="Image sur le vieillissement de l'l’Afrique en 2050">
+        </picture>
+        <div>
+            <div class="mb-3 mt-3" data-aos="fade-up" data-aos-duration="3000">
+                L’Europe et l’Amérique du nord sont les continents qui présentent les proportions les plus importantes de personnes âgées de 60 ans & plus, que ce soit en 2020 ou sur la base des projections à 2050.
+            </div>
+            <div class="mb-3" data-aos="fade-up" data-aos-duration="3000">
+                D’ici 2050, la population âgée de 60 ans & plus devrait représenter près d’un quart de la population totale en Asie, en Amérique latine & Caraïbes ainsi qu’en Oceanie.
+            </div>
+            <div class="mb-3" data-aos="fade-up" data-aos-duration="3000">
+                Une lecture basée sur les proportions suggère au contraire que même en 2050, l’Afrique devrait rester un continent jeune. En effet, la proportion de personnes âgées de 60 ans & plus devrait rester à moins de 10% en 2050. Cependant, lorsqu’on revient aux données brutes, on note que le nombre des membres de cette tranche d’âge devrait passer de 74 millions d’individus en 2020 à 235 millions en 2050 soit plus qu’un triplement du nombre de séniors !
+            </div>
+            <div class="mb-3" data-aos="fade-up" data-aos-duration="3000">
+                Il y a donc un réel enjeu de préparation de l’environnement, des infrastructures, des solutions et politiques de prise en charge de ces futurs nombreux séniors africains.
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

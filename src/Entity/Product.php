@@ -283,8 +283,9 @@ class Product
         $sum = array_reduce($this->comments->toArray(), function ($total, $comment) {
             return $total + $comment->getRating();
         }, 0);
-        if (count($this->comments) > 0) return $average = $sum / count($this->comments); //if there are no comments returns zero
+        if (count($this->comments) > 0) {
+            return $average = $sum / count($this->comments); //if there are no comments returns zero
+        }
         return 0;
     }
-    
 }

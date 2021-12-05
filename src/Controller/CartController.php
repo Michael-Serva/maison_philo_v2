@@ -39,7 +39,7 @@ class CartController extends AbstractController
     {
         $cartService->add($id);
         $this->addFlash('cart', 'The Product ' . $id . ' was added');
-        return $this->redirectToRoute('app_productcustomer_showwheelchair');
+        return $this->redirectToRoute('app_productcustomer_showproducts');
     }
 
     /**

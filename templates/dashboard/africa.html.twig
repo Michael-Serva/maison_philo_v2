@@ -1,0 +1,18 @@
+{% extends "dashboard/layout.html.twig" %}
+{% block title %}
+    {% trans %}Africa |{% endtrans %}{{ parent() }}
+{% endblock %}
+{% block body %}
+    <div>
+        <h1 class="text-site-or">Le vieillissement en Afrique</h1>
+        <div class="mb-3" data-aos="fade-up" data-aos-duration="3000">
+            Partout dans le monde, la tendance est à une espérance de vie plus longue grâce à l’effet combiné de l’amélioration des conditions de vie et des avancées en matière de santé. L’Afrique n’échappe pas à cette amélioration de l’espérance de vie favorable à l’augmentation du nombre de personnes âgées.
+        </div>
+        <div class="mt-5 mb-3 text-color-maisonphilo fw-bold text-center" data-aos="fade-up" data-aos-duration="3000">Répartition de la population totale et des personnes âgées de 60 ans & plus en Afrique par sous régions en 2020 et selon les projections 2050
+        </div>
+        <picture class="d-flex justify-content-center"><img src="{{asset('/images/africaaging.png')}} " alt="image de l'afrique" class="img-fluid" data-aos="fade-up" data-aos-duration="3000"></picture>
+        <div class="mt-3" data-aos="fade-up" data-aos-duration="3000">
+            Si le quasi triplement du nombre de personnes de 60 ans & plus est prévu pour presque toutes les zones d’Afrique d’ici à 2050, des disparités sont néanmoins à noter lorsqu’on analyse les proportions. En effet, en 2020 toutes les zones présentent une proportion de personnes âgées inférieure à 9%. L’Afrique du nord ainsi que le sud de l’Afrique verront cette proportion progresser à 15% et plus tandis que les autres régions devraient voir le taux également progresser mais rester en dessous des 9%.
+        </div>
+    </div>
+{% endblock %}

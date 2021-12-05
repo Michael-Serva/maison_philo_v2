@@ -70,8 +70,10 @@ class SecurityController extends AbstractController
                     ", A confirmation email has been sent to the following address:"
                     . $user->getEmail()
             );
-            return $this->redirectToRoute("app_verify_email"); */
+            */
+
             $this->addFlash('register', 'Your registration is valid');
+            return $this->redirectToRoute("app_security_login");
         }
         return $this->render('security\register.html.twig', [
             "registrationForm" => $form->createView(),

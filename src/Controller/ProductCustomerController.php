@@ -97,7 +97,7 @@ class ProductCustomerController extends AbstractController
         ?UserInterface $user
     ) {
         //comment creation
-        $comment = new Comments;
+        $comment = new Comments();
         $commentForm = $this->createForm(CommentsType::class, $comment);
         $commentForm->handleRequest($request);
         if ($user) {

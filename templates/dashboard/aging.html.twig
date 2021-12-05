@@ -1,0 +1,30 @@
+{% extends "dashboard/layout.html.twig" %}
+{% block title %}
+    {% trans %}Aging |{% endtrans %}{{ parent() }}
+{% endblock %}
+{% block body %}
+    <div class="rounded fs-5 mb-5">
+        <div class="mb-2">Les données et graphes présentés dans cette rubrique sont extraits de l’étude « Africa aging : 2020 » publié par le département américain du commerce. Pour aller plus loin, vous pouvez consulter le document source en
+            <a href="{{asset('images/africaaging2020.pdf')}}" target="_blank" class="fw-bold fst-italic">cliquant ici.</a>
+        </div>
+        <div>
+            Souvent présenté comme un continent jeune, l’Afrique n’échappe cependant pas au vieillissement de sa population suivant de ce fait une tendance mondiale.</div>
+    </div>
+    <div class="row justify-content-evenly">
+        <a href="{{path('app_dashboard_world')}}" class="btn btn-success btn-lg col-4 d-flex align-items-center justify-content-center row" style="height: 150px;">
+            <h3>{% trans %}World{% endtrans %}</h3>
+            <picture>
+                <img src="{{asset('images/worldaging2050.jpg')}}" class="rounded-circle img-fluid" alt="">
+            </picture>
+        </a>
+        <a href="{{path('app_dashboard_africa')}}" class="btn btn-success btn-lg col-4 d-flex align-items-center justify-content-center row">
+            <h3>
+                {% trans %}Africa{% endtrans %}
+            </h3>
+            <picture>
+                <img src="{{asset('images/africaaging.png')}}" class="rounded-circle img-fluid" alt="">
+            </picture>
+        </a>
+
+    </div>
+{% endblock %}

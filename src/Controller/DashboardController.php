@@ -11,6 +11,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
  * @Route("/")
+ * @Template
  */
 
 class DashboardController extends AbstractController
@@ -86,7 +87,26 @@ class DashboardController extends AbstractController
     public function objective()
     {
     }
-
+    /**
+     *
+     * @Route("/aging")
+     *
+     */
+    public function aging()
+    {
+    }
+    /**
+     * @Route("/world")
+     */
+    public function world()
+    {
+    }
+    /**
+     * @Route("/africa")
+     */
+    public function africa()
+    {
+    }
 
     /**
      * This method is used to modify the language of the site

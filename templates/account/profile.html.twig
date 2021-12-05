@@ -10,6 +10,12 @@
             alert: 'success'
         } %}{% endembed %}
     {% endfor %}
+       {% for message in app.flashes('passwordUpdate') %}
+        {% embed 'component/molecules/alertDesign.html.twig' with {
+            message: message,
+            alert: 'success'
+        } %}{% endembed %}
+    {% endfor %}
     <div class="row justify-content-center">
         <div class="col col-md-8 card text-dark bg-light mb-3 shadow">
             <div class="card-header text-center">
@@ -41,7 +47,7 @@
                 <a href="{{path('app_account_edit')}} " class="btn btn-outline-success col-md-3 col-7 text-site-or align-items-center d-flex justify-content-center mb-1">
                     <i class="fas fa-edit ms-2"></i>
                     {% trans %}Edit my profile{% endtrans %}</a>
-                <a href="" class="btn btn-danger col-md-3 col-7 align-items-center d-flex justify-content-center mb-1">
+                <a href="{{path('app_account_passwordupdate')}}" class="btn btn-danger col-md-3 col-7 align-items-center d-flex justify-content-center mb-1">
                     <i class="fas fa-unlock-alt ms-2"></i>
                     {% trans %}Edit my password{% endtrans %}</a>
                 <a href="" class="btn btn-outline-success col-md-3 col-7 align-items-center d-flex justify-content-center mb-1">

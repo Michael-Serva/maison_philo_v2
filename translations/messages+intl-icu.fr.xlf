@@ -813,6 +813,70 @@
         <source>This rating is based on an average of</source>
         <target>sur</target>
       </trans-unit>
+      <trans-unit id="8RhOomP" resname="Old password">
+        <source>Old password</source>
+        <target>Ancien mot de passe</target>
+      </trans-unit>
+      <trans-unit id="WsJl85a" resname="Confirm password">
+        <source>Confirm password</source>
+        <target>Confirmer votre mot nouveau de passe</target>
+      </trans-unit>
+      <trans-unit id="PdnfREH" resname="New password">
+        <source>New password</source>
+        <target>Nouveau mot de passe</target>
+      </trans-unit>
+      <trans-unit id="_5ICbWx" resname="Password update">
+        <source>Password update</source>
+        <target>Modification duu mot de passe</target>
+      </trans-unit>
+      <trans-unit id="wHumb.F" resname="Edit my comments">
+        <source>Edit my comments</source>
+        <target>Modifier mes commentaires</target>
+      </trans-unit>
+      <trans-unit id="672vJav" resname="Africa |">
+        <source>Africa |</source>
+        <target>Afrique |</target>
+      </trans-unit>
+      <trans-unit id="W9DqhW4" resname="Aging |">
+        <source>Aging |</source>
+        <target>Vieillissement |</target>
+      </trans-unit>
+      <trans-unit id="eK5kfcV" resname="World">
+        <source>World</source>
+        <target>Monde</target>
+      </trans-unit>
+      <trans-unit id="xKNxrNf" resname="Africa">
+        <source>Africa</source>
+        <target>Afrique</target>
+      </trans-unit>
+      <trans-unit id="BUv210u" resname="dans les pays africains ne doit pas se réduire à une recopie de solutions qui ont pu fonctionner (ou pas d’ailleurs) sous d’autres cieux. Elle">
+        <source>dans les pays africains ne doit pas se réduire à une recopie de solutions qui ont pu fonctionner (ou pas d’ailleurs) sous d’autres cieux. Elle</source>
+        <target>dans les pays africains ne doit pas se réduire à une recopie de solutions qui ont pu fonctionner (ou pas d’ailleurs) sous d’autres cieux. Elle</target>
+      </trans-unit>
+      <trans-unit id="Es1wh.i" resname="World |">
+        <source>World |</source>
+        <target>Monde |</target>
+      </trans-unit>
+      <trans-unit id="UnQvKtv" resname="Aging file">
+        <source>Aging file</source>
+        <target>Dossier vieillisement</target>
+      </trans-unit>
+      <trans-unit id="SG6kYiT" resname="world">
+        <source>world</source>
+        <target>monde</target>
+      </trans-unit>
+      <trans-unit id="oOpmsf6" resname="The last 5 comments">
+        <source>The last 5 comments</source>
+        <target>Les 5 derniers commentaires</target>
+      </trans-unit>
+      <trans-unit id="2Rfz.CU" resname="You have already posted a comment">
+        <source>You have already posted a comment</source>
+        <target>Vous avez déjà plublié un commentaire pour ce produit</target>
+      </trans-unit>
+      <trans-unit id="pOfmCfG" resname="Be the first to rate this product">
+        <source>Be the first to rate this product</source>
+        <target>Soyez le premier à noter ce produit</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

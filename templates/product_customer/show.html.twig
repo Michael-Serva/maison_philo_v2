@@ -38,8 +38,8 @@
                 </small>
                 <div class="col-md" data-aos="fade-up" data-aos-duuration="3000">
                     <ul class="list-group border border-success mb-2 p-1">
-                        <h1>{% trans %}The last 5 comments{% endtrans %}</h1>
                         {% if pagination.comments|length > 0 %}
+                            <h1>{% trans %}The last 5 comments{% endtrans %}</h1>
                             {# comments list #}
                             {% for comment in pagination.comments %}
                                 <strong class="fw-bold">{% trans %}Posted by{% endtrans %}
@@ -62,7 +62,7 @@
                             {% endfor %}
                         {% else %}
                             <li class="list-group">
-                                <h3>{% trans %}No comments for this product{% endtrans %}</h3>
+                                <h1>{% trans %}No comments for this product{% endtrans %}</h1>
                             </li>
                         {% endif %}
                     </ul>
@@ -86,7 +86,9 @@
                                             {% endif %}
                                         {% endfor %}
                                     {% else %}
-                                        <span>{{'Be the first to rate this product'}}</span>
+                                        <span>
+                                            {% trans %}Be the first to rate this product{% endtrans %}
+                                        </span>
                                     {% endif %}
                                 </span>
                             </div>

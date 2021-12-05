@@ -121,6 +121,10 @@ a {
 a.sortable{
     color: aliceblue;
 }
+a.nav-link, .navbar-toggler{
+    color: aliceblue;
+}
+
 .active a {
     color: #0bac0b !important;
 }

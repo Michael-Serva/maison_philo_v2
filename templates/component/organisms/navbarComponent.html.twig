@@ -30,28 +30,13 @@
                                         {% trans %}Our objective{% endtrans %}</a>
                                 </div>
                                 <div class="col row">
-                                    <a class="dropdown-item col-12 fw-bold text-site " href="{{path('app_productcustomer_index')}}">
-                                        {% trans %}Our products{% endtrans %}
-                                    </a>
-                                    <a class="dropdown-item col-12 text-site-or " href="#">
-                                        {% trans %}health care{% endtrans %}
-                                    </a>
-                                    <a class="dropdown-item col-12 text-site-or " href="#">
-                                        {% trans %}Incontinence{% endtrans %}
-                                    </a>
-                                    <a class="dropdown-item col-12 text-site-or " href="{{path('app_productcustomer_showproducts')}}">
-                                        {% trans %}Mobility aid{% endtrans %}
-                                    </a>
-                                </div>
-                                <div class="col row">
-                                    <a class="dropdown-item col-12 fw-bold text-site comments " href="#">
+                                    <a class="dropdown-item col-12 fw-bold text-site" href="{{path('app_dashboard_aging')}} ">
                                         {% trans %}Aging{% endtrans %}
                                     </a>
-                                    <a class="dropdown-item col-12 text-site-or comments" href="#">
+                                    <a class="dropdown-item col-12 text-site-or" href="{{path('app_dashboard_world')}}">
                                         {% trans %}In the world{% endtrans %}</a>
-                                    <a class="dropdown-item col-12 text-site-or comments" href="#">
+                                    <a class="dropdown-item col-12 text-site-or" href="{{path('app_dashboard_africa')}}">
                                         {% trans %}In Africa{% endtrans %}</a>
-
                                 </div>
                                 <div class="col row">
                                     <a class="dropdown-item col-12 fw-bold text-site comments" href="#">
@@ -65,8 +50,12 @@
                         </li>
                     </ul>
                 </li>
-                {% set test = 10 %}
-                {#{{ (test == 10) ? "oui" : "non" }} #}
+                <li class="nav-item">
+                    <a class="nav-link product" href="{{path('app_productcustomer_showproducts')}}">
+                    <i class="fas fa-shopping-bag text-light"></i>
+                        {% trans %}Our products{% endtrans %}
+                    </a>
+                </li>
                 {% if app.user %}
                     <li
                         class="nav-item text-light">

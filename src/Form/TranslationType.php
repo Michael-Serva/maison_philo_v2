@@ -15,7 +15,7 @@ class TranslationType extends AbstractType
         {
             $button = [
                 $translatorInterface->trans('Save'),
-                
+
             ];
             $placeholder = [
                 $translatorInterface->trans('Firstname'),
@@ -24,6 +24,9 @@ class TranslationType extends AbstractType
                 $translatorInterface->trans('Min price'),
                 $translatorInterface->trans('Max price'),
                 $translatorInterface->trans('Your comment'),
+                $translatorInterface->trans('Old password'),
+                $translatorInterface->trans('Confirm password'),
+                $translatorInterface->trans('New password'),
             ];
             $message = [
                 $translatorInterface->trans('Your comment are empty'),

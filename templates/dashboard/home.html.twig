@@ -14,12 +14,14 @@
     </div>
 {% endblock %}
 {% block body %}
-    {% for message in app.flashes('login') %}
-        {% include "component/molecules/alertDesign.html.twig" with {
+    {% if app.user %}
+        {% for message in app.flashes('login') %}
+            {% include "component/molecules/alertDesign.html.twig" with {
             message : message,
             alert : "success"
         } %}
-    {% endfor %}
+        {% endfor %}
+    {% endif %}
     <div class="row mb-1 justify-content-center">
         <span class="side col-lg-12 text-center mb-2 text-site-or">{% trans %}The Aging : a coming challenge for Africa{% endtrans %}</span>
         <div class="mb-1 col-12 col-sm-12 col-md-6 col-lg-6 col-xlg-5 text-center">

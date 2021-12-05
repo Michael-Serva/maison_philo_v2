@@ -3,14 +3,18 @@
 namespace App\Controller;
 
 use App\Form\AccountType;
+use App\Entity\PasswordUpdate;
+use App\Form\PasswordUpdateType;
+use Symfony\Component\Form\FormError;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\String\Slugger\SluggerInterface;
+use Symfony\Contracts\Translation\TranslatorInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
-use Symfony\Component\String\Slugger\SluggerInterface;
-use Symfony\Contracts\Translation\TranslatorInterface;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 /**
  * @Route("/account")
@@ -74,13 +78,45 @@ class AccountController extends AbstractController
             'form' => $form->createView()
         ];
     }
-/**
- * Undocumented function
- *
- * @return void
- */
-    public function passwordEdit()
-    {
-        
+    /**
+     * La fonction password_modification() permet de modifier le mot de passe de l'utilisateur Connecté
+     *
+     * @Route("/passwordUpdate")
+     */
+    public function passwordUpdate(
+        Request $request,
+        EntityManagerInterface $manager,
+        UserPasswordHasherInterface $encoder
+    ) {
+        $user = $this->getUser();
+
+        $passwordUpdate = new PasswordUpdate();
+
+        $form = $this->createForm(PasswordUpdateType::class, $passwordUpdate);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            if (!password_verify($passwordUpdate->getOldPassword(), $user->getPassword())) {
+                //dd($passwordUpdate->getOldPassword());
+                $form->get('oldPassword')->addError(new FormError("l'ancien mot de passe est incorrect"));
+            } else // true
+            {
+                $hash = $encoder->hashPassword($user, $passwordUpdate->getNewPassword());
+
+                $user->setPassword($hash);
+                $manager->persist($user);
+                $manager->flush();
+
+
+                $this->addFlash("passwordUpdate", $user->getPseudo() . ", votre mot de passe a bien été modifié");
+
+                return $this->redirectToRoute("app_account_profile");
+            }
+        }
+
+        return [
+            "formPassword" => $form->createView()
+        ];
     }
 }
