@@ -50,7 +50,7 @@ class CommentsType extends AbstractType
             ->add('send', SubmitType::class, [
                 "label" => "Send",
                 "attr" => [
-                    "class" => "btn btn-lg button-philo mb-3 mt-1 btn-success"
+                    "class" => "btn button-philo mb-3 mt-1 btn-success"
                 ]
             ]);
     }

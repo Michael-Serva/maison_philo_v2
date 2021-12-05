@@ -62,7 +62,7 @@
                             {% endfor %}
                         {% else %}
                             <li class="list-group">
-                                <h1>{% trans %}No comments for this product{% endtrans %}</h1>
+                                <h1>{% trans %}No comments for this product{% endtrans %}</h>
                             </li>
                         {% endif %}
                     </ul>
@@ -129,14 +129,14 @@
 
                         </div>
                     {% else %}
-                        <a class="col btn btn-success button-philo d-flex justify-content-center">{% trans %}Register to be able to leave a comment{% endtrans %}</a>
+                        <a class="col btn btn-success button-philo d-flex justify-content-center mb-5">{% trans %}Register to be able to leave a comment{% endtrans %}</a>
                     {% endif %}
                 </div>
             </div>
             {# add cart #}
             <div class="col-12 col-md justify-content-center" data-aos="fade-up" data-aos-duuration="3000">
                 <div class="text-center row justify-content-center">
-                    <a href="#" class="btn btn-success col-7 mb-2">{% trans %}Add to cart{% endtrans %}</a>
+                    <a href="#" class="btn btn-success col-7 col-lg-7 mb-2">{% trans %}Add to cart{% endtrans %}</a>
                     <div class="card bg-homypay text-light text-center mb-2 mx-auto col-7">{{product.price|format_currency('CFA')}}
                     </div>
 
