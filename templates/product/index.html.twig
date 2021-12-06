@@ -16,7 +16,8 @@
                     <th>{% trans %}Description{% endtrans %}</th>
                     <th>{% trans %}Category{% endtrans %}</th>
                     <th>{% trans %}Image{% endtrans %}</th>
-                    <th>{% trans %}actions{% endtrans %}</th>
+                    <th>{% trans %}See{% endtrans %}</th>
+                    <th>{% trans %}Edit{% endtrans %}</th>
                 </tr>
             </thead>
             <tbody>
@@ -40,6 +41,8 @@
                             <a href="{{ path('app_product_show', {'id': product.id}) }}">
                                 <i class="fas fa-eye text-primary"></i>
                             </a>
+                        </td>
+                        <td>
                             <a href="{{ path('app_product_edit', {'id': product.id}) }}">
                                 <i class="fas fa-edit text-warning ms-2"></i>
                             </a>

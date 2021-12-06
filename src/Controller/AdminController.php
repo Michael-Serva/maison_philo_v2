@@ -28,7 +28,7 @@ class AdminController extends AbstractController
      */
     public function index(UserRepository $userRepository, PaginatorInterface $paginator, Request $request): Response
     {
-        $userPerPage = 5;
+        $userPerPage = 10;
         $datas = $userRepository->findAll();
         $users = $paginator->paginate(
             $datas,

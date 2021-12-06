@@ -22,15 +22,11 @@
             <a href="#">
                 <i class="fab fa-twitter-square fs-5"></i>
             </a>
-            <form action="" method="post">
-                <div class="form-group">
-                    <label class="inputEmail">Abonnement à notre newsletter :</label>
-                </div>
-                <div class="form-group">
-                    <input type="email" class="emailNews" id="inputEmail" placeholder="Entrer votre email">
-                </div>
-                <input type="submit" class="btn button-philo text-light" value="Envoyer">
-            </form>
+                    <div class="mx-auto col-md-3 ">
+                {{ form_start(newsletterForm, { 'action': path('newsletter_inscription') }) }}
+                {{form_widget(newsletterForm)}}
+                {{ form_end(newsletterForm) }}
+            </div>
         </div>
     </section>
 </div>

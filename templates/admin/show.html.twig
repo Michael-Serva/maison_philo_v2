@@ -6,8 +6,8 @@
     <h1>{% trans %}Utilisateur{% endtrans %}</h1>
     {% if user.picture is not empty %}
         <img class="rounded-circle img-fluid user-picture" src="{{asset('/images/imagesUpload/' ~ user.picture) }}" alt="picture users"/>
-        {% else %}
-         <i class="fas fa-user fs-1"></i>
+    {% else %}
+        <i class="fas fa-user fs-1"></i>
     {% endif %}
     {% embed "component/molecules/tableDesign.html.twig" %}
         {% block table_content %}
@@ -18,12 +18,23 @@
                     <td>{{ user.id }}</td>
                 </tr>
                 <tr>
+                    <th>
+                        {% trans %}Created at{% endtrans %}</th>
+                    <td>
+                        {{user.createdAt|format_date}}
+                    </td>
+                </tr>
+                <tr>
                     <th>Email</th>
                     <td>{{ user.email }}</td>
                 </tr>
                 <tr>
                     <th>{% trans %}FirstName{% endtrans %}</th>
                     <td>{{ user.firstName }}</td>
+                </tr>
+                <tr>
+                    <th>{% trans %}LastName{% endtrans %}</th>
+                    <td>{{ user.lastName }}</td>
                 </tr>
                 <tr>
                     {% if user.genre is not empty %}

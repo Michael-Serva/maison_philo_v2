@@ -10,7 +10,6 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\String\Slugger\SluggerInterface;
-use Symfony\Contracts\Translation\TranslatorInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
@@ -22,10 +21,6 @@ use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
  */
 class AccountController extends AbstractController
 {
-    public function __construct(TranslatorInterface $trans)
-    {
-        $trans->trans('your profile has been modified');
-    }
 
     /**
      * @Route("/")
@@ -99,7 +94,7 @@ class AccountController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             if (!password_verify($passwordUpdate->getOldPassword(), $user->getPassword())) {
                 //dd($passwordUpdate->getOldPassword());
-                $form->get('oldPassword')->addError(new FormError("l'ancien mot de passe est incorrect"));
+                $form->get('oldPassword')->addError(new FormError("The old password is incorrect"));
             } else // true
             {
                 $hash = $encoder->hashPassword($user, $passwordUpdate->getNewPassword());
@@ -107,14 +102,10 @@ class AccountController extends AbstractController
                 $user->setPassword($hash);
                 $manager->persist($user);
                 $manager->flush();
-
-
-                $this->addFlash("passwordUpdate", $user->getPseudo() . ", votre mot de passe a bien été modifié");
-
+                $this->addFlash("passwordUpdate", $user->getPseudo() . ",Your password has been changed successfully");
                 return $this->redirectToRoute("app_account_profile");
             }
         }
-
         return [
             "formPassword" => $form->createView()
         ];

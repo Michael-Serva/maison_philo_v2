@@ -4,48 +4,53 @@
 {% endblock %}
 {% block body %}
     <h1>{% trans %}Users list{% endtrans %}</h1>
+
     {% include "component/atoms/paginationUser.html.twig" %}
-    <table class="table table-hover table-dark text-center align-middle">
-        <thead>
-            <tr>
-                <th>{% trans %}Picture{% endtrans %}</th>
-                <th>{% trans %}Pseudo{% endtrans %}</th>
-                <th>{% trans %}Email{% endtrans %}</th>
-                <th>{% trans %}Last name{% endtrans %}</th>
-                <th>{% trans %}firstname{% endtrans %}</th>
-                <th>{% trans %}IsVerified{% endtrans %}</th>
-                <th>{% trans %}Roles{% endtrans %}</th>
-                <th>{% trans %}Created at{% endtrans %}</th>
-                <th>{% trans %}Actions{% endtrans %}</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for user in users %}
+    {% embed "component/molecules/tableDesign.html.twig" %}
+        {% block table_content %}
+            <thead>
                 <tr>
-                    <td class=""><img class="rounded-circle" src="{{ user.picture }}" alt=""/></td>
-                    <td class="">{{ user.pseudo }}</td>
-                    <td class="">{{ user.email }}</td>
-                    <td>
-                        {% if user.genre is not empty %}
-                            {{user.genre == 'female' ? 'Mme' : 'Mr'|trans}}{{user.lastname}}
-                        {% endif %}
-                    </td>
-                    <td>{{ user.firstName }}</td>
-                    <td class="">{{ user.isVerified ? 'Yes' : 'No' }}</td>
-                    <td class="">{{ user.roles ? user.roles|json_encode : '' }}</td>
-                    <td>{{user.createdAt|format_date}}</td>
-                    <td class="">
-                        <a href="{{ path('app_admin_show', {'id': user.id}) }}">
-                            <i class="fas fa-eye btn-success btn"></i>
-                        </a>
-                    </td>
+                    <th>{% trans %}Picture{% endtrans %}</th>
+                    <th>{% trans %}Pseudo{% endtrans %}</th>
+                    <th>{% trans %}Email{% endtrans %}</th>
+                    <th>{% trans %}Last name{% endtrans %}</th>
+                    <th>{% trans %}firstname{% endtrans %}</th>
+                    <th>{% trans %}Created at{% endtrans %}</th>
+                    <th>{% trans %}Actions{% endtrans %}</th>
                 </tr>
-            {% else %}
-                <tr>
-                    <td colspan="11">{% trans %}No registered user{% endtrans %}</td>
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                    <tr>
+
+                        <td class="">
+                            {% if user.picture %}<img class="rounded-circle" src="{{ user.picture }}" alt=""/>
+                            {% endif %}
+                        </td>
+                        <td class="">{{ user.pseudo }}</td>
+                        <td class="">{{ user.email }}</td>
+                        <td>
+                            {% if user.genre is not empty %}
+                                {{user.genre == 'female' ? 'Mme' : 'Mr'|trans}}
+                            {% endif %}
+                            {{user.lastname}}
+                        </td>
+                        <td>{{ user.firstName }}</td>
+                        <td>{{user.createdAt|format_date}}</td>
+                        <td class="">
+                            <a href="{{ path('app_admin_show', {'id': user.id}) }}">
+                                <i class="fas fa-eye btn-success btn"></i>
+                            </a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="11">{% trans %}No registered user{% endtrans %}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        {% endblock %}
+    {% endembed %}
     {% include "component/atoms/paginationUser.html.twig" %}
+
 {% endblock %}

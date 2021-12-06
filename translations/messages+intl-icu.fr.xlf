@@ -381,7 +381,7 @@
       </trans-unit>
       <trans-unit id="KSAOZHw" resname="The Aging : a coming challenge for Africa">
         <source>The Aging : a coming challenge for Africa</source>
-        <target>Le vieillissement de la population : un défi à venir pour l'Afrique</target>
+        <target>Le vieillissement de la population : un défi à venir pour l' Afrique</target>
       </trans-unit>
       <trans-unit id="MRaWa4P" resname="Covid case in Ivory Coast">
         <source>Covid case in Ivory Coast</source>
@@ -601,7 +601,7 @@
       </trans-unit>
       <trans-unit id="erDR_PL" resname="Map of Africa">
         <source>Map of Africa</source>
-        <target>Carte de l'Afrique</target>
+        <target>Carte de l' Afrique</target>
       </trans-unit>
       <trans-unit id="D_S6tFM" resname="Contribuer au">
         <source>Contribuer au</source>
@@ -685,7 +685,7 @@
       </trans-unit>
       <trans-unit id="wved9c6" resname="See my profile">
         <source>See my profile</source>
-        <target>Voir on profil</target>
+        <target>Voir mon profil</target>
       </trans-unit>
       <trans-unit id="CG9UULI" resname="Edit my profile">
         <source>Edit my profile</source>
@@ -863,7 +863,7 @@
       </trans-unit>
       <trans-unit id="SG6kYiT" resname="world">
         <source>world</source>
-        <target>monde</target>
+        <target>Monde</target>
       </trans-unit>
       <trans-unit id="oOpmsf6" resname="The last 5 comments">
         <source>The last 5 comments</source>
@@ -876,6 +876,22 @@
       <trans-unit id="pOfmCfG" resname="Be the first to rate this product">
         <source>Be the first to rate this product</source>
         <target>Soyez le premier à noter ce produit</target>
+      </trans-unit>
+      <trans-unit id="uXpPdd8" resname="The old password is incorrect">
+        <source>The old password is incorrect</source>
+        <target>__The old password is incorrect</target>
+      </trans-unit>
+      <trans-unit id="ARA9Rf1" resname="Your password has been changed successfully">
+        <source>Your password has been changed successfully</source>
+        <target>Votre mot de passe a bien été modifié</target>
+      </trans-unit>
+      <trans-unit id="aGMGfrC" resname="See">
+        <source>See</source>
+        <target>Voir</target>
+      </trans-unit>
+      <trans-unit id="RkxP.QG" resname="Edit">
+        <source>Edit</source>
+        <target>Modifier</target>
       </trans-unit>
     </body>
   </file>

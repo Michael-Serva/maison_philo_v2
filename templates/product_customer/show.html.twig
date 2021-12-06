@@ -136,7 +136,7 @@
             {# add cart #}
             <div class="col-12 col-md justify-content-center" data-aos="fade-up" data-aos-duuration="3000">
                 <div class="text-center row justify-content-center">
-                    <a href="#" class="btn btn-success col-7 col-lg-7 mb-2">{% trans %}Add to cart{% endtrans %}</a>
+                    <a href="{{path('app_cart_add', {'id' : product.id})}}" class="btn btn-success col-7 col-lg-7 mb-2">{% trans %}Add to cart{% endtrans %}</a>
                     <div class="card bg-homypay text-light text-center mb-2 mx-auto col-7">{{product.price|format_currency('CFA')}}
                     </div>
 

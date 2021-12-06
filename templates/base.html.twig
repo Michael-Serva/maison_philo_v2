@@ -41,7 +41,7 @@
         <footer>
             <div class="container-fluid">
                 {% block footer %}
-                    {% include "component/atoms/footer.html.twig" %}
+                    {{ render(controller('App\\Controller\\FooterController::newsletter')) }}
                 {% endblock %}
             </div>
         </footer>

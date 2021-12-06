@@ -32,7 +32,7 @@
     </div>
     {% if app.user %}
         <div class="text-center mb-2 position-absolute fixed-bottom">
-            <a href="{{path('app_cart_add', {'id' : product.id})}} " class="btn btn-success">{% trans %}Add to cart{% endtrans %}</a>
+            <a href="{{path('app_cart_add', {'id' : product.id})}}" class="btn btn-success">{% trans %}Add to cart{% endtrans %}</a>
         </div>
     {% else %}
         <div class="text-center mb-2 position-absolute fixed-bottom">
