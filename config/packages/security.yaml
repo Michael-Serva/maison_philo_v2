@@ -49,7 +49,7 @@ security:
         - { path: ^/cart, roles: IS_AUTHENTICATED_FULLY }
         - { path: ^/security/login, roles: IS_ANONYMOUS}
         - { path: ^/security/register, roles: IS_ANONYMOUS }
-        - { path: ^/deconnexion, roles: IS_AUTHENTICATED_FULLY }
+        - { path: ^/logout, roles: IS_AUTHENTICATED_FULLY }
         - { path: ^/roles, roles: IS_AUTHENTICATED_FULLY }
         # Currently on the site, there are 2 roles: ROLE_ADMIN and ROLE_USER
         # all the roles of the site (logged in users): IS_AUTHENTICATED_FULLY
