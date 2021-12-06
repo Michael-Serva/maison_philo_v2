@@ -30,7 +30,12 @@
                 icon : "smile-wink"
             } %}
         </div>
-
+        {% for message in app.flashes('newsletter') %}
+            {% embed 'component/molecules/alertDesign.html.twig' with {
+            message: message,
+            alert: 'success'
+        } %}{% endembed %}
+        {% endfor %}
 
         <div class="container-fluid main"> {% block header %}{% endblock %}{% block body %}{% endblock %}
             {% block scripts %}
