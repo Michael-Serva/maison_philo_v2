@@ -40,7 +40,6 @@ class FooterController extends AbstractController
         $newsletter = new Newsletter();
         $newsletterForm = $this->createForm(NewsletterType::class, $newsletter);
         $newsletterForm->handleRequest($request);
-        dump($newsletterForm);
         if ($newsletterForm->isSubmitted() && $newsletterForm->isValid()) {
             $newsletter->setCreatedAt(new \DateTimeImmutable());
             $manager->persist($newsletter);

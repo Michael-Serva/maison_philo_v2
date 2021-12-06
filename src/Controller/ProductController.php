@@ -81,7 +81,6 @@ class ProductController extends AbstractController
                 $product->setImage($newFilename);
 
                 if ($request->request->get('imageQuestion') == "oui") {
-                    dd($newFilename);
                     unlink($this->getParameter('image_product') . '/' . $product->getImage());
                     $product->setImage(null);
                 }
@@ -144,7 +143,6 @@ class ProductController extends AbstractController
                 $product->setImage($newFilename);
 
                 if ($request->request->get('imageQuestion') == "oui") {
-                    dd($newFilename);
                     unlink($this->getParameter('image_product') . '/' . $product->getImage());
                     $product->setImage(null);
                 }
